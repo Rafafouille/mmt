@@ -1,0 +1,39 @@
+body
+{
+	margin:0px;
+	font-family:sans-serif;
+}
+
+
+
+#menu
+{
+	float:left;
+	width:300px;
+}
+
+.bouton
+{
+	display:inline-block;
+	margin:2px;
+	padding:5px;
+	border-radius:5px;
+	cursor:pointer;
+	box-shadow: 5px 5px 5px #AAAAAA;
+}
+
+.bouton:hover
+{
+	margin-top:4px;
+	margin-left:4px;
+	margin-right:0px;
+	margin-bottom:0px;
+	box-shadow: 2px 2px 2px #666666;
+}
+
+.bouton_deplacement
+{
+	font-size:large;
+	height:20px;
+	width:20px;
+}
