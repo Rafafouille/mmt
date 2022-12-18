@@ -109,9 +109,6 @@ function deplacePalpeur(bride=true)
 	var position = new THREE.Vector3( AXE2.position.x, AXE3.position.y, AXE1.position.z)
 	var dep = POSITION_CIBLE.clone().sub(position).multiplyScalar(0.5)
 	
-	/*var dx = (POSITION_CIBLE.x-AXE2.position.x)*0.5
-	var dy = (POSITION_CIBLE.y-AXE3.position.y)*0.5
-	var dz = (POSITION_CIBLE.z-AXE1.position.z)*0.5*/
 	dx = dep.x*0.5
 	dy = dep.y*0.5
 	dz = dep.z*0.5
@@ -136,7 +133,10 @@ function deplacePalpeur(bride=true)
 		AXE3.position.z = collision.z
 		AXE3.position.x = collision.x
 		AXE3.position.y = collision.y
-		placeMarker(collision)
+		if(!doublonMarker(collision))
+			{
+			placeMarker(collision)
+			}
 		}
 	else 
 		{
@@ -150,6 +150,7 @@ function deplacePalpeur(bride=true)
 		AXE3.position.y = newPosition.y
 		}
 }
+
 
 
 
@@ -219,7 +220,7 @@ function detectCollision(P1,P2)
 // Fonction qui place un marker
 function placeMarker(P)
 {
-	
+	//Marker en tant que tel
 	var geom = new THREE.DodecahedronGeometry(0.2,1);
 	var mat = new  THREE.MeshLambertMaterial({
 			color: 0x0000ff,
@@ -229,9 +230,25 @@ function placeMarker(P)
 	sphere.position.copy(P);
 	LISTE_MARKERS.push(sphere)
 	MARKERS.add(sphere);
+	
+	// Coordonnées dans la liste
+	$("#liste_mesures").append("\n"+String(Math.round(P.x*1000)/1000)+";"+String(-Math.round(P.z*1000)/1000)+";"+String(Math.round(P.y*1000)/1000))
 }
 
 
+
+// ****************************************
+// Fonction qui renvoie true si un marker existe déjà dans les environs
+function doublonMarker(pos)
+{
+	for(var i=0; i<LISTE_MARKERS.length;i++)
+	{
+		var marker=LISTE_MARKERS[i];
+		if(marker.position.distanceTo(pos)<DISTANCE_MIN_MARKERS)
+			return true
+	}
+	return false
+}
 
 
 // **********************************************

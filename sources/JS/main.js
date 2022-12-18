@@ -11,6 +11,7 @@ CHARGEMENT_TERMINE = false;
 NB_PIECES_CHARGEES = 0 ;
 
 LISTE_MARKERS = [];
+DISTANCE_MIN_MARKERS = 1	// Distance minimal pour autoriser à faire un autre marker
 
 PAS_DEPLACEMENT_BOUTON = 1
 PAS_DEPLACEMENT_BOUTON_PLUS = 10
