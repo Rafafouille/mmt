@@ -12,23 +12,33 @@ body
 	width:300px;
 }
 
+
+
+/* =======================================
+DEPLACEMENTS
+=========================================== */
 .bouton
 {
-	display:inline-block;
-	margin:2px;
-	padding:5px;
-	border-radius:5px;
-	cursor:pointer;
-	box-shadow: 5px 5px 5px #AAAAAA;
+	display : inline-block;
+	margin : 2px;
+	padding : 5px;
+	box-shadow: 2px 2px 2px #AAAAAA;
+}
+/* Centre */
+
+.bouton_deplacement.centre img
+{
+	height:40px;
 }
 
-.bouton:hover
+.bouton_deplacement.gauche,.bouton_deplacement.droite
 {
-	margin-top:4px;
-	margin-left:4px;
-	margin-right:0px;
-	margin-bottom:0px;
-	box-shadow: 2px 2px 2px #666666;
+	cursor:pointer;
+}
+
+.bouton_deplacement.gauche:hover,.bouton_deplacement.droite:hover
+{
+	background-color:#AAAAFF;
 }
 
 .bouton_deplacement

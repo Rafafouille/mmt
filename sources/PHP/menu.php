@@ -5,6 +5,12 @@
 			<input type="number" id="input_coord_Z" name="input_coord_Z" placeholder="Z" value="0" onchange="updateZ(Number(this.value))"/>
 		</div>
 	
+		<div class="bouton bouton_deplacement gauche">--</div>
+		<div class="bouton bouton_deplacement gauche">-</div>
+		<div class="bouton bouton_deplacement centre"><img src="./sources/images/depX.svg" alt="X"/></div>
+		<div class="bouton bouton_deplacement droite">+</div>
+		<div class="bouton bouton_deplacement droite">++</div>
+	
 		<div class="bouton bouton_deplacement" onclick="updateX(X()-PAS_DEPLACEMENT_BOUTON_PLUS)">--</div>
 		<div class="bouton bouton_deplacement" onclick="updateX(X()-PAS_DEPLACEMENT_BOUTON)">X-</div>
 		<div class="bouton bouton_deplacement" onclick="updateX(X()+PAS_DEPLACEMENT_BOUTON)">X+</div>
