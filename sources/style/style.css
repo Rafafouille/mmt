@@ -9,41 +9,87 @@ body
 #menu
 {
 	float:left;
-	width:300px;
+	width:299px;
+	text-align:center;
+	border-right:solid 1px black;
+	height:100%;
 }
 
 
 
 /* =======================================
-DEPLACEMENTS
+AFFICHAGE DEPLACEMENTS
+=========================================== */
+@import url('https://fonts.cdnfonts.com/css/seven-segment');
+
+#form_coordonnees input
+{
+	font-family: 'Seven Segment', sans-serif;
+	font-size: 30px;
+	background-color: #004400;
+	color: #00FF00;
+	width: 150px;
+}
+                
+
+/* =======================================
+BOUTONS DEPLACEMENTS
 =========================================== */
 .bouton
 {
 	display : inline-block;
 	margin : 2px;
+	margin-left:0px;
+	margin-right:0px;
 	padding : 5px;
-	box-shadow: 2px 2px 2px #AAAAAA;
-}
-/* Centre */
-
-.bouton_deplacement.centre img
-{
-	height:40px;
-}
-
-.bouton_deplacement.gauche,.bouton_deplacement.droite
-{
-	cursor:pointer;
-}
-
-.bouton_deplacement.gauche:hover,.bouton_deplacement.droite:hover
-{
-	background-color:#AAAAFF;
+	/*box-shadow: 2px 2px 2px #AAAAAA;*/
+	text-align:center;
+	border-top : solid 2px #EEEEEE;
+	border-bottom : solid 2px #888888;
+	border-right : solid 2px #888888;
+	border-left : solid 2px #EEEEEE;
+	user-select: none;
 }
 
 .bouton_deplacement
 {
-	font-size:large;
-	height:20px;
+	height:70px;
+	vertical-align:middle;
+}
+
+/* Centre */
+.bouton_deplacement.centre img
+{
+	height:100%;
+	margin:auto;
+	width:60px;
+}
+
+/* Coté */
+.bouton_deplacement.gauche,.bouton_deplacement.droite
+{
+	cursor:pointer;
 	width:20px;
+	background-color:#DDDDDD;
+}
+.bouton_deplacement.gauche:hover,.bouton_deplacement.droite:hover
+{
+	background-color:#AAAAFF;
+}
+.bouton_deplacement.gauche:active,.bouton_deplacement.droite:active
+{
+	border-bottom : solid 2px #EEEEEE;
+	border-top : solid 2px #888888;
+	border-left : solid 2px #888888;
+	border-right : solid 2px #EEEEEE;
+}
+	
+.bouton_deplacement.gauche
+{
+	border-radius : 10px 0 0 10px;
+}
+
+.bouton_deplacement.droite
+{
+	border-radius : 0 10px 10px 0;
 }

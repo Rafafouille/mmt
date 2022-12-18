@@ -24,6 +24,8 @@
 
 
 <!-- CSS ------------------------------- -->
+<!-- FONT -->
+<link href="https://fonts.cdnfonts.com/css/seven-segment" rel="stylesheet">
 <!--<link rel="stylesheet" type="text/css" href="./sources/style/checkbox.css">-->
 <!--<link rel="stylesheet" type="text/css" href="./sources/style/style_tableau_de_bord.css">-->
 <link rel="stylesheet" type="text/css" href="http://libs.allais.eu/jquery/jquery-ui/jquery-ui.css">
