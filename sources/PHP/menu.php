@@ -31,5 +31,6 @@
 		<div class="bouton" onclick="PIECE.visible=!PIECE.visible">Affiche/Cache pièce</div>
 		<div class="bouton" onclick="afficheCacheMachine()">Affiche/Cache machine</div>
 		
-		<textarea readonly id="liste_mesures"></textarea>
+		<textarea readonly id="liste_mesures" rows="10">
+		</textarea>
 	</div>
