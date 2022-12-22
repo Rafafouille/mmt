@@ -1,23 +1,23 @@
-//import * as THREE from './bibliotheques/node_modules/three/build/three.module.js';
+import * as THREE_ from './bibliotheques/threejs/three.module.js';
+THREE = THREE_ // Magouille pour se libérer des modules
+
+import { OrbitControls } from './bibliotheques/threejs/OrbitControls.js';
+THREEJS.OrbitControls = OrbitControls;// Magouille pour se libérer des modules
+
+import { MTLLoader }	from './bibliotheques/threejs/MTLLoader.js';
+THREEJS.MTLLoader = MTLLoader;// Magouille pour se libérer des modules
+import { OBJLoader }	from './bibliotheques/threejs/OBJLoader.js';
+THREEJS.OBJLoader = OBJLoader;// Magouille pour se libérer des modules
+
+
 
 
 // ======================================
 // CONSTANTES GLOBALES
 // ======================================
-PAS_MAX = 0.5 // Pas de déplacement discret, en m
-POSITION_CIBLE = new THREE.Vector3( 0, 0, 0 );
-
-CHARGEMENT_TERMINE = false;
-NB_PIECES_CHARGEES = 0 ;
-
-LISTE_MARKERS = [];
-DISTANCE_MIN_MARKERS = 1	// Distance minimal pour autoriser à faire un autre marker
-
-PAS_DEPLACEMENT_BOUTON = 1
-PAS_DEPLACEMENT_BOUTON_PLUS = 10
-
-v1 = new THREE.Vector3(30,30,-30)
-v2 = new THREE.Vector3(30,0,-30)
+POSITION_CIBLE = new THREE.Vector3( 0, 0, 0 ) ; 
+v1 = new THREE.Vector3(30,30,-30) ;
+v2 = new THREE.Vector3(30,0,-30) ;
 
 
 
@@ -27,10 +27,10 @@ const SCENE = new THREE.Scene();
 SCENE.background = new THREE.Color( 0xffffAA );
 
 // Calque regroupant le contenu de la scene, sauf pour la camera
-const ENVIRONNEMENT = new THREE.Group();
+ENVIRONNEMENT = new THREE.Group();
 SCENE.add(ENVIRONNEMENT);
 
-const MARKERS = new THREE.Group();
+MARKERS = new THREE.Group();
 ENVIRONNEMENT.add(MARKERS);
 
 // Des axes pour aider
@@ -48,7 +48,7 @@ document.body.appendChild( renderer.domElement );
 
 // CAMERA *************************************
 const CAMERA = new THREE.PerspectiveCamera( 75, (window.innerWidth-300) / window.innerHeight, 0.1, 1000 );
-const CONTROLS = new THREE.OrbitControls( CAMERA, renderer.domElement );
+const CONTROLS = new OrbitControls( CAMERA, renderer.domElement );
 
 CAMERA.position.set(100,100,100)
 
@@ -103,3 +103,4 @@ function animate() {
 	renderer.render( SCENE, CAMERA );
 }
 animate();
+

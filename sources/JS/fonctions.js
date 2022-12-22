@@ -1,3 +1,4 @@
+
 // ************************************************
 // CREEGEOMETRIE
 // Fonction qui crée les différentes pièces à l'initialisation
@@ -6,11 +7,11 @@
 function creeMachine()
 {
 	// Chargement du BATI (materiau puis géométrie) ***************
-	var materialLoader = new THREE.MTLLoader();
+	var materialLoader = new THREEJS.MTLLoader();
 	materialLoader.load("./sources/models/BATI.mtl", function(materials)
 		{
 		    	materials.preload();
-			var objLoader = new THREE.OBJLoader();
+			var objLoader = new THREEJS.OBJLoader();
 			objLoader.setMaterials(materials); // Affecte (d'avance) le matériau
 			objLoader.load('./sources/models/BATI.obj', function ( object ) {
 						BATI = object;
@@ -25,7 +26,7 @@ function creeMachine()
 	materialLoader.load("./sources/models/AXE1.mtl", function(materials)
 		{
 		    	materials.preload();
-			var objLoader = new THREE.OBJLoader();
+			var objLoader = new THREEJS.OBJLoader();
 			objLoader.setMaterials(materials); // Affecte (d'avance) le matériau
 			objLoader.load('./sources/models/AXE1.obj', function ( object ) {
 						AXE1 = object;
@@ -40,7 +41,7 @@ function creeMachine()
 	materialLoader.load("./sources/models/AXE2.mtl", function(materials)
 		{
 		    	materials.preload();
-			var objLoader = new THREE.OBJLoader();
+			var objLoader = new THREEJS.OBJLoader();
 			objLoader.setMaterials(materials); // Affecte (d'avance) le matériau
 			objLoader.load('./sources/models/AXE2.obj', function ( object ) {
 						AXE2 = object;
@@ -55,7 +56,7 @@ function creeMachine()
 	materialLoader.load("./sources/models/AXE2.mtl", function(materials)
 		{
 		    	materials.preload();
-			var objLoader = new THREE.OBJLoader();
+			var objLoader = new THREEJS.OBJLoader();
 			objLoader.setMaterials(materials); // Affecte (d'avance) le matériau
 			objLoader.load('./sources/models/AXE3.obj', function ( object ) {
 						AXE3 = object;
@@ -76,11 +77,11 @@ function creePiece()
 {
 	
 	// Chargement de la PIECE (materiau puis géométrie) ***************
-	var materialLoader = new THREE.MTLLoader();
+	var materialLoader = new THREEJS.MTLLoader();
 	materialLoader.load("./sources/models/T_Parallelisme.mtl", function(materials)
 		{
 		    	materials.preload();
-			var objLoader = new THREE.OBJLoader();
+			var objLoader = new THREEJS.OBJLoader();
 			objLoader.setMaterials(materials); // Affecte (d'avance) le matériau
 			objLoader.load('./sources/models/T_Parallelisme.obj', function ( object ) {
 						PIECE = object;
