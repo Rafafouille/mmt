@@ -29,6 +29,7 @@ SCENE.background = new THREE.Color( 0xffffAA );
 // Calque regroupant le contenu de la scene, sauf pour la camera
 ENVIRONNEMENT = new THREE.Group();
 SCENE.add(ENVIRONNEMENT);
+ENVIRONNEMENT.position.set(0,1.1,-0.5)
 
 MARKERS = new THREE.Group();
 ENVIRONNEMENT.add(MARKERS);
@@ -50,7 +51,7 @@ RENDERER.xr.enabled = true;	// Autorise la VR
 CAMERA = new THREE.PerspectiveCamera( 75, (window.innerWidth-300) / window.innerHeight, 0.1, 1000 );
 const CONTROLS = new OrbitControls( CAMERA, RENDERER.domElement );
 
-CAMERA.position.set(100,100,100)
+CAMERA.position.set(2,2,2)
 
 // LUMIERE ************************************
 var light = new THREE.DirectionalLight(0xFFFFFF, 1);
@@ -87,6 +88,8 @@ var light2 = new THREE.DirectionalLight(0xAAAAAA, 1);
 	creeMachine();
 	creePiece();
 	
+
+
 
 
 // *******************************************

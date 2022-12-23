@@ -15,6 +15,7 @@ function creeMachine()
 			objLoader.setMaterials(materials); // Affecte (d'avance) le matériau
 			objLoader.load('./sources/models/BATI.obj', function ( object ) {
 						BATI = object;
+						BATI.scale.set(0.04/3,0.04/3,0.04/3);
 				 		ENVIRONNEMENT.add( object );
 				 		NB_PIECES_CHARGEES += 1
 					},
@@ -30,6 +31,7 @@ function creeMachine()
 			objLoader.setMaterials(materials); // Affecte (d'avance) le matériau
 			objLoader.load('./sources/models/AXE1.obj', function ( object ) {
 						AXE1 = object;
+						AXE1.scale.set(0.04/3,0.04/3,0.04/3);
 				 		ENVIRONNEMENT.add( object );
 				 		NB_PIECES_CHARGEES += 1
 					},
@@ -45,6 +47,7 @@ function creeMachine()
 			objLoader.setMaterials(materials); // Affecte (d'avance) le matériau
 			objLoader.load('./sources/models/AXE2.obj', function ( object ) {
 						AXE2 = object;
+						AXE2.scale.set(0.04/3,0.04/3,0.04/3);
 				 		ENVIRONNEMENT.add( object );
 				 		NB_PIECES_CHARGEES += 1
 					},
@@ -60,6 +63,7 @@ function creeMachine()
 			objLoader.setMaterials(materials); // Affecte (d'avance) le matériau
 			objLoader.load('./sources/models/AXE3.obj', function ( object ) {
 						AXE3 = object;
+						AXE3.scale.set(0.04/3,0.04/3,0.04/3);
 				 		ENVIRONNEMENT.add( object );
 				 		NB_PIECES_CHARGEES += 1
 					},
@@ -86,9 +90,9 @@ function creePiece()
 			objLoader.load('./sources/models/T_Parallelisme.obj', function ( object ) {
 						PIECE = object;
 						//On déplace la géométrie de la piece (les vertices, et pas la piece elle meme)
-						var echelle = 5
+						var echelle = 0.1
 						PIECE.children[0].geometry.scale(echelle,echelle,echelle)
-						PIECE.children[0].geometry.translate(30,0,-30)
+						PIECE.children[0].geometry.translate(0.4,0,-0.4)
 						//CONTROLS.target = PIECE.position  // Camera vise la piece
 				 		ENVIRONNEMENT.add( object );
 				 		NB_PIECES_CHARGEES += 1
