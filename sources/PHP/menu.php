@@ -30,7 +30,7 @@
 		<br/>
 		<div class="bouton" onclick="PIECE.visible=!PIECE.visible">Affiche/Cache pièce</div>
 		<div class="bouton" onclick="afficheCacheMachine()">Affiche/Cache machine</div>
-		
+		<div id="vrbouton">[Bouton VR]</div>
 		<textarea readonly id="liste_mesures" rows="10">
 		</textarea>
 	</div>

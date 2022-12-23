@@ -8,8 +8,8 @@ import { MTLLoader }	from './bibliotheques/threejs/MTLLoader.js';
 THREEJS.MTLLoader = MTLLoader;// Magouille pour se libérer des modules
 import { OBJLoader }	from './bibliotheques/threejs/OBJLoader.js';
 THREEJS.OBJLoader = OBJLoader;// Magouille pour se libérer des modules
-
-
+import { VRButton } from './bibliotheques/threejs/VRButton.js';
+THREEJS.VRButton = VRButton;// Magouille pour se libérer des modules
 
 
 // ======================================
@@ -40,15 +40,15 @@ SCENE.add( axesHelper );
 
 
 // RENDERER ****************************
-const renderer = new THREE.WebGLRenderer();
-renderer.setSize( window.innerWidth-300, window.innerHeight);
-document.body.appendChild( renderer.domElement );
-
+RENDERER = new THREE.WebGLRenderer();
+RENDERER.setSize( window.innerWidth-300, window.innerHeight);
+document.body.appendChild( RENDERER.domElement );
+RENDERER.xr.enabled = true;	// Autorise la VR
 
 
 // CAMERA *************************************
-const CAMERA = new THREE.PerspectiveCamera( 75, (window.innerWidth-300) / window.innerHeight, 0.1, 1000 );
-const CONTROLS = new OrbitControls( CAMERA, renderer.domElement );
+CAMERA = new THREE.PerspectiveCamera( 75, (window.innerWidth-300) / window.innerHeight, 0.1, 1000 );
+const CONTROLS = new OrbitControls( CAMERA, RENDERER.domElement );
 
 CAMERA.position.set(100,100,100)
 
@@ -89,8 +89,13 @@ var light2 = new THREE.DirectionalLight(0xAAAAAA, 1);
 	
 
 
+// *******************************************
+// VR
+// Ajout du bouton VR
+$("#vrbouton").html( VRButton.createButton( RENDERER ) );
+
 function animate() {
-	requestAnimationFrame( animate );
+	//requestAnimationFrame( animate );<<--- Anciennement pour faire la boucle, mais c'était avant la VR
 	CONTROLS.update(); // Mise à jour de la caméra, en fonction des actions de l'utilisateur
 	if(CHARGEMENT_TERMINE)
 	{
@@ -100,7 +105,7 @@ function animate() {
 	{
 		checkChargement();
 	}
-	renderer.render( SCENE, CAMERA );
+	RENDERER.render( SCENE, CAMERA );
 }
-animate();
-
+// animate();  <<--- Anciennement pour faire la boucle, mais c'était avant la VR
+RENDERER.setAnimationLoop(animate);

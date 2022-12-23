@@ -15,8 +15,8 @@
 <!--<script src="./sources/JS/bibliotheques/node_modules/three/examples/jsm/loaders/OBJLoader.js"></script>-->
 
 
-<script src="http://code.jquery.com/jquery.min.js"></script>
-<script src="http://libs.allais.eu/jquery/jquery-ui/jquery-ui.js"></script>
+<script src="./sources/JS/bibliotheques/jquery/jquery.min.js"></script>
+<script src="./sources/JS/bibliotheques/jquery/jquery-ui.js"></script>
 <!--<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script> -->
 
 <script src="./sources/JS/fonctions.js"></script>
@@ -28,7 +28,7 @@
 <link href="https://fonts.cdnfonts.com/css/seven-segment" rel="stylesheet">
 <!--<link rel="stylesheet" type="text/css" href="./sources/style/checkbox.css">-->
 <!--<link rel="stylesheet" type="text/css" href="./sources/style/style_tableau_de_bord.css">-->
-<link rel="stylesheet" type="text/css" href="http://libs.allais.eu/jquery/jquery-ui/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="./sources/JS/bibliotheques/jquery/jquery-ui.css">
 <link rel="stylesheet" type="text/css" href="sources/style/style.css">
 
 
@@ -43,6 +43,8 @@ PAS_MAX = 0.5 // Pas de déplacement discret, en m
 
 ENVIRONNEMENT = null;
 MARKERS = null;
+RENDERER = null;
+CAMERA = null;
 
 POSITION_CIBLE = null;
 
