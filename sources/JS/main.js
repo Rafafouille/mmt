@@ -10,7 +10,8 @@ import { OBJLoader }	from './bibliotheques/threejs/OBJLoader.js';
 THREEJS.OBJLoader = OBJLoader;// Magouille pour se libérer des modules
 import { VRButton } from './bibliotheques/threejs/VRButton.js';
 THREEJS.VRButton = VRButton;// Magouille pour se libérer des modules
-
+import { XRControllerModelFactory } from './bibliotheques/threejs/XRControllerModelFactory.js';
+THREEJS.XRControllerModelFactory = XRControllerModelFactory;// Magouille pour se libérer des modules
 
 // ======================================
 // CONSTANTES GLOBALES
@@ -23,13 +24,13 @@ v2 = new THREE.Vector3(30,0,-30) ;
 
 
 // SCENE *************************************
-const SCENE = new THREE.Scene();
+SCENE = new THREE.Scene();
 SCENE.background = new THREE.Color( 0xffffAA );
 
 // Calque regroupant le contenu de la scene, sauf pour la camera
 ENVIRONNEMENT = new THREE.Group();
 SCENE.add(ENVIRONNEMENT);
-ENVIRONNEMENT.position.set(0,1.1,-0.5)
+ENVIRONNEMENT.position.set(0,0.73,-0.5)
 
 MARKERS = new THREE.Group();
 ENVIRONNEMENT.add(MARKERS);
@@ -87,21 +88,33 @@ var light2 = new THREE.DirectionalLight(0xAAAAAA, 1);
 	// IMPORTE LES MODELES
 	creeMachine();
 	creePiece();
-	
 
 
 
 
 // *******************************************
 // VR
-// Ajout du bouton VR
-$("#vrbouton").html( VRButton.createButton( RENDERER ) );
+	// Voir : https://ada.is/blog/2020/05/18/using-vr-controllers-and-locomotion-in-threejs/
+	// Ajout du bouton VR
+	$("#vrbouton").html( VRButton.createButton( RENDERER ) );
+	// Crée les controleurs
+	creeControllers()
 
+
+
+// BOUCLE *********************************************
 function animate() {
 	//requestAnimationFrame( animate );<<--- Anciennement pour faire la boucle, mais c'était avant la VR
 	CONTROLS.update(); // Mise à jour de la caméra, en fonction des actions de l'utilisateur
 	if(CHARGEMENT_TERMINE)
 	{
+		if(SUIVRE_MANETTE_VR)
+		{
+			var p = new THREE.Vector3();
+			var pp = new THREE.Vector3();
+			POSITION_CIBLE = p.add(COORDONNEES_PALPEUR_INITIAL_VR).add(CONTROLLER1.position).sub(COORDONNEES_INIALES_MANETTE_VR)
+		}
+		
 		deplacePalpeur();
 	}
 	else

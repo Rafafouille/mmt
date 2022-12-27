@@ -226,7 +226,7 @@ function detectCollision(P1,P2)
 function placeMarker(P)
 {
 	//Marker en tant que tel
-	var geom = new THREE.DodecahedronGeometry(0.2,1);
+	var geom = new THREE.DodecahedronGeometry(RAYON_MARKER,1);
 	var mat = new  THREE.MeshLambertMaterial({
 			color: 0x0000ff,
 			shading: THREE.SmoothShading
@@ -308,4 +308,64 @@ function afficheCacheMachine()
 	AXE1.visible = BATI.visible
 	AXE2.visible = BATI.visible
 }
+
+
+
+
+// *****************************************
+// Fonction qui créer les controlleurs
+function creeControllers()
+{
+	// Controllers
+	CONTROLLER1 = RENDERER.xr.getControllerGrip(0);
+	var controllerModelFactory = new THREEJS.XRControllerModelFactory();
+	var model1 = controllerModelFactory.createControllerModel( CONTROLLER1 );
+	CONTROLLER1.add(model1);
+	SCENE.add(CONTROLLER1);
+	CONTROLLER1.addEventListener('selectstart', function(){
+					COORDONNEES_INIALES_MANETTE_VR = CONTROLLER1.position.clone() ;  // Position de la manette VR au début du déplacement
+					COORDONNEES_PALPEUR_INITIAL_VR = POSITION_CIBLE.clone() ;
+					SUIVRE_MANETTE_VR = true;
+				});
+	CONTROLLER1.addEventListener('selectend', function(){
+					SUIVRE_MANETTE_VR = false;
+				});
+	
+	CONTROLLER2 = RENDERER.xr.getControllerGrip(1);
+	var model2 = controllerModelFactory.createControllerModel( CONTROLLER2 );
+	CONTROLLER2.add(model2);
+	SCENE.add(CONTROLLER2);
+}
+// *****************************************
+// Fabrique les modèles des controleurs 
+// (issu de :  https://codingxr.com/articles/getting-started-with-webxr-and-threejs/)
+/*function buildControllers() {
+  const controllerModelFactory = new THREEJS.XRControllerModelFactory();
+
+  const geometry = new THREE.BufferGeometry().setFromPoints([
+    new THREE.Vector3(0, 0, 0),
+    new THREE.Vector3(0, 0, -1)
+  ]);
+
+  const line = new THREE.Line(geometry);
+  line.scale.z = 10;
+
+  const controllers = [];
+
+  for (let i = 0; i < 2; i++) {
+    const controller = RENDERER.xr.getController(i);
+    controller.add(line.clone());
+    controller.userData.selectPressed = false;
+    controller.userData.selectPressedPrev = false;
+    SCENE.add(controller);
+    controllers.push(controller);
+
+    const grip = RENDERER.xr.getControllerGrip(i);
+    grip.add(controllerModelFactory.createControllerModel(grip));
+    SCENE.add(grip);
+  }
+
+  return controllers;
+}*/
+
 

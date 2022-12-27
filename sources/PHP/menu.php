@@ -1,13 +1,13 @@
 <div id="menu">
 		<div id="form_coordonnees">
 			<label for="input_coord_X">X :</label>
-			<input type="number" id="input_coord_X" name="input_coord_X" placeholder="X" value="0" onchange="updateX(Number(this.value))"/>
+			<input type="number" id="input_coord_X" name="input_coord_X" step="0.01" placeholder="X" value="0" onchange="updateX(Number(this.value))"/>
 			<br/>
 			<label for="input_coord_Y">Y :</label>
-			<input type="number" id="input_coord_Y" name="input_coord_Y" placeholder="Y" value="0" onchange="updateY(Number(this.value))"/>
+			<input type="number" id="input_coord_Y" name="input_coord_Y" step="0.01"  placeholder="Y" value="0" onchange="updateY(Number(this.value))"/>
 			<br/>
 			<label for="input_coord_Z">Z :</label>
-			<input type="number" id="input_coord_Z" name="input_coord_Z" placeholder="Z" value="0" onchange="updateZ(Number(this.value))"/>
+			<input type="number" id="input_coord_Z" name="input_coord_Z" step="0.01"  placeholder="Z" value="0" onchange="updateZ(Number(this.value))"/>
 		</div>
 	
 		<div class="bouton bouton_deplacement gauche" onclick="updateX(X()-PAS_DEPLACEMENT_BOUTON_PLUS)">-<br/>-</div>

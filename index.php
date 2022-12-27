@@ -41,10 +41,12 @@ THREE = null ; //Magouille pour se libérer des modules
 THREEJS={}
 PAS_MAX = 0.5 // Pas de déplacement discret, en m
 
+SCENE = null;
 ENVIRONNEMENT = null;
 MARKERS = null;
 RENDERER = null;
 CAMERA = null;
+
 
 POSITION_CIBLE = null;
 
@@ -52,12 +54,19 @@ CHARGEMENT_TERMINE = false;
 NB_PIECES_CHARGEES = 0 ;
 
 LISTE_MARKERS = [];
-DISTANCE_MIN_MARKERS = 1	// Distance minimal pour autoriser à faire un autre marker
+RAYON_MARKER = 0.003;
+DISTANCE_MIN_MARKERS = 0.02	// Distance minimal pour autoriser à faire un autre marker
 
-PAS_DEPLACEMENT_BOUTON = 1
-PAS_DEPLACEMENT_BOUTON_PLUS = 10
+PAS_DEPLACEMENT_BOUTON = 0.01
+PAS_DEPLACEMENT_BOUTON_PLUS = 0.1
 
+COORDONNEES_INIALES_MANETTE_VR = null; // Position de la manette VR au début du déplacement
+COORDONNEES_PALPEUR_INITIAL_VR = null; // Position du palpeur au début du déplacement VR
+SUIVRE_MANETTE_VR = false;
 
+// Manettes
+CONTROLLER1 = null
+CONTROLLER2 = null
 
 v1 = null
 v2 = null
