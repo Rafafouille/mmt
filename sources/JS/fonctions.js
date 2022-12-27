@@ -15,7 +15,7 @@ function creeMachine()
 			objLoader.setMaterials(materials); // Affecte (d'avance) le matériau
 			objLoader.load('./sources/models/BATI.obj', function ( object ) {
 						BATI = object;
-						BATI.scale.set(0.04/3,0.04/3,0.04/3);
+						//BATI.scale.set(0.04/3,0.04/3,0.04/3);
 				 		ENVIRONNEMENT.add( object );
 				 		NB_PIECES_CHARGEES += 1
 					},
@@ -31,7 +31,7 @@ function creeMachine()
 			objLoader.setMaterials(materials); // Affecte (d'avance) le matériau
 			objLoader.load('./sources/models/AXE1.obj', function ( object ) {
 						AXE1 = object;
-						AXE1.scale.set(0.04/3,0.04/3,0.04/3);
+						//AXE1.scale.set(0.04/3,0.04/3,0.04/3);
 				 		ENVIRONNEMENT.add( object );
 				 		NB_PIECES_CHARGEES += 1
 					},
@@ -47,7 +47,7 @@ function creeMachine()
 			objLoader.setMaterials(materials); // Affecte (d'avance) le matériau
 			objLoader.load('./sources/models/AXE2.obj', function ( object ) {
 						AXE2 = object;
-						AXE2.scale.set(0.04/3,0.04/3,0.04/3);
+						//AXE2.scale.set(0.04/3,0.04/3,0.04/3);
 				 		ENVIRONNEMENT.add( object );
 				 		NB_PIECES_CHARGEES += 1
 					},
@@ -63,13 +63,22 @@ function creeMachine()
 			objLoader.setMaterials(materials); // Affecte (d'avance) le matériau
 			objLoader.load('./sources/models/AXE3.obj', function ( object ) {
 						AXE3 = object;
-						AXE3.scale.set(0.04/3,0.04/3,0.04/3);
+						//AXE3.scale.set(0.04/3,0.04/3,0.04/3);
 				 		ENVIRONNEMENT.add( object );
 				 		NB_PIECES_CHARGEES += 1
+				 		
+				 		
+						// Bille
+						var geom = new THREE.DodecahedronGeometry(RAYON_PALPEUR,1);
+				 		BILLE =  new THREE.Mesh( geom, materiau_rouge );
+						object.add(BILLE)
+				 		
 					},
 					function (progression){},
 					function (error){console.log(error);});
 		});
+		
+	
 	
 
  
@@ -114,30 +123,38 @@ function deplacePalpeur(bride=true)
 	var position = new THREE.Vector3( AXE2.position.x, AXE3.position.y, AXE1.position.z)
 	var dep = POSITION_CIBLE.clone().sub(position).multiplyScalar(0.5)
 	
-	dx = dep.x*0.5
+	/*dx = dep.x*0.5
 	dy = dep.y*0.5
-	dz = dep.z*0.5
+	dz = dep.z*0.5*/
+	
+	var n = dep.clone().normalize() // Vecteur directeur
+	var decallage_boule_palpeur = n.clone().multiplyScalar(RAYON_PALPEUR) // Rayon de la boule du palper, dans le sens de n
 	
 	if(dep.length() > PAS_MAX)
 	{
-		dep.normalize()
+		dep = n.clone().multiplyScalar(PAS_MAX)
 	}
 	
-	var newPosition = position.clone().add(dep)
+	var newPosition = position.clone().add(dep) // Point d'arriver du centre du palper
 	
-	collision = detectCollision(position,newPosition)
+	
+		
+	collision = detectCollision(position,newPosition.clone().add(decallage_boule_palpeur)) // Détecte une collision entre le centre actuel de la sphère et le point de contact tangent de la shère après déplacement
 	if(collision)
 		{
-		POSITION_CIBLE.copy(collision)
+		POSITION_CIBLE = collision.clone().sub(decallage_boule_palpeur); // On revient d'un rayon en arrière
+		console.log(collision)
+		console.log(collision.clone().sub(decallage_boule_palpeur));
+		
 		updateAffichageCoordonnees();
-		AXE1.position.z = collision.z
+		AXE1.position.z = POSITION_CIBLE.z
 
-		AXE2.position.z = collision.z
-		AXE2.position.x = collision.x
+		AXE2.position.z = POSITION_CIBLE.z
+		AXE2.position.x = POSITION_CIBLE.x
 
-		AXE3.position.z = collision.z
-		AXE3.position.x = collision.x
-		AXE3.position.y = collision.y
+		AXE3.position.z = POSITION_CIBLE.z
+		AXE3.position.x = POSITION_CIBLE.x
+		AXE3.position.y = POSITION_CIBLE.y
 		if(!doublonMarker(collision))
 			{
 			placeMarker(collision)

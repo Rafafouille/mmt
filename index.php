@@ -37,28 +37,40 @@
 // ======================================
 // CONSTANTES GLOBALES
 // ======================================
+
+// Three JS *********
 THREE = null ; //Magouille pour se libérer des modules
 THREEJS={}
-PAS_MAX = 0.5 // Pas de déplacement discret, en m
 
 SCENE = null;
 ENVIRONNEMENT = null;
 MARKERS = null;
 RENDERER = null;
 CAMERA = null;
+BILLE = null;
 
+material=null
+materiau_rouge=null
+materiau_jaune=null
+materiau_orange=null
 
+// Déplacement *******************
+PAS_MAX = 0.005 // Pas de déplacement discret, en m
+PAS_DEPLACEMENT_BOUTON = 0.01		// Pas de déplacement quand on clique sur le bouton "déplacer +"
+PAS_DEPLACEMENT_BOUTON_PLUS = 0.1	// Pas de déplacement quand on clique sur le bouton "déplacer ++"
 POSITION_CIBLE = null;
 
+
+// PIECE
 CHARGEMENT_TERMINE = false;
 NB_PIECES_CHARGEES = 0 ;
 
+// MESURES
+RAYON_PALPEUR = 0.002 ; 	// Rayon de la pointe du palpeur
 LISTE_MARKERS = [];
 RAYON_MARKER = 0.003;
 DISTANCE_MIN_MARKERS = 0.02	// Distance minimal pour autoriser à faire un autre marker
 
-PAS_DEPLACEMENT_BOUTON = 0.01
-PAS_DEPLACEMENT_BOUTON_PLUS = 0.1
 
 COORDONNEES_INIALES_MANETTE_VR = null; // Position de la manette VR au début du déplacement
 COORDONNEES_PALPEUR_INITIAL_VR = null; // Position du palpeur au début du déplacement VR
@@ -70,10 +82,6 @@ CONTROLLER2 = null
 
 v1 = null
 v2 = null
-material=null
-materiau_rouge=null
-materiau_jaune=null
-materiau_orange=null
 </script>
 </head>
 
