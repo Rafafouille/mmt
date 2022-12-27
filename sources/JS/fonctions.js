@@ -354,35 +354,12 @@ function creeControllers()
 	SCENE.add(CONTROLLER2);
 }
 // *****************************************
-// Fabrique les modèles des controleurs 
-// (issu de :  https://codingxr.com/articles/getting-started-with-webxr-and-threejs/)
-/*function buildControllers() {
-  const controllerModelFactory = new THREEJS.XRControllerModelFactory();
-
-  const geometry = new THREE.BufferGeometry().setFromPoints([
-    new THREE.Vector3(0, 0, 0),
-    new THREE.Vector3(0, 0, -1)
-  ]);
-
-  const line = new THREE.Line(geometry);
-  line.scale.z = 10;
-
-  const controllers = [];
-
-  for (let i = 0; i < 2; i++) {
-    const controller = RENDERER.xr.getController(i);
-    controller.add(line.clone());
-    controller.userData.selectPressed = false;
-    controller.userData.selectPressedPrev = false;
-    SCENE.add(controller);
-    controllers.push(controller);
-
-    const grip = RENDERER.xr.getControllerGrip(i);
-    grip.add(controllerModelFactory.createControllerModel(grip));
-    SCENE.add(grip);
-  }
-
-  return controllers;
-}*/
+// Redéfinit les paramètres de caméra quand on change la taille de la fenetre
+function resizeFenetre()
+{
+    CAMERA.aspect = (window.innerWidth-300) / window.innerHeight;
+    CAMERA.updateProjectionMatrix();
+    RENDERER.setSize( window.innerWidth-300, window.innerHeight );
+}
 
 
