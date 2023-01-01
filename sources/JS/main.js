@@ -49,7 +49,7 @@ RENDERER.xr.enabled = true;	// Autorise la VR
 
 
 // CAMERA *************************************
-CAMERA = new THREE.PerspectiveCamera( 75, (window.innerWidth-300) / window.innerHeight, 0.1, 1000 );
+CAMERA = new THREE.PerspectiveCamera( 75, (window.innerWidth-300) / window.innerHeight, 0.01, 1000 );
 const CONTROLS = new OrbitControls( CAMERA, RENDERER.domElement );
 
 window.addEventListener( 'resize', resizeFenetre, false );
