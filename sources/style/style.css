@@ -49,6 +49,7 @@ BOUTONS DEPLACEMENTS
 	border-right : solid 2px #888888;
 	border-left : solid 2px #EEEEEE;
 	user-select: none;
+	cursor:pointer;
 }
 
 .bouton_deplacement
@@ -92,4 +93,61 @@ BOUTONS DEPLACEMENTS
 .bouton_deplacement.droite
 {
 	border-radius : 0 10px 10px 0;
+}
+
+
+
+
+
+/* =======================================
+ARBRE
+=========================================== */
+
+#arbre
+{
+	width:250px;
+	border:solid 1px;
+	margin:auto;
+	min-height:200px;
+	text-align:center;
+	
+	border-bottom : solid 2px #EEEEEE;
+	border-top : solid 2px #888888;
+	border-left : solid 2px #888888;
+	border-right : solid 2px #EEEEEE;
+}
+
+#arbre .item
+{
+	width:240px;
+	min-width : 20px;
+	border-radius:10px;
+	margin:3px;
+	overflow:hidden;
+	box-shadow: 2px 2px 2px #AAAAAA;
+}
+
+#arbre .item .titre-item
+{
+	background-color:black;
+	color:white;
+	margin:0px;
+	min-height:30px;
+	cursor:pointer;
+}
+
+
+#arbre .item .contenu-item
+{
+	display:none;
+}
+
+
+
+.nuage_valeurs
+{
+	margin:auto;
+	border:solid 1px;
+	width:235px;
+	text-align:center;
 }

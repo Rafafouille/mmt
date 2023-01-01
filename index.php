@@ -20,6 +20,8 @@
 <!--<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script> -->
 
 <script src="./sources/JS/fonctions.js"></script>
+<script src="./sources/JS/CLASS_Item.js"></script>
+<script src="./sources/JS/CLASS_Nuage.js"></script>
 <script src="./sources/JS/init.js"></script>
 
 
@@ -61,24 +63,31 @@ PAS_DEPLACEMENT_BOUTON_PLUS = 0.1	// Pas de déplacement quand on clique sur le 
 POSITION_CIBLE = null;
 
 
-// PIECE
+// PIECE *******************
 CHARGEMENT_TERMINE = false;
 NB_PIECES_CHARGEES = 0 ;
 
-// MESURES
+// MESURES *******************
 RAYON_PALPEUR = 0.002 ; 	// Rayon de la pointe du palpeur
 LISTE_MARKERS = [];
 RAYON_MARKER = 0.003;
 DISTANCE_MIN_MARKERS = 0.02	// Distance minimal pour autoriser à faire un autre marker
+NUAGE_COURANT = null;		// Référence vers le nuage de points courant (null si aucun)
+LISTE_COULEURS = ["#FF0000","#0000FF","#00AA00","#FFAA00","#FF00FF","#00FFFF","#00FF00","#000000"]
 
 
+// Manettes *******************
 COORDONNEES_INIALES_MANETTE_VR = null; // Position de la manette VR au début du déplacement
 COORDONNEES_PALPEUR_INITIAL_VR = null; // Position du palpeur au début du déplacement VR
 SUIVRE_MANETTE_VR = false;
-
-// Manettes
 CONTROLLER1 = null
 CONTROLLER2 = null
+
+
+
+// arbre *******************
+LISTE_ITEMS = []
+NUMERO_ITEM = 0;
 
 v1 = null
 v2 = null
@@ -94,8 +103,14 @@ v2 = null
 	
 	<div id="ThreeJS" style="width=50%;display:inline-block;vertical-align:top;"></div><!--position: absolute; left:0px; top:0px-->
     
-    
+
+	<?php
+	
+		include("./sources/PHP/boites.php")
+	?>
+
 </body>
 
 <script type="module" src="./sources/JS/main.js"></script>
+
 </html>

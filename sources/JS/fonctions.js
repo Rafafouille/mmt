@@ -142,11 +142,13 @@ function deplacePalpeur(bride=true)
 	collision = detectCollision(position,newPosition.clone().add(decallage_boule_palpeur)) // Détecte une collision entre le centre actuel de la sphère et le point de contact tangent de la shère après déplacement
 	if(collision)
 		{
+		// On repositionne le palper un peu en arriere (l'équivalent d'un rayon de sphere)
 		POSITION_CIBLE = collision.clone().sub(decallage_boule_palpeur); // On revient d'un rayon en arrière
-		console.log(collision)
-		console.log(collision.clone().sub(decallage_boule_palpeur));
 		
+		// Mise à jour des coordonnées (du centre de la sphere) sur l'écran
 		updateAffichageCoordonnees();
+		
+		// Mise à jour de la position de la machine
 		AXE1.position.z = POSITION_CIBLE.z
 
 		AXE2.position.z = POSITION_CIBLE.z
@@ -155,13 +157,14 @@ function deplacePalpeur(bride=true)
 		AXE3.position.z = POSITION_CIBLE.z
 		AXE3.position.x = POSITION_CIBLE.x
 		AXE3.position.y = POSITION_CIBLE.y
-		if(!doublonMarker(collision))
+		if(NUAGE_COURANT && !NUAGE_COURANT.doublonMarker(collision))
 			{
-			placeMarker(collision)
+			NUAGE_COURANT.ajouteMesure(collision)
 			}
 		}
 	else 
 		{
+		// Mise à jour de la position de la machine
 		AXE1.position.z = newPosition.z
 
 		AXE2.position.z = newPosition.z
@@ -240,7 +243,8 @@ function detectCollision(P1,P2)
 
 // *******************************************
 // Fonction qui place un marker
-function placeMarker(P)
+// OBSOLETE
+function placeMarker(P,_couleur_=0x000000)
 {
 	//Marker en tant que tel
 	var geom = new THREE.DodecahedronGeometry(RAYON_MARKER,1);
@@ -363,3 +367,24 @@ function resizeFenetre()
 }
 
 
+
+// *****************************************
+// Ajoute un nouvel item, en accord avec la boite de dialogue
+function ajouterItemFromDialog()
+{
+	var type = $("#new_item_liste").val()
+	var item = null
+	if(type=="nuage")
+	{
+		var couleurNuage = LISTE_COULEURS[ NUMERO_ITEM % LISTE_COULEURS.length ]
+		item = new Nuage("nuage", couleurNuage);
+		NUAGE_COURANT = item;
+	}
+	else
+		item = new Item("item", "#000000");
+		
+	// Ajout à la liste des items
+	LISTE_ITEMS.push(item);
+	// Ajout dans le menu "arbre"
+	$("#arbre").append(item.getHTML())
+}

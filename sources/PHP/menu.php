@@ -31,6 +31,14 @@
 		<div class="bouton" onclick="PIECE.visible=!PIECE.visible">Affiche/Cache pièce</div>
 		<div class="bouton" onclick="afficheCacheMachine()">Affiche/Cache machine</div>
 		<div id="vrbouton">[Bouton VR]</div>
-		<textarea readonly id="liste_mesures" rows="10">
-		</textarea>
+		
+		<div class="bouton" onclick="$('#boite_new_item').dialog('open')">+ Ajouter</div>
+		<div id="arbre">
+		</div>
+		
+		<div id="mesures">
+			Mesures :<br/>
+			<textarea readonly id="liste_mesures" rows="30">
+			</textarea>
+		</div>
 	</div>
