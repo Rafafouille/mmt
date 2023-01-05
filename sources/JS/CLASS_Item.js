@@ -1,11 +1,12 @@
 class Item
 {
 	/* Constructeur */
-	constructor(nom_,couleur_)
+	constructor(nom_,couleur_,type_="item")
 	{
 		this.#nom = nom_;
 		this.#couleur = couleur_;
 		this.#id = NUMERO_ITEM++ + 1;
+		this.#type = type_
 	}
 	
 	
@@ -13,6 +14,7 @@ class Item
 	 MEMBRES
 	 **************************** */
 	 
+	 #type = ""
 	 #nom = "";	// Nom
 	 #couleur = "#000000"; // Couleur
 	 #id = 0 ;	// N° de l'item
@@ -36,6 +38,13 @@ class Item
 	 		this.#nom = n_
 	 	}
 	 	return this.#nom
+	 }
+	 
+	 
+	 // Nom de l'item de l'item
+	 type()
+	 {
+	 	return this.#type
 	 }
 	 
 	 // Couleur d'affichage de l'item
@@ -63,7 +72,7 @@ class Item
 	{
 		var retour = `
 			<div class="item" id="item-`+String(this.#id)+`">
-				<div class="titre-item" style="background-color:`+this.#couleur+`" onclick="$(this).parent().find('.contenu-item').slideToggle('fast')">
+				<div class="titre-item" style="background-color:`+this.#couleur+`" onclick="ouvreFermeItem(`+String(this.#id)+`)">
 					`+this.#nom+`
 				</div>
 				<div class="contenu-item">
@@ -77,6 +86,23 @@ class Item
 	contenuHTML()
 	{
 		return "contenu de l'item";
+	}
+	
+	
+	/** Fonction qui se met en évidence quand on sélectionne l'item dans le menu */
+	selectionne()
+	{
+		$("#item-"+String(this.#id)+" .titre-item").css("box-shadow","inset 0px 0px 5px #000000");
+		$("#item-"+String(this.#id)+" .titre-item").css("color","yellow");
+		$("#item-"+String(this.#id)+" .titre-item").css("font-weight","bold");
+	}
+	
+	/* Fonction qui se remet avec le CSS "de base" quand on désélectionne */
+	deselectionne()
+	{
+		$("#item-"+String(this.#id)+" .titre-item").css("box-shadow","none");
+		$("#item-"+String(this.#id)+" .titre-item").css("color","white");
+		$("#item-"+String(this.#id)+" .titre-item").css("font-weight","normal");
 	}
 }
 

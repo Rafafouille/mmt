@@ -103,6 +103,11 @@ var light2 = new THREE.DirectionalLight(0xAAAAAA, 1);
 	$("#vrbouton").html( VRButton.createButton( RENDERER ) );
 	// Crée les controleurs
 	creeControllers()
+	
+	
+// **********************************************
+// Ajout premier nuage de points
+ajouteNuage("Nuage 1")
 
 
 

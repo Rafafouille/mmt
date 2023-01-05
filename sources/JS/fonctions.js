@@ -376,9 +376,8 @@ function ajouterItemFromDialog()
 	var item = null
 	if(type=="nuage")
 	{
-		var couleurNuage = LISTE_COULEURS[ NUMERO_ITEM % LISTE_COULEURS.length ]
-		item = new Nuage("nuage", couleurNuage);
-		NUAGE_COURANT = item;
+		ajouteNuage();
+		return ;
 	}
 	else
 		item = new Item("item", "#000000");
@@ -387,4 +386,62 @@ function ajouterItemFromDialog()
 	LISTE_ITEMS.push(item);
 	// Ajout dans le menu "arbre"
 	$("#arbre").append(item.getHTML())
+}
+
+
+// *****************************************
+// Ajoute un nouveau nuage de point
+function ajouteNuage(_nom_="nuage", _couleur_ = LISTE_COULEURS[ NUMERO_ITEM % LISTE_COULEURS.length ])
+{
+	if(NUAGE_COURANT)
+		NUAGE_COURANT.deselectionne()
+	var item = new Nuage(_nom_, _couleur_);
+	NUAGE_COURANT = item;
+	LISTE_ITEMS.push(item);
+	$("#arbre").append(item.getHTML())
+	item.selectionne()
+}
+
+
+
+// ****************************************
+// Fonction qui renvoie une reference vers l'item, en fonction de son numéro
+function getItemFromId(id_)
+{
+	for(i=0;i<LISTE_ITEMS.length;i++)
+	{
+		if(LISTE_ITEMS[i].id()==id_)
+			return LISTE_ITEMS[i]
+	}
+	return null;
+}
+
+// ******************************************
+// Fonction ouvre le contenu d'un item n°i dans l'abre,
+// et sélectionne le nuage de point dans NUAGE_COURANT le cas échéant
+function ouvreFermeItem(id_)
+{
+	// On ouvre dans l'arbre
+	$("#item-"+String(id_)+" .contenu-item").slideToggle('fast');
+	
+	selectionneItem(id_);
+		
+}
+
+
+// ***********************************************
+// Fonction qui sélectionne un item (nuage de point, par exemple)
+function selectionneItem(id_)
+{
+	if(NUAGE_COURANT)
+		NUAGE_COURANT.deselectionne()
+	
+	NUAGE_COURANT = null; // Reset
+	
+	var item = getItemFromId(id_);
+	if(item.type()=="nuage")
+		{
+			NUAGE_COURANT = item;
+			item.selectionne();
+		}
 }

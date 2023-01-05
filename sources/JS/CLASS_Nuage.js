@@ -3,19 +3,24 @@ class Nuage extends Item
 	/* Constructeur */
 	constructor(nom_,_couleur_ )
 	{
-		super("Nuage "+String(NUMERO_ITEM+1),_couleur_);
+		super("Nuage "+String(NUMERO_ITEM+1),_couleur_,"nuage");
 		
 		this.#couleur = _couleur_ ;
 		
 		// Ajout du nuage de point(graphique) sous forme de groupe sur la scene
 		this.groupeMarkers = new THREE.Group();
 		MARKERS.add(this.groupeMarkers);
+		
+		
+	
 	}
 	
 	
 	/* ****************************
 	 MEMBRES
 	 **************************** */
+		
+	 #type = ""
 	 groupeMarkers = null;
 	 #rayon_marker = RAYON_MARKER;
 	 #couleur = 0xff0000;
