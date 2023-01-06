@@ -4,6 +4,7 @@
 		<select name="new_item_liste" id="new_item_liste">
 		    <!--<option value="base">Item de base</option>-->
 		    <option value="nuage">Nouveau nuage de point</option>
+		    <option value="nuage">Plan des moindres carrés</option>
 		</select>
 	</form>
 </div>
