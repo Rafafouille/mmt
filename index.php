@@ -92,6 +92,9 @@ NUMERO_ITEM = 0;
 v1 = null
 v2 = null
 </script>
+
+
+<script src="./sources/JS/matomo.js"></script>
 </head>
 
 
