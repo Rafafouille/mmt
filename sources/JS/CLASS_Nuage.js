@@ -5,7 +5,7 @@ class Nuage extends Item
 	{
 		super("Nuage "+String(NUMERO_ITEM+1),_couleur_,"nuage");
 		
-		this.#couleur = _couleur_ ;
+		this._couleur = _couleur_ ;
 		
 		// Ajout du nuage de point(graphique) sous forme de groupe sur la scene
 		this.groupeMarkers = new THREE.Group();
@@ -20,10 +20,10 @@ class Nuage extends Item
 	 MEMBRES
 	 **************************** */
 		
-	 #type = ""
+	 _type = ""
 	 groupeMarkers = null;
-	 #rayon_marker = RAYON_MARKER;
-	 #couleur = 0xff0000;
+	 _rayon_marker = RAYON_MARKER;
+	 _couleur = 0xff0000;
 	 
 	/* ****************************
 	 GETTER / SETTER
@@ -34,9 +34,9 @@ class Nuage extends Item
 	 {
 	 	if (r_ != undefined)
 	 	{
-	 		this.#rayon_marker = r_
+	 		this._rayon_marker = r_
 	 	}
-	 	return this.#rayon_marker
+	 	return this._rayon_marker
 	 }
 	 
 	  // couleur
@@ -44,9 +44,9 @@ class Nuage extends Item
 	 {
 	 	if (c_ != undefined)
 	 	{
-	 		this.#couleur = c_
+	 		this._couleur = c_
 	 	}
-	 	return this.#couleur
+	 	return this._couleur
 	 }
 	 
 	 // nombre de mesures déjà faite dans ce nuage
@@ -67,6 +67,8 @@ class Nuage extends Item
 	 {
 	 	return this.getMarker(_i_).position;
 	 }
+	 
+
 	 
 	/* ****************************
 	 AUTRES MEMBRES
@@ -100,9 +102,9 @@ class Nuage extends Item
 	placeMarker(_coord_)
 	{
 		//Marker en tant que tel
-		var geom = new THREE.DodecahedronGeometry(this.#rayon_marker,1);
+		var geom = new THREE.DodecahedronGeometry(this._rayon_marker,1);
 		var mat = new  THREE.MeshLambertMaterial({
-				color: this.#couleur,
+				color: this._couleur,
 				shading: THREE.SmoothShading
 				})
 		var sphere = new THREE.Mesh( geom, mat );
@@ -137,6 +139,59 @@ class Nuage extends Item
 				return true
 		}
 		return false
+	}
+	
+	
+	
+	// ******************************************
+	// Fonction qui donne la somme des erreurs au carré du nuage de points
+	// avec un plan d'équation ax+by+cz+d=0
+	// du marker i
+	getErreurCarre(_param_plan_, _i_)
+	{
+		var a=_param_plan_[0]
+		var b=_param_plan_[1]
+		var c=_param_plan_[2]
+		var d=_param_plan_[3]
+		var P = this.getMesure(_i_)
+		
+		//https://www.cuemath.com/geometry/distance-between-point-and-plane/
+		return Math.pow(a*P.x+b*P.y+c*P.z+d,2)/(a*a+b*b+c*c)
+	}
+	
+	// ******************************************
+	// Fonction qui donne la somme des erreurs au carré du nuage de points
+	// avec un plan d'équation ax+by+cz+d=0
+	getSommeErreursCarre(_param_plan_)
+	{
+		var s=0
+		for(var i=0;i<this.nbMesures();i++)
+		{
+			s += this.getErreurCarre(_param_plan_, i)
+		}
+		return s
+	}
+	
+	
+	// *******************************************
+	// Fonction qui renvoie la liste [a,b,c,d] de l'équation du plan
+	// des moindres carré : ax+by+cz+d=0
+	getPlanRMS()
+	{
+		//Bricolage : on créer une fontion, un peu comme un objet, avec la référence vers le nuage de point en membre
+		function erreur(_param_plan_) // _param_plan_ sera un ensemble de parametres [a,b,c,d] que l'algo va tester
+		{
+			return this.nuage.getSommeErreursCarre(_param_plan_)
+		}
+		erreur.nuage = this; // On sauve la référence vers le nuage de point
+		// Vue que erreur n'est pas un objet, mais une fonction, il ne connait pas "this"
+		erreur = erreur.bind(erreur) // Pour que "this" devienne la fonction elle meme (un pb de contexte...)
+		
+		
+		var resultat =  GEN_algo_genetique([1,0,0,0], [1000,1000,1000,1000], erreur	,1000,100,0.1) // (nominal, IT, fecart, nb population, nb itérations, %meilleurs)
+		console.log(resultat[0])
+		new Plan("plan",resultat[0]);
+		return resultat;
 	}
 	 
 }

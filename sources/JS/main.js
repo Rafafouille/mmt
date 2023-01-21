@@ -43,7 +43,7 @@ SCENE.add( axesHelper );
 
 // RENDERER ****************************
 RENDERER = new THREE.WebGLRenderer();
-RENDERER.setSize( window.innerWidth-300, window.innerHeight);
+RENDERER.setSize( window.innerWidth-320, window.innerHeight);
 document.body.appendChild( RENDERER.domElement );
 RENDERER.xr.enabled = true;	// Autorise la VR
 
@@ -89,6 +89,13 @@ var light2 = new THREE.DirectionalLight(0xAAAAAA, 1);
 		color: 0xFFAA00,
 		shading: THREE.SmoothShading
 		})
+	MATERIAU_PLAN = new THREE.MeshLambertMaterial({
+		color: 0x00FF00,
+		transparent :true,
+		opacity:0.5
+		})
+		MATERIAU_PLAN.side = THREE.DoubleSide;
+
 	// IMPORTE LES MODELES
 	creeMachine();
 	creePiece();

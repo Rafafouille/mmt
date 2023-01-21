@@ -20,8 +20,10 @@
 <!--<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script> -->
 
 <script src="./sources/JS/fonctions.js"></script>
+<script src="./sources/JS/genetique.js"></script>
 <script src="./sources/JS/CLASS_Item.js"></script>
 <script src="./sources/JS/CLASS_Nuage.js"></script>
+<script src="./sources/JS/CLASS_Plan.js"></script>
 <script src="./sources/JS/init.js"></script>
 
 
@@ -55,6 +57,7 @@ material=null
 materiau_rouge=null
 materiau_jaune=null
 materiau_orange=null
+MATERIAU_PLAN=null
 
 // Déplacement *******************
 PAS_MAX = 0.005 // Pas de déplacement discret, en m

@@ -463,3 +463,29 @@ function selectionneItem(id_)
 			item.selectionne();
 		}
 }
+
+
+
+// ********************************************************
+// Fonction qui met à jour la fenetre d'ajout d'item
+function update_boite_new_item()
+{
+	var type = $("#new_item_liste").val();
+	
+	$("#boite_new_plan_RMS").hide()
+	if(type=="RMS")
+	{
+		$("#new_plan_RMS").empty()
+		for(var i=0; i<LISTE_ITEMS.length;i++)
+		{
+			var item = LISTE_ITEMS[i];
+			if(item.type()=="nuage" && item.nbMesures()>=3)
+			{
+//				Il faudrait vérifier que les 3 points ne sont pas alignés...
+				$("#new_plan_RMS").append("<option value=\""+String(item.id())+"\">"+item.nom()+"</option>")
+			}
+		}
+		$("#boite_new_plan_RMS").show();
+
+	}
+}

@@ -3,10 +3,10 @@ class Item
 	/* Constructeur */
 	constructor(nom_,couleur_,type_="item")
 	{
-		this.#nom = nom_;
-		this.#couleur = couleur_;
-		this.#id = NUMERO_ITEM++ + 1;
-		this.#type = type_
+		this._nom = nom_;
+		this._couleur = couleur_;
+		this._id = NUMERO_ITEM++ + 1;
+		this._type = type_
 	}
 	
 	
@@ -14,10 +14,10 @@ class Item
 	 MEMBRES
 	 **************************** */
 	 
-	 #type = ""
-	 #nom = "";	// Nom
-	 #couleur = "#000000"; // Couleur
-	 #id = 0 ;	// N° de l'item
+	 _type = ""
+	 _nom = "";	// Nom
+	 _couleur = "#000000"; // Couleur
+	 _id = 0 ;	// N° de l'item
 	 
 	/* ****************************
 	 GETTER / SETTER
@@ -27,7 +27,7 @@ class Item
 	 // Nom de l'item de l'item
 	 id()
 	 {
-	 	return this.#id;
+	 	return this._id;
 	 }
 	 
 	 // Nom de l'item de l'item
@@ -35,16 +35,16 @@ class Item
 	 {
 	 	if (n_ != undefined)
 	 	{
-	 		this.#nom = n_
+	 		this._nom = n_
 	 	}
-	 	return this.#nom
+	 	return this._nom
 	 }
 	 
 	 
 	 // Nom de l'item de l'item
 	 type()
 	 {
-	 	return this.#type
+	 	return this._type
 	 }
 	 
 	 // Couleur d'affichage de l'item
@@ -52,11 +52,11 @@ class Item
 	 {
 	 	if (c_ != undefined)
 	 	{
-	 		this.#couleur = c_
-	 		$("#item-"+String(this.id())+" .titre-item").css("background-color",this.#couleur)
+	 		this._couleur = c_
+	 		$("#item-"+String(this.id())+" .titre-item").css("background-color",this._couleur)
 	 		console.log("#item-"+String(this.id())+" .titre-item")
 	 	}
-	 	return this.#couleur
+	 	return this._couleur
 	 }
 	 
 	 
@@ -71,9 +71,9 @@ class Item
 	getHTML()
 	{
 		var retour = `
-			<div class="item" id="item-`+String(this.#id)+`">
-				<div class="titre-item" style="background-color:`+this.#couleur+`" onclick="ouvreFermeItem(`+String(this.#id)+`)">
-					`+this.#nom+`
+			<div class="item" id="item-`+String(this._id)+`">
+				<div class="titre-item" style="background-color:`+this._couleur+`" onclick="ouvreFermeItem(`+String(this._id)+`)">
+					`+this._nom+`
 				</div>
 				<div class="contenu-item">
 					`+this.contenuHTML()+`
@@ -92,17 +92,17 @@ class Item
 	/** Fonction qui se met en évidence quand on sélectionne l'item dans le menu */
 	selectionne()
 	{
-		$("#item-"+String(this.#id)+" .titre-item").css("box-shadow","inset 0px 0px 5px #000000");
-		$("#item-"+String(this.#id)+" .titre-item").css("color","yellow");
-		$("#item-"+String(this.#id)+" .titre-item").css("font-weight","bold");
+		$("#item-"+String(this._id)+" .titre-item").css("box-shadow","inset 0px 0px 5px #000000");
+		$("#item-"+String(this._id)+" .titre-item").css("color","yellow");
+		$("#item-"+String(this._id)+" .titre-item").css("font-weight","bold");
 	}
 	
 	/* Fonction qui se remet avec le CSS "de base" quand on désélectionne */
 	deselectionne()
 	{
-		$("#item-"+String(this.#id)+" .titre-item").css("box-shadow","none");
-		$("#item-"+String(this.#id)+" .titre-item").css("color","white");
-		$("#item-"+String(this.#id)+" .titre-item").css("font-weight","normal");
+		$("#item-"+String(this._id)+" .titre-item").css("box-shadow","none");
+		$("#item-"+String(this._id)+" .titre-item").css("color","white");
+		$("#item-"+String(this._id)+" .titre-item").css("font-weight","normal");
 	}
 }
 
