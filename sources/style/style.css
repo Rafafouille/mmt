@@ -151,3 +151,47 @@ ARBRE
 	width:235px;
 	text-align:center;
 }
+
+
+
+
+
+/* =======================================
+NOUVEL ITEM
+=========================================== */
+
+
+#tab_new_item_bouton_add_contrainte_plan
+{
+	cursor:pointer;
+	background-color:#CCCCCC;
+	width:200px;
+	text-align:center;
+	border-radius:5px;
+	margin:auto;
+	margin-bottom:3px;
+}
+
+
+#tab_new_item_liste_contraintes_plan
+{
+	min-height:100px;
+	border:solid 1px;
+}
+
+.tab_new_item_contrainte_plan
+{
+	padding:5px;
+	background-color:#AAAAFF;
+	border-bottom: solid 2px #0000FF;
+	border-right: solid 2px #0000FF;
+	border-left: solid 2px #DDDDFF;
+	border-top: solid 2px #DDDDFF;
+	border-radius:5px;
+}
+
+
+.choix_contrainte_nuage
+{
+	display:inline-block;
+}

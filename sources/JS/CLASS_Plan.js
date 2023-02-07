@@ -1,11 +1,12 @@
 class Plan extends Item
 {
 	/* Constructeur */
-	constructor(nom_,param_)
+	constructor(nom_,param_=[0,1,0,0])
 	{
 		var _couleur_ = "#00FF00";
-		super("Plan "+String(NUMERO_ITEM+1),_couleur_,"plan");
 		
+		super(nom_,_couleur_,"plan");
+
 		this._couleur = _couleur_ ;
 		this._parametres = param_;
 		this._centre = this.getProjection(new THREE.Vector3(0, 0, 0)) // centre arbitraire
@@ -22,14 +23,20 @@ class Plan extends Item
 	/* ****************************
 	 MEMBRES
 	 **************************** */
+	 
+	 _type = "plan"
 	 _couleur = ""
 	 groupePlan = null;
-	 _parametres = null;
+	 _parametres = null;	// [a,b,c,d] dans l'équation ax+by+cz+d=0
 	 _marges = 0.1	// Marge autour de la pièce
 	 _centre = null;	//Point dont la projection sur le plan sera le centre du plan
 	 _base = null; // Base attachée au plan [xP,yP,n] ou n est la normale
-	 _rayon = 1;	// demi-diagonale du carré qui va dessiner le plan
+	 //_rayon = 0.5;	// demi-diagonale du carré qui va dessiner le plan
+	 _largeur = 0.5; // Dimension du rectangle
+	 _longueur = 0.5;
 	 PLAN = null;	//Objet graphique
+	 
+	 liste_contraintes = [];  // Liste des fonctions qui permettent de calculer les "erreurs" à optimiser
 	 
 	/* ****************************
 	 GETTER / SETTER
@@ -45,9 +52,41 @@ class Plan extends Item
 	 	return this._couleur
 	 }
 	 
+	// largeur
+	largeur(l_,redessine=true)
+	{
+	 	if (l_ != undefined)
+	 	{
+	 		this._largeur = l_;
+	 		if(redessine)
+	 			this.redessine()
+	 	}
+	 	return this._largeur
+	}
+	
+	// longueur
+	longueur(l_,redessine=true)
+	{
+	 	if (l_ != undefined)
+	 	{
+	 		this._longueur = l_;
+	 		if(redessine)
+	 			this.redessine()
+	 	}
+	 	return this._longueur
+	}
+	 
 	 // Renvoie les parametres [a,b,c,d] du plan
-	 parametres()
+	 parametres(p_,redessine=true)
 	 {
+		 if (p_ != undefined)
+		 {
+		 	this._parametres = p_
+		 	this.updateBase();
+			this.updateCentre();
+	 		if(redessine)
+	 			this.redessine()
+		 }
 	 	return this._parametres;
 	 }
 	 
@@ -73,7 +112,8 @@ class Plan extends Item
 	 	return this._base.ez;
 	 }
 	 
-	 // Point dont la projection sera le centre du plan
+	 // Point qui sera le centre du plan
+	 // Si ce point n'est pas sur le plan, c'est son projeté qui sera le centre
 	 // Si x = undefined : getter
 	 // Si x = THREE.vector3() : setter
 	 // Si x, y z dont des flottant : setter
@@ -83,11 +123,12 @@ class Plan extends Item
 	 	{
 	 		if(typeof(_x_)=="number" && typeof(_y_)=="number" && typeof(_z_)=="number")
 	 		{
-	 			this._centre.set(_x_,_y_,_z_);
+	 			this._centre = this.getProjection(new THREE.Vector3(_x_,_y_,_z_));
+	 			
 	 		}
 	 		else if(_x_.constructor.name=="Vector3")
 	 		{
-	 			this._centre = _x_;
+	 			this._centre = this.getProjection(_x_);
 	 		}
 	 		if(redessine)
 	 			this.redessine()
@@ -107,18 +148,7 @@ class Plan extends Item
 	 	return V
 	 }
 	 
-	  // Rayon
-	 rayon(r_,redessine=true)
-	 {
-	 	if (r_ != undefined)
-	 	{
-	 		this._rayon = r_
-	 		if(redessine)
-	 			this.redessine()
-	 	}
-	 	return this._rayon
-	 }
-	 
+	
 	/* ****************************
 	 AUTRES MEMBRES
 	 **************************** */
@@ -150,6 +180,21 @@ class Plan extends Item
 	 }
 	 
 	 
+	 // Fonction qui renvoie la distance d'un ponint _P_ (Three.Vector3)
+	 // au plan
+	 getDistancePoint(_P_)
+	 {
+		var a = this._parametres[0]
+		var b = this._parametres[1]
+		var c = this._parametres[2]
+		var d = this._parametres[3]
+		
+		//https://www.cuemath.com/geometry/distance-between-point-and-plane/
+		return (a*_P_.x+b*_P_.y+c*_P_.z+d)/(Math.sqrt(a*a+b*b+c*c))
+	 }
+	 
+	 
+	 
 	 
 	 // Renvoie la projection (THREE.Vector3) d'un point _P_ (idem)
 	 // sur le plan
@@ -178,6 +223,13 @@ class Plan extends Item
 		 return result
 	 }
 	 
+	 
+	 
+	 /* Fonction qui recalcule la position du centre (si jamais on a changé l'équation, par exemple)*/
+	 updateCentre()
+	 {
+	 	this._centre = this.getProjection(this._centre)
+	 }
 	 
 	 /* Fonction qui calcul le triplet de vecteur orthonormé, dont la 3ème est n*/
 	 updateBase()
@@ -217,78 +269,20 @@ class Plan extends Item
 		this.PLAN = new THREE.Mesh( geometry, MATERIAU_PLAN );
 		this.groupePlan.add(this.PLAN);
 		
-		var a = this._parametres[0]
-		var b = this._parametres[1]
-		var c = this._parametres[2]
-		var d = this._parametres[3]
 		
-		
-		//Mise à jour des coordonnées
-		/*var x=0
-		var z=0
-		plan.geometry.attributes.position.array[0] = x
-		plan.geometry.attributes.position.array[1] = -(d-a*x-c*z)/b
-		plan.geometry.attributes.position.array[2] = z
-		
-		var x=1
-		var z=0
-		plan.geometry.attributes.position.array[3] = x
-		plan.geometry.attributes.position.array[4] = -(d-a*x-c*z)/b
-		plan.geometry.attributes.position.array[5] = z
-		
-		var x=1
-		var z=1
-		plan.geometry.attributes.position.array[6] = x
-		plan.geometry.attributes.position.array[7] = -(d-a*x-c*z)/b
-		plan.geometry.attributes.position.array[8] = z
-		
-		var x=0
-		var z=1
-		plan.geometry.attributes.position.array[9] = x
-		plan.geometry.attributes.position.array[10] = -(d-a*x-c*z)/b
-		plan.geometry.attributes.position.array[11] = z*/
 		
 			var O = this._centre;
-			var i = (this._base.ex).clone().multiplyScalar(this._rayon/Math.sqrt(2))
-			var j = (this._base.ey).clone().multiplyScalar(this._rayon/Math.sqrt(2))
+			var i = (this._base.ex).clone().multiplyScalar(this._largeur/2);
+			var j = (this._base.ey).clone().multiplyScalar(this._longueur/2);
 			var diag1 = i.clone().add(j)
 			var diag2 = i.clone().sub(j)
 		
-		
-			/*
-			geometry.attributes.position.array[0] = O.clone().add(diag1).x
-			geometry.attributes.position.array[1] = O.clone().add(diag1).y
-			geometry.attributes.position.array[2] = O.clone().add(diag1).z
-			
-			geometry.attributes.position.array[3] = O.clone().add(diag2).x
-			geometry.attributes.position.array[4] = O.clone().add(diag2).y
-			geometry.attributes.position.array[5] = O.clone().add(diag2).z
-			
-			geometry.attributes.position.array[6] = O.clone().sub(diag1).x
-			geometry.attributes.position.array[7] = O.clone().sub(diag1).y
-			geometry.attributes.position.array[8] = O.clone().sub(diag1).z
-			
-			geometry.attributes.position.array[9] = O.clone().sub(diag2).x
-			geometry.attributes.position.array[10] = O.clone().sub(diag2).y
-			geometry.attributes.position.array[11] = O.clone().sub(diag2).z*/
 		
 		       const v3Array = [
 				O.clone().add(diag1),
 				O.clone().add(diag2),
 				O.clone().sub(diag2),
-				O.clone().sub(diag1),
-				/*
-				O.clone().sub(diag1),
-				O.clone().sub(diag2),
-				O.clone().add(diag1),
-				/*
-				O.clone().add(diag2),
-				O.clone().add(diag1),
-				O.clone().sub(diag1),
-				//
-				O.clone().sub(diag2),
-				O.clone().sub(diag1),
-				O.clone().add(diag1),*/
+				O.clone().sub(diag1)
 			    ];
 			geometry.setFromPoints(v3Array);
 			// Mise à jour de la taille du plan
@@ -300,6 +294,66 @@ class Plan extends Item
 	 }
 	 
 	
+	
+	
+	
+	// ******************************
+	// MEMBRES relatifs à l'optimisation
+	
+	
+	// ******************************************************************************************
+	// Fonction qui fabrique la fonction qui calcule les distances au carré d'un plan d'equation ax+by+cz+d=0
+	// a un nuage de points
+	/*addContrainteRMS(_nuage_)
+	{
+		var f = function(_param_plan_)
+				{
+					var S=0;
+					for(var i=0;i<this.nuage.nbMesures();i++)//Pour chaque noeud
+					{
+						S+= getDistancePlanCarre(_param_plan_,this.nuage.getMesure(i))
+					}
+					return S
+				}
+		f.nuage = _nuage_ ;
+		f.type = "RMS"
+		f = f.bind(f)
+		this.liste_contraintes.push(f); // On l'ajoute à la liste des contraintes
+		return f;
+	}*/
+	
+	
+	// ********************************************************************************
+	// Fonction qui recherche la meilleure équation ax+by+cz+d=0,
+	// En accord avec les contraintes renseignées dans this.liste_contraintes
+	optimisePlan()
+	{
+		// On crée la fonction globale qui somme toutes les fonctions erreurs
+		// Il s'agit de faire une fonction autonome, qui embarque toutes les infos utiles à son calcul
+		function erreur(_param_plan_) // _param_plan_ sera un ensemble de parametres [a,b,c,d] que l'algo va tester
+		{
+			var e = 0
+			for(var i=0;i<this.listeContraintes.length;i++)	// Pour chaque contrainte
+			{
+				var contrainte = this.listeContraintes[i];
+				e += contrainte.exec(_param_plan_);
+			}
+			return e
+		}
+		erreur.listeContraintes = this.liste_contraintes;
+		erreur = erreur.bind(erreur)
+	
+		
+		var resultat =  GEN_algo_genetique([1,0,0,5], [1000,1000,1000,10], erreur	,10000,50,0.1) // (nominal, IT, fecart, nb population, nb itérations, %meilleurs)
+
+
+		
+
+
+		this.parametres(resultat[0]);
+		return resultat[0];
+		
+	}
 	
 	
 	 

@@ -32,7 +32,7 @@
 		<div class="bouton" onclick="afficheCacheMachine()">Affiche/Cache machine</div>
 		<div id="vrbouton">[Bouton VR]</div>
 		
-		<div class="bouton" onclick="$('#boite_new_item').dialog('open')">+ Ajouter</div>
+		<div class="bouton" onclick="ouvreBoiteAjouterItem()">+ Ajouter</div>
 		<div id="arbre">
 		</div>
 		

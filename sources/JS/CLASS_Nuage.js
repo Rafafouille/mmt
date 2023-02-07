@@ -3,7 +3,7 @@ class Nuage extends Item
 	/* Constructeur */
 	constructor(nom_,_couleur_ )
 	{
-		super("Nuage "+String(NUMERO_ITEM+1),_couleur_,"nuage");
+		super(nom_,_couleur_,"nuage");
 		
 		this._couleur = _couleur_ ;
 		
@@ -19,8 +19,8 @@ class Nuage extends Item
 	/* ****************************
 	 MEMBRES
 	 **************************** */
-		
-	 _type = ""
+			
+	 _type = "nuage"
 	 groupeMarkers = null;
 	 _rayon_marker = RAYON_MARKER;
 	 _couleur = 0xff0000;
@@ -142,6 +142,23 @@ class Nuage extends Item
 	}
 	
 	
+	// ******************************************
+	// Fonction qui donne la somme des erreurs au carré du nuage de points
+	// avec un plan d'équation ax+by+cz+d=0
+	// du marker i
+	getBarycentre()
+	{
+		if(this.nbMesures()==0)
+			return null;
+			
+		var bar = new THREE.Vector3(0,0,0);
+		for(var i=0; i<this.nbMesures(); i++)
+		{
+			bar.add(this.getMesure(i))
+		}
+		bar.divideScalar(this.nbMesures());
+		return bar;
+	}
 	
 	// ******************************************
 	// Fonction qui donne la somme des erreurs au carré du nuage de points
@@ -188,10 +205,10 @@ class Nuage extends Item
 		erreur = erreur.bind(erreur) // Pour que "this" devienne la fonction elle meme (un pb de contexte...)
 		
 		
-		var resultat =  GEN_algo_genetique([1,0,0,0], [1000,1000,1000,1000], erreur	,1000,100,0.1) // (nominal, IT, fecart, nb population, nb itérations, %meilleurs)
+		var resultat =  GEN_algo_genetique([1,0,0,0], [1000,1000,1000,1000], erreur	,10000,100,0.1) // (nominal, IT, fecart, nb population, nb itérations, %meilleurs)
 		console.log(resultat[0])
-		new Plan("plan",resultat[0]);
-		return resultat;
+		//new Plan("plan",resultat[0]);
+		return resultat[0];
 	}
 	 
 }

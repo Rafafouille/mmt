@@ -32,6 +32,9 @@ ENVIRONNEMENT = new THREE.Group();
 SCENE.add(ENVIRONNEMENT);
 ENVIRONNEMENT.position.set(0,0.73,-0.5)
 
+DECORS = new THREE.Group();
+ENVIRONNEMENT.add(DECORS);
+
 MARKERS = new THREE.Group();
 ENVIRONNEMENT.add(MARKERS);
 
@@ -46,6 +49,7 @@ RENDERER = new THREE.WebGLRenderer();
 RENDERER.setSize( window.innerWidth-320, window.innerHeight);
 document.body.appendChild( RENDERER.domElement );
 RENDERER.xr.enabled = true;	// Autorise la VR
+
 
 
 // CAMERA *************************************
@@ -99,6 +103,8 @@ var light2 = new THREE.DirectionalLight(0xAAAAAA, 1);
 	// IMPORTE LES MODELES
 	creeMachine();
 	creePiece();
+	creeDecors();
+
 
 
 

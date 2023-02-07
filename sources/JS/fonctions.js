@@ -110,7 +110,31 @@ function creePiece()
 					function (error){console.log(error);});
 		});
 }
-		
+	
+	
+	
+	
+	// DECORS
+function creeDecors()
+{
+	var geometry = new THREE.BoxGeometry( 3, 10, 3 );
+	var material = new THREE.MeshLambertMaterial({color : 0x0000AA});//   MeshBasicMaterial( {color: 0x00ff00} );
+	var cube = new THREE.Mesh( geometry, material );
+	cube.position.set(0.3,-5,-0.5);
+	cube.position.sub(ENVIRONNEMENT.position) // Recentre par rapport à l'origine principale
+	DECORS.add(cube);
+	
+	
+	
+	geometry = new THREE.BoxGeometry( 10, 20, 10 );
+	material = new THREE.MeshLambertMaterial({color : 0xFFFFFF});//   MeshBasicMaterial( {color: 0x00ff00} );
+	material.side = THREE.BackSide;
+	cube = new THREE.Mesh( geometry, material );
+	cube.position.sub(ENVIRONNEMENT.position) // Recentre par rapport à l'origine principale
+	DECORS.add(cube);
+
+}
+	
 
 
 // **********************************************
@@ -390,12 +414,78 @@ function resizeFenetre()
 // Ajoute un nouvel item, en accord avec la boite de dialogue
 function ajouterItemFromDialog()
 {
-	var type = $("#new_item_liste").val()
-	var item = null
-	if(type=="nuage")
+	// Choix du nouvel item
+	var type=["nuage","plan"][$("#tab_new_item").tabs('option', 'active')]
+
+	if(type == "nuage")
 	{
-		ajouteNuage();
-		return ;
+		var nom = $("#tab_new_item_nuage_nom").val();
+		var couleur = $("#tab_new_item_nuage_couleur").val();
+		return ajouteNuage(nom,couleur);
+	}
+	else if(type == "plan")
+	{
+	
+		var nom = $("#tab_new_item_plan_nom").val();
+		var couleur = $("#tab_new_item_nuage_couleur").val();
+		
+		
+		var plan = new Plan(nom);
+		plan.couleur(couleur);
+		
+		var centre = new THREE.Vector3(0,0,0); // Centre du plan (qui sera un éventuel barycentre de nuage de points)
+		var nbNuages = 0;
+		
+		// Ajout des contraintes
+		for(var i=0; i<$("#tab_new_item_liste_contraintes_plan").children().length;i++)
+		{
+			htmlContrainte = $("#tab_new_item_liste_contraintes_plan").children()[i];
+			typeContrainte = $(htmlContrainte).find(".type-contrainte").val();
+			if(typeContrainte=="RMS")
+			{
+				var nNuage = Number($(htmlContrainte).find(".choix_contrainte_nuage select").val()); // A quel nuage doit-on s'attacher ?
+				var nuage = getItemFromId(nNuage)	// On recupere le nuage
+				centre.add(nuage.getBarycentre())
+				nbNuages+=1 // Pour faire la moyenne
+				var contrainte = new ContrainteRMSPlan(nuage) // On créer la contrainte
+				plan.liste_contraintes.push(contrainte)
+			}
+			else if(typeContrainte == "exterieurPlus")
+			{
+				var nNuage = Number($(htmlContrainte).find(".choix_contrainte_nuage select").val()); // A quel nuage doit-on s'attacher ?
+				var nuage = getItemFromId(nNuage)	// On recupere le nuage
+				centre.add(nuage.getBarycentre())
+				nbNuages+=1 // Pour faire la moyenne
+				var contrainte = new ContraintePlanExterieurPositif(nuage) // On créer la contrainte
+				plan.liste_contraintes.push(contrainte)
+			}
+			else if(typeContrainte == "exterieurMoins")
+			{
+				var nNuage = Number($(htmlContrainte).find(".choix_contrainte_nuage select").val()); // A quel nuage doit-on s'attacher ?
+				var nuage = getItemFromId(nNuage)	// On recupere le nuage
+				centre.add(nuage.getBarycentre())
+				nbNuages+=1 // Pour faire la moyenne
+				var contrainte = new ContraintePlanExterieurNegatif(nuage) // On créer la contrainte
+				plan.liste_contraintes.push(contrainte)
+			}
+		}
+		
+		
+/*	
+		var nuage = getItemFromId(Number($("#new_plan_RMS_nuage").val()));
+		var param_plan = nuage.getPlanRMS();
+		var plan = ajoutePlan("plan",param_plan);
+		plan.centre(nuage.getBarycentre())
+*/		
+		if(nbNuages)
+			centre.divideScalar(nbNuages)
+
+		plan.centre(centre);
+		plan.optimisePlan();
+		LISTE_ITEMS.push(plan);
+		$("#arbre").append(plan.getHTML())
+		return plan;
+		
 	}
 	else
 		item = new Item("item", "#000000");
@@ -413,13 +503,23 @@ function ajouteNuage(_nom_="nuage", _couleur_ = LISTE_COULEURS[ NUMERO_ITEM % LI
 {
 	if(NUAGE_COURANT)
 		NUAGE_COURANT.deselectionne()
-	var item = new Nuage(_nom_, _couleur_);
-	NUAGE_COURANT = item;
-	LISTE_ITEMS.push(item);
-	$("#arbre").append(item.getHTML())
-	item.selectionne()
+	var nuage = new Nuage(_nom_, _couleur_);
+	NUAGE_COURANT = nuage;
+	LISTE_ITEMS.push(nuage);
+	$("#arbre").append(nuage.getHTML())
+	nuage.selectionne()
+	return nuage
 }
 
+// *****************************************
+// Ajoute un nouveau plan
+function ajoutePlan(_nom_="plan", _param_=[0,1,0,0])
+{
+	var plan = new Plan(_nom_, _param_);
+	LISTE_ITEMS.push(plan);
+	$("#arbre").append(plan.getHTML())
+	return plan
+}
 
 
 // ****************************************
@@ -473,19 +573,93 @@ function update_boite_new_item()
 	var type = $("#new_item_liste").val();
 	
 	$("#boite_new_plan_RMS").hide()
-	if(type=="RMS")
+	if(type=="plan_RMS")
 	{
-		$("#new_plan_RMS").empty()
+		$("#new_plan_RMS_nuage").empty()
 		for(var i=0; i<LISTE_ITEMS.length;i++)
 		{
 			var item = LISTE_ITEMS[i];
 			if(item.type()=="nuage" && item.nbMesures()>=3)
 			{
 //				Il faudrait vérifier que les 3 points ne sont pas alignés...
-				$("#new_plan_RMS").append("<option value=\""+String(item.id())+"\">"+item.nom()+"</option>")
+				$("#new_plan_RMS_nuage").append("<option value=\""+String(item.id())+"\">"+item.nom()+"</option>")
 			}
 		}
 		$("#boite_new_plan_RMS").show();
 
 	}
 }
+
+
+
+
+
+// ********************************************************
+// Fonction qui calcule la distance au carré entre un plan d'équation ax+by+cz+d=0
+// à un point P
+// _param_plan_ = [a,b,c,d]
+// _P_ = THREE.Vector3
+function getDistancePlanCarre(_param_plan_,_P_)
+{
+	 			
+	var a=_param_plan_[0]
+	var b=_param_plan_[1]
+	var c=_param_plan_[2]
+	var d=_param_plan_[3]
+	
+	//https://www.cuemath.com/geometry/distance-between-point-and-plane/
+	return Math.pow(a*_P_.x+b*_P_.y+c*_P_.z+d,2)/(a*a+b*b+c*c)
+}
+
+
+
+// *****************************************
+// Ouvre boitre "ajouter item"
+function ouvreBoiteAjouterItem()
+{
+	$("#tab_new_item_nuage_nom").val("Nuage "+String(NUMERO_ITEM+1))
+	$("#tab_new_item_nuage_couleur").val(LISTE_COULEURS[ NUMERO_ITEM % LISTE_COULEURS.length ])
+	
+	
+	$("#tab_new_item_plan_nom").val("Plan "+String(NUMERO_ITEM+1))
+	$('#boite_new_item').dialog('open')
+	$("#tab_new_item_liste_contraintes_plan").empty();
+}
+
+
+
+
+// ********************************************
+// Fonction qui ajoute un div pour lister les contrainte à inffliger au futur plan dans la boite de dialog
+function tab_new_item_ajouteContrainte_plan()
+{
+	var html = `
+		<div class=\"tab_new_item_contrainte_plan\">
+			Contrainte : 
+			<select class="type-contrainte">
+				<option value="RMS">Plan des moindres carrés</option>
+				<option value="exterieurPlus">Plan extérieur aux points (+)</option>
+				<option value="exterieurMoins">Plan extérieur aux points (-)</option>
+			</select>
+			<div class="choix_contrainte_nuage">
+				Nuage :
+				<select>`
+	for(var i=0;i<LISTE_ITEMS.length;i++)
+	{
+		var item = LISTE_ITEMS[i];
+		if(item.type()=="nuage")
+		{
+			html+=`
+					<option value="`+String(item.id())+`">`+item.nom()+`</option>`;
+		}
+	}
+				
+	html += `
+				</select>
+			</div>`;
+			
+	html += "</div>";
+	
+	$("#tab_new_item_liste_contraintes_plan").append(html)
+}
+

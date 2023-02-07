@@ -151,7 +151,12 @@ function GEN_accouplement(v1,v2,Vnominal,VIT)
 	for (var i=0; i<v1.length; i++) // Pour chaque composante
 	{
 		var ppp=Math.random(); //#On choisi la part du pere et de la mere
-		vEnfant.push(v1[i]*ppp+v2[i]*(1-ppp))  // On fait la moyenne des solutions du pere et de la mere
+		
+		// Si on appelle DELTA la taille de l'intervalle [v1;v2],
+		// On créee une valeur mixte sur l'intervalle [ v1-DELTA ; v2+DELTA]
+		var e = v1[i]+(v2[i]-v1[i]) * (3*ppp-1)
+		
+		vEnfant.push(e) 
 	}
 	return vEnfant
 }
