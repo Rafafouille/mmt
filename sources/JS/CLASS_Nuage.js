@@ -86,6 +86,16 @@ class Nuage extends Item
 				<img class = "bouton_item" src="sources/images/supprime.svg" alt="[X]" title="Supprimer le nuage de point" onclick="ouvreBoiteDeleteItem(`+String(this.id())+`)"/>
 			</div>
 			<div class="nuage-valeurs">
+				<table style="margin:auto;">
+					<tr>
+						<th scope="col">X</th>
+						<th></th>
+						<th scope="col">Y</th>
+						<th></th>
+						<th scope="col">X</th>
+						<th></th>
+					</tr>
+				</table>
 			</div>
 		`;
 		return retour;
@@ -96,8 +106,21 @@ class Nuage extends Item
 	Prend un vecteur3 de threejs (coordonnées du point mesuré)*/
 	ajouteMesure(_coord_)
 	{
-		this.placeMarker(_coord_);
-		this.ajouteMesureDansArbre(_coord_);
+		var marker = this.placeMarker(_coord_);
+		this.ajouteMesureDansArbre(marker);
+	}
+	
+	
+	/** Supprime une mesure (_id_ = index de THREEJS !!!!!!!)*/
+	supprimeMesure(_id_)
+	{
+		// Supprime dans TREEJS
+		var marker = SCENE.getObjectById(_id_)
+		marker.removeFromParent();
+		
+		// Supprime de la liste du menu
+		$("#arbre .mesure[data-id='"+String(_id_)+"']").remove();
+		
 	}
 	
 	// *******************************************
@@ -111,22 +134,24 @@ class Nuage extends Item
 				shading: THREE.SmoothShading
 				})
 		var sphere = new THREE.Mesh( geom, mat );
+		// On ajoute une référence vers cet objet
+		sphere.nuage = this;
 		sphere.position.copy(_coord_);
-		this.groupeMarkers.add(sphere)
-	//	LISTE_MARKERS.push(sphere)
-		//MARKERS.add(sphere);
-		
+		this.groupeMarkers.add(sphere)	
+		return sphere;
 	}
 	
 	// *******************************************
 	// Fonction qui ajoute une mesure dans l'arbre
-	ajouteMesureDansArbre(_coord_)
+	ajouteMesureDansArbre(_marker_)
 	{
+		var _coord_ = _marker_.position;
 		// Coordonnées dans la liste
 		// OBSOLETE :
 		$("#liste_mesures").append("\n"+String(Math.round(_coord_.x*10000)/10000)+";"+String(-Math.round(_coord_.z*10000)/10000)+";"+String(Math.round(_coord_.y*10000)/10000))
 		
-		$("#item-"+String(this.id())+" .contenu-item").append("<div class=\"mesure\">"+String(Math.round(_coord_.x*10000)/10000)+";"+String(-Math.round(_coord_.z*10000)/10000)+";"+String(Math.round(_coord_.y*10000)/10000)+"</div>")
+		
+		$("#item-"+String(this.id())+" .contenu-item .nuage-valeurs table").append("<tr data-id=\""+String(_marker_.id)+"\"class=\"mesure\"><td>"+String(Math.round(_coord_.x*10000)/10000)+"</td><td>;</td><td>"+String(-Math.round(_coord_.z*10000)/10000)+"</td><td>;</td><td>"+String(Math.round(_coord_.y*10000)/10000)+"</td><td><img style=\"height:20px;cursor:pointer;\" src=\"sources/images/supprime.svg\" onclick=\"supprimeMarker("+String(_marker_.id)+")\"</td></tr>")
 	}
 	
 	

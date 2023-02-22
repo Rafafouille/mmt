@@ -502,6 +502,16 @@ function supprimeItemFromDialog()
 
 
 // *****************************************
+// Supprime un marker à partir de son ID threeJS
+function supprimeMarker(_idThree)
+{
+	var marker = SCENE.getObjectById(_idThree)
+	var nuage = marker.nuage;
+	nuage.supprimeMesure(_idThree)
+}
+
+
+// *****************************************
 // Ajoute un nouveau nuage de point
 function ajouteNuage(_nom_="nuage", _couleur_ = LISTE_COULEURS[ NUMERO_ITEM % LISTE_COULEURS.length ])
 {
