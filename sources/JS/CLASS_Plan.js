@@ -152,7 +152,23 @@ class Plan extends Item
 	/* ****************************
 	 AUTRES MEMBRES
 	 **************************** */
+	
 	 
+	 
+	/** Renvoie le contenu HTML (en dessous du titre) pour le menu */
+	contenuHTML()
+	{
+		var retour = `
+			<div class="menu_item">
+				<img class = "bouton_item" src="sources/images/supprime.svg" alt="[X]" title="Supprimer le plan" onclick="ouvreBoiteDeleteItem(`+String(this.id())+`)"/>
+			</div>
+			<div class="info_plan">
+			</div>
+		`;
+		return retour;
+	}
+	
+	
 	 // Renvoie la 3ème coordonnées d'un point en fonction des deux autres
 	 getXFromOthers(_y_, _z_)
 	 {
@@ -356,6 +372,14 @@ class Plan extends Item
 	}
 	
 	
+	
+	// *******************************************
+	/* Fonction (écrase la précédente) qui fait le ménage dans les éléments THREEJS au moment de la suppression */
+	supprimeElementsGeometriques()
+	{
+		this.groupePlan.removeFromParent();
+
+	}
 	 
 }
 

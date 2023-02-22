@@ -33,22 +33,6 @@
 	</div>
 	
 	
-<!--
-	<form id="dialog_new_item">
-		<label for="new_item_liste">Choix de l'élément à ajouter</label>
-		<select name="new_item_liste" id="new_item_liste" onchange="update_boite_new_item()">
-
-		    <option value="nuage">Nouveau nuage de point</option>
-		    <option value="plan_RMS">Plan des moindres carrés</option>
-		</select>
-		<div id="boite_new_plan_RMS">
-			Nuage de point (de 3 points ou plus)
-			<select name="new_plan_RMS_nuage" id="new_plan_RMS_nuage">
-			</select>
-		</div>
-	</form>
-	-->
-</div>
 
 <script>
 	$("#boite_new_item").dialog({
@@ -57,6 +41,33 @@
 					buttons:{
 						Annuler: function() {$(this).dialog("close")},
 						Ajouter : function(){ajouterItemFromDialog();$(this).dialog("close")}
+						}
+				});
+				
+				
+	$("#tab_new_item").tabs()
+</script>
+
+
+
+
+
+
+
+<!-- SUPPRESSION D'UN ITEM ----------------------- -->
+<div id="boite_delete_item" title="Supprimer un élément" data-id="-1">
+	<p>Voulez-vous vraiment supprimer l'item "<strong style="font-weight:bold" id="boite_delete_nom_item"></strong>" ?</p>
+</div>
+	
+	
+
+<script>
+	$("#boite_delete_item").dialog({
+					autoOpen:false,
+					width: "800px",
+					buttons:{
+						Annuler: function() {$(this).dialog("close")},
+						Supprimer : function(){supprimeItemFromDialog();$(this).dialog("close")}
 						}
 				});
 				

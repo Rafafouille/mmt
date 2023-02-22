@@ -104,5 +104,23 @@ class Item
 		$("#item-"+String(this._id)+" .titre-item").css("color","white");
 		$("#item-"+String(this._id)+" .titre-item").css("font-weight","normal");
 	}
+	
+	
+	/* Fonction qui s'auto-supprime */
+	remove()
+	{
+		// Supprime du menu
+		$("#item-"+String(this.id())).remove()
+		// supprime de la list des items
+		LISTE_ITEMS.splice(LISTE_ITEMS.indexOf(this),1);
+		// supprime les éléments créés dedans
+		this.supprimeElementsGeometriques()
+	}
+	
+	/* Fonction (abstraite) qui fait le ménage dans les éléments THREEJS au moment de la suppression */
+	supprimeElementsGeometriques()
+	{
+		// rien
+	}
 }
 

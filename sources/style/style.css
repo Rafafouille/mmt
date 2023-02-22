@@ -117,6 +117,8 @@ ARBRE
 	border-right : solid 2px #EEEEEE;
 }
 
+
+/* ITEMS */
 #arbre .item
 {
 	width:240px;
@@ -143,6 +145,16 @@ ARBRE
 }
 
 
+#arbre .item .bouton_item
+{
+	height:30px;
+	cursor:pointer;
+}
+
+
+/* NUAGE DE POINTS */
+
+
 
 .nuage_valeurs
 {
@@ -151,6 +163,7 @@ ARBRE
 	width:235px;
 	text-align:center;
 }
+
 
 
 

@@ -82,6 +82,9 @@ class Nuage extends Item
 	contenuHTML()
 	{
 		var retour = `
+			<div class="menu_item">
+				<img class = "bouton_item" src="sources/images/supprime.svg" alt="[X]" title="Supprimer le nuage de point" onclick="ouvreBoiteDeleteItem(`+String(this.id())+`)"/>
+			</div>
 			<div class="nuage-valeurs">
 			</div>
 		`;
@@ -209,6 +212,16 @@ class Nuage extends Item
 		console.log(resultat[0])
 		//new Plan("plan",resultat[0]);
 		return resultat[0];
+	}
+	
+	
+	
+	// *******************************************
+	/* Fonction (écrase la précédente) qui fait le ménage dans les éléments THREEJS au moment de la suppression */
+	supprimeElementsGeometriques()
+	{
+		this.groupeMarkers.removeFromParent();
+
 	}
 	 
 }

@@ -414,7 +414,7 @@ function resizeFenetre()
 // Ajoute un nouvel item, en accord avec la boite de dialogue
 function ajouterItemFromDialog()
 {
-	// Choix du nouvel item
+	// Choix du nouvel item   (type = "nuage" ou "plan", etc.)
 	var type=["nuage","plan"][$("#tab_new_item").tabs('option', 'active')]
 
 	if(type == "nuage")
@@ -471,12 +471,6 @@ function ajouterItemFromDialog()
 		}
 		
 		
-/*	
-		var nuage = getItemFromId(Number($("#new_plan_RMS_nuage").val()));
-		var param_plan = nuage.getPlanRMS();
-		var plan = ajoutePlan("plan",param_plan);
-		plan.centre(nuage.getBarycentre())
-*/		
 		if(nbNuages)
 			centre.divideScalar(nbNuages)
 
@@ -495,6 +489,16 @@ function ajouterItemFromDialog()
 	// Ajout dans le menu "arbre"
 	$("#arbre").append(item.getHTML())
 }
+
+
+// *****************************************
+// Supprime un nouveau nuage de point
+function supprimeItemFromDialog()
+{
+	var id = Number($("#boite_delete_item").attr("data-id"))
+	getItemFromId(id).remove();
+}
+
 
 
 // *****************************************
@@ -626,6 +630,18 @@ function ouvreBoiteAjouterItem()
 	$("#tab_new_item_liste_contraintes_plan").empty();
 }
 
+
+
+// *****************************************
+// Ouvre boitre "ajouter item"
+function ouvreBoiteDeleteItem(_id)
+{
+	$("#boite_delete_item").attr("data-id",_id)
+	var item = getItemFromId(_id)
+	$("#boite_delete_nom_item").text(item.nom())
+	
+	$('#boite_delete_item').dialog('open')
+}
 
 
 
