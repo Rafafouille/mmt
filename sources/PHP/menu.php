@@ -16,17 +16,23 @@
 		<div class="bouton bouton_deplacement droite" onclick="updateX(X()+PAS_DEPLACEMENT_BOUTON)">+</div>
 		<div class="bouton bouton_deplacement droite" onclick="updateX(X()+PAS_DEPLACEMENT_BOUTON_PLUS)">+<br/>+</div>
 		<br/>
+		<input type="range" id="input_range_X" name="input_range_X" min="0" max="0.8" step="0.001" oninput="updateX($(this).val())"/>
+		<br/>
 		<div class="bouton bouton_deplacement gauche" onclick="updateY(Y()-PAS_DEPLACEMENT_BOUTON_PLUS)">-<br/>-</div>
 		<div class="bouton bouton_deplacement gauche" onclick="updateY(Y()-PAS_DEPLACEMENT_BOUTON)">-</div>
 		<div class="bouton bouton_deplacement centre"><img src="./sources/images/depY.svg" alt="Y"/></div>
 		<div class="bouton bouton_deplacement droite" onclick="updateY(Y()+PAS_DEPLACEMENT_BOUTON)">+</div>
 		<div class="bouton bouton_deplacement droite" onclick="updateY(Y()+PAS_DEPLACEMENT_BOUTON_PLUS)">+<br/>+</div>
 		<br/>
+		<input type="range" id="input_range_Y" name="input_range_Y" min="0" max="0.8" step="0.001" oninput="updateY($(this).val())"/>
+		<br/>
 		<div class="bouton bouton_deplacement gauche" onclick="updateZ(Z()-PAS_DEPLACEMENT_BOUTON_PLUS)">-<br/>-</div>
 		<div class="bouton bouton_deplacement gauche" onclick="updateZ(Z()-PAS_DEPLACEMENT_BOUTON)">-</div>
 		<div class="bouton bouton_deplacement centre"><img src="./sources/images/depZ.svg" alt="Y"/></div>
 		<div class="bouton bouton_deplacement droite" onclick="updateZ(Z()+PAS_DEPLACEMENT_BOUTON)">+</div>
 		<div class="bouton bouton_deplacement droite" onclick="updateZ(Z()+PAS_DEPLACEMENT_BOUTON_PLUS)">+<br/>+</div>
+		<br/>
+		<input type="range" id="input_range_Z" name="input_range_Z" min="0" max="0.4" step="0.001" oninput="updateZ($(this).val())"/>
 		<br/>
 		<div class="bouton" onclick="PIECE.visible=!PIECE.visible">Affiche/Cache pièce</div>
 		<div class="bouton" onclick="afficheCacheMachine()">Affiche/Cache machine</div>

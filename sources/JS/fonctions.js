@@ -142,6 +142,8 @@ function creeDecors()
 // Fonction qui déplace le palpeur, éventuellement bridé
 // vers la position enregistrée dans POSITION_CIBLE
 // ************************************************
+
+
 function deplacePalpeur(bride=true)
 {	
 	var position = new THREE.Vector3( AXE2.position.x, AXE3.position.y, AXE1.position.z)
@@ -305,18 +307,36 @@ function doublonMarker(pos)
 // Fonction qui met à jour X (utilisateur)
 function updateX(X)
 {
+	X = Number(X)
+	if(X<0)
+		X=0;
+	if(X>0.8)
+		X=0.8;
 	POSITION_CIBLE.x = X;
 	$("#input_coord_X").val(X)
+	$("#input_range_X").val(X)
 }
 function updateY(Y)
 {
+	Y = Number(Y)
+	if(Y<0)
+		Y=0;
+	if(Y>0.8)
+		Y=0.8;
 	POSITION_CIBLE.z = -Y;
 	$("#input_coord_Y").val(Y)
+	$("#input_range_Y").val(Y)
 }
 function updateZ(Z)
 {
+	Z = Number(Z)
+	if(Z<0)
+		Z=0;
+	if(Z>0.4)
+		Z=0.4;
 	POSITION_CIBLE.y = Z;
 	$("#input_coord_Z").val(Z)
+	$("#input_range_Z").val(Z)
 }
 
 

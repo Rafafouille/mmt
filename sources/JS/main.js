@@ -147,3 +147,10 @@ function animate() {
 }
 // animate();  <<--- Anciennement pour faire la boucle, mais c'était avant la VR
 RENDERER.setAnimationLoop(animate);
+
+
+
+// Init HTML *************************************************
+updateX(0)
+updateY(0)
+updateZ(0)

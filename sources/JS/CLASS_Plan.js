@@ -163,9 +163,43 @@ class Plan extends Item
 				<img class = "bouton_item" src="sources/images/supprime.svg" alt="[X]" title="Supprimer le plan" onclick="ouvreBoiteDeleteItem(`+String(this.id())+`)"/>
 			</div>
 			<div class="info_plan">
+				<span style="font-size:small;">
+				`+this.getEquation()+`</span>
 			</div>
 		`;
 		return retour;
+	}
+	
+	// Renvoie une forme littérale mise en forme de l'équation
+	// renvoie un STR
+	getEquation(_precision_=3)
+	{
+		var p = Math.pow(10,_precision_)
+		var a = Math.round(this._parametres[0]*p)/p
+		var b = Math.round(this._parametres[1]*p)/p
+		var c = Math.round(this._parametres[2]*p)/p
+		var d = Math.round(this._parametres[3]*p)/p
+		
+		
+		var res = ""
+		
+		if(a!=0)
+			 res += String(a)+" × <strong>x</strong>"
+		if(b>0)
+			res += " + "+String(b)+" × <strong>y</strong>"
+		if(b<0)
+			res += " - "+String(Math.abs(b))+" × <strong>y</strong>"
+		if(c>0)
+			res += " + "+String(c)+" × <strong>z</strong>"
+		if(c<0)
+			res += " - "+String(Math.abs(c))+" × <strong>z</strong>"
+		if(d>0)
+			res += " + "+String(d)
+		if(d<0)
+			res += " - "+String(Math.abs(d))
+		res += " = 0"
+		
+		return res;
 	}
 	
 	
@@ -360,7 +394,7 @@ class Plan extends Item
 		erreur = erreur.bind(erreur)
 	
 		
-		var resultat =  GEN_algo_genetique([1,0,0,5], [1000,1000,1000,10], erreur	,10000,50,0.1) // (nominal, IT, fecart, nb population, nb itérations, %meilleurs)
+		var resultat =  GEN_algo_genetique([1,0,0,0], [1000,1000,1000,10], erreur	,10000,100,0.1) // (nominal, IT, fecart, nb population, nb itérations, %meilleurs)
 
 
 		
