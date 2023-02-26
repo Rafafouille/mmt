@@ -560,6 +560,7 @@ function ajoutePlan(_nom_="plan", _param_=[0,1,0,0])
 // Fonction qui renvoie une reference vers l'item, en fonction de son numéro
 function getItemFromId(id_)
 {
+	id_ = Number(id_)
 	for(i=0;i<LISTE_ITEMS.length;i++)
 	{
 		if(LISTE_ITEMS[i].id()==id_)
@@ -709,3 +710,59 @@ function tab_new_item_ajouteContrainte_plan()
 	$("#tab_new_item_liste_contraintes_plan").append(html)
 }
 
+
+// ******************************************
+// Ouvre la boite d'analyse par rapport au plan dont l'item est le n°id
+function ouvreBoiteMesurePlan(_id_)
+{
+	$("#boite_mesure_plan").attr("data-id",_id_);
+	$("#boite_mesure_plan_choix_item").empty();
+	$("#boite_mesure_plan_choix_item").append("<option value=\"\"></select>");
+	for(var i=0;i<LISTE_ITEMS.length ;i++)
+	{
+		if(LISTE_ITEMS[i].id()!=_id_)
+		{
+			$("#boite_mesure_plan_choix_item").append("<option value=\""+String(LISTE_ITEMS[i].id())+"\">"+LISTE_ITEMS[i].nom()+"</select>")
+		}
+	}
+	$("#boite_mesure_plan_mesures").empty();
+	$("#boite_mesure_plan").dialog("open");
+}
+
+// *****************************************
+function updateCalculMesurePlan()
+{
+	var plan = getItemFromId($("#boite_mesure_plan").attr("data-id"))
+	var item = getItemFromId($("#boite_mesure_plan_choix_item").val())
+	
+	// NUAGES ========================
+	if(item.type()=="nuage")
+	{
+		var dMin = 0
+		var dMax = 0
+		var Ra = 0
+		for(var i=0;i<item.nbMesures();i++)
+		{
+			console.log(i);
+			var mes = item.getMesure(i)
+			var d = plan.getDistancePoint(mes);
+			if(d>dMax)
+				dMax = d;
+			if(d<dMin)
+				dMin = d;
+			Ra += Math.abs(d);
+		}
+		if(item.nbMesures())
+			Ra /= item.nbMesures();
+	
+		// Résultats
+		$("#boite_mesure_plan_mesures").append(`
+			<ul>
+				<li><strong>Écart min :</strong> `+String(dMin)+`</li>
+				<li><strong>Écart max :</strong> `+String(dMax)+`</li>
+				<li><strong>R<sub>a</sub> :</strong> `+String(Ra)+`</li>
+			</ul>
+		`)
+	}
+	
+}

@@ -161,6 +161,7 @@ class Plan extends Item
 		var retour = `
 			<div class="menu_item">
 				<img class = "bouton_item" src="sources/images/supprime.svg" alt="[X]" title="Supprimer le plan" onclick="ouvreBoiteDeleteItem(`+String(this.id())+`)"/>
+				<img class = "bouton_item" src="sources/images/calculette.svg" alt="[%]" title="Mesures sur le plan" onclick="ouvreBoiteMesurePlan(`+String(this.id())+`)"/>
 			</div>
 			<div class="info_plan">
 				<span style="font-size:small;">

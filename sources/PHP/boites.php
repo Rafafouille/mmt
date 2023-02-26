@@ -74,3 +74,33 @@
 				
 	$("#tab_new_item").tabs()
 </script>
+
+
+
+
+<!-- MESURE D'ÉLÉMENTS PAR RAPPORT AU PLAN ----------------------- -->
+<div id="boite_mesure_plan" title="Mesures à partir d'un plan" data-id="-1">
+	<p>
+		<label for="boite_mesure_plan_choix_item">Réaliser des mesures entre le plan et :</label>
+		<select name="boite_mesure_plan_choix_item" id="boite_mesure_plan_choix_item" onchange="updateCalculMesurePlan();">
+		</select>
+	</p>
+	<div id="boite_mesure_plan_mesures">
+	</div>
+</div>
+	
+	
+
+<script>
+	$("#boite_mesure_plan").dialog({
+					autoOpen:false,
+					width: "800px",
+					modal: true,
+					buttons:{
+						Fermer: function() {$(this).dialog("close")}
+						}
+				});
+				
+				
+	$("#tab_new_item").tabs()
+</script>
