@@ -39,8 +39,8 @@ MARKERS = new THREE.Group();
 ENVIRONNEMENT.add(MARKERS);
 
 // Des axes pour aider
-const axesHelper = new THREE.AxesHelper( 5 );
-SCENE.add( axesHelper );
+/*const axesHelper = new THREE.AxesHelper( 5 );
+SCENE.add( axesHelper );*/
 
 
 

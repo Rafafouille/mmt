@@ -92,7 +92,7 @@ class Nuage extends Item
 						<th></th>
 						<th scope="col">Y</th>
 						<th></th>
-						<th scope="col">X</th>
+						<th scope="col">Z</th>
 						<th></th>
 					</tr>
 				</table>

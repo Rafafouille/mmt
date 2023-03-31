@@ -72,7 +72,25 @@ function creeMachine()
 						var geom = new THREE.DodecahedronGeometry(RAYON_PALPEUR,1);
 				 		BILLE =  new THREE.Mesh( geom, materiau_rouge );
 						object.add(BILLE)
-				 		
+						
+						
+						// Repere palpeur
+						REPERE_PALPEUR = new THREE.Group();
+						object.add(REPERE_PALPEUR);
+						var material_axesX_palpeur = new THREE.LineBasicMaterial({color: 0xFF0000})
+						var material_axesY_palpeur = new THREE.LineBasicMaterial({color: 0x00FF00})
+						var material_axesZ_palpeur = new THREE.LineBasicMaterial({color: 0x0000FF})
+						
+						const geometryX = new THREE.BufferGeometry().setFromPoints( [new THREE.Vector3(-1,0,0),new THREE.Vector3(1,0,0)] );
+						const geometryY = new THREE.BufferGeometry().setFromPoints( [new THREE.Vector3(0,0,-1),new THREE.Vector3(0,0,1)] );
+						const geometryZ = new THREE.BufferGeometry().setFromPoints( [new THREE.Vector3(0,-1,0),new THREE.Vector3(0,1,0)] );
+						
+						var axeX = new THREE.Line( geometryX, material_axesX_palpeur );
+						var axeY = new THREE.Line( geometryY, material_axesY_palpeur );
+						var axeZ = new THREE.Line( geometryZ, material_axesZ_palpeur );
+						REPERE_PALPEUR.add(axeX);
+						REPERE_PALPEUR.add(axeY);
+						REPERE_PALPEUR.add(axeZ);
 					},
 					function (progression){},
 					function (error){console.log(error);});
@@ -86,7 +104,7 @@ function creeMachine()
 }
 
 
-function creePiece()
+function creePiece_OLD_A_SUPPRIMER()
 {
 	
 	// Chargement de la PIECE (materiau puis géométrie) ***************
@@ -728,6 +746,42 @@ function ouvreBoiteMesurePlan(_id_)
 	$("#boite_mesure_plan_mesures").empty();
 	$("#boite_mesure_plan").dialog("open");
 }
+
+// ******************************************
+// Ouvre la boite pour charger une nouvelle piece
+function ouvreBoiteOuvrirPiece()
+{
+	//Supprime le contenu
+	$("#boite_ouvrir_piece_contenu").empty();
+	//met le'icone
+	$("#boite_ouvrir_piece_contenu").append("<div style='text-align:center;'><img style='width:50px;' src='./sources/images/chargement.svg' alt='Chargement...'/></div>");
+	$("#boite_ouvrir_piece").dialog("open");
+	
+	//Requete liste des mecanismes
+	$.post(	"repondeur.php",
+			{action:"getPieces"},
+			getPiece_callback,
+			"json"
+	)
+}
+// *************************************************
+// Fonction callback qui recoit la liste des 
+getPiece_callback = function(data)
+{
+	var pieces = data.pieces
+	//Supprime le contenu
+	$("#boite_ouvrir_piece_contenu").empty();
+	for(i=0;i<pieces.length;i++)
+	{
+		var piece = pieces[i];
+		var nom = piece.nom;
+		var image = piece.image;
+		var lien = piece.lien;
+		var code = "<a class='piece_a_ouvrir' href='?piece="+lien+"'><h1>"+nom+"</h1><div class='image_piece_a_ouvrir'><img src='"+image+"'/></div></div>"
+		$("#boite_ouvrir_piece_contenu").append(code);
+	}	
+}
+
 
 // *****************************************
 function updateCalculMesurePlan()

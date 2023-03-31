@@ -70,9 +70,6 @@
 						Supprimer : function(){supprimeItemFromDialog();$(this).dialog("close")}
 						}
 				});
-				
-				
-	$("#tab_new_item").tabs()
 </script>
 
 
@@ -97,10 +94,32 @@
 					width: "800px",
 					modal: true,
 					buttons:{
+						Annuler: function() {$(this).dialog("close")}
+						}
+				});
+</script>
+
+
+
+
+
+
+
+<!-- OUVRIR UNE PIECE ----------------------- -->
+<div id="boite_ouvrir_piece" title="Ouvrir une pièce">
+	<div id="boite_ouvrir_piece_contenu">
+	</div>
+</div>
+	
+	
+
+<script>
+	$("#boite_ouvrir_piece").dialog({
+					autoOpen:false,
+					width: "800px",
+					modal: true,
+					buttons:{
 						Fermer: function() {$(this).dialog("close")}
 						}
 				});
-				
-				
-	$("#tab_new_item").tabs()
 </script>

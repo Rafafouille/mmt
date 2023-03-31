@@ -1,3 +1,10 @@
+<?php
+
+$PIECE = isset($_GET['piece']) ? $_GET['piece'] : "T";	# Pièce à chargé (passée en GET, facultatif)
+
+?>
+
+<!DOCTYPE html>
 <html>
 <head>
 
@@ -54,6 +61,7 @@ MARKERS = null;
 RENDERER = null;
 CAMERA = null;
 BILLE = null;
+REPERE_PALPEUR = null; //Groupe associé au palpeur
 
 material=null
 materiau_rouge=null
@@ -63,7 +71,7 @@ MATERIAU_PLAN=null
 
 // Déplacement *******************
 PAS_MAX = 0.005 // Pas de déplacement discret, en m
-PAS_DEPLACEMENT_BOUTON = 0.01		// Pas de déplacement quand on clique sur le bouton "déplacer +"
+PAS_DEPLACEMENT_BOUTON = 0.002		// Pas de déplacement quand on clique sur le bouton "déplacer +"
 PAS_DEPLACEMENT_BOUTON_PLUS = 0.1	// Pas de déplacement quand on clique sur le bouton "déplacer ++"
 POSITION_CIBLE = null;
 
@@ -75,8 +83,8 @@ NB_PIECES_CHARGEES = 0 ;
 // MESURES *******************
 RAYON_PALPEUR = 0.002 ; 	// Rayon de la pointe du palpeur
 LISTE_MARKERS = [];
-RAYON_MARKER = 0.003;
-DISTANCE_MIN_MARKERS = 0.02	// Distance minimal pour autoriser à faire un autre marker
+RAYON_MARKER = 0.0015;
+DISTANCE_MIN_MARKERS = 0.01	// Distance minimal pour autoriser à faire un autre marker
 NUAGE_COURANT = null;		// Référence vers le nuage de points courant (null si aucun)
 LISTE_COULEURS = ["#FF0000","#0000FF","#00AA00","#FFAA00","#FF00FF","#00FFFF","#00FF00","#000000"]
 
@@ -118,6 +126,33 @@ v2 = null
 	?>
 
 </body>
+
+
+
+<script>
+// CHARGEMENT DE LA PIECE =========================
+function creePiece()
+{
+<?php
+if(isset($_GET['piece']))
+{
+	$piece_a_ouvrir = $_GET['piece'];
+	$fichier = "./pieces/".$piece_a_ouvrir."/chargement.js";
+	//on vérifie que le dossier existe
+	if(file_exists($fichier))
+	{
+		$code = fopen($fichier, 'r');
+		$taille = filesize( $fichier );
+            	echo fread($code,$taille);
+	}
+	else // Si le fichier n'est pas dans la BDD (si c'est pas un dossier)
+	{
+		echo "alert('Pièce absente');";
+	}
+}
+?>
+}
+</script>
 
 <script type="module" src="./sources/JS/main.js"></script>
 
