@@ -47,7 +47,7 @@
 		<div id="arbre">
 		</div>
 		
-		<div id="mesures">
+		<div id="mesures" style="display:none;">
 			Mesures :<br/>
 			<textarea readonly id="liste_mesures" rows="30">
 			</textarea>
