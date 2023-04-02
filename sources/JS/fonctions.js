@@ -407,14 +407,6 @@ function creeControllers()
 	SCENE.add(CONTROLLER1);
 	
 	
-	CONTROLLER1.addEventListener('selectstart', function(){
-					COORDONNEES_INIALES_MANETTE_VR = CONTROLLER1.position.clone() ;  // Position de la manette VR au début du déplacement
-					COORDONNEES_PALPEUR_INITIAL_VR = POSITION_CIBLE.clone() ;
-					SUIVRE_MANETTE_VR = true;
-				});
-	CONTROLLER1.addEventListener('selectend', function(){
-					SUIVRE_MANETTE_VR = false;
-				});
 	
 	CONTROLLER2 = RENDERER.xr.getControllerGrip(1);
 	var model2 = controllerModelFactory.createControllerModel( CONTROLLER2 );
@@ -422,7 +414,20 @@ function creeControllers()
 	SCENE.add(CONTROLLER2);
 	
 	
+	
+	// Evenements des mannettes ===
+	
+	
 	CONTROLLER2.addEventListener('selectstart', function(){
+					COORDONNEES_INIALES_MANETTE_VR = CONTROLLER2.position.clone() ;  // Position de la manette VR au début du déplacement
+					COORDONNEES_PALPEUR_INITIAL_VR = POSITION_CIBLE.clone() ;
+					SUIVRE_MANETTE_VR = true;
+				});
+	CONTROLLER2.addEventListener('selectend', function(){
+					SUIVRE_MANETTE_VR = false;
+				});
+	
+	CONTROLLER1.addEventListener('selectstart', function(){
 					if(PIECE.visible && BATI.visible)
 						PIECE.visible = false;
 					else if(BATI.visible)
@@ -433,7 +438,7 @@ function creeControllers()
 						PIECE.visible = true;
 						
 				});
-	CONTROLLER2.addEventListener('selectend', function(){
+	CONTROLLER1.addEventListener('selectend', function(){
 					
 				});
 }

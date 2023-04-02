@@ -134,7 +134,7 @@ function animate() {
 		{
 			var p = new THREE.Vector3();
 			var pp = new THREE.Vector3();
-			POSITION_CIBLE = p.add(COORDONNEES_PALPEUR_INITIAL_VR).add(CONTROLLER1.position).sub(COORDONNEES_INIALES_MANETTE_VR)
+			POSITION_CIBLE = p.add(COORDONNEES_PALPEUR_INITIAL_VR).add(CONTROLLER2.position).sub(COORDONNEES_INIALES_MANETTE_VR)
 		}
 		
 		deplacePalpeur();
