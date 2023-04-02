@@ -134,9 +134,9 @@ v2 = null
 function creePiece()
 {
 <?php
-if(isset($_GET['piece']))
-{
-	$piece_a_ouvrir = $_GET['piece'];
+//if(isset($_GET['piece']))
+//{
+	$piece_a_ouvrir = isset($_GET['piece'])?$_GET['piece']:"RI40";
 	$fichier = "./pieces/".$piece_a_ouvrir."/chargement.js";
 	//on vérifie que le dossier existe
 	if(file_exists($fichier))
@@ -149,7 +149,7 @@ if(isset($_GET['piece']))
 	{
 		echo "alert('Pièce absente');";
 	}
-}
+//}
 ?>
 }
 </script>
