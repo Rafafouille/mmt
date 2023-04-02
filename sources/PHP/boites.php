@@ -123,3 +123,28 @@
 						}
 				});
 </script>
+
+
+
+
+
+
+
+<!-- SAUVEGARDES LES DONNEES SUR LE SERVEUR (VALIDATION) ----------------------- -->
+<div id="boite_valider_enregistrer_depuis_Occulus" title="Enregistrement des données sur le serveur">
+	<p>Les données ont été enregistrées sur le serveur (l'ancien fichier a été écrasé).</p>
+	<p>Le fichier est accessible dans <a href="https://<?php echo  $_SERVER['HTTP_HOST'].parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);?>/sauvegardes">https://<?php echo  $_SERVER['HTTP_HOST'].parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);?>sauvegardes</a>.</p>
+</div>
+	
+	
+
+<script>
+	$("#boite_valider_enregistrer_depuis_Occulus").dialog({
+					autoOpen:false,
+					width: "800px",
+					modal: true,
+					buttons:{
+						Fermer: function() {$(this).dialog("close")}
+						}
+				});
+</script>

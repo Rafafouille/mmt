@@ -415,6 +415,21 @@ class Plan extends Item
 		this.groupePlan.removeFromParent();
 
 	}
+	
+	
+	
+	/* Fonction qui prépare les données pour les mettre sous forme de tableau 
+	(écrase la fonction abstraite) */
+	export()
+	{
+		var tab = {
+			type : "plan",
+			nom : this.nom(),
+			donnees : {"a":this._parametres[0],"b":this._parametres[1],"c":this._parametres[2],"d":this._parametres[3]}
+		};
+		
+		return tab
+	}
 	 
 }
 

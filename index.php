@@ -84,7 +84,7 @@ NB_PIECES_CHARGEES = 0 ;
 RAYON_PALPEUR = 0.002 ; 	// Rayon de la pointe du palpeur
 LISTE_MARKERS = [];
 RAYON_MARKER = 0.0015;
-DISTANCE_MIN_MARKERS = 0.01	// Distance minimal pour autoriser à faire un autre marker
+DISTANCE_MIN_MARKERS = 0.005	// Distance minimal pour autoriser à faire un autre marker
 NUAGE_COURANT = null;		// Référence vers le nuage de points courant (null si aucun)
 LISTE_COULEURS = ["#FF0000","#0000FF","#00AA00","#FFAA00","#FF00FF","#00FFFF","#00FF00","#000000"]
 

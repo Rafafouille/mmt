@@ -820,3 +820,42 @@ function updateCalculMesurePlan()
 	}
 	
 }
+
+
+// *****************************************
+function getDonneesInTableau()
+{
+	var tab = [];
+	
+	LISTE_ITEMS.forEach(function(item){
+		tab.push(item.export());
+	});
+	
+	
+	return tab;
+}
+
+// *****************************************
+function envoieDonneesVersServeur()
+{
+	var donnees = getDonneesInTableau()
+	
+	$.post(
+		"repondeur.php",
+		{
+			action:"sauvegardeDonnées",
+			donnees:donnees
+		},
+		envoieDonneesVersServeur_callback,
+		"json"
+	);
+}
+
+// **********************************************
+function envoieDonneesVersServeur_callback(data)
+{
+	if(data.OK)
+	{
+		$("#boite_valider_enregistrer_depuis_Occulus").dialog("open");
+	}
+}

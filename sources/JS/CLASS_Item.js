@@ -122,5 +122,18 @@ class Item
 	{
 		// rien
 	}
+	
+	
+	
+	/* Fonction (abstraite) qui prépare les données pour les mettre sous forme de tableau */
+	export()
+	{
+		var tab = {
+			type : "item",
+			nom : "Item abstrait",
+			donnees : null
+		};
+		return tab
+	}
 }
 

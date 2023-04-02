@@ -41,6 +41,9 @@
 		<div id="vrbouton">[Bouton VR]</div>
 		
 		<div class="bouton" onclick="ouvreBoiteAjouterItem()">+ Ajouter</div>
+		
+		
+		<!-- ARBRE DES ITEMS -------- -->
 		<div id="arbre">
 		</div>
 		
@@ -49,4 +52,11 @@
 			<textarea readonly id="liste_mesures" rows="30">
 			</textarea>
 		</div>
+		
+		<?php
+		if(strpos($_SERVER['HTTP_USER_AGENT'],"Quest 2") != false)
+		{
+			echo '<div class="bouton" onclick="envoieDonneesVersServeur()">données --> Serveur</div>';
+		}
+		?>
 	</div>

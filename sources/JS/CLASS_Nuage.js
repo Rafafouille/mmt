@@ -248,6 +248,26 @@ class Nuage extends Item
 		this.groupeMarkers.removeFromParent();
 
 	}
+	
+	
+	
+	/* Fonction qui prépare les données pour les mettre sous forme de tableau 
+	(écrase la fonction abstraite) */
+	export()
+	{
+		var tab = {
+			type : "nuage",
+			nom : this.nom(),
+			donnees : new Array()
+		};
+		
+		for(var i=0;i<this.nbMesures();i++)
+		{
+			var mesure = this.getMesure(i);
+			tab.donnees.push({"x":mesure.x, "y":mesure.y, "z":mesure.z})
+		}
+		return tab
+	}
 	 
 }
 
