@@ -31,6 +31,7 @@ $PIECE = isset($_GET['piece']) ? $_GET['piece'] : "T";	# Pièce à chargé (pass
 <script src="./sources/JS/CLASS_Item.js"></script>
 <script src="./sources/JS/CLASS_Nuage.js"></script>
 <script src="./sources/JS/CLASS_Plan.js"></script>
+<script src="./sources/JS/CLASS_Cylindre.js"></script>
 <script src="./sources/JS/CLASS_Contrainte.js"></script>
 <script src="./sources/JS/init.js"></script>
 

@@ -9,16 +9,22 @@ class Cylindre extends Item
 		super(nom_,_couleur_,"cylindre");
 
 		this._couleur = _couleur_ ;
+		
+		// Normalisation de l'axe
+		var normeAxe = Math.sqrt(param_[3]*param_[3]+param_[4]*param_[4]+param_[5]*param_[5])
+		param_[3] /= normeAxe;
+		param_[4] /= normeAxe;
+		param_[5] /= normeAxe;
 		this._parametres = param_;
 		
 		// Centre du cylindre (projeté sur l'axe, si le point n'y est pas)
-		this._centre = this.getProjectionSurAxe(new THREE.Vector3(0, 0, 0)) // centre arbitraire
+		//this._centre = this.getProjectionSurAxe(new THREE.Vector3(0, 0, 0)) // centre arbitraire
 		this._longueur = 1;	// Longueur de cylindre à afficher
 		this.updateBase();
 		
 		// Ajout du nuage de point(graphique) sous forme de groupe sur la scene
 		this.groupeCylindre = new THREE.Group();
-		ENVIRONNEMENT.add(this.groupePlan);
+		ENVIRONNEMENT.add(this.groupeCylindre);
 		
 		this.redessine()
 	}
@@ -35,8 +41,8 @@ class Cylindre extends Item
 
 	 _base = null; // Base attachée au plan [xP,yP,n] ou n est la normale
 
-	 _longueur = 1;
-	 _nbFaces = 6 ;
+	 _longueur = 1; // Longueur visible du cylindre (centrée sur le centre)
+	 _nbFaces = 50 ;
 	 CYLINDRE = null;	//Objet graphique
 	 
 	 liste_contraintes = [];  // Liste des fonctions qui permettent de calculer les "erreurs" à optimiser
@@ -154,7 +160,7 @@ class Cylindre extends Item
 	 		}
 	 		else if(_x_.constructor.name=="Vector3")
 	 		{
-	 			_x_.normalize();
+	 			_x_.clone().normalize();
 	 			this._parametres[3] = _x_.x;
 	 			this._parametres[4] = _x_.y;
 	 			this._parametres[5] = _x_.z;
@@ -207,13 +213,11 @@ class Cylindre extends Item
 	 // à l'axe du cylindre
 	 getRayonPoint(_P_)
 	 {
-		var a = this._parametres[0]
-		var b = this._parametres[1]
-		var c = this._parametres[2]
-		var d = this._parametres[3]
-		
-		//https://www.cuemath.com/geometry/distance-between-point-and-plane/
-		return (a*_P_.x+b*_P_.y+c*_P_.z+d)/(Math.sqrt(a*a+b*b+c*c))
+		var C = this.centre()
+		var vDir = this.vDirecteur().normalize() // Au cas où : on normalise
+		var CP = _P_.clone().sub(C)
+		// R = || vDir ^ CP ||
+		return vDir.cross(CP).length()
 	 }
 	 
 	 
@@ -234,9 +238,9 @@ class Cylindre extends Item
 		var centre = this.centre()
 		var vDir = this.vDirecteur().normalize() // Au cas où : on normalise
 		
-		l = vDir.dot(P.clone().sub(centre))
+		var l = vDir.dot(P.clone().sub(centre))
 		
-		 return centre.clone().vDir.multiplyScalar(l)
+		 return centre.clone().add(vDir.multiplyScalar(l))
 	 }
 	 
 	 
@@ -245,27 +249,18 @@ class Cylindre extends Item
 	 /* Fonction qui calcul le triplet de vecteur orthonormé, dont la 3ème est n*/
 	 updateBase()
 	 {
-	 	var ez = this.vDirecteur();
-	 	if( ((new THREE.Vector3(1,0,0)).cross(ez)).length()    ) 	// Si (1,0,0) et ez ne sont pas colinéaire
-	 	{
-		 	var ex = (new THREE.Vector3(1,0,0).sub(
-		 				 this.normale().multiplyScalar(
-		 				 	(new THREE.Vector3(1,0,0)).dot(this.normale())
-		 				 )
-		 		)).normalize()  //  (ex - ex.n * n).normalize
-		 	var ey = ez.clone().cross(ex)
-		 }
-		 else	// Si (1,0,0)) et ez sont colinéaires (on prendra (0,1,0) pour l'orthonormalisation)
-		 {
-		 	var ex = (new THREE.Vector3(0,1,0).sub(
-		 				 this.normale().multiplyScalar(
-		 				 	(new THREE.Vector3(0,1,0)).dot(this.normale())
-		 				 )
-		 		)).normalize()  //  (ey - ey.n * n).normalize
-		 	var ey = ez.clone().cross(ex)
-		 }
+	 	var e3 = this.vDirecteur();
+	 	if( ((new THREE.Vector3(1,0,0)).cross(e3)).length()    ) 	// Si (1,0,0) et ez ne sont pas colinéaire
+	 		var Vint = new THREE.Vector3(1,0,0) // Vecteur intermédiaire pour l'orthonormalisation
+	 	else
+	 		var Vint = new THREE.Vector3(0,1,0)
+	 		
+	 	console.log(Vint)
+	 	var e1 = (Vint.sub( this.vDirecteur().multiplyScalar(this.vDirecteur().dot(Vint)) )).normalize()
+	 	var e2 = e3.clone().cross(e1)
 	 	
-	 	this._base = {"ex":ex,"ey":ey,"ez":ez}
+	 	
+	 	this._base = {"ex":e1,"ey":e2,"ez":e3}
 	 	return this._base
 	 }
 	 
@@ -274,33 +269,113 @@ class Cylindre extends Item
 	 redessine()
 	 {
 	 
-	 	// Voir : https://dustinpfister.github.io/2018/04/14/threejs-geometry/
-	 	// On retire l'éventuel plan (et autre) qu'il y a dans le groupe
+	 	// Au début, je regardai ça (obsolete) Voir : https://dustinpfister.github.io/2018/04/14/threejs-geometry/
+	 	//https://threejs.org/manual/#en/custom-buffergeometry
+	 	// On retire l'éventuel cylindre (et autre) qu'il y a dans le groupe
  		this.groupeCylindre.clear();
  		
- 		var geometry = new THREE.Geometry();
  		
- 		//Création des sommets
+ 		//Quelques constantes
  		var dtheta = 2*Math.PI/this._nbFaces;
+ 		var ex = this.base().ex.clone();
+ 		var ey = this.base().ey.clone();
+ 		var ez = this.base().ez.clone();
+ 		var R = this.rayon();
+ 		
+ 		
+ 		// POSITION DES SOMMETS
+ 		var positions = [];
  		for(var i=0;i< this._nbFaces; i++)
  		{
- 			
- 		}
- 		//Création des faces
- 		var nbPt = this._nbFaces*2
- 		for(var i=0;i< this._nbFaces; i++)
- 		{
+ 			// Une des faces du cylindre :
+ 			// P2 --- P1
+ 			// |      |
+ 			// PC2    PC1
+ 			// |      |
+ 			// P4 --- P3
+ 		
+ 		
  			var theta = i * dtheta;
- 			geometry.faces.push(
-	 			new THREE.Face3((2*i)%nbPt, (2*i+1)%nbPt , (2*i+2)%nbPt ),
-	 			new THREE.Face3((2*i+1)%nbPt, (2*i+2)%nbPt, (2*i+3)%nbPt),
-	 		);
+ 			// Point milieu
+ 			var PC1 = this.centre().add((ex.clone().multiplyScalar(Math.cos(theta))).add(ey.clone().multiplyScalar(Math.sin(theta))).multiplyScalar(R))
+ 			var PC2 = this.centre().add((ex.clone().multiplyScalar(Math.cos(theta+dtheta))).add(ey.clone().multiplyScalar(Math.sin(theta+dtheta))).multiplyScalar(R))
+ 			
+ 			
+ 			// P1
+ 			var P1 = PC1.clone().add(ez.clone().multiplyScalar(this._longueur/2))
+ 			// P2
+ 			var P2 = PC2.clone().add(ez.clone().multiplyScalar(this._longueur/2))
+ 			// P3
+ 			var P3 = PC1.clone().sub(ez.clone().multiplyScalar(this._longueur/2))
+ 			// P4
+ 			var P4 = PC2.clone().sub(ez.clone().multiplyScalar(this._longueur/2))
+
+ 			positions.push(P1.x,P1.y,P1.z)
+ 			positions.push(P2.x,P2.y,P2.z)
+ 			positions.push(P3.x,P3.y,P3.z)
+ 			
+ 			positions.push(P3.x,P3.y,P3.z)
+ 			positions.push(P2.x,P2.y,P2.z)
+ 			positions.push(P4.x,P4.y,P4.z)
  		}
-		geometry.computeVertexNormals();
-		geometry.normalize();
+ 		console.log(positions)
+ 		
+ 		// Normales
+ 		var normals = [];
+ 		for(var i=0;i< this._nbFaces; i++)
+ 		{
+ 			var theta = i * dtheta - dtheta/2;
+ 			// rayons (on met un biai pour faire un dégradé
+ 			var R1 = (ex.clone().multiplyScalar(Math.cos(theta-dtheta/2))).add(ey.clone().multiplyScalar(Math.sin(theta-dtheta/2))).normalize()
+ 			var R2 = (ex.clone().multiplyScalar(Math.cos(theta+dtheta/2))).add(ey.clone().multiplyScalar(Math.sin(theta+dtheta/2))).normalize()
+			//var R2 = (ex.clone().multiplyScalar(Math.cos(theta-dtheta/2))).add(ey.clone().multiplyScalar(Math.sin(theta-dtheta/2))).normalize()
+			
+ 			normals.push(R1.x,R1.y,R1.z) // P1
+ 			normals.push(R2.x,R2.y,R2.z) // P2
+ 			normals.push(R1.x,R1.y,R1.z) // P3
+ 			
+ 			normals.push(R1.x,R1.y,R1.z) // P3
+ 			normals.push(R2.x,R2.y,R2.z) // P2
+ 			normals.push(R2.x,R2.y,R2.z) // P4
+ 		}
+ 		console.log(normals)
+ 		
+ 		// UV
+ 		var uvs = []
+ 		for(var i=0;i< this._nbFaces; i++)
+ 		{
+ 			uvs.push(0,0)
+ 			uvs.push(1,0)
+ 			uvs.push(0,1)
+ 			
+ 			uvs.push(0,1)
+ 			uvs.push(1,0)
+ 			uvs.push(1,1)
+ 		}
+ 		console.log(uvs)
+ 		
+ 		
+ 		var geometry = new THREE.BufferGeometry()
+ 		
+ 		const positionNumComponents = 3;
+		const normalNumComponents = 3;
+		const uvNumComponents = 2;
+ 		geometry.setAttribute(
+		      'position',
+		      new THREE.BufferAttribute(new Float32Array(positions), positionNumComponents));
+		geometry.setAttribute(
+		      'normal',
+		      new THREE.BufferAttribute(new Float32Array(normals), normalNumComponents));
+		geometry.setAttribute(
+		      'uv',
+		      new THREE.BufferAttribute(new Float32Array(uvs), uvNumComponents));
+ 		
+ 		
+ 		
+ 		
 		
 		
-		CYLINDRE = new THREE.Mesh(geometry,new THREE.MeshNormalMaterial({side: THREE.DoubleSide}));
+		var CYLINDRE = new THREE.Mesh(geometry,MATERIAU_PLAN);//new THREE.MeshNormalMaterial({side: THREE.DoubleSide}));
 		this.groupeCylindre.add(CYLINDRE)
  	}
  		
