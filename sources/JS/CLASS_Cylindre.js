@@ -42,8 +42,10 @@ class Cylindre extends Item
 	 _base = null; // Base attachée au plan [xP,yP,n] ou n est la normale
 
 	 _longueur = 1; // Longueur visible du cylindre (centrée sur le centre)
+	 _longueurAxe = 3 // Longueur de l'axe
 	 _nbFaces = 50 ;
 	 CYLINDRE = null;	//Objet graphique
+	 AXE = null		// Objet graphique
 	 
 	 liste_contraintes = [];  // Liste des fonctions qui permettent de calculer les "erreurs" à optimiser
 	 
@@ -72,6 +74,19 @@ class Cylindre extends Item
 	 	}
 	 	return this._longueur
 	}
+	
+	// longueur de l'axe
+	longueurAxe(l_,redessine=true)
+	{
+	 	if (l_ != undefined)
+	 	{
+	 		this._longueurAxe = l_;
+	 		if(redessine)
+	 			this.redessine()
+	 	}
+	 	return this._longueurAxe
+	}
+	 
 	 
 	 // Renvoie les parametres [a,b,c,d] du plan
 	 parametres(p_,redessine=true)
@@ -318,7 +333,7 @@ class Cylindre extends Item
  			positions.push(P2.x,P2.y,P2.z)
  			positions.push(P4.x,P4.y,P4.z)
  		}
- 		console.log(positions)
+ 		//console.log(positions)
  		
  		// Normales
  		var normals = [];
@@ -338,7 +353,7 @@ class Cylindre extends Item
  			normals.push(R2.x,R2.y,R2.z) // P2
  			normals.push(R2.x,R2.y,R2.z) // P4
  		}
- 		console.log(normals)
+ 		//console.log(normals)
  		
  		// UV
  		var uvs = []
@@ -352,7 +367,7 @@ class Cylindre extends Item
  			uvs.push(1,0)
  			uvs.push(1,1)
  		}
- 		console.log(uvs)
+ 		//console.log(uvs)
  		
  		
  		var geometry = new THREE.BufferGeometry()
@@ -371,12 +386,21 @@ class Cylindre extends Item
 		      new THREE.BufferAttribute(new Float32Array(uvs), uvNumComponents));
  		
  		
- 		
- 		
+		
+		this.CYLINDRE = new THREE.Mesh(geometry,MATERIAU_PLAN);//new THREE.MeshNormalMaterial({side: THREE.DoubleSide}));
+		this.groupeCylindre.add(this.CYLINDRE)
 		
 		
-		var CYLINDRE = new THREE.Mesh(geometry,MATERIAU_PLAN);//new THREE.MeshNormalMaterial({side: THREE.DoubleSide}));
-		this.groupeCylindre.add(CYLINDRE)
+		var material_Ligne = new THREE.LineBasicMaterial({color: this.couleur()});
+
+		var points = [];
+		points.push(this.centre().add(this.vDirecteur().multiplyScalar(this.longueurAxe()/2)));
+		points.push(this.centre().sub(this.vDirecteur().multiplyScalar(this.longueurAxe()/2)));
+		
+		var geometry_Ligne = new THREE.BufferGeometry().setFromPoints( points );
+
+		this.AXE = new THREE.Line( geometry_Ligne, material_Ligne );
+		this.groupeCylindre.add( this.AXE );
  	}
  		
  		
