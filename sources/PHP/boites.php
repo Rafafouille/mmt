@@ -1,10 +1,13 @@
 <div id="boite_new_item" title="Ajouter un élément">
 
 	<div id="tab_new_item">
+		<!-- Liste des onglets "new items" -->
 		<ul>
 			<li><a href="#tab_new_item_nuage"><img width="50px;" src="./sources/images/bouton_nuage.svg" alt="***"/><br/>Nuage</a></li>
 			<li><a href="#tab_new_item_plan"><img width="50px;" src="./sources/images/bouton_plan.svg" alt="***"/><br/>Plan</a></li>
 		</ul>
+		
+		<!-- Onglets "nouveau nuage" -->
 		<div id="tab_new_item_nuage">
 			<p>Créer un nouveau nuage de mesures de points.</p>
 			<form>
@@ -15,6 +18,8 @@
 				<input type="color" name="tab_new_item_nuage_couleur" id="tab_new_item_nuage_couleur" value="#FF0000"/>
 			</form>
 		</div>
+		
+		<!-- Onglets "nouveau plan" -->
 		<div id="tab_new_item_plan">
 			<p>Créer un nouveau plan à partir d'une équation ou d'autres éléments.</p>
 			<form>
@@ -25,8 +30,31 @@
 				<input type="color" name="tab_new_item_nuage_couleur" id="tab_new_item_nuage_couleur" value="#00FF00"/>
 			</form>
 			
-			<div id="tab_new_item_bouton_add_contrainte_plan" onclick="tab_new_item_ajouteContrainte_plan()">Ajouter une contrainte à respecter</div>
-			<div id="tab_new_item_liste_contraintes_plan">
+			<!-- Liste des manière de définir le plan -->
+			<div id="tab_new_item_plan_methode">
+				<ul>
+					<li><a href="#tab_new_item_plan_equation">Équation</a></li>
+					<li><a href="#tab_new_item_contraintes">Contraintes de position</a></li>
+				</ul>
+				<!-- Plan par équation -->
+				<div id="tab_new_item_plan_equation">
+					<form>
+						Équation du plan :<br/>
+						<input type="number" style="width: 80px;text-align:center;" id="tab_new_item_plan_A" placeholder="a" name="tab_new_item_plan_A" value="0"/><label for="tab_new_item_plan_A"> × X</label>
+						+
+						<input type="number" style="width: 80px;text-align:center;" id="tab_new_item_plan_B" placeholder="b" name="tab_new_item_plan_B" value="0"/><label for="tab_new_item_plan_B"> × Y</label>
+						+
+						<input type="number" style="width: 80px;text-align:center;" id="tab_new_item_plan_C" placeholder="c" name="tab_new_item_plan_C" value="1"/><label for="tab_new_item_plan_C"> × Z</label>
+						+
+						<input type="number" style="width: 80px;text-align:center;" id="tab_new_item_plan_D" placeholder="d" name="tab_new_item_plan_D" value="0"/><label for="tab_new_item_plan_D"> </label>
+						=0
+					</form>
+				</div>
+				<!-- Plan par contraintes -->
+				<div id="tab_new_item_contraintes">
+					<div id="tab_new_item_bouton_add_contrainte_plan" onclick="tab_new_item_ajouteContrainte_plan()">Ajouter une contrainte à respecter</div>
+					<div id="tab_new_item_liste_contraintes_plan"></div>
+				</div>
 			</div>
 			
 		</div>
@@ -45,7 +73,8 @@
 				});
 				
 				
-	$("#tab_new_item").tabs()
+	$("#tab_new_item").tabs();
+	$("#tab_new_item_plan_methode").tabs();
 </script>
 
 

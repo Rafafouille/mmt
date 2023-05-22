@@ -458,7 +458,7 @@ function resizeFenetre()
 function ajouterItemFromDialog()
 {
 	// Choix du nouvel item   (type = "nuage" ou "plan", etc.)
-	var type=["nuage","plan"][$("#tab_new_item").tabs('option', 'active')]
+	var type=["nuage","plan"][$("#tab_new_item").tabs('option', 'active')];
 
 	if(type == "nuage")
 	{
@@ -468,57 +468,68 @@ function ajouterItemFromDialog()
 	}
 	else if(type == "plan")
 	{
-	
+		var methode = ["equation","contraintes"][$("#tab_new_item_plan_methode").tabs('option', 'active')];
 		var nom = $("#tab_new_item_plan_nom").val();
 		var couleur = $("#tab_new_item_nuage_couleur").val();
 		
-		
-		var plan = new Plan(nom);
-		plan.couleur(couleur);
-		
 		var centre = new THREE.Vector3(0,0,0); // Centre du plan (qui sera un éventuel barycentre de nuage de points)
-		var nbNuages = 0;
 		
-		// Ajout des contraintes
-		for(var i=0; i<$("#tab_new_item_liste_contraintes_plan").children().length;i++)
+		if(methode == "equation")
 		{
-			htmlContrainte = $("#tab_new_item_liste_contraintes_plan").children()[i];
-			typeContrainte = $(htmlContrainte).find(".type-contrainte").val();
-			if(typeContrainte=="RMS")
-			{
-				var nNuage = Number($(htmlContrainte).find(".choix_contrainte_nuage select").val()); // A quel nuage doit-on s'attacher ?
-				var nuage = getItemFromId(nNuage)	// On recupere le nuage
-				centre.add(nuage.getBarycentre())
-				nbNuages+=1 // Pour faire la moyenne
-				var contrainte = new ContrainteRMSPlan(nuage) // On créer la contrainte
-				plan.liste_contraintes.push(contrainte)
-			}
-			else if(typeContrainte == "exterieurPlus")
-			{
-				var nNuage = Number($(htmlContrainte).find(".choix_contrainte_nuage select").val()); // A quel nuage doit-on s'attacher ?
-				var nuage = getItemFromId(nNuage)	// On recupere le nuage
-				centre.add(nuage.getBarycentre())
-				nbNuages+=1 // Pour faire la moyenne
-				var contrainte = new ContraintePlanExterieurPositif(nuage) // On créer la contrainte
-				plan.liste_contraintes.push(contrainte)
-			}
-			else if(typeContrainte == "exterieurMoins")
-			{
-				var nNuage = Number($(htmlContrainte).find(".choix_contrainte_nuage select").val()); // A quel nuage doit-on s'attacher ?
-				var nuage = getItemFromId(nNuage)	// On recupere le nuage
-				centre.add(nuage.getBarycentre())
-				nbNuages+=1 // Pour faire la moyenne
-				var contrainte = new ContraintePlanExterieurNegatif(nuage) // On créer la contrainte
-				plan.liste_contraintes.push(contrainte)
-			}
+			var A = Number($("#tab_new_item_plan_A").val());
+			var B = Number($("#tab_new_item_plan_B").val());
+			var C = Number($("#tab_new_item_plan_C").val());
+			var D = Number($("#tab_new_item_plan_D").val());
+			var plan = new Plan(nom,[ A , C , -B , D ])
 		}
-		
-		
-		if(nbNuages)
-			centre.divideScalar(nbNuages)
-
+		else if(methode == "contraintes")
+		{
+			var plan = new Plan(nom);
+			
+			var nbNuages = 0; // Nombre de points (pour le barycentre)
+			
+			// Ajout des contraintes
+			for(var i=0; i<$("#tab_new_item_liste_contraintes_plan").children().length;i++)
+			{
+				htmlContrainte = $("#tab_new_item_liste_contraintes_plan").children()[i];
+				typeContrainte = $(htmlContrainte).find(".type-contrainte").val();
+				if(typeContrainte=="RMS")
+				{
+					var nNuage = Number($(htmlContrainte).find(".choix_contrainte_nuage select").val()); // A quel nuage doit-on s'attacher ?
+					var nuage = getItemFromId(nNuage)	// On recupere le nuage
+					centre.add(nuage.getBarycentre())
+					nbNuages+=1 // Pour faire la moyenne
+					var contrainte = new ContrainteRMSPlan(nuage) // On créer la contrainte
+					plan.liste_contraintes.push(contrainte)
+				}
+				else if(typeContrainte == "exterieurPlus")
+				{
+					var nNuage = Number($(htmlContrainte).find(".choix_contrainte_nuage select").val()); // A quel nuage doit-on s'attacher ?
+					var nuage = getItemFromId(nNuage)	// On recupere le nuage
+					centre.add(nuage.getBarycentre())
+					nbNuages+=1 // Pour faire la moyenne
+					var contrainte = new ContraintePlanExterieurPositif(nuage) // On créer la contrainte
+					plan.liste_contraintes.push(contrainte)
+				}
+				else if(typeContrainte == "exterieurMoins")
+				{
+					var nNuage = Number($(htmlContrainte).find(".choix_contrainte_nuage select").val()); // A quel nuage doit-on s'attacher ?
+					var nuage = getItemFromId(nNuage)	// On recupere le nuage
+					centre.add(nuage.getBarycentre())
+					nbNuages+=1 // Pour faire la moyenne
+					var contrainte = new ContraintePlanExterieurNegatif(nuage) // On créer la contrainte
+					plan.liste_contraintes.push(contrainte)
+				}
+			}
+			
+			if(nbNuages)
+				centre.divideScalar(nbNuages)
+			plan.optimisePlan(); // si ce n'est pas des contraintes, il ne se passera rien
+			
+		}
+		plan.couleur(couleur);
 		plan.centre(centre);
-		plan.optimisePlan();
+		
 		LISTE_ITEMS.push(plan);
 		$("#arbre").append(plan.getHTML())
 		return plan;

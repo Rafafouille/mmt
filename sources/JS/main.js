@@ -70,6 +70,11 @@ var light2 = new THREE.DirectionalLight(0xAAAAAA, 1);
 	light2.position.set(-30, 20, -10).normalize();
 	ENVIRONNEMENT.add(light2);
 
+
+// **********************************************
+// Ajout premier nuage de points
+ajouteNuage("Nuage 1")
+
 // MODELES *************************************
 
 	//MATERIAUX communs
@@ -118,9 +123,6 @@ var light2 = new THREE.DirectionalLight(0xAAAAAA, 1);
 	creeControllers()
 	
 	
-// **********************************************
-// Ajout premier nuage de points
-ajouteNuage("Nuage 1")
 
 
 
