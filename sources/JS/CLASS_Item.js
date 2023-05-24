@@ -36,6 +36,7 @@ class Item
 	 	if (n_ != undefined)
 	 	{
 	 		this._nom = n_
+	 		$("#item-"+String(this._id)+" .titre-item").text(n_)
 	 	}
 	 	return this._nom
 	 }
