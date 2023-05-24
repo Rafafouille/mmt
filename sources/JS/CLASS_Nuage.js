@@ -1,15 +1,15 @@
 class Nuage extends Item
 {
 	/* Constructeur */
-	constructor(nom_,_couleur_ )
+	constructor(nom_,_couleur_)
 	{
-		super(nom_,_couleur_,"nuage");
+		super(nom_,_couleur_,"nuage",);
 		
 		this._couleur = _couleur_ ;
 		
 		// Ajout du nuage de point(graphique) sous forme de groupe sur la scene
-		this.groupeMarkers = new THREE.Group();
-		MARKERS.add(this.groupeMarkers);
+		this.GROUPE = new THREE.Group(); // Goupe (ThreeJS) du nuage de point
+		MARKERS.add(this.GROUPE);
 		
 		
 	
@@ -21,9 +21,9 @@ class Nuage extends Item
 	 **************************** */
 			
 	 _type = "nuage"
-	 groupeMarkers = null;
 	 _rayon_marker = RAYON_MARKER;
 	 _couleur = 0xff0000;
+
 	 
 	/* ****************************
 	 GETTER / SETTER
@@ -52,14 +52,14 @@ class Nuage extends Item
 	 // nombre de mesures déjà faite dans ce nuage
 	 nbMesures()
 	 {
-	 	return this.groupeMarkers.children.length
+	 	return this.GROUPE.children.length
 	 }
 	 
 	 
 	 // Renvoie le marker (objet géométrique) n°i
 	 getMarker(_i_)
 	 {
-	 	return this.groupeMarkers.children[_i_];
+	 	return this.GROUPE.children[_i_];
 	 }
 	 
 	 // Renvoie les coordonnées n°i sous la forme d'un vecteur3
@@ -79,12 +79,15 @@ class Nuage extends Item
 	 
 	 
 	/** Renvoie le contenu HTML (en dessous du titre) pour le menu */
-	contenuHTML()
+	menuItemHTML()
+	{
+		return "";
+	}
+	
+	/** Renvoie le contenu HTML (en dessous du titre) pour les donnees (coordonnées points) */
+	donneesItemHTML()
 	{
 		var retour = `
-			<div class="menu_item">
-				<img class = "bouton_item" src="sources/images/supprime.svg" alt="[X]" title="Supprimer le nuage de point" onclick="ouvreBoiteDeleteItem(`+String(this.id())+`)"/>
-			</div>
 			<div class="nuage-valeurs">
 				<table style="margin:auto;">
 					<tr>
@@ -96,10 +99,11 @@ class Nuage extends Item
 						<th></th>
 					</tr>
 				</table>
-			</div>
-		`;
+			</div>`;
 		return retour;
 	}
+	
+	
 	
 	
 	/** Ajoute une mesure : met dans la this.liste_mesures, crée le marker, et ajoute la mesure dans l'arbre
@@ -137,7 +141,7 @@ class Nuage extends Item
 		// On ajoute une référence vers cet objet
 		sphere.nuage = this;
 		sphere.position.copy(_coord_);
-		this.groupeMarkers.add(sphere)	
+		this.GROUPE.add(sphere)	
 		return sphere;
 	}
 	
@@ -245,7 +249,7 @@ class Nuage extends Item
 	/* Fonction (écrase la précédente) qui fait le ménage dans les éléments THREEJS au moment de la suppression */
 	supprimeElementsGeometriques()
 	{
-		this.groupeMarkers.removeFromParent();
+		this.GROUPE.removeFromParent();
 
 	}
 	

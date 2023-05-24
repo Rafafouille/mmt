@@ -13,8 +13,8 @@ class Plan extends Item
 		this.updateBase();
 		
 		// Ajout du nuage de point(graphique) sous forme de groupe sur la scene
-		this.groupePlan = new THREE.Group();
-		ENVIRONNEMENT.add(this.groupePlan);
+		this.GROUPE = new THREE.Group();
+		ENVIRONNEMENT.add(this.GROUPE);
 		
 		this.redessine()
 	}
@@ -26,7 +26,7 @@ class Plan extends Item
 	 
 	 _type = "plan"
 	 _couleur = ""
-	 groupePlan = null;
+	 GROUPE = null;
 	 _parametres = null;	// [a,b,c,d] dans l'équation ax+by+cz+d=0
 	 _marges = 0.1	// Marge autour de la pièce
 	 _centre = null;	//Point dont la projection sur le plan sera le centre du plan
@@ -153,23 +153,25 @@ class Plan extends Item
 	 AUTRES MEMBRES
 	 **************************** */
 	
-	 
-	 
-	/** Renvoie le contenu HTML (en dessous du titre) pour le menu */
-	contenuHTML()
+
+	
+		/** Renvoie le contenu HTML (en dessous du titre) pour le menu */
+	menuItemHTML()
+	{
+		return `
+				<div class="bouton_item bouton_calculette" title="Mesures sur le plan" onclick="ouvreBoiteMesurePlan(`+String(this.id())+`)"></div>`;
+	}
+	
+	/** Renvoie le contenu HTML (en dessous du titre) pour les donnees (coordonnées points) */
+	donneesItemHTML()
 	{
 		var retour = `
-			<div class="menu_item">
-				<img class = "bouton_item" src="sources/images/supprime.svg" alt="[X]" title="Supprimer le plan" onclick="ouvreBoiteDeleteItem(`+String(this.id())+`)"/>
-				<img class = "bouton_item" src="sources/images/calculette.svg" alt="[%]" title="Mesures sur le plan" onclick="ouvreBoiteMesurePlan(`+String(this.id())+`)"/>
-			</div>
-			<div class="info_plan">
-				<span style="font-size:small;">
-				`+this.getEquation()+`</span>
-			</div>
-		`;
+			<span style="font-size:small;">
+				`+this.getEquation()+`</span>`;
 		return retour;
 	}
+	
+	
 	
 	// Renvoie une forme littérale mise en forme de l'équation
 	// renvoie un STR
@@ -314,11 +316,11 @@ class Plan extends Item
 	 redessine()
 	 {
 	 	// On retire l'éventuel plan (et autre) qu'il y a dans le groupe
- 		this.groupePlan.clear();
+ 		this.GROUPE.clear();
 			 	
 	 	var geometry = new THREE.PlaneGeometry( 1, 1 );
 		this.PLAN = new THREE.Mesh( geometry, MATERIAU_PLAN );
-		this.groupePlan.add(this.PLAN);
+		this.GROUPE.add(this.PLAN);
 		
 		
 		
@@ -412,7 +414,7 @@ class Plan extends Item
 	/* Fonction (écrase la précédente) qui fait le ménage dans les éléments THREEJS au moment de la suppression */
 	supprimeElementsGeometriques()
 	{
-		this.groupePlan.removeFromParent();
+		this.GROUPE.removeFromParent();
 
 	}
 	

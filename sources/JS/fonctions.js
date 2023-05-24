@@ -875,3 +875,14 @@ function envoieDonneesVersServeur_callback(data)
 		$("#boite_valider_enregistrer_depuis_Occulus").dialog("open");
 	}
 }
+
+// **********************************************
+function afficheCache(_id_)
+{
+	var item = getItemFromId(_id_);
+	item.afficheCacheGROUPE();
+}
+
+
+
+

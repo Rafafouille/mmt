@@ -129,6 +129,7 @@ ARBRE
 	box-shadow: 2px 2px 2px #AAAAAA;
 }
 
+
 #arbre .item .titre-item
 {
 	background-color:black;
@@ -139,17 +140,54 @@ ARBRE
 }
 
 
+
 #arbre .item .contenu-item
 {
 	display:none;
 }
 
 
-#arbre .item .bouton_item
+/* MENU ITEM */
+
+
+
+#arbre .bouton_item
 {
 	height:30px;
+	width:30px;
 	cursor:pointer;
+	display:inline-block;
+	background-size:30px 30px;
 }
+
+
+#arbre .bouton_visible.visible
+{
+	background-image:url("../images/visible.svg");
+}
+#arbre .bouton_visible.visible:hover
+{
+	background-image:url("../images/invisible.svg");
+}
+#arbre .bouton_visible.invisible
+{
+	background-image:url("../images/invisible.svg");
+}
+#arbre .bouton_visible.invisible:hover
+{
+	background-image:url("../images/visible.svg");
+}
+
+#arbre .bouton_supprimer
+{
+	background-image:url("../images/supprime.svg");
+}
+
+#arbre .bouton_calculette
+{
+	background-image:url("../images/calculette.svg");
+}
+
 
 
 /* NUAGE DE POINTS */

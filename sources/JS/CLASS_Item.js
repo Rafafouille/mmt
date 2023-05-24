@@ -1,12 +1,13 @@
 class Item
 {
 	/* Constructeur */
-	constructor(nom_,couleur_,type_="item")
+	constructor(nom_,couleur_,type_="item", _groupe_=null)
 	{
 		this._nom = nom_;
 		this._couleur = couleur_;
 		this._id = NUMERO_ITEM++ + 1;
 		this._type = type_
+		this.GROUPE = null;
 	}
 	
 	
@@ -68,7 +69,7 @@ class Item
 	 AUTRES MEMBRES
 	 **************************** */
 	
-	/** Renvoie le bouton HTML pour le menu */
+	/** Renvoie le contenu HTML dans un Item */
 	getHTML()
 	{
 		var retour = `
@@ -77,16 +78,33 @@ class Item
 					`+this._nom+`
 				</div>
 				<div class="contenu-item">
-					`+this.contenuHTML()+`
+					<div class="menu_item">
+						<!-- BOUTONS COMMUNS -- -->`;
+			if(this.GROUPE)
+				{retour += `
+						<div class="bouton_item bouton_visible `+(this.GROUPE.visible?"visible":"invisible")+`" onclick="afficheCache(`+String(this._id)+`)"  title="Rendre Visible/Invisible"></div>`;}
+			retour += `
+						<div class="bouton_item bouton_supprimer" title="Supprimer l'item" onclick="ouvreBoiteDeleteItem(`+String(this.id())+`)"></div>
+						<!-- BOUTONS SPECIFIQUES A L'ITEM ---- -->`+this.menuItemHTML()+`
+					</div>
+					<div class="donnees_item">
+						`+this.donneesItemHTML()+`
+					</div>
 				</div>
 			</div>`;
 		return retour;
 	}
 	
 	/** Renvoie le contenu HTML (en dessous du titre) pour le menu */
-	contenuHTML()
+	menuItemHTML()
 	{
-		return "contenu de l'item";
+		return "";
+	}
+	
+	/** Renvoie le contenu HTML (en dessous du titre) pour les donnees (coordonnées points) */
+	donneesItemHTML()
+	{
+		return "Données l'item";
 	}
 	
 	
@@ -136,5 +154,27 @@ class Item
 		};
 		return tab
 	}
+	
+	// Si GROUPE n'est pas null, il affiche ou cache l'élement graphique
+	afficheCacheGROUPE()
+	{
+		if(this.GROUPE)
+		{
+			if(this.GROUPE.visible)
+			{
+				this.GROUPE.visible = false;
+				$("#item-"+String(this.id())+" .bouton_visible").removeClass("visible")
+				$("#item-"+String(this.id())+" .bouton_visible").addClass("invisible")
+			}
+			else
+			{
+				this.GROUPE.visible = true;
+				$("#item-"+String(this.id())+" .bouton_visible").removeClass("invisible")
+				$("#item-"+String(this.id())+" .bouton_visible").addClass("visible")
+			}
+		}
+	}
+	
+	
 }
 
