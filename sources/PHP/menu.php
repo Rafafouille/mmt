@@ -59,4 +59,7 @@
 			echo '<div class="bouton" onclick="envoieDonneesVersServeur()">données --> Serveur</div>';
 		}
 		?>
+		
+		<a href="https://contact.allais.eu/?site=MMT" title="Contact" style="display:inline-block;margin-top:20px;"><img src="./sources/images/icone_mail.png" alt=Contact/></a>
+		
 	</div>

@@ -1,51 +1,53 @@
 <?php
 
-$PIECE = isset($_GET['piece']) ? $_GET['piece'] : "T";	# Pièce à chargé (passée en GET, facultatif)
+$PIECE = isset($_GET['piece']) ? $_GET['piece'] : "RI40";	# Pièce à chargé (passée en GET, facultatif)
 
 ?>
 
 <!DOCTYPE html>
 <html>
-<head>
+	<head>
+
+		<title>MMT Virtuelle - <?php echo $PIECE;?></title>
+		<meta name = "description" content = "Machine à mesurer tridimensionnelle (MMT) virtuelle pour s'entraîner en métrologie, notamment en CPGE PTSI / PT. Elle permet de générer des nuages de points à partir de pièce exagérément déformées. Elle peut être utilisée avec un casque de VR.">
+
+		<!-- JAVASCRIPT ------------------------- -->
+		<!--<script src="./sources/JS/bibliotheques/threejs/three.min.js"></script> -->
+		<!--<script type="module" src="./sources/JS/bibliotheques/node_modules/three/build/three.js"></script>-->
+
+		<!--<script src="./three.js-master/three.js"></script>-->
+		<!-- <script src="https://stemkoski.github.io/Three.js/js/Detector.js"></script>-->
+		<!--<script src="sources/JS/bibliotheques/node_modules/three/examples/jsm/controls/OrbitControls.js"></script>-->
+		<!--<script src="./sources/JS/bibliotheques/threejs/ConvexGeometry.js"></script>-->
+		<!--<script src="./sources/JS/bibliotheques/ThreeCSG/THREE.CSG.js"></script>-->
+		<!--<script src="./sources/JS/bibliotheques/node_modules/three/examples/jsm/loaders/MTLLoader.js"></script>-->
+		<!--<script src="./sources/JS/bibliotheques/node_modules/three/examples/jsm/loaders/OBJLoader.js"></script>-->
 
 
-<!-- JAVASCRIPT ------------------------- -->
-<!--<script src="./sources/JS/bibliotheques/threejs/three.min.js"></script> -->
-<!--<script type="module" src="./sources/JS/bibliotheques/node_modules/three/build/three.js"></script>-->
+		<script src="./sources/JS/bibliotheques/jquery/jquery.min.js"></script>
+		<script src="./sources/JS/bibliotheques/jquery/jquery-ui.js"></script>
+		<!--<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script> -->
 
-<!--<script src="./three.js-master/three.js"></script>-->
-<!-- <script src="https://stemkoski.github.io/Three.js/js/Detector.js"></script>-->
-<!--<script src="sources/JS/bibliotheques/node_modules/three/examples/jsm/controls/OrbitControls.js"></script>-->
-<!--<script src="./sources/JS/bibliotheques/threejs/ConvexGeometry.js"></script>-->
-<!--<script src="./sources/JS/bibliotheques/ThreeCSG/THREE.CSG.js"></script>-->
-<!--<script src="./sources/JS/bibliotheques/node_modules/three/examples/jsm/loaders/MTLLoader.js"></script>-->
-<!--<script src="./sources/JS/bibliotheques/node_modules/three/examples/jsm/loaders/OBJLoader.js"></script>-->
-
-
-<script src="./sources/JS/bibliotheques/jquery/jquery.min.js"></script>
-<script src="./sources/JS/bibliotheques/jquery/jquery-ui.js"></script>
-<!--<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script> -->
-
-<script src="./sources/JS/fonctions.js"></script>
-<script src="./sources/JS/genetique.js"></script>
-<script src="./sources/JS/CLASS_Item.js"></script>
-<script src="./sources/JS/CLASS_Nuage.js"></script>
-<script src="./sources/JS/CLASS_Plan.js"></script>
-<script src="./sources/JS/CLASS_Cylindre.js"></script>
-<script src="./sources/JS/CLASS_Contrainte.js"></script>
-<script src="./sources/JS/init.js"></script>
+		<script src="./sources/JS/fonctions.js"></script>
+		<script src="./sources/JS/genetique.js"></script>
+		<script src="./sources/JS/CLASS_Item.js"></script>
+		<script src="./sources/JS/CLASS_Nuage.js"></script>
+		<script src="./sources/JS/CLASS_Plan.js"></script>
+		<script src="./sources/JS/CLASS_Cylindre.js"></script>
+		<script src="./sources/JS/CLASS_Contrainte.js"></script>
+		<script src="./sources/JS/init.js"></script>
 
 
-<!-- CSS ------------------------------- -->
-<!-- FONT -->
-<link href="https://fonts.cdnfonts.com/css/seven-segment" rel="stylesheet">
-<!--<link rel="stylesheet" type="text/css" href="./sources/style/checkbox.css">-->
-<!--<link rel="stylesheet" type="text/css" href="./sources/style/style_tableau_de_bord.css">-->
-<link rel="stylesheet" type="text/css" href="./sources/JS/bibliotheques/jquery/jquery-ui.css">
-<link rel="stylesheet" type="text/css" href="sources/style/style.css">
+		<!-- CSS ------------------------------- -->
+		<!-- FONT -->
+		<link href="https://fonts.cdnfonts.com/css/seven-segment" rel="stylesheet">
+		<!--<link rel="stylesheet" type="text/css" href="./sources/style/checkbox.css">-->
+		<!--<link rel="stylesheet" type="text/css" href="./sources/style/style_tableau_de_bord.css">-->
+		<link rel="stylesheet" type="text/css" href="./sources/JS/bibliotheques/jquery/jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href="sources/style/style.css">
 
 
-<script>
+		<script>
 // Déclaration des variables globales
 // ======================================
 // CONSTANTES GLOBALES
@@ -105,11 +107,11 @@ NUMERO_ITEM = 0;
 
 v1 = null
 v2 = null
-</script>
+		</script>
 
 
-<script src="./sources/JS/stats.js"></script>
-</head>
+		<script src="./sources/JS/stats.js"></script>
+	</head>
 
 
 <body>
@@ -137,9 +139,9 @@ function creePiece()
 <?php
 //if(isset($_GET['piece']))
 //{
-	$piece_a_ouvrir = isset($_GET['piece'])?$_GET['piece']:"RI40";
+	$piece_a_ouvrir = $PIECE;
 	$fichier = "./pieces/".$piece_a_ouvrir."/chargement.js";
-	//on vérifie que le dossier existe
+	//on vérifie que le dossier existeRI40
 	if(file_exists($fichier))
 	{
 		$code = fopen($fichier, 'r');
