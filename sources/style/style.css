@@ -212,7 +212,7 @@ NOUVEL ITEM
 =========================================== */
 
 
-#tab_new_item_bouton_add_contrainte_plan
+#tab_new_item_bouton_add_contrainte_plan, #tab_new_item_bouton_add_contrainte_cylindre
 {
 	cursor:pointer;
 	background-color:#CCCCCC;
@@ -224,13 +224,13 @@ NOUVEL ITEM
 }
 
 
-#tab_new_item_liste_contraintes_plan
+#tab_new_item_liste_contraintes_plan, #tab_new_item_liste_contraintes_cylindre
 {
 	min-height:100px;
 	border:solid 1px;
 }
 
-.tab_new_item_contrainte_plan
+.tab_new_item_contrainte_plan, .tab_new_item_contrainte_cylindre
 {
 	padding:5px;
 	background-color:#AAAAFF;

@@ -4,7 +4,8 @@
 		<!-- Liste des onglets "new items" -->
 		<ul>
 			<li><a href="#tab_new_item_nuage"><img width="50px;" src="./sources/images/bouton_nuage.svg" alt="***"/><br/>Nuage</a></li>
-			<li><a href="#tab_new_item_plan"><img width="50px;" src="./sources/images/bouton_plan.svg" alt="***"/><br/>Plan</a></li>
+			<li><a href="#tab_new_item_plan"><img width="50px;" src="./sources/images/bouton_plan.svg" alt="/_/"/><br/>Plan</a></li>
+			<li><a href="#tab_new_item_cylindre"><img width="50px;" src="./sources/images/bouton_cylindre.svg" alt="C_O"/><br/>Cylindre</a></li>
 		</ul>
 		
 		<!-- Onglets "nouveau nuage" -->
@@ -17,9 +18,29 @@
 				<label for="tab_new_item_nuage_couleur">Couleur : </label>
 				<input type="color" name="tab_new_item_nuage_couleur" id="tab_new_item_nuage_couleur" value="#FF0000"/>
 			</form>
+			<!-- Liste des manière de définir le nuage de point -->
+			<div id="tab_new_item_nuage_methode">
+				<ul>
+					<li><a href="#tab_new_item_nuage_vierge">Nuage vierge</a></li>
+					<li><a href="#tab_new_item_nuage_assemblage">Assemblage</a></li>
+				</ul>
+				<div id="tab_new_item_nuage_vierge">
+					(Rien à faire)
+				</div>
+				<div id="tab_new_item_nuage_assemblage">
+					<form>
+						<label for="tab_new_item_nuage_assemblage_nuage1">Nuage 1 : </label>
+							<select id="tab_new_item_nuage_assemblage_nuage1">
+							</select>
+						<label for="tab_new_item_nuage_assemblage_nuage2">Nuage 2 : </label>
+							<select id="tab_new_item_nuage_assemblage_nuage2">
+							</select>
+					</form>
+				</div>
+			</div>
 		</div>
 		
-		<!-- Onglets "nouveau plan" -->
+		<!-- Onglets "nouveau plan" ----------------------------------- -->
 		<div id="tab_new_item_plan">
 			<p>Créer un nouveau plan à partir d'une équation ou d'autres éléments.</p>
 			<form>
@@ -34,7 +55,7 @@
 			<div id="tab_new_item_plan_methode">
 				<ul>
 					<li><a href="#tab_new_item_plan_equation">Équation</a></li>
-					<li><a href="#tab_new_item_contraintes">Contraintes de position</a></li>
+					<li><a href="#tab_new_item_plan_contraintes">Contraintes de position</a></li>
 				</ul>
 				<!-- Plan par équation -->
 				<div id="tab_new_item_plan_equation">
@@ -51,12 +72,61 @@
 					</form>
 				</div>
 				<!-- Plan par contraintes -->
-				<div id="tab_new_item_contraintes">
+				<div id="tab_new_item_plan_contraintes">
 					<div id="tab_new_item_bouton_add_contrainte_plan" onclick="tab_new_item_ajouteContrainte_plan()">Ajouter une contrainte à respecter</div>
 					<div id="tab_new_item_liste_contraintes_plan"></div>
 				</div>
 			</div>
 			
+		</div>
+		
+		
+		
+		<!-- Onglets "nouveau nuage" ------------------------------------ -->
+		<div id="tab_new_item_cylindre">
+			<p>Créer un nouveau cylindre.</p>
+			<form>
+				<label for="tab_new_item_cylindre_nom">Nom : </label>
+				<input type="text" name="tab_new_item_cylindre_nom" id="tab_new_item_cylindre_nom"/>
+				<br/>
+				<label for="tab_new_item_cylindre_couleur">Couleur : </label>
+				<input type="color" name="tab_new_item_cylindre_couleur" id="tab_new_item_cylindre_couleur" value="#00FF00"/>
+			</form>
+			
+			
+			<!-- Liste des manière de définir le cylindre -->
+			<div id="tab_new_item_cylindre_methode">
+				<ul>
+					<li><a href="#tab_new_item_cylindre_equation">Coordonnées</a></li>
+					<li><a href="#tab_new_item_cylindre_contraintes">Contraintes de position</a></li>
+				</ul>
+				<div id="tab_new_item_cylindre_equation">
+					<form>
+						<label for="tab_new_item_cylindre_Px">Point central du cylindre :</label> ( 
+						<input type="number" style="width: 80px;text-align:center;" id="tab_new_item_cylindre_Px" placeholder="x" name="tab_new_item_cylindre_Px" value="0"/>
+						;
+						<input type="number" style="width: 80px;text-align:center;" id="tab_new_item_cylindre_Py" placeholder="y" name="tab_new_item_cylindre_Py" value="0"/>
+						;
+						<input type="number" style="width: 80px;text-align:center;" id="tab_new_item_cylindre_Pz" placeholder="z" name="tab_new_item_cylindre_Pz" value="0"/>
+						)
+						<br/><label for="tab_new_item_cylindre_Vx">Vecteur directeur :</label> ( 
+						<input type="number" style="width: 80px;text-align:center;" id="tab_new_item_cylindre_Vx" placeholder="V.x" name="tab_new_item_cylindre_Vx" value="1"/>
+						; 
+						<input type="number" style="width: 80px;text-align:center;" id="tab_new_item_cylindre_Vy" placeholder="V.y" name="tab_new_item_cylindre_Vy" value="0"/>
+						; 
+						<input type="number" style="width: 80px;text-align:center;" id="tab_new_item_cylindre_Vz" placeholder="V.z" name="tab_new_item_cylindre_Vz" value="0"/>
+						)
+						<br/>
+						<label for="tab_new_item_cylindre_R">Rayon : </label> 
+						<input type="number" style="width: 80px;text-align:center;" id="tab_new_item_cylindre_R" placeholder="R" name="tab_new_item_cylindre_R" value="0.3"/>
+					</form>
+				</div>
+				<!-- Cylindre par contraintes -->
+				<div id="tab_new_item_cylindre_contraintes">
+					<div id="tab_new_item_bouton_add_contrainte_cylindre" onclick="tab_new_item_ajouteContrainte_cylindre()">Ajouter une contrainte à respecter</div>
+					<div id="tab_new_item_liste_contraintes_cylindre"></div>
+				</div>
+			</div>
 		</div>
 	</div>
 	
@@ -74,7 +144,9 @@
 				
 				
 	$("#tab_new_item").tabs();
-	$("#tab_new_item_plan_methode").tabs();
+	$("#tab_new_item_nuage_methode").tabs();
+	$("#tab_new_item_plan_methode").tabs({ active: 1 });
+	$("#tab_new_item_cylindre_methode").tabs({ active: 1 });
 </script>
 
 

@@ -118,7 +118,9 @@ ajouteNuage("Nuage 1")
 // VR
 	// Voir : https://ada.is/blog/2020/05/18/using-vr-controllers-and-locomotion-in-threejs/
 	// Ajout du bouton VR
-	$("#vrbouton").html( VRButton.createButton( RENDERER ) );
+	$("#conteneur_vrbouton").html( VRButton.createButton( RENDERER ) );
+	$("#VRButton").css("position","static");//Replace le bouton à une meilleure place
+	$("#VRButton").css("background-color","black");//Replace le bouton à une meilleure place
 	// Crée les controleurs
 	creeControllers()
 	

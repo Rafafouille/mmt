@@ -38,7 +38,7 @@
 		<div class="bouton" onclick="PIECE.visible=!PIECE.visible">Affiche/Cache pièce</div>
 		<div class="bouton" onclick="afficheCacheMachine()">Affiche/Cache machine</div>
 		<div class="bouton" onclick="REPERE_PALPEUR.visible=!REPERE_PALPEUR.visible">Affiche/Cache repere</div>
-		<div id="vrbouton">[Bouton VR]</div>
+		<div id="conteneur_vrbouton">[Bouton VR]</div>
 		
 		<div class="bouton" onclick="ouvreBoiteAjouterItem()">+ Ajouter</div>
 		

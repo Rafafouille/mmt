@@ -155,7 +155,7 @@ class Plan extends Item
 	
 
 	
-		/** Renvoie le contenu HTML (en dessous du titre) pour le menu */
+	/** Renvoie le contenu HTML (en dessous du titre) pour le menu */
 	menuItemHTML()
 	{
 		return `
@@ -397,7 +397,7 @@ class Plan extends Item
 		erreur = erreur.bind(erreur)
 	
 		
-		var resultat =  GEN_algo_genetique([1,0,0,0], [1000,1000,1000,10], erreur	,10000,100,0.1) // (nominal, IT, fecart, nb population, nb itérations, %meilleurs)
+		var resultat =  GEN_algo_genetique([0,0,0,0], [1000,1000,1000,10], erreur	,10000,100,0.1) // (nominal, IT, fecart, nb population, nb itérations, %meilleurs)
 
 
 		

@@ -23,8 +23,8 @@ class Cylindre extends Item
 		this.updateBase();
 		
 		// Ajout du nuage de point(graphique) sous forme de groupe sur la scene
-		this.groupeCylindre = new THREE.Group();
-		ENVIRONNEMENT.add(this.groupeCylindre);
+		this.GROUPE = new THREE.Group();
+		ENVIRONNEMENT.add(this.GROUPE);
 		
 		this.redessine()
 	}
@@ -34,15 +34,14 @@ class Cylindre extends Item
 	 MEMBRES
 	 **************************** */
 	 
-	 _type = "plan"
-	 _couleur = ""
-	 groupeCylindre = null;
+	 _couleur = "";
+	 GROUPE = null;
 	 _parametres = null;	// [a,b,c,d] dans l'équation ax+by+cz+d=0
 
 	 _base = null; // Base attachée au plan [xP,yP,n] ou n est la normale
 
 	 _longueur = 1; // Longueur visible du cylindre (centrée sur le centre)
-	 _longueurAxe = 3 // Longueur de l'axe
+	 _longueurAxe = 3; // Longueur de l'axe
 	 _nbFaces = 50 ;
 	 CYLINDRE = null;	//Objet graphique
 	 AXE = null		// Objet graphique
@@ -94,8 +93,8 @@ class Cylindre extends Item
 		 if (p_ != undefined)
 		 {
 		 	this._parametres = p_
+		 	this.normalizevDirecteur();
 		 	this.updateBase();
-			this.updateCentre();
 	 		if(redessine)
 	 			this.redessine()
 		 }
@@ -175,15 +174,15 @@ class Cylindre extends Item
 	 		}
 	 		else if(_x_.constructor.name=="Vector3")
 	 		{
-	 			_x_.clone().normalize();
-	 			this._parametres[3] = _x_.x;
-	 			this._parametres[4] = _x_.y;
-	 			this._parametres[5] = _x_.z;
+	 			var V = _x_.clone().normalize();
+	 			this._parametres[3] = V.x;
+	 			this._parametres[4] = V.y;
+	 			this._parametres[5] = V.z;
 	 		}
 	 		if(redessine)
 	 			this.redessine()
 	 	}
-	 	return new THREE.Vector3(this._parametres[3],this._parametres[4],this._parametres[5]);
+	 	return new THREE.Vector3(this._parametres[3],this._parametres[4],this._parametres[5]).normalize();
 	 }
 	 
 	 // Rayon du cylindre
@@ -199,16 +198,44 @@ class Cylindre extends Item
 	 	return this._parametres[6]
 	}
 	
+	// Fonction qui met les paramètres assciées au vecteur directeur, tel que ca fasse un vecteur normé
+	normalizevDirecteur()
+	{
+	 	var norme = Math.sqrt(this._parametres[3]*this._parametres[3]+this._parametres[4]*this._parametres[4]+this._parametres[5]*this._parametres[5]);
+	 	this._parametres[3] /= norme;
+	 	this._parametres[4] /= norme;
+	 	this._parametres[5] /= norme;
+	
+	}
 	
 	
 	/* ****************************
 	 AUTRES MEMBRES
 	 **************************** */
 	
-	 
+	 /** Renvoie le contenu HTML (en dessous du titre) pour le menu */
+	menuItemHTML()
+	{
+		return ``;
+	}
+	
+	
+	/** Renvoie le contenu HTML (en dessous du titre) pour les donnees (coordonnées points) */
+	donneesItemHTML()
+	{
+		var retour = `
+			<div style="text-align:left;">
+			<strong>Centre :</strong> ( `+String(this.centre().x)+` ; `+String(-this.centre().z)+` ; `+String(this.centre().y)+` )
+			<br/>
+			<strong>Vec. Directeur :</strong> ( `+String(this.vDirecteur().x)+` ; `+String(-this.vDirecteur().z)+` ; `+String(this.vDirecteur().y)+` )
+			<br/>
+			<strong>R :</strong> `+String(this.rayon())+`
+			</div>`;
+		return retour;
+	}
 	 
 	/** Renvoie le contenu HTML (en dessous du titre) pour le menu */
-	contenuHTML()
+	/*contenuHTML()
 	{
 		var retour = `
 			<div class="menu_item">
@@ -220,7 +247,7 @@ class Cylindre extends Item
 			</div>
 		`;
 		return retour;
-	}
+	}*/
 	
 	 
 	 
@@ -270,7 +297,7 @@ class Cylindre extends Item
 	 	else
 	 		var Vint = new THREE.Vector3(0,1,0)
 	 		
-	 	console.log(Vint)
+	 
 	 	var e1 = (Vint.sub( this.vDirecteur().multiplyScalar(this.vDirecteur().dot(Vint)) )).normalize()
 	 	var e2 = e3.clone().cross(e1)
 	 	
@@ -287,7 +314,7 @@ class Cylindre extends Item
 	 	// Au début, je regardai ça (obsolete) Voir : https://dustinpfister.github.io/2018/04/14/threejs-geometry/
 	 	//https://threejs.org/manual/#en/custom-buffergeometry
 	 	// On retire l'éventuel cylindre (et autre) qu'il y a dans le groupe
- 		this.groupeCylindre.clear();
+ 		this.GROUPE.clear();
  		
  		
  		//Quelques constantes
@@ -326,12 +353,12 @@ class Cylindre extends Item
  			var P4 = PC2.clone().sub(ez.clone().multiplyScalar(this._longueur/2))
 
  			positions.push(P1.x,P1.y,P1.z)
- 			positions.push(P2.x,P2.y,P2.z)
  			positions.push(P3.x,P3.y,P3.z)
+ 			positions.push(P2.x,P2.y,P2.z)
  			
  			positions.push(P3.x,P3.y,P3.z)
- 			positions.push(P2.x,P2.y,P2.z)
  			positions.push(P4.x,P4.y,P4.z)
+ 			positions.push(P2.x,P2.y,P2.z)
  		}
  		//console.log(positions)
  		
@@ -346,12 +373,12 @@ class Cylindre extends Item
 			//var R2 = (ex.clone().multiplyScalar(Math.cos(theta-dtheta/2))).add(ey.clone().multiplyScalar(Math.sin(theta-dtheta/2))).normalize()
 			
  			normals.push(R1.x,R1.y,R1.z) // P1
- 			normals.push(R2.x,R2.y,R2.z) // P2
  			normals.push(R1.x,R1.y,R1.z) // P3
+ 			normals.push(R2.x,R2.y,R2.z) // P2
  			
  			normals.push(R1.x,R1.y,R1.z) // P3
- 			normals.push(R2.x,R2.y,R2.z) // P2
  			normals.push(R2.x,R2.y,R2.z) // P4
+ 			normals.push(R2.x,R2.y,R2.z) // P2
  		}
  		//console.log(normals)
  		
@@ -360,12 +387,12 @@ class Cylindre extends Item
  		for(var i=0;i< this._nbFaces; i++)
  		{
  			uvs.push(0,0)
- 			uvs.push(1,0)
  			uvs.push(0,1)
+ 			uvs.push(1,0)
  			
  			uvs.push(0,1)
- 			uvs.push(1,0)
  			uvs.push(1,1)
+ 			uvs.push(1,0)
  		}
  		//console.log(uvs)
  		
@@ -388,7 +415,7 @@ class Cylindre extends Item
  		
 		
 		this.CYLINDRE = new THREE.Mesh(geometry,MATERIAU_PLAN);//new THREE.MeshNormalMaterial({side: THREE.DoubleSide}));
-		this.groupeCylindre.add(this.CYLINDRE)
+		this.GROUPE.add(this.CYLINDRE)
 		
 		
 		var material_Ligne = new THREE.LineBasicMaterial({color: this.couleur()});
@@ -400,7 +427,7 @@ class Cylindre extends Item
 		var geometry_Ligne = new THREE.BufferGeometry().setFromPoints( points );
 
 		this.AXE = new THREE.Line( geometry_Ligne, material_Ligne );
-		this.groupeCylindre.add( this.AXE );
+		this.GROUPE.add( this.AXE );
  	}
  		
  		
@@ -412,56 +439,35 @@ class Cylindre extends Item
 	// MEMBRES relatifs à l'optimisation
 	
 	
-	// ******************************************************************************************
-	// Fonction qui fabrique la fonction qui calcule les distances au carré d'un plan d'equation ax+by+cz+d=0
-	// a un nuage de points
-	/*addContrainteRMS(_nuage_)
-	{
-		var f = function(_param_plan_)
-				{
-					var S=0;
-					for(var i=0;i<this.nuage.nbMesures();i++)//Pour chaque noeud
-					{
-						S+= getDistancePlanCarre(_param_plan_,this.nuage.getMesure(i))
-					}
-					return S
-				}
-		f.nuage = _nuage_ ;
-		f.type = "RMS"
-		f = f.bind(f)
-		this.liste_contraintes.push(f); // On l'ajoute à la liste des contraintes
-		return f;
-	}*/
 	
 	
 	// ********************************************************************************
 	// Fonction qui recherche la meilleure équation ax+by+cz+d=0,
 	// En accord avec les contraintes renseignées dans this.liste_contraintes
-	optimisePlan()
+	optimiseCylindre()
 	{
 		// On crée la fonction globale qui somme toutes les fonctions erreurs
 		// Il s'agit de faire une fonction autonome, qui embarque toutes les infos utiles à son calcul
-		function erreur(_param_plan_) // _param_plan_ sera un ensemble de parametres [a,b,c,d] que l'algo va tester
+		function erreur(_param_cyl_) // _param_cyl_ sera un ensemble de parametres [xp, yp, zp, vx, vy, vz, r] que l'algo va tester
 		{
 			var e = 0
-			for(var i=0;i<this.listeContraintes.length;i++)	// Pour chaque contrainte
+			for(var i=0; i<this.listeContraintes.length; i++)	// Pour chaque contrainte
 			{
 				var contrainte = this.listeContraintes[i];
-				e += contrainte.exec(_param_plan_);
+				e += contrainte.exec(_param_cyl_);
 			}
 			return e
 		}
 		erreur.listeContraintes = this.liste_contraintes;
 		erreur = erreur.bind(erreur)
 	
-		
-		var resultat =  GEN_algo_genetique([1,0,0,0], [1000,1000,1000,10], erreur	,10000,100,0.1) // (nominal, IT, fecart, nb population, nb itérations, %meilleurs)
+		var resultat =  GEN_algo_genetique([0.5,0.,-0.2,0,0,0,0.01], [0.5,0.5,0.5,1,1,1,0.1], erreur ,10000,30,0.2) // (nominal, IT, fecart, nb population, nb itérations, %meilleurs)
 
-
-		
-
-
+		console.log(resultat)
 		this.parametres(resultat[0]);
+		
+		console.log(this.vDirecteur());
+		
 		return resultat[0];
 		
 	}
@@ -472,8 +478,23 @@ class Cylindre extends Item
 	/* Fonction (écrase la précédente) qui fait le ménage dans les éléments THREEJS au moment de la suppression */
 	supprimeElementsGeometriques()
 	{
-		this.groupePlan.removeFromParent();
+		this.GROUPE.removeFromParent();
 
+	}
+	
+	
+	
+	/* Fonction qui prépare les données pour les mettre sous forme de tableau 
+	(écrase la fonction abstraite) */
+	export()
+	{
+		var tab = {
+			type : "cyl",
+			nom : this.nom(),
+			donnees : {"xp":this._parametres[0],"yp":this._parametres[1],"zp":this._parametres[2],"vx":this._parametres[3],"vy":this._parametres[4],"vz":this._parametres[5],"r":this._parametres[6]}
+		};
+		
+		return tab
 	}
 	 
 }

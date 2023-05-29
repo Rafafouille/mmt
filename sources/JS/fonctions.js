@@ -458,13 +458,27 @@ function resizeFenetre()
 function ajouterItemFromDialog()
 {
 	// Choix du nouvel item   (type = "nuage" ou "plan", etc.)
-	var type=["nuage","plan"][$("#tab_new_item").tabs('option', 'active')];
+	var type=["nuage","plan","cylindre"][$("#tab_new_item").tabs('option', 'active')];
 
 	if(type == "nuage")
 	{
+		var methode = ["vierge","assemblage"][$("#tab_new_item_nuage_methode").tabs('option', 'active')];
 		var nom = $("#tab_new_item_nuage_nom").val();
 		var couleur = $("#tab_new_item_nuage_couleur").val();
-		return ajouteNuage(nom,couleur);
+		var nuage =  ajouteNuage(nom,couleur);
+		if(methode == "vierge")
+		{
+			
+		}
+		else if (methode == "assemblage")
+		{
+			var nuage1 = getItemFromId(Number($("#tab_new_item_nuage_assemblage_nuage1").val())) ; 
+			var nuage2 = getItemFromId(Number($("#tab_new_item_nuage_assemblage_nuage2").val())) ;
+			copyMesuresFromFusion
+			copyMesuresFromFusion(nuage1,nuage)
+			copyMesuresFromFusion(nuage2,nuage)
+		}
+		return nuage;
 	}
 	else if(type == "plan")
 	{
@@ -535,13 +549,70 @@ function ajouterItemFromDialog()
 		return plan;
 		
 	}
-	else
-		item = new Item("item", "#000000");
+	else if(type == "cylindre")
+	{
+		var methode = ["equation","contraintes"][$("#tab_new_item_cylindre_methode").tabs('option', 'active')];
+		var nom = $("#tab_new_item_cylindre_nom").val();
+		var couleur = $("#tab_new_item_cylindre_couleur").val();
 		
-	// Ajout à la liste des items
-	LISTE_ITEMS.push(item);
-	// Ajout dans le menu "arbre"
-	$("#arbre").append(item.getHTML())
+		var centre = new THREE.Vector3(0,0,0); // Centre du plan (qui sera un éventuel barycentre de nuage de points)
+		
+		
+		if(methode == "equation")
+		{
+			var centre = {"x": Number($("#tab_new_item_cylindre_Px").val()) , "y" : Number($("#tab_new_item_cylindre_Pz").val()) , "z" : -Number($("#tab_new_item_cylindre_Py").val()) };
+			var vDirecteur = {"x": Number($("#tab_new_item_cylindre_Vx").val()) , "y" : Number($("#tab_new_item_cylindre_Vz").val()) , "z" : -Number($("#tab_new_item_cylindre_Vy").val()) };
+			var R = Number($("#tab_new_item_cylindre_R").val())
+			
+			var cylindre = new Cylindre(nom,[ centre.x , centre.y , centre.z , vDirecteur.x , vDirecteur.y , vDirecteur.z ,  R])
+		}
+		else if(methode == "contraintes")
+		{
+			var cylindre = new Cylindre(nom);
+			var nbNuages = 0; // Nombre de points (pour le barycentre)
+			// Ajout des contraintes
+			for(var i=0; i<$("#tab_new_item_liste_contraintes_cylindre").children().length;i++)
+			{
+				htmlContrainte = $("#tab_new_item_liste_contraintes_cylindre").children()[i];
+				typeContrainte = $(htmlContrainte).find(".type-contrainte").val();
+				if(typeContrainte=="RMS")
+				{
+					var nNuage = Number($(htmlContrainte).find(".choix_contrainte_nuage select").val()); // A quel nuage doit-on s'attacher ?
+					var nuage = getItemFromId(nNuage)	// On recupere le nuage
+					centre.add(nuage.getBarycentre())
+					nbNuages+=1 // Pour faire la moyenne
+					var contrainte = new ContrainteRMSCylindre(nuage) // On créer la contrainte
+					cylindre.liste_contraintes.push(contrainte)
+				}
+				else if(typeContrainte == "inscrit")
+				{}
+				else if(typeContrainte == "circonscrit")
+				{}
+				
+			}
+			
+			
+			if(nbNuages)
+				centre.divideScalar(nbNuages)
+			cylindre.optimiseCylindre(); // si ce n'est pas des contraintes, il ne se passera rien
+		}
+		
+		
+		cylindre.couleur(couleur);
+		cylindre.centre(centre);
+		
+		LISTE_ITEMS.push(cylindre);
+		$("#arbre").append(cylindre.getHTML())
+		return cylindre;
+	}
+	else
+	{
+		item = new Item("item", "#000000");
+		// Ajout à la liste des items
+		LISTE_ITEMS.push(item);
+		// Ajout dans le menu "arbre"
+		$("#arbre").append(item.getHTML())
+	}
 }
 
 
@@ -680,6 +751,21 @@ function getDistancePlanCarre(_param_plan_,_P_)
 	return Math.pow(a*_P_.x+b*_P_.y+c*_P_.z+d,2)/(a*a+b*b+c*c)
 }
 
+// ********************************************************
+// Fonction qui calcule la distance au carré entre un cylindre de composante [Px, Py, Pz, Vx, Vy, Vz, R]
+// à un point P
+// _P_ = THREE.Vector3
+function getDistanceCylindreCarre(_param_cylindre_,_P_)
+{
+	 			
+	var C = new THREE.Vector3(_param_cylindre_[0], _param_cylindre_[1],_param_cylindre_[2]);
+	var vDir = new THREE.Vector3(_param_cylindre_[3], _param_cylindre_[4],_param_cylindre_[5]).normalize();
+	var R = _param_cylindre_[6];
+	
+	var CP = _P_.clone().sub(C)
+	// R = || vDir ^ CP ||
+	return Math.pow(vDir.cross(CP).length()-R , 2)
+}
 
 
 // *****************************************
@@ -688,11 +774,19 @@ function ouvreBoiteAjouterItem()
 {
 	$("#tab_new_item_nuage_nom").val("Nuage "+String(NUMERO_ITEM+1))
 	$("#tab_new_item_nuage_couleur").val(LISTE_COULEURS[ NUMERO_ITEM % LISTE_COULEURS.length ])
-	
+	$("#tab_new_item_nuage_assemblage_nuage1").empty();
+	$("#tab_new_item_nuage_assemblage_nuage1").html(getHTMLNuagesInSelect());
+	$("#tab_new_item_nuage_assemblage_nuage2").empty();
+	$("#tab_new_item_nuage_assemblage_nuage2").html(getHTMLNuagesInSelect());
+	$("#tab_new_item_nuage_assemblage_nuage2 option:nth-child(2)").prop('selected', true);
 	
 	$("#tab_new_item_plan_nom").val("Plan "+String(NUMERO_ITEM+1))
 	$('#boite_new_item').dialog('open')
 	$("#tab_new_item_liste_contraintes_plan").empty();
+	
+	$("#tab_new_item_cylindre_nom").val("Cylindre "+String(NUMERO_ITEM+1))
+	$("#tab_new_item_cylindre_couleur").val(LISTE_COULEURS[ NUMERO_ITEM % LISTE_COULEURS.length ])
+	$("#tab_new_item_liste_contraintes_cylindre").empty();
 }
 
 
@@ -724,24 +818,39 @@ function tab_new_item_ajouteContrainte_plan()
 			</select>
 			<div class="choix_contrainte_nuage">
 				Nuage :
-				<select>`
-	for(var i=0;i<LISTE_ITEMS.length;i++)
-	{
-		var item = LISTE_ITEMS[i];
-		if(item.type()=="nuage")
-		{
-			html+=`
-					<option value="`+String(item.id())+`">`+item.nom()+`</option>`;
-		}
-	}
-				
-	html += `
+				<select>
+					`+getHTMLNuagesInSelect()+`
 				</select>
 			</div>`;
 			
 	html += "</div>";
 	
 	$("#tab_new_item_liste_contraintes_plan").append(html)
+}
+
+
+// ********************************************
+// Fonction qui ajoute un div pour lister les contrainte à inffliger au futur cylindre dans la boite de dialog
+function tab_new_item_ajouteContrainte_cylindre()
+{
+	var html = `
+		<div class=\"tab_new_item_contrainte_cylindre\">
+			Contrainte : 
+			<select class="type-contrainte">
+				<option value="RMS">Cylindre des moindres carrés</option>
+				<option value="inscrit">Inscrit dans le nuage</option>
+				<option value="circonscrit">Circonscrit au nuage</option>
+			</select>
+			<div class="choix_contrainte_nuage">
+				Nuage :
+				<select>
+					`+getHTMLNuagesInSelect()+`
+				</select>
+			</div>`;
+			
+	html += "</div>";
+	
+	$("#tab_new_item_liste_contraintes_cylindre").append(html)
 }
 
 
@@ -884,5 +993,30 @@ function afficheCache(_id_)
 }
 
 
+// *********************************************
+// Fonction qui fait la liste des nuages pour mettre dans un select (form)
+function getHTMLNuagesInSelect()
+{
+	var html = "";
+	for(var i=0;i<LISTE_ITEMS.length;i++)
+	{
+		var item = LISTE_ITEMS[i];
+		if(item.type()=="nuage")
+		{
+			html+=`
+					<option value="`+String(item.id())+`">`+item.nom()+`</option>`;
+		}
+	}
+	return html;
+}
 
 
+// **************************************************************************
+// Fait une copie des mesures de l'un dans l'autre (utile pour les fusions)
+function copyMesuresFromFusion(n_source,n_contenant)
+{
+	for(var i=0; i< n_source.nbMesures(); i++)
+	{
+		n_contenant.ajouteMesure(n_source.getMesure(i))
+	}
+}
