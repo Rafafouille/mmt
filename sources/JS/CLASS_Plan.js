@@ -43,11 +43,13 @@ class Plan extends Item
 	 **************************** */
 	 
 	  // couleur
-	 couleur(c_)
+	 couleur(c_, redessine=true)
 	 {
 	 	if (c_ != undefined)
 	 	{
 	 		this._couleur = c_
+	 		if(redessine)
+	 			this.redessine()
 	 	}
 	 	return this._couleur
 	 }
@@ -319,7 +321,14 @@ class Plan extends Item
  		this.GROUPE.clear();
 			 	
 	 	var geometry = new THREE.PlaneGeometry( 1, 1 );
-		this.PLAN = new THREE.Mesh( geometry, MATERIAU_PLAN );
+	 	
+		var materiau =  new THREE.MeshLambertMaterial({
+							color: this.couleur(),
+							transparent :true,
+							opacity:0.5
+							})
+			materiau.side = THREE.DoubleSide;
+		this.PLAN = new THREE.Mesh( geometry, materiau );
 		this.GROUPE.add(this.PLAN);
 		
 		
@@ -397,7 +406,7 @@ class Plan extends Item
 		erreur = erreur.bind(erreur)
 	
 		
-		var resultat =  GEN_algo_genetique([0,0,0,0], [1000,1000,1000,10], erreur	,10000,100,0.1) // (nominal, IT, fecart, nb population, nb itérations, %meilleurs)
+		var resultat =  GEN_algo_genetique([0,0,0,0], [1000,1000,1000,10], erreur	,10000,50,0.1) // (nominal, IT, fecart, nb population, nb itérations, %meilleurs)
 
 
 		

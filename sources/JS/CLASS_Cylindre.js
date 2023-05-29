@@ -53,11 +53,13 @@ class Cylindre extends Item
 	 **************************** */
 	 
 	  // couleur
-	 couleur(c_)
+	 couleur(c_,redessine=true)
 	 {
 	 	if (c_ != undefined)
 	 	{
 	 		this._couleur = c_
+	 		if(redessine)
+	 			this.redessine()
 	 	}
 	 	return this._couleur
 	 }
@@ -404,8 +406,13 @@ class Cylindre extends Item
 		      new THREE.BufferAttribute(new Float32Array(uvs), uvNumComponents));
  		
  		
-		
-		this.CYLINDRE = new THREE.Mesh(geometry,MATERIAU_PLAN);//new THREE.MeshNormalMaterial({side: THREE.DoubleSide}));
+		var materiau =  new THREE.MeshLambertMaterial({
+							color: this.couleur(),
+							transparent :true,
+							opacity:0.5
+							})
+			materiau.side = THREE.DoubleSide;
+		this.CYLINDRE = new THREE.Mesh(geometry,materiau);//new THREE.MeshNormalMaterial({side: THREE.DoubleSide}));
 		this.GROUPE.add(this.CYLINDRE)
 		
 		
