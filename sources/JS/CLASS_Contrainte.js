@@ -93,7 +93,7 @@ class ContraintePlanExterieurPositif
 			
 			// coté positif ? ou négatif ?
 			if ((a*O.x + b*O.y + c*O.z + d) * (a*P.x + b*P.y + c*P.z + d) > 0) // Si on est du bon coté
-				S += 1000000000 //* getDistancePlanCarre(params_plan,this.nuage.getMesure(i));//Math.abs(a*P.x + b*P.y + c*P.z + d)/(Math.sqrt(a*a+b*b+c*c))
+				S += 1000000000 * getDistancePlanCarre(params_plan,this.nuage.getMesure(i));//Math.abs(a*P.x + b*P.y + c*P.z + d)/(Math.sqrt(a*a+b*b+c*c))
 		}
 		return S
 	}	 
@@ -158,7 +158,7 @@ class ContraintePlanExterieurNegatif
 			
 			// coté positif ? ou négatif ?
 			if ((a*O.x + b*O.y + c*O.z + d) * (a*P.x + b*P.y + c*P.z + d) < 0) // Si on est du bon coté
-				S += 100000000 //* getDistancePlanCarre(params_plan,this.nuage.getMesure(i));//Math.abs(a*P.x + b*P.y + c*P.z + d)/(Math.sqrt(a*a+b*b+c*c))
+				S += 100000000 * getDistancePlanCarre(params_plan,this.nuage.getMesure(i));//Math.abs(a*P.x + b*P.y + c*P.z + d)/(Math.sqrt(a*a+b*b+c*c))
 		}
 		return S
 	}	 
@@ -206,3 +206,90 @@ class ContrainteRMSCylindre
 	}	 
 }
 
+
+
+class ContrainteCylindreInscrit
+{
+	/* Constructeur */
+	constructor(_nuage_)
+	{
+		this.nuage = _nuage_;
+	}
+	
+	
+	/* ****************************
+	 MEMBRES
+	 **************************** */
+			
+	nuage = null;
+	 
+	/* ****************************
+	 GETTER / SETTER
+	 **************************** */
+	 
+	 
+	/* ****************************
+	 AUTRES MEMBRES
+	 **************************** */
+	 
+	 
+	/** Calcule la somme des erreurs au carré */
+	exec(params_cylindre)
+	{
+		var S=0;
+		for(var i=0;i<this.nuage.nbMesures();i++)//Pour chaque noeud du nuage
+		{
+			var CP = this.nuage.getMesure(i).clone().sub(new THREE.Vector3(params_cylindre[0],params_cylindre[1],params_cylindre[2]))
+			var vDir = (new THREE.Vector3(params_cylindre[3],params_cylindre[4],params_cylindre[5])).normalize();
+			if(vDir.cross(CP).length()<params_cylindre[6])
+				S+= 100000000*getDistanceCylindreCarre(params_cylindre,this.nuage.getMesure(i))	// On calcule la distance entre le point i et le plan
+		}
+		return S
+	}	 
+}
+
+
+
+
+
+
+
+class ContrainteCylindreCirconscrit
+{
+	/* Constructeur */
+	constructor(_nuage_)
+	{
+		this.nuage = _nuage_;
+	}
+	
+	
+	/* ****************************
+	 MEMBRES
+	 **************************** */
+			
+	nuage = null;
+	 
+	/* ****************************
+	 GETTER / SETTER
+	 **************************** */
+	 
+	 
+	/* ****************************
+	 AUTRES MEMBRES
+	 **************************** */
+	 
+	 
+	/** Calcule la somme des erreurs au carré */
+	exec(params_cylindre)
+	{
+		var S=0;
+		for(var i=0;i<this.nuage.nbMesures();i++)//Pour chaque noeud du nuage
+		{
+			var CP = this.nuage.getMesure(i).clone().sub(new THREE.Vector3(params_cylindre[0],params_cylindre[1],params_cylindre[2]))
+			var vDir = (new THREE.Vector3(params_cylindre[3],params_cylindre[4],params_cylindre[5])).normalize();
+			if(vDir.cross(CP).length()>params_cylindre[6])
+				S+= 100000000*getDistanceCylindreCarre(params_cylindre,this.nuage.getMesure(i))	// On calcule la distance entre le point i et le plan
+		}
+		return S
+	}	 
+}

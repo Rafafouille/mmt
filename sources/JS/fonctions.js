@@ -585,9 +585,23 @@ function ajouterItemFromDialog()
 					cylindre.liste_contraintes.push(contrainte)
 				}
 				else if(typeContrainte == "inscrit")
-				{}
+				{
+					var nNuage = Number($(htmlContrainte).find(".choix_contrainte_nuage select").val()); // A quel nuage doit-on s'attacher ?
+					var nuage = getItemFromId(nNuage)	// On recupere le nuage
+					centre.add(nuage.getBarycentre())
+					nbNuages+=1 // Pour faire la moyenne
+					var contrainte = new ContrainteCylindreInscrit(nuage) // On créer la contrainte
+					cylindre.liste_contraintes.push(contrainte)
+				}
 				else if(typeContrainte == "circonscrit")
-				{}
+				{
+					var nNuage = Number($(htmlContrainte).find(".choix_contrainte_nuage select").val()); // A quel nuage doit-on s'attacher ?
+					var nuage = getItemFromId(nNuage)	// On recupere le nuage
+					centre.add(nuage.getBarycentre())
+					nbNuages+=1 // Pour faire la moyenne
+					var contrainte = new ContrainteCylindreCirconscrit(nuage) // On créer la contrainte
+					cylindre.liste_contraintes.push(contrainte)
+				}
 				
 			}
 			
