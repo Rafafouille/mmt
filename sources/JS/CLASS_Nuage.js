@@ -65,7 +65,7 @@ class Nuage extends Item
 	 // Renvoie les coordonnées n°i sous la forme d'un vecteur3
 	 getMesure(_i_)
 	 {
-	 	return this.getMarker(_i_).position;
+	 	return this.getMarker(_i_).position.clone();
 	 }
 	 
 

@@ -40,7 +40,7 @@ class Cylindre extends Item
 
 	 _base = null; // Base attachée au plan [xP,yP,n] ou n est la normale
 
-	 _longueur = 1; // Longueur visible du cylindre (centrée sur le centre)
+	 _longueur = 0.5; // Longueur visible du cylindre (centrée sur le centre)
 	 _longueurAxe = 3; // Longueur de l'axe
 	 _nbFaces = 50 ;
 	 CYLINDRE = null;	//Objet graphique
@@ -124,17 +124,20 @@ class Cylindre extends Item
 	 }
 	 
 	 // Point qui sera le centre du cylindre visible
-	 // Si ce point n'est pas sur l'axe, c'est son projeté qui sera le centre
+	 // Si _proj_=true, Si ce point n'est pas sur l'axe, c'est son projeté qui sera le centre
 	 // Si x = undefined : getter
 	 // Si x = THREE.vector3() : setter
 	 // Si x, y z dont des flottant : setter
-	 centre(_x_,_y_,_z_,redessine=true)
+	 centre(_x_,_y_,_z_,_proj_=true,redessine=true)
 	 {
 	 	if(_x_ != undefined)
 	 	{
 	 		if(typeof(_x_)=="number" && typeof(_y_)=="number" && typeof(_z_)=="number")
 	 		{
-	 			var c = this.getProjectionSurAxe(new THREE.Vector3(_x_,_y_,_z_));
+	 			if(_proj_)
+		 			var c = this.getProjectionSurAxe(new THREE.Vector3(_x_,_y_,_z_));
+		 		else
+		 			var c = new THREE.Vector3(_x_,_y_,_z_);
 	 			this._parametres[0] = c.x;
 	 			this._parametres[1] = c.y;
 	 			this._parametres[2] = c.z;
@@ -142,7 +145,10 @@ class Cylindre extends Item
 	 		}
 	 		else if(_x_.constructor.name=="Vector3")
 	 		{
-	 			var c = this.getProjectionSurAxe(_x_);
+	 			if(_proj_)
+	 				var c = this.getProjectionSurAxe(_x_);
+	 			else
+	 				var c = _x_;
 	 			this._parametres[0] = c.x;
 	 			this._parametres[1] = c.y;
 	 			this._parametres[2] = c.z;
@@ -233,21 +239,6 @@ class Cylindre extends Item
 			</div>`;
 		return retour;
 	}
-	 
-	/** Renvoie le contenu HTML (en dessous du titre) pour le menu */
-	/*contenuHTML()
-	{
-		var retour = `
-			<div class="menu_item">
-				<img class = "bouton_item" src="sources/images/supprime.svg" alt="[X]" title="Supprimer le cylindre" onclick="ouvreBoiteDeleteItem(`+String(this.id())+`)"/>
-				<img class = "bouton_item" src="sources/images/calculette.svg" alt="[%]" title="Mesures sur le cylindre" onclick="ouvreBoiteMesurePlan(`+String(this.id())+`)"/>
-			</div>
-			<div class="info_cylindre">
-				<span style="font-size:small;"></span>
-			</div>
-		`;
-		return retour;
-	}*/
 	
 	 
 	 
@@ -466,13 +457,39 @@ class Cylindre extends Item
 		console.log(resultat)
 		this.parametres(resultat[0]);
 		
-		console.log(this.vDirecteur());
-		
 		return resultat[0];
 		
 	}
 	
 	
+	// *****************************************
+	/* Fonction qui cherche le meilleur centre (projeté sur l'axe) et longueur, par rapport aux nuages associés*/
+	optimiseGraphismes()
+	{		
+		// Borne graphique du cylindre
+		var s_min = 0;
+		var s_max = 0;
+		var vDir = this.vDirecteur().normalize();
+		for(var i=0; i<this.liste_contraintes.length;i++) // Pour chaque contrainte
+		{
+			var contrainte = this.liste_contraintes[i]
+			if(typeof(contrainte.nuage) != "undefined") // Si c'est lié à un nuage de point
+			{
+				for(var k=0; k<contrainte.nuage.nbMesures(); k++) // Pour chaque point
+				{
+					var s = vDir.dot(contrainte.nuage.getMesure(k).sub(this.centre()))
+					if(s<s_min)
+						s_min = s;
+					else if(s>s_max)
+						s_max = s;
+				}
+			}
+		}
+		var L=(s_max-s_min)+this.rayon()
+		this.longueur(L,false)
+		this.centre( this.centre().add(this.vDirecteur().multiplyScalar((s_max+s_min)/2)) )
+		
+	}
 	
 	// *******************************************
 	/* Fonction (écrase la précédente) qui fait le ménage dans les éléments THREEJS au moment de la suppression */

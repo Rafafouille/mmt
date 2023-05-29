@@ -290,7 +290,7 @@ function detectCollision(P1,P2)
 // *******************************************
 // Fonction qui place un marker
 // OBSOLETE
-function placeMarker(P,_couleur_=0x000000)
+/*function placeMarker(P,_couleur_=0x000000)
 {
 	//Marker en tant que tel
 	var geom = new THREE.DodecahedronGeometry(RAYON_MARKER,1);
@@ -305,7 +305,7 @@ function placeMarker(P,_couleur_=0x000000)
 	
 	// Coordonnées dans la liste
 	$("#liste_mesures").append("\n"+String(Math.round(P.x*1000)/1000)+";"+String(-Math.round(P.z*1000)/1000)+";"+String(Math.round(P.y*1000)/1000))
-}
+}*/
 
 
 
@@ -557,7 +557,7 @@ function ajouterItemFromDialog()
 		var nom = $("#tab_new_item_cylindre_nom").val();
 		var couleur = $("#tab_new_item_cylindre_couleur").val();
 		
-		var centre = new THREE.Vector3(0,0,0); // Centre du plan (qui sera un éventuel barycentre de nuage de points)
+		//var centre = new THREE.Vector3(0,0,0); // Centre du plan (qui sera un éventuel barycentre de nuage de points)
 		
 		
 		if(methode == "equation")
@@ -567,6 +567,8 @@ function ajouterItemFromDialog()
 			var R = Number($("#tab_new_item_cylindre_R").val())
 			
 			var cylindre = new Cylindre(nom,[ centre.x , centre.y , centre.z , vDirecteur.x , vDirecteur.y , vDirecteur.z ,  R])
+			
+			cylindre.centre(centre);
 		}
 		else if(methode == "contraintes")
 		{
@@ -581,8 +583,8 @@ function ajouterItemFromDialog()
 				{
 					var nNuage = Number($(htmlContrainte).find(".choix_contrainte_nuage select").val()); // A quel nuage doit-on s'attacher ?
 					var nuage = getItemFromId(nNuage)	// On recupere le nuage
-					centre.add(nuage.getBarycentre())
-					nbNuages+=1 // Pour faire la moyenne
+					/*centre.add(nuage.getBarycentre())
+					nbNuages+=1 // Pour faire la moyenne*/
 					var contrainte = new ContrainteRMSCylindre(nuage) // On créer la contrainte
 					cylindre.liste_contraintes.push(contrainte)
 				}
@@ -590,8 +592,8 @@ function ajouterItemFromDialog()
 				{
 					var nNuage = Number($(htmlContrainte).find(".choix_contrainte_nuage select").val()); // A quel nuage doit-on s'attacher ?
 					var nuage = getItemFromId(nNuage)	// On recupere le nuage
-					centre.add(nuage.getBarycentre())
-					nbNuages+=1 // Pour faire la moyenne
+					/*centre.add(nuage.getBarycentre())
+					nbNuages+=1 // Pour faire la moyenne*/
 					var contrainte = new ContrainteCylindreInscrit(nuage) // On créer la contrainte
 					cylindre.liste_contraintes.push(contrainte)
 				}
@@ -599,8 +601,8 @@ function ajouterItemFromDialog()
 				{
 					var nNuage = Number($(htmlContrainte).find(".choix_contrainte_nuage select").val()); // A quel nuage doit-on s'attacher ?
 					var nuage = getItemFromId(nNuage)	// On recupere le nuage
-					centre.add(nuage.getBarycentre())
-					nbNuages+=1 // Pour faire la moyenne
+					/*centre.add(nuage.getBarycentre())
+					nbNuages+=1 // Pour faire la moyenne*/
 					var contrainte = new ContrainteCylindreCirconscrit(nuage) // On créer la contrainte
 					cylindre.liste_contraintes.push(contrainte)
 				}
@@ -608,14 +610,14 @@ function ajouterItemFromDialog()
 			}
 			
 			
-			if(nbNuages)
-				centre.divideScalar(nbNuages)
-			cylindre.optimiseCylindre(); // si ce n'est pas des contraintes, il ne se passera rien
+			/*if(nbNuages)
+				centre.divideScalar(nbNuages)*/
+			cylindre.optimiseCylindre(); // Trouves la meilleure équationsi ce n'est pas des contraintes, il ne se passera rien
+			cylindre.optimiseGraphismes(); // Trouves les meilleurs paramètres d'affichage (centre, ...)
 		}
 		
 		
 		cylindre.couleur(couleur);
-		cylindre.centre(centre);
 		
 		LISTE_ITEMS.push(cylindre);
 		$("#arbre").append(cylindre.getHTML())
