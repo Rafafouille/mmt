@@ -204,6 +204,8 @@ function deplacePalpeur(bride=true)
 		if(NUAGE_COURANT && !NUAGE_COURANT.doublonMarker(collision))
 			{
 			NUAGE_COURANT.ajouteMesure(collision)
+			if(AUTORISE_BEEP)
+				BEEP.play();
 			}
 		}
 	else 

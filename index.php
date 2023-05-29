@@ -66,6 +66,9 @@ CAMERA = null;
 BILLE = null;
 REPERE_PALPEUR = null; //Groupe associé au palpeur
 
+BEEP = null;	// Son (beep) du palpeur
+AUTORISE_BEEP = true;
+
 material=null
 materiau_rouge=null
 materiau_jaune=null

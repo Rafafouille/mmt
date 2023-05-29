@@ -112,7 +112,10 @@ ajouteNuage("Nuage 1")
 
 
 
-
+// *****************************************************
+// Sons (beep)
+	BEEP = new Audio('https://mmt.allais.eu/develop/sources/sons/beep.mp3')
+	BEEP.volume = 0.1;
 
 // *******************************************
 // VR
