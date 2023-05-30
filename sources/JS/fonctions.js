@@ -1010,6 +1010,12 @@ function afficheCache(_id_)
 	item.afficheCacheGROUPE();
 }
 
+// **********************************************
+function changeAlpha(_id_,_alpha_)
+{
+	var item = getItemFromId(_id_);
+	item.setTransparence(_alpha_);
+}
 
 // *********************************************
 // Fonction qui fait la liste des nuages pour mettre dans un select (form)

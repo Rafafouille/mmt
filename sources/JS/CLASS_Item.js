@@ -64,7 +64,6 @@ class Item
 	 
 	 
 	 
-	 
 	/* ****************************
 	 AUTRES MEMBRES
 	 **************************** */
@@ -82,7 +81,8 @@ class Item
 						<!-- BOUTONS COMMUNS -- -->`;
 			if(this.GROUPE)
 				{retour += `
-						<div class="bouton_item bouton_visible `+(this.GROUPE.visible?"visible":"invisible")+`" onclick="afficheCache(`+String(this._id)+`)"  title="Rendre Visible/Invisible"></div>`;}
+						<div class="bouton_item bouton_visible `+(this.GROUPE.visible?"visible":"invisible")+`" onclick="afficheCache(`+String(this._id)+`)"  title="Rendre Visible/Invisible"></div>
+						<div class="range_visible_item"><label for="curseur_alpha_item_`+String(this._id)+`">&#945; :</a><input type="range" id="curseur_alpha_item_`+String(this._id)+`" name="curseur_alpha_item_`+String(this._id)+`" min="0" max="1" step="0.2" value="1" oninput="changeAlpha(`+String(this._id)+`,$(this).val())"/></div>`;}
 			retour += `
 						<div class="bouton_item bouton_supprimer" title="Supprimer l'item" onclick="ouvreBoiteDeleteItem(`+String(this.id())+`)"></div>
 						<!-- BOUTONS SPECIFIQUES A L'ITEM ---- -->`+this.menuItemHTML()+`
@@ -155,26 +155,61 @@ class Item
 		return tab
 	}
 	
+	// Fonction qui affiche le groupe
+	afficheGROUPE()
+	{
+		if(this.GROUPE)
+		{
+			this.GROUPE.visible = true;
+			$("#item-"+String(this.id())+" .bouton_visible").removeClass("invisible")
+			$("#item-"+String(this.id())+" .bouton_visible").addClass("visible")
+		}
+	}
+	
+	// Fonction qui affiche le groupe
+	cacheGROUPE()
+	{
+		if(this.GROUPE)
+		{
+			this.GROUPE.visible = false;
+			$("#item-"+String(this.id())+" .bouton_visible").removeClass("visible")
+			$("#item-"+String(this.id())+" .bouton_visible").addClass("invisible")
+		}
+	}
 	// Si GROUPE n'est pas null, il affiche ou cache l'élement graphique
 	afficheCacheGROUPE()
 	{
 		if(this.GROUPE)
 		{
 			if(this.GROUPE.visible)
-			{
-				this.GROUPE.visible = false;
-				$("#item-"+String(this.id())+" .bouton_visible").removeClass("visible")
-				$("#item-"+String(this.id())+" .bouton_visible").addClass("invisible")
-			}
+				this.cacheGROUPE();
 			else
-			{
-				this.GROUPE.visible = true;
-				$("#item-"+String(this.id())+" .bouton_visible").removeClass("invisible")
-				$("#item-"+String(this.id())+" .bouton_visible").addClass("visible")
-			}
+				this.afficheGROUPE();
 		}
 	}
 	
+	 
+	 // Change la transparence 
+	 setTransparence(_alpha_)
+	 {
+	 
+	 	if(_alpha_==0)
+	 	{
+	 		this.cacheGROUPE()
+	 	}
+	 
+	 	this.afficheGROUPE()
+	 	
+	 	for(var i=0; i< this.GROUPE.children.length; i++)
+	 	{
+	 		if(_alpha_==1)
+		 		this.GROUPE.children[i].material.transparent = false;
+		 	else
+		 		this.GROUPE.children[i].material.transparent = true;
+	 		this.GROUPE.children[i].material.opacity = _alpha_;
+	 		this.GROUPE.children[i].material.needsUpdate = true;
+	 	}
+	 }
 	
 }
 

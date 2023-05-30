@@ -188,7 +188,15 @@ ARBRE
 	background-image:url("../images/calculette.svg");
 }
 
+.range_visible_item
+{
+	display:inline-block;
+}
 
+.range_visible_item input
+{
+	width:50px;
+}
 
 /* NUAGE DE POINTS */
 
