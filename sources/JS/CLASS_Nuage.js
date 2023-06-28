@@ -35,6 +35,7 @@ class Nuage extends Item
 	 	if (r_ != undefined)
 	 	{
 	 		this._rayon_marker = r_
+	 		this.redessineMarkers()
 	 	}
 	 	return this._rayon_marker
 	 }
@@ -81,14 +82,14 @@ class Nuage extends Item
 	/** Renvoie le contenu HTML (en dessous du titre) pour le menu */
 	menuItemHTML()
 	{
-		return "";
+		return "<br/><label for=\"range_rayon_marker_"+String(this._id)+"\"><img src=\"./sources/images/bouton_taille_markers.svg\" height=\"20px\" alt=\"[Taille Markers]\" title=\"Taille des points de mesure\"/></label><input id=\"range_rayon_marker_"+String(this._id)+"\" type=\"range\" min=\"0\" max=\"0.005\" step=\"0.0001\" value=\""+String(RAYON_MARKER)+"\" oninput=\"getItemFromId("+String(this._id)+").rayon_marker(Number($(this).val()))\"/>";
 	}
 	
 	/** Renvoie le contenu HTML (en dessous du titre) pour les donnees (coordonnées points) */
 	donneesItemHTML()
 	{
 		var retour = `
-			<div class="nuage-valeurs">
+			<div class="nuage-valeurs" style="border-top:solid;">
 				<table style="margin:auto;">
 					<tr>
 						<th scope="col">X</th>
@@ -143,6 +144,18 @@ class Nuage extends Item
 		sphere.position.copy(_coord_);
 		this.GROUPE.add(sphere)	
 		return sphere;
+	}
+	
+	// ************************************
+	// Fonction qui reprend chaque marker un par un pour les redessiner
+	redessineMarkers()
+	{
+		for(var i=0; i<this.nbMesures(); i++)
+		{
+			var mark = this.getMarker(i)
+			mark.geometry.dispose() 
+			mark.geometry = new THREE.DodecahedronGeometry(this._rayon_marker,1);
+		}
 	}
 	
 	// *******************************************
