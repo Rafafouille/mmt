@@ -851,6 +851,7 @@ function tab_new_item_ajouteContrainte_plan()
 {
 	var html = `
 		<div class=\"tab_new_item_contrainte_plan\">
+			<div class=\"bouton_autosupprime_dans_liste\" title=\"Supprimer la contrainte\" onclick=\"autosupprime_dans_liste(this)\"></div>
 			Contrainte : 
 			<select class="type-contrainte">
 				<option value="RMS">Plan des moindres carrés</option>
@@ -876,6 +877,7 @@ function tab_new_item_ajouteContrainte_cylindre()
 {
 	var html = `
 		<div class=\"tab_new_item_contrainte_cylindre\">
+			<div class=\"bouton_autosupprime_dans_liste\" title=\"Supprimer la contrainte\" onclick=\"autosupprime_dans_liste(this)\"></div>
 			Contrainte : 
 			<select class="type-contrainte">
 				<option value="RMS">Cylindre des moindres carrés</option>
@@ -901,6 +903,7 @@ function tab_new_item_assemble_ajoute_nuage()
 {
 	var html = `
 		<div class=\"tab_new_item_assemble_nuage\">
+			<div class=\"bouton_autosupprime_dans_liste\" title=\"Supprimer la contrainte\" onclick=\"autosupprime_dans_liste(this)\"></div>
 			<div class="choix_assemblage_nuage_nuage">
 				Nuage :
 				<select>
@@ -918,6 +921,16 @@ function tab_new_item_assemble_ajoute_nuage()
 		</div>`;
 	
 	$("#tab_new_item_liste_assemble_nuage").append(html)
+}
+
+
+
+
+// ********************************************
+// Fonction qui supprime l'élément de son parent
+function autosupprime_dans_liste(element)
+{
+	$(element).parent().remove() 
 }
 
 

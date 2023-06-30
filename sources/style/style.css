@@ -255,6 +255,28 @@ NOUVEL ITEM
 	display:inline-block;
 }
 
+
+.bouton_autosupprime_dans_liste
+{
+	float:right;
+	cursor:pointer;
+	padding:0px;
+	margin:0px;
+	margin-top:-2px;
+	height:30px;
+	width:30px;
+	vertical-align:middle;
+	background-image:url('../images/supprime.svg');
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+
+}
+.bouton_autosupprime_dans_liste img
+{
+	height:30px;
+	vertical-align:middle;
+}
+
 /* =====================================
 MENU d'ouverture des Pièces
 =======================================*/
