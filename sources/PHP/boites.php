@@ -12,7 +12,7 @@
 		<div id="tab_new_item_nuage">
 			<p>Créer un nouveau nuage de mesures de points.</p>
 			<form>
-				<label for="tab_new_item_nuage_nom">Nom : </label>
+				<label for="tab_new_item_nuage_nom">Nom du nouveau : </label>
 				<input type="text" name="tab_new_item_nuage_nom" id="tab_new_item_nuage_nom"/>
 				<br/>
 				<label for="tab_new_item_nuage_couleur">Couleur : </label>
@@ -22,20 +22,22 @@
 			<div id="tab_new_item_nuage_methode">
 				<ul>
 					<li><a href="#tab_new_item_nuage_vierge">Nuage vierge</a></li>
-					<li><a href="#tab_new_item_nuage_assemblage">Assemblage</a></li>
+					<li><a href="#tab_new_item_nuage_assemblage">Fusionner nuages</a></li>
 				</ul>
 				<div id="tab_new_item_nuage_vierge">
 					(Rien à faire)
 				</div>
 				<div id="tab_new_item_nuage_assemblage">
-					<form>
-						<label for="tab_new_item_nuage_assemblage_nuage1">Nuage 1 : </label>
+					<!--<form>
+					 	<label for="tab_new_item_nuage_assemblage_nuage1">Nuage 1 : </label>
 							<select id="tab_new_item_nuage_assemblage_nuage1">
 							</select>
 						<label for="tab_new_item_nuage_assemblage_nuage2">Nuage 2 : </label>
 							<select id="tab_new_item_nuage_assemblage_nuage2">
 							</select>
-					</form>
+					</form>-->
+					<div id="tab_new_item_bouton_assemble_ajoute_nuages" onclick="tab_new_item_assemble_ajoute_nuage()">Ajouter un nuage à fusionner</div>
+					<div id="tab_new_item_liste_assemble_nuage"></div>
 				</div>
 			</div>
 		</div>

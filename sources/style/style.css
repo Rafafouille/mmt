@@ -220,7 +220,7 @@ NOUVEL ITEM
 =========================================== */
 
 
-#tab_new_item_bouton_add_contrainte_plan, #tab_new_item_bouton_add_contrainte_cylindre
+#tab_new_item_bouton_add_contrainte_plan, #tab_new_item_bouton_add_contrainte_cylindre, #tab_new_item_bouton_assemble_ajoute_nuages
 {
 	cursor:pointer;
 	background-color:#CCCCCC;
@@ -232,13 +232,13 @@ NOUVEL ITEM
 }
 
 
-#tab_new_item_liste_contraintes_plan, #tab_new_item_liste_contraintes_cylindre
+#tab_new_item_liste_contraintes_plan, #tab_new_item_liste_contraintes_cylindre, #tab_new_item_liste_assemble_nuage
 {
 	min-height:100px;
 	border:solid 1px;
 }
 
-.tab_new_item_contrainte_plan, .tab_new_item_contrainte_cylindre
+.tab_new_item_contrainte_plan, .tab_new_item_contrainte_cylindre, .tab_new_item_assemble_nuage
 {
 	padding:5px;
 	background-color:#AAAAFF;
@@ -250,7 +250,7 @@ NOUVEL ITEM
 }
 
 
-.choix_contrainte_nuage
+.choix_contrainte_nuage, .choix_assemblage_nuage_nuage
 {
 	display:inline-block;
 }

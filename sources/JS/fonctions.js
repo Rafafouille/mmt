@@ -464,7 +464,7 @@ function ajouterItemFromDialog()
 
 	if(type == "nuage")
 	{
-		var methode = ["vierge","assemblage"][$("#tab_new_item_nuage_methode").tabs('option', 'active')];
+		var methode = ["vierge","fusion"][$("#tab_new_item_nuage_methode").tabs('option', 'active')];
 		var nom = $("#tab_new_item_nuage_nom").val();
 		var couleur = $("#tab_new_item_nuage_couleur").val();
 		var nuage =  ajouteNuage(nom,couleur);
@@ -472,13 +472,35 @@ function ajouterItemFromDialog()
 		{
 			
 		}
-		else if (methode == "assemblage")
+		else if (methode == "fusion")
 		{
-			var nuage1 = getItemFromId(Number($("#tab_new_item_nuage_assemblage_nuage1").val())) ; 
-			var nuage2 = getItemFromId(Number($("#tab_new_item_nuage_assemblage_nuage2").val())) ;
-			copyMesuresFromFusion
-			copyMesuresFromFusion(nuage1,nuage)
-			copyMesuresFromFusion(nuage2,nuage)
+			/*var nuage1 = getItemFromId(Number($("#tab_new_item_nuage_assemblage_nuage1").val())) ; 
+			var nuage2 = getItemFromId(Number($("#tab_new_item_nuage_assemblage_nuage2").val())) ;*/
+/*			copyMesuresFromFusion(nuage1,nuage)
+			copyMesuresFromFusion(nuage2,nuage)*/
+			for(var i=0; i<$("#tab_new_item_liste_assemble_nuage").children().length;i++ ) // Pour chaque nuage à copier
+			{
+				var htmlNuageAFusionner = $("#tab_new_item_liste_assemble_nuage").children()[i];
+				var nNuage = Number($(htmlNuageAFusionner).find(".choix_assemblage_nuage_nuage select").val()); // A quel nuage doit-on s'attacher ?
+				var nuageSource = getItemFromId(nNuage)
+				
+				var A_SUPPRIMER = $(htmlNuageAFusionner).find("input[name=suppr_source]").is(':checked') 
+				var A_FUSIONNER = $(htmlNuageAFusionner).find("input[name=CdG]").is(':checked')
+				
+				if(A_FUSIONNER)
+				{
+					var CdG = nuageSource.getBarycentre()
+					nuage.ajouteMesure(CdG)
+				}
+				else
+				{
+					copyMesuresFromFusion(nuageSource,nuage)
+				}
+				if(A_SUPPRIMER)
+				{
+					nuageSource.remove()
+				}
+			}
 		}
 		return nuage;
 	}
@@ -792,11 +814,12 @@ function ouvreBoiteAjouterItem()
 {
 	$("#tab_new_item_nuage_nom").val("Nuage "+String(NUMERO_ITEM+1))
 	$("#tab_new_item_nuage_couleur").val(LISTE_COULEURS[ NUMERO_ITEM % LISTE_COULEURS.length ])
-	$("#tab_new_item_nuage_assemblage_nuage1").empty();
+/*	$("#tab_new_item_nuage_assemblage_nuage1").empty();
 	$("#tab_new_item_nuage_assemblage_nuage1").html(getHTMLNuagesInSelect());
 	$("#tab_new_item_nuage_assemblage_nuage2").empty();
 	$("#tab_new_item_nuage_assemblage_nuage2").html(getHTMLNuagesInSelect());
-	$("#tab_new_item_nuage_assemblage_nuage2 option:nth-child(2)").prop('selected', true);
+	$("#tab_new_item_nuage_assemblage_nuage2 option:nth-child(2)").prop('selected', true);*/
+	$("#tab_new_item_liste_assemble_nuage").empty();
 	
 	$("#tab_new_item_plan_nom").val("Plan "+String(NUMERO_ITEM+1))
 	$('#boite_new_item').dialog('open')
@@ -810,7 +833,7 @@ function ouvreBoiteAjouterItem()
 
 
 // *****************************************
-// Ouvre boitre "ajouter item"
+// Ouvre boitre "supprime item"
 function ouvreBoiteDeleteItem(_id)
 {
 	$("#boite_delete_item").attr("data-id",_id)
@@ -869,6 +892,32 @@ function tab_new_item_ajouteContrainte_cylindre()
 	html += "</div>";
 	
 	$("#tab_new_item_liste_contraintes_cylindre").append(html)
+}
+
+
+// ********************************************
+// Fonction qui ajoute un div pour lister nuages à fusionner
+function tab_new_item_assemble_ajoute_nuage()
+{
+	var html = `
+		<div class=\"tab_new_item_assemble_nuage\">
+			<div class="choix_assemblage_nuage_nuage">
+				Nuage :
+				<select>
+					`+getHTMLNuagesInSelect()+`
+				</select>
+			</div>
+			<form style=\"display:inline-block;\">
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				<img src=\"./sources/images/poubelle.svg\" alt=\"[Supprimer source]\" title=\"Supprimer le nuage de point original après fusion\" style=\"height:30px;vertical-align:middle;\"/>
+				<input type="checkbox" name=\"suppr_source\">
+				&nbsp;&nbsp;&nbsp;&nbsp;
+				<img src=\"./sources/images/CdG.svg\" alt=\"[CdG]\" title=\"Ne prender que le barycentre des points\" style=\"height:30px;vertical-align:middle;\"/>
+				<input type="checkbox" name=\"CdG\">
+			</form>
+		</div>`;
+	
+	$("#tab_new_item_liste_assemble_nuage").append(html)
 }
 
 
