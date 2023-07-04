@@ -363,26 +363,7 @@ class Plan extends Item
 	// MEMBRES relatifs à l'optimisation
 	
 	
-	// ******************************************************************************************
-	// Fonction qui fabrique la fonction qui calcule les distances au carré d'un plan d'equation ax+by+cz+d=0
-	// a un nuage de points
-	/*addContrainteRMS(_nuage_)
-	{
-		var f = function(_param_plan_)
-				{
-					var S=0;
-					for(var i=0;i<this.nuage.nbMesures();i++)//Pour chaque noeud
-					{
-						S+= getDistancePlanCarre(_param_plan_,this.nuage.getMesure(i))
-					}
-					return S
-				}
-		f.nuage = _nuage_ ;
-		f.type = "RMS"
-		f = f.bind(f)
-		this.liste_contraintes.push(f); // On l'ajoute à la liste des contraintes
-		return f;
-	}*/
+
 	
 	
 	// ********************************************************************************

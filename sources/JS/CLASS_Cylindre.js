@@ -224,7 +224,8 @@ class Cylindre extends Item
 	 /** Renvoie le contenu HTML (en dessous du titre) pour le menu */
 	menuItemHTML()
 	{
-		return ``;
+		return `
+				<div class="bouton_item bouton_calculette" title="Mesures sur le cylindre" onclick="ouvreBoiteMesureCylindre(`+String(this.id())+`)"></div>`;
 	}
 	
 	

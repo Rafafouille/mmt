@@ -952,6 +952,26 @@ function ouvreBoiteMesurePlan(_id_)
 	$("#boite_mesure_plan").dialog("open");
 }
 
+
+// ******************************************
+// Ouvre la boite d'analyse par rapport au cylindre dont l'item est le n°id
+function ouvreBoiteMesureCylindre(_id_)
+{
+	$("#boite_mesure_cylindre").attr("data-id",_id_);
+	$("#boite_mesure_cylindre_choix_item").empty();
+	$("#boite_mesure_cylindre_choix_item").append("<option value=\"\"></select>");
+	for(var i=0;i<LISTE_ITEMS.length ;i++)
+	{
+		if(LISTE_ITEMS[i].id()!=_id_)
+		{
+			$("#boite_mesure_cylindre_choix_item").append("<option value=\""+String(LISTE_ITEMS[i].id())+"\">"+LISTE_ITEMS[i].nom()+"</select>")
+		}
+	}
+	$("#boite_mesure_cylindre_mesures").empty();
+	$("#boite_mesure_cylindre").dialog("open");
+}
+
+
 // ******************************************
 // Ouvre la boite pour charger une nouvelle piece
 function ouvreBoiteOuvrirPiece()
@@ -1002,7 +1022,6 @@ function updateCalculMesurePlan()
 		var Ra = 0
 		for(var i=0;i<item.nbMesures();i++)
 		{
-			console.log(i);
 			var mes = item.getMesure(i)
 			var d = plan.getDistancePoint(mes);
 			if(d>dMax)
@@ -1020,6 +1039,61 @@ function updateCalculMesurePlan()
 				<li><strong>Écart min :</strong> `+String(dMin)+`</li>
 				<li><strong>Écart max :</strong> `+String(dMax)+`</li>
 				<li><strong>R<sub>a</sub> :</strong> `+String(Ra)+`</li>
+			</ul>
+		`)
+	}
+	
+}
+
+
+// *****************************************
+function updateCalculMesureCylindre()
+{
+	var cylindre = getItemFromId($("#boite_mesure_cylindre").attr("data-id"))
+	var item = getItemFromId($("#boite_mesure_cylindre_choix_item").val())
+	
+	// NUAGES ========================
+	if(item.type()=="nuage")
+	{
+		var dcMin = 0
+		var dcMax = 0
+		var daMax = 0
+		var Ra = 0
+		for(var i=0;i<item.nbMesures();i++)
+		{
+			var mes = item.getMesure(i)
+			
+			// Mesures au cylindre
+			var dc = cylindre.getDistancePoint(mes);
+			if(dc>dcMax)
+				dcMax = dc;
+			if(dc<dcMin)
+				dcMin = dc;
+			Ra += Math.abs(dc);
+			
+			// Mesures à l'axe
+			var da = cylindre.getRayonPoint(mes)
+			if(da>daMax)
+				daMax = da;
+			
+		}
+		if(item.nbMesures())
+		{
+			Ra /= item.nbMesures();
+		}
+	
+		// Résultats
+		$("#boite_mesure_cylindre_mesures").append(`
+			<strong>Mesure par rapport au cylindre :</strong>
+			<ul>
+				<li><strong>Écart min :</strong> `+String(dcMin)+`</li>
+				<li><strong>Écart max :</strong> `+String(dcMax)+`</li>
+				<li><strong>IT :</strong> `+String(dcMax-dcMin)+`</li>
+				<li><strong>R<sub>a</sub> :</strong> `+String(Ra)+`</li>
+			</ul>
+			<strong>Mesure par rapport à l'axe :</strong>
+			<ul>
+				<li><strong>Écart max :</strong> `+String(daMax)+`</li>
 			</ul>
 		`)
 	}

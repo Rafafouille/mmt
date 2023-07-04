@@ -205,6 +205,33 @@
 
 
 
+<!-- MESURE D'ÉLÉMENTS PAR RAPPORT AU CYLINDRE ----------------------- -->
+<div id="boite_mesure_cylindre" title="Mesures à partir d'un cylindre" data-id="-1">
+	<p>
+		<label for="boite_mesure_cylindre_choix_item">Réaliser des mesures entre le cylindre et :</label>
+		<select name="boite_mesure_cylindre_choix_item" id="boite_mesure_cylindre_choix_item" onchange="updateCalculMesureCylindre();">
+		</select>
+	</p>
+	<div id="boite_mesure_cylindre_mesures">
+	</div>
+</div>
+	
+	
+
+<script>
+	$("#boite_mesure_cylindre").dialog({
+					autoOpen:false,
+					width: "800px",
+					modal: true,
+					buttons:{
+						Annuler: function() {$(this).dialog("close")}
+						}
+				});
+</script>
+
+
+
+
 
 
 
