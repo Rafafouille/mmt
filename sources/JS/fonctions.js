@@ -1180,3 +1180,25 @@ function copyMesuresFromFusion(n_source,n_contenant)
 		n_contenant.ajouteMesure(n_source.getMesure(i))
 	}
 }
+
+
+
+// *******************************************************************
+// Ouvre le voile modal de chargement
+function ouvreModal(texte="Chargement...")
+{
+	$("#message_voileNoir").text(texte);
+	$("#pourcentage_calcul").text("(cela peut être long... La prochaine fois, lancez la console (F11) AVANT de lancer le calcul pour suivre l'avancement)");
+	$("#voileNoir").show()
+}
+
+
+// *******************************************************************
+// Ferme le voile modal de chargement
+function fermeModal()
+{
+	$("#voileNoir").hide();
+	$("#pourcentage_calcul").text("");
+}
+
+

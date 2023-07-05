@@ -10,33 +10,61 @@
 */
 function GEN_algo_genetique(Vnominal, VIT, f, nGens, nGenerations, ratioSurvivants)
 {
-    var population = GEN_nouvellePopulationAleatoire(nGens, Vnominal, VIT) ;
-    //console.log("=============================== DEBUT");
-    //console.log("Population initiale :")
-    //console.log(population);
-    for(var i=0; i<nGenerations;i++)//#A chaque génération...
-    {
-        var evaluations = GEN_getEvaluations(population,f)  //On évalue chaque vecteur d'une population
-        //console.log("evaluations")
-        //console.log(evaluations)
-        var champion = GEN_getPositionChampion(evaluations)
-        
-        
-        if(i%10 == 0)
-            console.log("GÉNERATION : "+String(i+1)+"/ "+String(nGenerations)+"  (err = "+String(f(population[champion]))+")")
-        
-        if(i==nGenerations-1)
-        {
-            break //Pas la peine de refaire une population à la fin
-        }
-        var elus = GEN_killPopulation(population, evaluations, ratioSurvivants);	// Supprime les solutions les plus éloignées
-        //console.log("elus")
-        //console.log(elus)
-        population = GEN_renouvellePopulation(elus, population.length-elus.length,Vnominal,VIT)	//Supprime les 
-        //console.log("nouvelle population")
-        //console.log(population)
-    }
-    return [population[champion], evaluations[champion]]
+	var population = GEN_nouvellePopulationAleatoire(nGens, Vnominal, VIT) ;
+
+	var pas_affichage = Math.floor(nGenerations/10);
+
+
+
+	for(var i=0; i<nGenerations;i++)//#A chaque génération...
+	{
+		var evaluations = GEN_getEvaluations(population,f)  //On évalue chaque vecteur d'une population
+		var champion = GEN_getPositionChampion(evaluations)
+		
+		
+		if(i%pas_affichage == 0)
+		{
+		    console.log("GÉNERATION : "+String(i+1)+"/ "+String(nGenerations)+"  (err = "+String(f(population[champion]))+")")
+		   // $("#pourcentage_calcul").text(" ("+String(Math.floor(i/nGenerations*100))+"%)")     <--- IMPOSSIBLE car un seul tread pour tout faire.
+		}
+		
+		if(i==nGenerations-1)
+		{
+		    break //Pas la peine de refaire une population à la fin
+		}
+		var elus = GEN_killPopulation(population, evaluations, ratioSurvivants);	// Supprime les solutions les plus éloignées
+		population = GEN_renouvellePopulation(elus, population.length-elus.length,Vnominal,VIT)	//Supprime les 
+	}
+	
+	// Pour des raisons de raffraichissement de l'écran, on est obligés d'utiliser setTimeout, et donc de passer par un algo récurcif
+	/*function boucle_reccurcive_algo_gen(i,nGenerations,population,f,pas_affichage,ratioSurvivants)
+	{
+		var evaluations = GEN_getEvaluations(population,f)  //On évalue chaque vecteur d'une population
+		var champion = GEN_getPositionChampion(evaluations)
+		
+		if(i%pas_affichage == 0)
+		{
+		    console.log("GÉNERATION : "+String(i+1)+"/ "+String(nGenerations)+"  (err = "+String(f(population[champion]))+")")
+		    $("#pourcentage_calcul").text(" ("+String(Math.floor(i/nGenerations*100))+"%)")
+		}
+		
+		
+		if(i==nGeneration-1)
+		{}
+		else
+		{
+			var elus = GEN_killPopulation(population, evaluations, ratioSurvivants);	// Supprime les solutions les plus éloignées
+			population = GEN_renouvellePopulation(elus, population.length-elus.length,Vnominal,VIT)	//Supprime les 
+			
+			setTimeout(function(){boucle_reccurcive_algo_gen(i+1,nGenerations,population,f,pas_affichage,ratioSurvivants)},0)
+		}
+		
+
+	}
+	
+	setTimeout(function(){boucle_reccurcive_algo_gen(0,nGenerations,population,f,pas_affichage,ratioSurvivants)},0)*/
+	
+	return [population[champion], evaluations[champion]]
 }
     
     

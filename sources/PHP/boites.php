@@ -131,6 +131,7 @@
 			</div>
 		</div>
 	</div>
+</div>
 	
 	
 
@@ -140,7 +141,14 @@
 					width: "800px",
 					buttons:{
 						Annuler: function() {$(this).dialog("close")},
-						Ajouter : function(){ajouterItemFromDialog();$(this).dialog("close")}
+						Ajouter : function()	{
+										$(this).dialog("close");
+										ouvreModal("Calcul...");
+										// Ci dessous : astuce pour laisser le temps à l'écran de se mettre à jour
+										setTimeout(function()
+												{ajouterItemFromDialog();fermeModal();}
+												,100);
+									}
 						}
 				});
 				

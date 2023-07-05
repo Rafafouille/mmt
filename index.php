@@ -122,15 +122,18 @@ v2 = null
 	
 		include("./sources/PHP/menu.php")
 	?>
-	
-	<div id="ThreeJS" style="width=50%;display:inline-block;vertical-align:top;"></div><!--position: absolute; left:0px; top:0px-->
-    
+
+	<!-- <div id="ThreeJS" style="width=50%;display:inline-block;vertical-align:top;"></div> --> <!--position: absolute; left:0px; top:0px-->
 
 	<?php
 	
 		include("./sources/PHP/boites.php")
 	?>
 
+	<!-- Fenêtre modale ------------ -->
+	<div id="voileNoir">
+		<div><span id="message_voileNoir"></span><br/><br/><span id="pourcentage_calcul"></span></div>
+	</div>
 </body>
 
 
@@ -161,5 +164,6 @@ function creePiece()
 </script>
 
 <script type="module" src="./sources/JS/main.js"></script>
+
 
 </html>

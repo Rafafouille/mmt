@@ -277,6 +277,45 @@ NOUVEL ITEM
 	vertical-align:middle;
 }
 
+
+
+/* VOILE NOIR modal ****** */
+#voileNoir
+{
+	background-color:#888888;
+	position:fixed;left:0;top:0;
+	width:100%;height:100%;
+	opacity:.80;
+	z-index:9998;
+	display:none;
+}
+#voileNoir div
+{
+	position : absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	text-align:center;
+	margin:auto;
+	
+	color:white;
+	font-weight:bold;
+	font-size:large;
+	
+}
+
+#pourcentage_calcul
+{
+	font-weight:normal;
+	font-style:italic;
+	font-size:small;
+}
+
+*html #voileNoir	/*--Gérer la position fixed pour IE6--*/
+{
+	position: absolute;
+}
+
 /* =====================================
 MENU d'ouverture des Pièces
 =======================================*/
