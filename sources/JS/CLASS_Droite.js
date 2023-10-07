@@ -12,13 +12,14 @@ class Droite extends Item
 		
 		// Normalisation de l'axe
 		var normeVDir = Math.sqrt(param_[3]*param_[3]+param_[4]*param_[4]+param_[5]*param_[5])
-		param_[3] /= normeAxe;
-		param_[4] /= normeAxe;
-		param_[5] /= normeAxe;
+		param_[3] /= normeVDir;
+		param_[4] /= normeVDir;
+		param_[5] /= normeVDir;
 		this._parametres = param_;
 		
 		
-		this._longueur = 1;	// Longueur de la droite à afficher
+		this._longueur = 2;	// Longueur de la droite à afficher
+		this._epaisseur = 3;	// Epaisseur du trait
 		this.updateBase();
 		
 		// Ajout du nuage de point(graphique) sous forme de groupe sur la scene
@@ -34,6 +35,7 @@ class Droite extends Item
 	 **************************** */
 	 
 	 _couleur = "";
+	 _epaisseur = 10;
 	 GROUPE = null;
 	 _parametres = null;	// [a,b,c,d] dans l'équation ax+by+cz+d=0
 
@@ -73,6 +75,20 @@ class Droite extends Item
 	 	return this._longueur
 	}
 	 
+	
+	// longueur
+	epaisseur(e_,redessine=true)
+	{
+	 	if (e_ != undefined)
+	 	{
+	 		this._epaisseur = e_;
+	 		if(redessine)
+	 			this.redessine()
+	 	}
+	 	return this._epaisseur
+	}
+	
+	
 	 
 	 // Renvoie les parametres [xc,yc,zc,vdx,vdy,vdz] du plan
 	 parametres(p_,redessine=true)
@@ -197,7 +213,8 @@ class Droite extends Item
 	 /** Renvoie le contenu HTML (en dessous du titre) pour le menu */
 	menuItemHTML()
 	{
-		return ``;
+		return `
+				<div class="bouton_item bouton_calculette" title="Mesures sur la droite" onclick="ouvreBoiteMesureDroite(`+String(this.id())+`)"></div>`;
 	}
 	
 	
@@ -232,13 +249,13 @@ class Droite extends Item
 	 
 	 
 	 // Renvoie la projection (THREE.Vector3) d'un point _P_ (idem)
-	 // sur le plan
-	 getProjectionSurAxe(P)
+	 // sur la droite
+	 getProjectionSurDroite(_P_)
 	 {
 		var centre = this.centre()
 		var vDir = this.vDirecteur().normalize() // Au cas où : on normalise
 		
-		var l = vDir.dot(P.clone().sub(centre))
+		var l = vDir.dot(_P_.clone().sub(centre))
 		
 		 return centre.clone().add(vDir.multiplyScalar(l))
 	 }
@@ -281,106 +298,12 @@ class Droite extends Item
  		var ey = this.base().ey.clone();
  		var ez = this.base().ez.clone();
  		
- 		/*
- 		// POSITION DES SOMMETS
- 		var positions = [];
- 		for(var i=0;i< this._nbFaces; i++)
- 		{
- 			// Une des faces du cylindre :
- 			// P2 --- P1
- 			// |      |
- 			// PC2    PC1
- 			// |      |
- 			// P4 --- P3
  		
- 		
- 			var theta = i * dtheta;
- 			// Point milieu
- 			var PC1 = this.centre().add((ex.clone().multiplyScalar(Math.cos(theta))).add(ey.clone().multiplyScalar(Math.sin(theta))).multiplyScalar(R))
- 			var PC2 = this.centre().add((ex.clone().multiplyScalar(Math.cos(theta+dtheta))).add(ey.clone().multiplyScalar(Math.sin(theta+dtheta))).multiplyScalar(R))
- 			
- 			
- 			// P1
- 			var P1 = PC1.clone().add(ez.clone().multiplyScalar(this._longueur/2))
- 			// P2
- 			var P2 = PC2.clone().add(ez.clone().multiplyScalar(this._longueur/2))
- 			// P3
- 			var P3 = PC1.clone().sub(ez.clone().multiplyScalar(this._longueur/2))
- 			// P4
- 			var P4 = PC2.clone().sub(ez.clone().multiplyScalar(this._longueur/2))
-
- 			positions.push(P1.x,P1.y,P1.z)
- 			positions.push(P3.x,P3.y,P3.z)
- 			positions.push(P2.x,P2.y,P2.z)
- 			
- 			positions.push(P3.x,P3.y,P3.z)
- 			positions.push(P4.x,P4.y,P4.z)
- 			positions.push(P2.x,P2.y,P2.z)
- 		}
- 		//console.log(positions)
- 		
- 		// Normales
- 		var normals = [];
- 		for(var i=0;i< this._nbFaces; i++)
- 		{
- 			var theta = i * dtheta - dtheta/2;
- 			// rayons (on met un biai pour faire un dégradé
- 			var R1 = (ex.clone().multiplyScalar(Math.cos(theta-dtheta/2))).add(ey.clone().multiplyScalar(Math.sin(theta-dtheta/2))).normalize()
- 			var R2 = (ex.clone().multiplyScalar(Math.cos(theta+dtheta/2))).add(ey.clone().multiplyScalar(Math.sin(theta+dtheta/2))).normalize()
-			//var R2 = (ex.clone().multiplyScalar(Math.cos(theta-dtheta/2))).add(ey.clone().multiplyScalar(Math.sin(theta-dtheta/2))).normalize()
-			
- 			normals.push(R1.x,R1.y,R1.z) // P1
- 			normals.push(R1.x,R1.y,R1.z) // P3
- 			normals.push(R2.x,R2.y,R2.z) // P2
- 			
- 			normals.push(R1.x,R1.y,R1.z) // P3
- 			normals.push(R2.x,R2.y,R2.z) // P4
- 			normals.push(R2.x,R2.y,R2.z) // P2
- 		}
- 		//console.log(normals)
- 		
- 		// UV
- 		var uvs = []
- 		for(var i=0;i< this._nbFaces; i++)
- 		{
- 			uvs.push(0,0)
- 			uvs.push(0,1)
- 			uvs.push(1,0)
- 			
- 			uvs.push(0,1)
- 			uvs.push(1,1)
- 			uvs.push(1,0)
- 		}
- 		//console.log(uvs)
- 		
- 		
- 		var geometry = new THREE.BufferGeometry()
- 		
- 		const positionNumComponents = 3;
-		const normalNumComponents = 3;
-		const uvNumComponents = 2;
- 		geometry.setAttribute(
-		      'position',
-		      new THREE.BufferAttribute(new Float32Array(positions), positionNumComponents));
-		geometry.setAttribute(
-		      'normal',
-		      new THREE.BufferAttribute(new Float32Array(normals), normalNumComponents));
-		geometry.setAttribute(
-		      'uv',
-		      new THREE.BufferAttribute(new Float32Array(uvs), uvNumComponents));
- 		
- 		
-		var materiau =  new THREE.MeshLambertMaterial({
-							color: this.couleur(),
-							transparent :true,
-							opacity:0.5
-							})
-			materiau.side = THREE.DoubleSide;
-		this.CYLINDRE = new THREE.Mesh(geometry,materiau);//new THREE.MeshNormalMaterial({side: THREE.DoubleSide}));
-		this.GROUPE.add(this.CYLINDRE)
-		*/
 		
-		var material_Ligne = new THREE.LineBasicMaterial({color: this.couleur()});
+		var material_Ligne = new THREE.LineBasicMaterial({
+								color: this.couleur(),
+								linewidth: 10
+								});
 
 		var points = [];
 		points.push(this.centre().add(this.vDirecteur().multiplyScalar(this.longueur()/2)));
@@ -423,7 +346,7 @@ class Droite extends Item
 		erreur.listeContraintes = this.liste_contraintes;
 		erreur = erreur.bind(erreur)
 	
-		var resultat =  GEN_algo_genetique([0.5,0.,-0.2,0,0,0,0.01], [0.5,0.5,0.5,1,1,1,0.1], erreur ,10000,30,0.2) // (nominal, IT, fecart, nb population, nb itérations, %meilleurs)
+		var resultat =  GEN_algo_genetique([0.5,0.,-0.2,0,0,0,0.01], [0.5,0.5,0.5,1,1,1,0.1], erreur ,10000,20,0.2) // (nominal, IT, fecart, nb population, nb itérations, %meilleurs)
 
 		console.log(resultat)
 		this.parametres(resultat[0]);
@@ -437,7 +360,7 @@ class Droite extends Item
 	/* Fonction qui cherche le meilleur centre (projeté sur l'axe) et longueur, par rapport aux nuages associés*/
 	optimiseGraphismes()
 	{		
-		// Borne graphique du cylindre
+		// Borne graphique de la droite
 		var s_min = 0;
 		var s_max = 0;
 		var vDir = this.vDirecteur().normalize();
@@ -456,7 +379,7 @@ class Droite extends Item
 				}
 			}
 		}
-		var L=(s_max-s_min)+this.rayon()
+		var L=(s_max-s_min)
 		this.longueur(L,false)
 		this.centre( this.centre().add(this.vDirecteur().multiplyScalar((s_max+s_min)/2)) )
 		

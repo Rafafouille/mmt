@@ -10,37 +10,36 @@
 			<input type="number" id="input_coord_Z" name="input_coord_Z" step="0.01"  placeholder="Z" value="0" onchange="updateZ(Number(this.value))"/>
 		</div>
 	
-		<div class="bouton bouton_deplacement gauche" onclick="updateX(X()-PAS_DEPLACEMENT_BOUTON_PLUS)">-<br/>-</div>
-		<div class="bouton bouton_deplacement gauche" onclick="updateX(X()-PAS_DEPLACEMENT_BOUTON)">-</div>
+		<div class="bouton clicable bouton_deplacement gauche" onclick="updateX(X()-PAS_DEPLACEMENT_BOUTON_PLUS)">-<br/>-</div>
+		<div class="bouton clicable bouton_deplacement gauche" onclick="updateX(X()-PAS_DEPLACEMENT_BOUTON)">-</div>
 		<div class="bouton bouton_deplacement centre" style="background-color:#FFDDDD;"><img src="./sources/images/depX.svg" alt="X"/></div>
-		<div class="bouton bouton_deplacement droite" onclick="updateX(X()+PAS_DEPLACEMENT_BOUTON)">+</div>
-		<div class="bouton bouton_deplacement droite" onclick="updateX(X()+PAS_DEPLACEMENT_BOUTON_PLUS)">+<br/>+</div>
+		<div class="bouton clicable bouton_deplacement droite" onclick="updateX(X()+PAS_DEPLACEMENT_BOUTON)">+</div>
+		<div class="bouton clicable bouton_deplacement droite" onclick="updateX(X()+PAS_DEPLACEMENT_BOUTON_PLUS)">+<br/>+</div>
 		<br/>
 		<input type="range" id="input_range_X" name="input_range_X" min="0" max="0.8" step="0.001" oninput="updateX($(this).val())"/>
 		<br/>
-		<div class="bouton bouton_deplacement gauche" onclick="updateY(Y()-PAS_DEPLACEMENT_BOUTON_PLUS)">-<br/>-</div>
-		<div class="bouton bouton_deplacement gauche" onclick="updateY(Y()-PAS_DEPLACEMENT_BOUTON)">-</div>
+		<div class="bouton clicable bouton_deplacement gauche" onclick="updateY(Y()-PAS_DEPLACEMENT_BOUTON_PLUS)">-<br/>-</div>
+		<div class="bouton clicable bouton_deplacement gauche" onclick="updateY(Y()-PAS_DEPLACEMENT_BOUTON)">-</div>
 		<div class="bouton bouton_deplacement centre" style="background-color:#DDFFDD;"><img src="./sources/images/depY.svg" alt="Y"/></div>
-		<div class="bouton bouton_deplacement droite" onclick="updateY(Y()+PAS_DEPLACEMENT_BOUTON)">+</div>
-		<div class="bouton bouton_deplacement droite" onclick="updateY(Y()+PAS_DEPLACEMENT_BOUTON_PLUS)">+<br/>+</div>
+		<div class="bouton clicable bouton_deplacement droite" onclick="updateY(Y()+PAS_DEPLACEMENT_BOUTON)">+</div>
+		<div class="bouton clicable bouton_deplacement droite" onclick="updateY(Y()+PAS_DEPLACEMENT_BOUTON_PLUS)">+<br/>+</div>
 		<br/>
 		<input type="range" id="input_range_Y" name="input_range_Y" min="0" max="0.8" step="0.001" oninput="updateY($(this).val())"/>
 		<br/>
-		<div class="bouton bouton_deplacement gauche" onclick="updateZ(Z()-PAS_DEPLACEMENT_BOUTON_PLUS)">-<br/>-</div>
-		<div class="bouton bouton_deplacement gauche" onclick="updateZ(Z()-PAS_DEPLACEMENT_BOUTON)">-</div>
+		<div class="bouton clicable bouton_deplacement gauche" onclick="updateZ(Z()-PAS_DEPLACEMENT_BOUTON_PLUS)">-<br/>-</div>
+		<div class="bouton clicable bouton_deplacement gauche" onclick="updateZ(Z()-PAS_DEPLACEMENT_BOUTON)">-</div>
 		<div class="bouton bouton_deplacement centre" style="background-color:#DDDDFF;"><img src="./sources/images/depZ.svg" alt="Y"/></div>
-		<div class="bouton bouton_deplacement droite" onclick="updateZ(Z()+PAS_DEPLACEMENT_BOUTON)">+</div>
-		<div class="bouton bouton_deplacement droite" onclick="updateZ(Z()+PAS_DEPLACEMENT_BOUTON_PLUS)">+<br/>+</div>
+		<div class="bouton clicable bouton_deplacement droite" onclick="updateZ(Z()+PAS_DEPLACEMENT_BOUTON)">+</div>
+		<div class="bouton clicable bouton_deplacement droite" onclick="updateZ(Z()+PAS_DEPLACEMENT_BOUTON_PLUS)">+<br/>+</div>
 		<br/>
 		<input type="range" id="input_range_Z" name="input_range_Z" min="0" max="0.4" step="0.001" oninput="updateZ($(this).val())"/>
 		<br/>
-		<div class="bouton" onclick="ouvreBoiteOuvrirPiece()">Ouvrir une pièce</div>
-		<div class="bouton" onclick="PIECE.visible=!PIECE.visible">Affiche/Cache pièce</div>
-		<div class="bouton" onclick="afficheCacheMachine()">Affiche/Cache machine</div>
-		<div class="bouton" onclick="REPERE_PALPEUR.visible=!REPERE_PALPEUR.visible">Affiche/Cache repere</div>
-		<div id="conteneur_vrbouton">[Bouton VR]</div>
-		
-		<div class="bouton" onclick="ouvreBoiteAjouterItem()">+ Ajouter</div>
+		<div class="bouton clicable carre" onclick="ouvreBoiteOuvrirPiece()"><img src="./sources/images/icone_ouvrir.svg" alt="[Ouvrir]" title="Ouvrir une pièce à mesurer"></div>
+		<div class="bouton clicable carre affichePiece" id="boutonAfficheCachePiece" title="Afficher/Cacher la pièce" onclick="afficheCachePiece()"></div>
+		<div class="bouton clicable carre afficheMachine" id="boutonAfficheCacheMachine" title="Affiche/Cacher machine" onclick="afficheCacheMachine()"></div>
+		<div class="bouton clicable carre afficheReperePalpeur" id="boutonAfficheCacheReperePalpeur" title="Afficher/Cacher le repère du palpeur"onclick="afficheCacheReperePalpeur()"></div>
+		<div class="bouton clicable carre" onclick="ouvreBoiteAjouterItem()"><img src="./sources/images/plus.svg" title="Ajouter un élément" alt="[ + ]"/></div>
+		<div class="bouton clicable carre" style="display:none;" id="conteneur_vrbouton">[Bouton VR]</div>
 		
 		
 		<!-- ARBRE DES ITEMS -------- -->

@@ -293,3 +293,46 @@ class ContrainteCylindreCirconscrit
 		return S
 	}	 
 }
+
+
+
+
+
+
+class ContrainteRMSDroite
+{
+	/* Constructeur */
+	constructor(_nuage_)
+	{
+		this.nuage = _nuage_;
+	}
+	
+	
+	/* ****************************
+	 MEMBRES
+	 **************************** */
+			
+	nuage = null;
+	 
+	/* ****************************
+	 GETTER / SETTER
+	 **************************** */
+	 
+	 
+	/* ****************************
+	 AUTRES MEMBRES
+	 **************************** */
+	 
+	 
+	/** Calcule la somme des erreurs au carré */
+	exec(params_droite)
+	{
+		var S=0;
+		for(var i=0;i<this.nuage.nbMesures();i++)//Pour chaque noeud du nuage
+		{
+			S+= getDistanceDroiteCarre(params_droite,this.nuage.getMesure(i))	// On calcule la distance entre le point i et le plan
+		}
+		return S
+	}	 
+}
+

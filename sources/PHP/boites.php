@@ -6,6 +6,7 @@
 			<li><a href="#tab_new_item_nuage"><img width="50px;" src="./sources/images/bouton_nuage.svg" alt="***"/><br/>Nuage</a></li>
 			<li><a href="#tab_new_item_plan"><img width="50px;" src="./sources/images/bouton_plan.svg" alt="/_/"/><br/>Plan</a></li>
 			<li><a href="#tab_new_item_cylindre"><img width="50px;" src="./sources/images/bouton_cylindre.svg" alt="C_O"/><br/>Cylindre</a></li>
+			<li><a href="#tab_new_item_droite"><img width="50px;" src="./sources/images/bouton_droite.svg" alt="---"/><br/>Droite</a></li>
 		</ul>
 		
 		<!-- Onglets "nouveau nuage" -->
@@ -41,6 +42,9 @@
 				</div>
 			</div>
 		</div>
+		
+		
+		
 		
 		<!-- Onglets "nouveau plan" ----------------------------------- -->
 		<div id="tab_new_item_plan">
@@ -84,7 +88,7 @@
 		
 		
 		
-		<!-- Onglets "nouveau nuage" ------------------------------------ -->
+		<!-- Onglets "nouveau cylindre" ------------------------------------ -->
 		<div id="tab_new_item_cylindre">
 			<p>Créer un nouveau cylindre.</p>
 			<form>
@@ -130,6 +134,52 @@
 				</div>
 			</div>
 		</div>
+		
+		
+		
+		<!-- Onglets "nouvelle droite" ------------------------------------ -->
+		<div id="tab_new_item_droite">
+			<p>Créer une nouvelle doite.</p>
+			<form>
+				<label for="tab_new_item_droite_nom">Nom : </label>
+				<input type="text" name="tab_new_item_droite_nom" id="tab_new_item_droite_nom"/>
+				<br/>
+				<label for="tab_new_item_droite_couleur">Couleur : </label>
+				<input type="color" name="tab_new_item_droite_couleur" id="tab_new_item_droite_couleur" value="#0000FF"/>
+			</form>
+			
+			
+			<!-- Liste des manière de définir la droite -->
+			<div id="tab_new_item_droite_methode">
+				<ul>
+					<li><a href="#tab_new_item_droite_equation">Coordonnées</a></li>
+					<li><a href="#tab_new_item_droite_contraintes">Contraintes de position</a></li>
+				</ul>
+				<div id="tab_new_item_droite_equation">
+					<form>
+						<label for="tab_new_item_droite_Px">Point central de la droite :</label> ( 
+						<input type="number" style="width: 80px;text-align:center;" id="tab_new_item_droite_Px" placeholder="x" name="tab_new_item_droite_Px" value="0"/>
+						;
+						<input type="number" style="width: 80px;text-align:center;" id="tab_new_item_droite_Py" placeholder="y" name="tab_new_item_droite_Py" value="0"/>
+						;
+						<input type="number" style="width: 80px;text-align:center;" id="tab_new_item_droite_Pz" placeholder="z" name="tab_new_item_droite_Pz" value="0"/>
+						)
+						<br/><label for="tab_new_item_cylindre_Vx">Vecteur directeur :</label> ( 
+						<input type="number" style="width: 80px;text-align:center;" id="tab_new_item_droite_Vx" placeholder="V.x" name="tab_new_item_droite_Vx" value="1"/>
+						; 
+						<input type="number" style="width: 80px;text-align:center;" id="tab_new_item_droite_Vy" placeholder="V.y" name="tab_new_item_droite_Vy" value="0"/>
+						; 
+						<input type="number" style="width: 80px;text-align:center;" id="tab_new_item_droite_Vz" placeholder="V.z" name="tab_new_item_droite_Vz" value="0"/>
+						)
+					</form>
+				</div>
+				<!-- droite par contraintes -->
+				<div id="tab_new_item_droite_contraintes">
+					<div id="tab_new_item_bouton_add_contrainte_droite" onclick="tab_new_item_ajouteContrainte_droite()">Ajouter une contrainte à respecter</div>
+					<div id="tab_new_item_liste_contraintes_droite"></div>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 	
@@ -157,6 +207,7 @@
 	$("#tab_new_item_nuage_methode").tabs();
 	$("#tab_new_item_plan_methode").tabs({ active: 1 });
 	$("#tab_new_item_cylindre_methode").tabs({ active: 1 });
+	$("#tab_new_item_droite_methode").tabs({ active: 1 });
 </script>
 
 
@@ -236,6 +287,35 @@
 						}
 				});
 </script>
+
+
+
+
+<!-- MESURE D'ÉLÉMENTS PAR RAPPORT A UNE DROITE ----------------------- -->
+<div id="boite_mesure_droite" title="Mesures à partir d'une droite" data-id="-1">
+	<p>
+		<label for="boite_mesure_droite_choix_item">Réaliser des mesures entre la droite et :</label>
+		<select name="boite_mesure_droite_choix_item" id="boite_mesure_droite_choix_item" onchange="updateCalculMesureDroite();">
+		</select>
+	</p>
+	<div id="boite_mesure_droite_mesures">
+	</div>
+</div>
+	
+	
+
+<script>
+	$("#boite_mesure_droite").dialog({
+					autoOpen:false,
+					width: "800px",
+					modal: true,
+					buttons:{
+						Annuler: function() {$(this).dialog("close")}
+						}
+				});
+</script>
+
+
 
 
 

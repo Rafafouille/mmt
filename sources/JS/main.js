@@ -123,8 +123,22 @@ ajouteNuage("Nuage 1")
 	// Ajout du bouton VR
 	$("#conteneur_vrbouton").html( VRButton.createButton( RENDERER ) );
 	$("#VRButton").css("position","static");//Replace le bouton à une meilleure place
-	$("#VRButton").css("background-color","black");//Replace le bouton à une meilleure place
-	setTimeout(function(){$("#VRButton").text("Lancer la VR")},1000);
+	//$("#VRButton").css("background-color","black");//Replace le bouton à une meilleure place
+	setTimeout(function(){
+			$("#VRButton").css("opacity","100%");//Replace le bouton à une meilleure place
+			$("#VRButton").css("background","none");//Replace le bouton à une meilleure place
+			$("#VRButton").css("border","none");//Replace le bouton à une meilleure place
+			$("#VRButton").css("margin","0px");//Replace le bouton à une meilleure place
+			$("#VRButton").css("padding","0px");//Replace le bouton à une meilleure place
+			$("#VRButton").css("width","52px");//Replace le bouton à une meilleure place
+			$("#VRButton").css("height","52px");//Replace le bouton à une meilleure place
+//			$("#VRButton").css("border","solid");//Replace le bouton à une meilleure place
+			$("#VRButton").css("vertical-align","middle");//Replace le bouton à une meilleure place
+			$("#VRButton").html("<img src=\"./sources/images/casque_VR.svg\" alt=\"Casque\" title=\"Lancer la réalité virtuelle\"/>");
+			$("#conteneur_vrbouton").css("display","inline-block");//Replace le bouton à une meilleure place
+		},1000);
+	
+	
 	// Bouton quand il n'y a pas le VR (on efface le bouton)
 	$("#conteneur_vrbouton a").css("display","none")
 	// Crée les controleurs

@@ -49,7 +49,24 @@ BOUTONS DEPLACEMENTS
 	border-right : solid 2px #888888;
 	border-left : solid 2px #EEEEEE;
 	user-select: none;
+}
+
+.bouton.clicable
+{
 	cursor:pointer;
+}
+
+.bouton.clicable:hover
+{
+	background-color:#AAAAFF;
+}
+
+.bouton.clicable:active
+{
+	border-bottom : solid 2px #EEEEEE;
+	border-top : solid 2px #888888;
+	border-left : solid 2px #888888;
+	border-right : solid 2px #EEEEEE;
 }
 
 .bouton_deplacement
@@ -64,6 +81,7 @@ BOUTONS DEPLACEMENTS
 	height:100%;
 	margin:auto;
 	width:60px;
+	cursor:none;
 }
 
 /* Coté */
@@ -75,14 +93,14 @@ BOUTONS DEPLACEMENTS
 }
 .bouton_deplacement.gauche:hover,.bouton_deplacement.droite:hover
 {
-	background-color:#AAAAFF;
+	/*background-color:#AAAAFF;*/
 }
 .bouton_deplacement.gauche:active,.bouton_deplacement.droite:active
 {
-	border-bottom : solid 2px #EEEEEE;
+	/*border-bottom : solid 2px #EEEEEE;
 	border-top : solid 2px #888888;
 	border-left : solid 2px #888888;
-	border-right : solid 2px #EEEEEE;
+	border-right : solid 2px #EEEEEE;*/
 }
 	
 .bouton_deplacement.gauche
@@ -95,8 +113,94 @@ BOUTONS DEPLACEMENTS
 	border-radius : 0 10px 10px 0;
 }
 
+.bouton.carre
+{
+	width:52px;
+	height:52px;
+	background-color:#DDDDDD;
+	vertical-align:middle;
+	padding:0px;
+}
+
+.bouton.carre img
+{
+	max-width:50px;
+	max-height:50px;
+}
+
+.bouton.affichePiece
+{
+	background-image:url('../images/icon_affiche_piece.svg');
+	background-size:contain;
+	background-repeat:no-repeat;
+}
+
+.bouton.affichePiece:hover
+{
+	background-image:url('../images/icon_cache_piece.svg')
+}
+
+.bouton.cachePiece
+{
+	background-image:url('../images/icon_cache_piece.svg');
+	background-size:contain;
+	background-repeat:no-repeat;
+}
+
+.bouton.cachePiece:hover
+{
+	background-image:url('../images/icon_affiche_piece.svg')
+}
 
 
+.bouton.afficheMachine
+{
+	background-image:url('../images/icon_affiche_machine.svg');
+	background-size:contain;
+	background-repeat:no-repeat;
+}
+
+.bouton.afficheMachine:hover
+{
+	background-image:url('../images/icon_cache_machine.svg')
+}
+
+.bouton.cacheMachine
+{
+	background-image:url('../images/icon_cache_machine.svg');
+	background-size:contain;
+	background-repeat:no-repeat;
+}
+
+.bouton.cacheMachine:hover
+{
+	background-image:url('../images/icon_affiche_machine.svg')
+}
+
+
+.bouton.afficheReperePalpeur
+{
+	background-image:url('../images/palpeur_repere.png');
+	background-size:contain;
+	background-repeat:no-repeat;
+}
+
+.bouton.afficheReperePalpeur:hover
+{
+	background-image:url('../images/palpeur.png')
+}
+
+.bouton.cacheReperePalpeur
+{
+	background-image:url('../images/palpeur.png');
+	background-size:contain;
+	background-repeat:no-repeat;
+}
+
+.bouton.cacheReperePalpeur:hover
+{
+	background-image:url('../images/palpeur_repere.png')
+}
 
 
 /* =======================================
@@ -220,7 +324,7 @@ NOUVEL ITEM
 =========================================== */
 
 
-#tab_new_item_bouton_add_contrainte_plan, #tab_new_item_bouton_add_contrainte_cylindre, #tab_new_item_bouton_assemble_ajoute_nuages
+#tab_new_item_bouton_add_contrainte_plan, #tab_new_item_bouton_add_contrainte_cylindre, #tab_new_item_bouton_assemble_ajoute_nuages, #tab_new_item_bouton_add_contrainte_droite
 {
 	cursor:pointer;
 	background-color:#CCCCCC;
@@ -232,13 +336,13 @@ NOUVEL ITEM
 }
 
 
-#tab_new_item_liste_contraintes_plan, #tab_new_item_liste_contraintes_cylindre, #tab_new_item_liste_assemble_nuage
+#tab_new_item_liste_contraintes_plan, #tab_new_item_liste_contraintes_cylindre, #tab_new_item_liste_assemble_nuage, #tab_new_item_liste_contraintes_droite
 {
 	min-height:100px;
 	border:solid 1px;
 }
 
-.tab_new_item_contrainte_plan, .tab_new_item_contrainte_cylindre, .tab_new_item_assemble_nuage
+.tab_new_item_contrainte_plan, .tab_new_item_contrainte_cylindre, .tab_new_item_assemble_nuage, .tab_new_item_contrainte_droite
 {
 	padding:5px;
 	background-color:#AAAAFF;

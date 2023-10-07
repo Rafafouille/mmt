@@ -385,6 +385,24 @@ function updateAffichageCoordonnees()
 }
 
 
+
+// *******************************************************************
+// Affiche/Cache la pièce
+function afficheCachePiece()
+{
+	PIECE.visible=!PIECE.visible
+	if(PIECE.visible)
+	{
+		$("#boutonAfficheCachePiece").removeClass("cachePiece");
+		$("#boutonAfficheCachePiece").addClass("affichePiece");
+	}
+	else
+	{
+		$("#boutonAfficheCachePiece").removeClass("affichePiece");
+		$("#boutonAfficheCachePiece").addClass("cachePiece");
+	}
+}
+
 // **************************************
 // Fonction qui affiche/cache la machine
 function afficheCacheMachine()
@@ -392,6 +410,35 @@ function afficheCacheMachine()
 	BATI.visible = !BATI.visible
 	AXE1.visible = BATI.visible
 	AXE2.visible = BATI.visible
+	if(BATI.visible)
+	{
+		$("#boutonAfficheCacheMachine").removeClass("cacheMachine");
+		$("#boutonAfficheCacheMachine").addClass("afficheMachine");
+	}
+	else
+	{
+		$("#boutonAfficheCacheMachine").removeClass("afficheMachine");
+		$("#boutonAfficheCacheMachine").addClass("cacheMachine");
+	}
+	
+}
+
+// **************************************
+// Fonction qui affiche/cache la machine
+function afficheCacheReperePalpeur()
+{
+	REPERE_PALPEUR.visible=!REPERE_PALPEUR.visible
+	if(REPERE_PALPEUR.visible)
+	{
+		$("#boutonAfficheCacheReperePalpeur").removeClass("cacheReperePalpeur");
+		$("#boutonAfficheCacheReperePalpeur").addClass("afficheReperePalpeur");
+	}
+	else
+	{
+		$("#boutonAfficheCacheReperePalpeur").removeClass("afficheReperePalpeur");
+		$("#boutonAfficheCacheReperePalpeur").addClass("cacheReperePalpeur");
+	}
+	
 }
 
 
@@ -460,7 +507,7 @@ function resizeFenetre()
 function ajouterItemFromDialog()
 {
 	// Choix du nouvel item   (type = "nuage" ou "plan", etc.)
-	var type=["nuage","plan","cylindre"][$("#tab_new_item").tabs('option', 'active')];
+	var type=["nuage","plan","cylindre","droite"][$("#tab_new_item").tabs('option', 'active')];
 
 	if(type == "nuage")
 	{
@@ -474,10 +521,6 @@ function ajouterItemFromDialog()
 		}
 		else if (methode == "fusion")
 		{
-			/*var nuage1 = getItemFromId(Number($("#tab_new_item_nuage_assemblage_nuage1").val())) ; 
-			var nuage2 = getItemFromId(Number($("#tab_new_item_nuage_assemblage_nuage2").val())) ;*/
-/*			copyMesuresFromFusion(nuage1,nuage)
-			copyMesuresFromFusion(nuage2,nuage)*/
 			for(var i=0; i<$("#tab_new_item_liste_assemble_nuage").children().length;i++ ) // Pour chaque nuage à copier
 			{
 				var htmlNuageAFusionner = $("#tab_new_item_liste_assemble_nuage").children()[i];
@@ -590,7 +633,7 @@ function ajouterItemFromDialog()
 			
 			var cylindre = new Cylindre(nom,[ centre.x , centre.y , centre.z , vDirecteur.x , vDirecteur.y , vDirecteur.z ,  R])
 			
-			cylindre.centre(centre);
+			cylindre.centre(centre); // <-- ? Pourquoi déjà ?
 		}
 		else if(methode == "contraintes")
 		{
@@ -644,6 +687,58 @@ function ajouterItemFromDialog()
 		LISTE_ITEMS.push(cylindre);
 		$("#arbre").append(cylindre.getHTML())
 		return cylindre;
+		
+		
+		
+		
+	}
+	else if(type == "droite")
+	{
+		var methode = ["equation","contraintes"][$("#tab_new_item_droite_methode").tabs('option', 'active')];
+		var nom = $("#tab_new_item_droite_nom").val();
+		var couleur = $("#tab_new_item_droite_couleur").val();
+		
+		if(methode == "equation")
+		{
+			var centre = {"x": Number($("#tab_new_item_droite_Px").val()) , "y" : Number($("#tab_new_item_droite_Pz").val()) , "z" : -Number($("#tab_new_item_droite_Py").val()) };
+			var vDirecteur = {"x": Number($("#tab_new_item_droite_Vx").val()) , "y" : Number($("#tab_new_item_droite_Vz").val()) , "z" : -Number($("#tab_new_item_droite_Vy").val()) };
+			
+			var droite = new Droite(nom,[ centre.x , centre.y , centre.z , vDirecteur.x , vDirecteur.y , vDirecteur.z])
+			
+//			droite.centre(centre);
+		}
+		else if(methode=="contraintes")
+		{
+			var droite = new Droite(nom); // On fabrique une nouvelle droite
+			var nbNuages = 0; // Nombre de points (pour le barycentre)
+			// Ajout des contraintes
+			for(var i=0; i<$("#tab_new_item_liste_contraintes_droite").children().length;i++)
+			{
+				htmlContrainte = $("#tab_new_item_liste_contraintes_droite").children()[i];
+				typeContrainte = $(htmlContrainte).find(".type-contrainte").val();
+				if(typeContrainte=="RMS")
+				{
+					var nNuage = Number($(htmlContrainte).find(".choix_contrainte_nuage select").val()); // A quel nuage doit-on s'attacher ?
+					var nuage = getItemFromId(nNuage)	// On recupere le nuage
+					/*centre.add(nuage.getBarycentre())
+					nbNuages+=1 // Pour faire la moyenne*/
+					var contrainte = new ContrainteRMSDroite(nuage) // On créer la contrainte
+					droite.liste_contraintes.push(contrainte)
+				}
+			}
+			droite.optimiseDroite(); // Trouves la meilleure équation si ce n'est pas des contraintes, il ne se passera rien
+			droite.optimiseGraphismes(); // Trouves les meilleurs paramètres d'affichage (centre, ...)
+			
+		}
+		
+		
+		
+		droite.couleur(couleur);
+		
+		LISTE_ITEMS.push(droite);
+		$("#arbre").append(droite.getHTML())
+		return droite;
+		
 	}
 	else
 	{
@@ -808,6 +903,22 @@ function getDistanceCylindreCarre(_param_cylindre_,_P_)
 }
 
 
+
+// ********************************************************
+// Fonction qui calcule la distance au carré entre une droite d'équation passant par le point O=(x,y,z), de vecteur directeur V=(a,b,c)
+// _param_droite_ = [x,y,z,a,b,c]
+// _P_ = THREE.Vector3
+function getDistanceDroiteCarre(_param_droite_,_P_)
+{
+	
+	var OP = new THREE.Vector3(_P_.x-_param_droite_[0] , _P_.y-_param_droite_[1], _P_.z-_param_droite_[2])
+	var V =  new THREE.Vector3(_param_droite_[3],_param_droite_[4],_param_droite_[5])
+	//https://www.cuemath.com/geometry/distance-between-point-and-plane/
+	return Math.pow( (OP.cross(V)).length()/V.length()  ,2)
+}
+
+
+
 // *****************************************
 // Ouvre boitre "ajouter item"
 function ouvreBoiteAjouterItem()
@@ -828,6 +939,10 @@ function ouvreBoiteAjouterItem()
 	$("#tab_new_item_cylindre_nom").val("Cylindre "+String(NUMERO_ITEM+1))
 	$("#tab_new_item_cylindre_couleur").val(LISTE_COULEURS[ NUMERO_ITEM % LISTE_COULEURS.length ])
 	$("#tab_new_item_liste_contraintes_cylindre").empty();
+	
+	
+	$("#tab_new_item_droite_nom").val("Droite "+String(NUMERO_ITEM+1))
+	$("#tab_new_item_liste_contraintes_droite").empty();
 }
 
 
@@ -872,7 +987,7 @@ function tab_new_item_ajouteContrainte_plan()
 
 
 // ********************************************
-// Fonction qui ajoute un div pour lister les contrainte à inffliger au futur cylindre dans la boite de dialog
+// Fonction qui ajoute un div pour lister les contrainte à infliger au futur cylindre dans la boite de dialog
 function tab_new_item_ajouteContrainte_cylindre()
 {
 	var html = `
@@ -894,6 +1009,31 @@ function tab_new_item_ajouteContrainte_cylindre()
 	html += "</div>";
 	
 	$("#tab_new_item_liste_contraintes_cylindre").append(html)
+}
+
+
+
+// ********************************************
+// Fonction qui ajoute un div pour lister les contrainte à inffliger à la future droite dans la boite de dialog
+function tab_new_item_ajouteContrainte_droite()
+{
+	var html = `
+		<div class=\"tab_new_item_contrainte_droite\">
+			<div class=\"bouton_autosupprime_dans_liste\" title=\"Supprimer la contrainte\" onclick=\"autosupprime_dans_liste(this)\"></div>
+			Contrainte : 
+			<select class="type-contrainte">
+				<option value="RMS">Droite des moindres carrés</option>
+			</select>
+			<div class="choix_contrainte_nuage">
+				Nuage :
+				<select>
+					`+getHTMLNuagesInSelect()+`
+				</select>
+			</div>`;
+			
+	html += "</div>";
+	
+	$("#tab_new_item_liste_contraintes_droite").append(html)
 }
 
 
@@ -945,7 +1085,7 @@ function ouvreBoiteMesurePlan(_id_)
 	{
 		if(LISTE_ITEMS[i].id()!=_id_)
 		{
-			$("#boite_mesure_plan_choix_item").append("<option value=\""+String(LISTE_ITEMS[i].id())+"\">"+LISTE_ITEMS[i].nom()+"</select>")
+			$("#boite_mesure_plan_choix_item").append("<option value=\""+String(LISTE_ITEMS[i].id())+"\">"+LISTE_ITEMS[i].nom()+"</option>")
 		}
 	}
 	$("#boite_mesure_plan_mesures").empty();
@@ -964,11 +1104,30 @@ function ouvreBoiteMesureCylindre(_id_)
 	{
 		if(LISTE_ITEMS[i].id()!=_id_)
 		{
-			$("#boite_mesure_cylindre_choix_item").append("<option value=\""+String(LISTE_ITEMS[i].id())+"\">"+LISTE_ITEMS[i].nom()+"</select>")
+			$("#boite_mesure_cylindre_choix_item").append("<option value=\""+String(LISTE_ITEMS[i].id())+"\">"+LISTE_ITEMS[i].nom()+"</option>")
 		}
 	}
 	$("#boite_mesure_cylindre_mesures").empty();
 	$("#boite_mesure_cylindre").dialog("open");
+}
+
+
+// ******************************************
+// Ouvre la boite d'analyse par rapport au droite dont l'item est le n°id
+function ouvreBoiteMesureDroite(_id_)
+{
+	$("#boite_mesure_droite").attr("data-id",_id_);
+	$("#boite_mesure_droite_choix_item").empty();
+	$("#boite_mesure_droite_choix_item").append("<option value=\"\"></select>");
+	for(var i=0;i<LISTE_ITEMS.length ;i++)
+	{
+		if(LISTE_ITEMS[i].id()!=_id_)
+		{
+			$("#boite_mesure_droite_choix_item").append("<option value=\""+String(LISTE_ITEMS[i].id())+"\">"+LISTE_ITEMS[i].nom()+"</option>")
+		}
+	}
+	$("#boite_mesure_droite_mesures").empty();
+	$("#boite_mesure_droite").dialog("open");
 }
 
 
@@ -1102,6 +1261,39 @@ function updateCalculMesureCylindre()
 
 
 // *****************************************
+function updateCalculMesureDroite()
+{
+	var droite = getItemFromId($("#boite_mesure_droite").attr("data-id"))
+	var item = getItemFromId($("#boite_mesure_droite_choix_item").val())
+	
+	// NUAGES ========================
+	if(item.type()=="nuage")
+	{
+		var rMax = 0
+		for(var i=0;i<item.nbMesures();i++)
+		{
+			var mes = item.getMesure(i)
+			
+			// Mesures à la droite
+			var r = droite.getRayonPoint(mes)
+			if(r>rMax)
+				rMax = r;
+			
+		}
+	
+		// Résultats
+		$("#boite_mesure_droite_mesures").append(`
+			<strong>Mesure par rapport à la droite :</strong>
+			<ul>
+				<li><strong>Écart max :</strong> `+String(rMax)+`</li>
+			</ul>
+		`)
+	}
+	
+}
+
+
+// *****************************************
 function getDonneesInTableau()
 {
 	var tab = [];
@@ -1200,5 +1392,6 @@ function fermeModal()
 	$("#voileNoir").hide();
 	$("#pourcentage_calcul").text("");
 }
+
 
 
