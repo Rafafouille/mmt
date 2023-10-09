@@ -576,7 +576,7 @@ function ajouterItemFromDialog()
 				typeContrainte = $(htmlContrainte).find(".type-contrainte").val();
 				if(typeContrainte=="RMS")
 				{
-					var nNuage = Number($(htmlContrainte).find(".choix_contrainte_nuage select").val()); // A quel nuage doit-on s'attacher ?
+					var nNuage = Number($(htmlContrainte).find(".choix_contrainte_element select").val()); // A quel nuage doit-on s'attacher ?
 					var nuage = getItemFromId(nNuage)	// On recupere le nuage
 					centre.add(nuage.getBarycentre())
 					nbNuages+=1 // Pour faire la moyenne
@@ -585,7 +585,7 @@ function ajouterItemFromDialog()
 				}
 				else if(typeContrainte == "exterieurPlus")
 				{
-					var nNuage = Number($(htmlContrainte).find(".choix_contrainte_nuage select").val()); // A quel nuage doit-on s'attacher ?
+					var nNuage = Number($(htmlContrainte).find(".choix_contrainte_element select").val()); // A quel nuage doit-on s'attacher ?
 					var nuage = getItemFromId(nNuage)	// On recupere le nuage
 					centre.add(nuage.getBarycentre())
 					nbNuages+=1 // Pour faire la moyenne
@@ -594,12 +594,26 @@ function ajouterItemFromDialog()
 				}
 				else if(typeContrainte == "exterieurMoins")
 				{
-					var nNuage = Number($(htmlContrainte).find(".choix_contrainte_nuage select").val()); // A quel nuage doit-on s'attacher ?
+					var nNuage = Number($(htmlContrainte).find(".choix_contrainte_element select").val()); // A quel nuage doit-on s'attacher ?
 					var nuage = getItemFromId(nNuage)	// On recupere le nuage
 					centre.add(nuage.getBarycentre())
 					nbNuages+=1 // Pour faire la moyenne
 					var contrainte = new ContraintePlanExterieurNegatif(nuage) // On créer la contrainte
 					plan.liste_contraintes.push(contrainte)
+				}
+				else if(typeContrainte == "parallelisme")
+				{
+					var nPlanRef = Number($(htmlContrainte).find(".choix_contrainte_element select").val()); // A quel plan doit-on s'attacher ?
+					var planRef = getItemFromId(nPlanRef)// On recupere le plan de référence
+					var contrainte = new ContraintePlanParallelisme(planRef) // On créer la contrainte
+					plan.liste_contraintes.push(contrainte);
+				}
+				else if(typeContrainte == "perpendicularite")
+				{
+					var nPlanRef = Number($(htmlContrainte).find(".choix_contrainte_element select").val()); // A quel plan doit-on s'attacher ?
+					var planRef = getItemFromId(nPlanRef)// On recupere le plan de référence
+					var contrainte = new ContraintePlanPerpendicularite(planRef) // On créer la contrainte
+					plan.liste_contraintes.push(contrainte);
 				}
 			}
 			
@@ -646,7 +660,7 @@ function ajouterItemFromDialog()
 				typeContrainte = $(htmlContrainte).find(".type-contrainte").val();
 				if(typeContrainte=="RMS")
 				{
-					var nNuage = Number($(htmlContrainte).find(".choix_contrainte_nuage select").val()); // A quel nuage doit-on s'attacher ?
+					var nNuage = Number($(htmlContrainte).find(".choix_contrainte_element select").val()); // A quel nuage doit-on s'attacher ?
 					var nuage = getItemFromId(nNuage)	// On recupere le nuage
 					/*centre.add(nuage.getBarycentre())
 					nbNuages+=1 // Pour faire la moyenne*/
@@ -655,7 +669,7 @@ function ajouterItemFromDialog()
 				}
 				else if(typeContrainte == "inscrit")
 				{
-					var nNuage = Number($(htmlContrainte).find(".choix_contrainte_nuage select").val()); // A quel nuage doit-on s'attacher ?
+					var nNuage = Number($(htmlContrainte).find(".choix_contrainte_element select").val()); // A quel nuage doit-on s'attacher ?
 					var nuage = getItemFromId(nNuage)	// On recupere le nuage
 					/*centre.add(nuage.getBarycentre())
 					nbNuages+=1 // Pour faire la moyenne*/
@@ -664,7 +678,7 @@ function ajouterItemFromDialog()
 				}
 				else if(typeContrainte == "circonscrit")
 				{
-					var nNuage = Number($(htmlContrainte).find(".choix_contrainte_nuage select").val()); // A quel nuage doit-on s'attacher ?
+					var nNuage = Number($(htmlContrainte).find(".choix_contrainte_element select").val()); // A quel nuage doit-on s'attacher ?
 					var nuage = getItemFromId(nNuage)	// On recupere le nuage
 					/*centre.add(nuage.getBarycentre())
 					nbNuages+=1 // Pour faire la moyenne*/
@@ -718,8 +732,10 @@ function ajouterItemFromDialog()
 				typeContrainte = $(htmlContrainte).find(".type-contrainte").val();
 				if(typeContrainte=="RMS")
 				{
-					var nNuage = Number($(htmlContrainte).find(".choix_contrainte_nuage select").val()); // A quel nuage doit-on s'attacher ?
+					var nNuage = Number($(htmlContrainte).find(".choix_contrainte_element select").val()); // A quel nuage doit-on s'attacher ?
 					var nuage = getItemFromId(nNuage)	// On recupere le nuage
+					console.log(nNuage);
+					console.log(nuage);
 					/*centre.add(nuage.getBarycentre())
 					nbNuages+=1 // Pour faire la moyenne*/
 					var contrainte = new ContrainteRMSDroite(nuage) // On créer la contrainte
@@ -968,12 +984,14 @@ function tab_new_item_ajouteContrainte_plan()
 		<div class=\"tab_new_item_contrainte_plan\">
 			<div class=\"bouton_autosupprime_dans_liste\" title=\"Supprimer la contrainte\" onclick=\"autosupprime_dans_liste(this)\"></div>
 			Contrainte : 
-			<select class="type-contrainte">
+			<select class="type-contrainte" onchange="new_item_contrainte_plan_update_liste_elements(this)">
 				<option value="RMS">Plan des moindres carrés</option>
 				<option value="exterieurPlus">Plan extérieur aux points (+)</option>
 				<option value="exterieurMoins">Plan extérieur aux points (-)</option>
+				<option value="parallelisme">Parallélisme</option>
+				<option value="perpendicularite">Perpendicularité</option>
 			</select>
-			<div class="choix_contrainte_nuage">
+			<div class="choix_contrainte_element">
 				Nuage :
 				<select>
 					`+getHTMLNuagesInSelect()+`
@@ -999,7 +1017,7 @@ function tab_new_item_ajouteContrainte_cylindre()
 				<option value="inscrit">Inscrit dans le nuage</option>
 				<option value="circonscrit">Circonscrit au nuage</option>
 			</select>
-			<div class="choix_contrainte_nuage">
+			<div class="choix_contrainte_element">
 				Nuage :
 				<select>
 					`+getHTMLNuagesInSelect()+`
@@ -1024,7 +1042,7 @@ function tab_new_item_ajouteContrainte_droite()
 			<select class="type-contrainte">
 				<option value="RMS">Droite des moindres carrés</option>
 			</select>
-			<div class="choix_contrainte_nuage">
+			<div class="choix_contrainte_element">
 				Nuage :
 				<select>
 					`+getHTMLNuagesInSelect()+`
@@ -1362,6 +1380,23 @@ function getHTMLNuagesInSelect()
 	return html;
 }
 
+// *********************************************
+// Fonction qui fait la liste des plans pour mettre dans un select (form)
+function getHTMLPlansInSelect()
+{
+	var html = "";
+	for(var i=0;i<LISTE_ITEMS.length;i++)
+	{
+		var item = LISTE_ITEMS[i];
+		if(item.type()=="plan")
+		{
+			html+=`
+					<option value="`+String(item.id())+`">`+item.nom()+`</option>`;
+		}
+	}
+	return html;
+}
+
 
 // **************************************************************************
 // Fait une copie des mesures de l'un dans l'autre (utile pour les fusions)
@@ -1394,4 +1429,28 @@ function fermeModal()
 }
 
 
+// ***********************************************************
+// Fonction qui met à jour la liste déroulante, au moment du choix de contraintes d'un nouveau plan
+// (Par exemple : pour un RMS, on mets des nuages de point, pour une perpendicularité, on mets une liste de plan, etc.)
+function new_item_contrainte_plan_update_liste_elements(element)
+{
+	AAA = element
+	// On récupere le type de contrainte
+	var elementContrainte = $(element).parent();
+	var typeDeContrainte = $(element).val();
+		
+	// On vide la liste des éléments
+	var listeDeroulanteElements = $(element).parent().find(".choix_contrainte_element") ;
+	listeDeroulanteElements.empty();
+	
+	// Choix des nouveaux élments en fonction du type
+	if(typeDeContrainte == "RMS" || typeDeContrainte == "exterieurPlus" || typeDeContrainte == "exterieurMoins")
+	{
+		listeDeroulanteElements.html("Nuage : <select>"+getHTMLNuagesInSelect()+"</select>");
+	}
+	else if(typeDeContrainte == "parallelisme" || typeDeContrainte == "perpendicularite")
+	{
+		listeDeroulanteElements.html("Plans de ref.: <select>"+getHTMLPlansInSelect()+"</select>");
+	}
+}
 

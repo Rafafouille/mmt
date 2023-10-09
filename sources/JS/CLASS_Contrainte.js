@@ -336,3 +336,97 @@ class ContrainteRMSDroite
 	}	 
 }
 
+
+
+
+
+
+class ContraintePlanParallelisme
+{
+	/* Constructeur */
+	constructor(_plan_)
+	{
+		this.plan = _plan_;
+	}
+	
+	
+	/* ****************************
+	 MEMBRES
+	 **************************** */
+			
+	plan = null;
+	 
+	/* ****************************
+	 GETTER / SETTER
+	 **************************** */
+	 
+	 
+	/* ****************************
+	 AUTRES MEMBRES
+	 **************************** */
+	 
+	 
+	/** Calcule la somme des erreurs au carré */
+	exec(params_plan)
+	{
+		var n1 = this.plan.normale() ; // normale de ref, Unitaire
+		var n2 = new THREE.Vector3(params_plan[0], params_plan[1], params_plan[2]);
+		n2.normalize();
+		
+		if(n1.dot(n2)==0) // S'ils sont orthogonaux (sinon, le calcul qui suit va rendre l'infini)
+			return 100000000000000
+		
+		
+		var S = Math.pow(  Math.tan((n1.cross(n2)).length() * Math.PI*0.5 )   ,2);
+		
+		return S;
+	}	 
+}
+
+
+
+
+
+
+class ContraintePlanPerpendicularite
+{
+	/* Constructeur */
+	constructor(_plan_)
+	{
+		this.plan = _plan_;
+	}
+	
+	
+	/* ****************************
+	 MEMBRES
+	 **************************** */
+			
+	plan = null;
+	 
+	/* ****************************
+	 GETTER / SETTER
+	 **************************** */
+	 
+	 
+	/* ****************************
+	 AUTRES MEMBRES
+	 **************************** */
+	 
+	 
+	/** Calcule la somme des erreurs au carré */
+	exec(params_plan)
+	{
+		var n1 = this.plan.normale() ; // normale de ref, Unitaire
+		var n2 = new THREE.Vector3(params_plan[0], params_plan[1], params_plan[2]);
+		n2.normalize();
+		
+		if(Math.abs(n1.dot(n2))==1) // S'ils sont orthogonaux (sinon, le calcul qui suit va rendre l'infini)
+			return 100000000000000
+		
+		
+		var S = Math.pow(  Math.tan(Math.abs(n1.dot(n2)) * Math.PI*0.5 )   ,2);
+		
+		return S;
+	}	 
+}
+
