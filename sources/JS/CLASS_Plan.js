@@ -188,16 +188,33 @@ class Plan extends Item
 		
 		var res = ""
 		
+		// X
 		if(a!=0)
 			 res += String(a)+" × <strong>x</strong>"
-		if(b>0)
-			res += " + "+String(b)+" × <strong>y</strong>"
-		if(b<0)
-			res += " - "+String(Math.abs(b))+" × <strong>y</strong>"
-		if(c>0)
-			res += " + "+String(c)+" × <strong>z</strong>"
-		if(c<0)
-			res += " - "+String(Math.abs(c))+" × <strong>z</strong>"
+			 
+		// Y
+		if(a!=0 && c!=0)
+		{
+			if(c>0)
+				res += " - "; // Attention, le y = -z
+			if(c<0)
+				res += " + ";
+		}
+		if(c!=0)
+			res += String(c)+" × <strong>y</strong>"
+			
+		// Z
+		if((a!=0 || b!=0) && c!=0)
+		{
+			if(b>0)
+				res += " + "; // Attention, le z = y
+			if(b<0)
+				res += " - ";
+		}
+		if(b!=0)
+			res += String(b)+" × <strong>z</strong>"
+			
+		// Constante
 		if(d>0)
 			res += " + "+String(d)
 		if(d<0)
