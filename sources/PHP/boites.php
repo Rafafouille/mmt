@@ -53,8 +53,8 @@
 				<label for="tab_new_item_plan_nom">Nom : </label>
 				<input type="text" name="tab_new_item_plan_nom" id="tab_new_item_plan_nom"/>
 				<br/>
-				<label for="tab_new_item_nuage_couleur">Couleur : </label>
-				<input type="color" name="tab_new_item_nuage_couleur" id="tab_new_item_nuage_couleur" value="#00FF00"/>
+				<label for="tab_new_item_plan_couleur">Couleur : </label>
+				<input type="color" name="tab_new_item_plan_couleur" id="tab_new_item_plan_couleur" value="#00FF00"/>
 			</form>
 			
 			<!-- Liste des manière de définir le plan -->
@@ -62,6 +62,7 @@
 				<ul>
 					<li><a href="#tab_new_item_plan_equation">Équation</a></li>
 					<li><a href="#tab_new_item_plan_contraintes">Contraintes de position</a></li>
+					<li><a href="#tab_new_item_plan_decale">Copie décalée</a></li>
 				</ul>
 				<!-- Plan par équation -->
 				<div id="tab_new_item_plan_equation">
@@ -81,6 +82,19 @@
 				<div id="tab_new_item_plan_contraintes">
 					<div id="tab_new_item_bouton_add_contrainte_plan" onclick="tab_new_item_ajouteContrainte_plan()">Ajouter une contrainte à respecter</div>
 					<div id="tab_new_item_liste_contraintes_plan"></div>
+				</div>
+				<!-- Plan à partir d'un autre plan -->
+				<div id="tab_new_item_plan_decale">
+					Crée une copie d'un plan, décalé par rapport à sa normale.
+					<form>
+						<label for="tab_new_item_plan_decale_reference">Plan de référence : </label>
+							<select name="tab_new_item_plan_decale_reference" id="tab_new_item_plan_decale_reference">
+							</select>
+						<br/>
+						<label for="tab_new_item_plan_decale_distance">Distance (en m) : </label>
+							<input type="number" id="tab_new_item_plan_decale_distance" name="tab_new_item_plan_decale_distance" value="0">
+							<div class="bouton_infobulle" title="Positif pour s'éloigner de l'origine ; négatif pour s'en rapprocher."></div>
+					</form>
 				</div>
 			</div>
 			
@@ -208,6 +222,7 @@
 	$("#tab_new_item_plan_methode").tabs({ active: 1 });
 	$("#tab_new_item_cylindre_methode").tabs({ active: 1 });
 	$("#tab_new_item_droite_methode").tabs({ active: 1 });
+	
 </script>
 
 

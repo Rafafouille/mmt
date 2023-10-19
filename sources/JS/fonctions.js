@@ -549,7 +549,7 @@ function ajouterItemFromDialog()
 	}
 	else if(type == "plan")
 	{
-		var methode = ["equation","contraintes"][$("#tab_new_item_plan_methode").tabs('option', 'active')];
+		var methode = ["equation","contraintes","décalé"][$("#tab_new_item_plan_methode").tabs('option', 'active')];
 		var nom = $("#tab_new_item_plan_nom").val();
 		var couleur = $("#tab_new_item_nuage_couleur").val();
 		
@@ -621,6 +621,29 @@ function ajouterItemFromDialog()
 				centre.divideScalar(nbNuages)
 			plan.optimisePlan(); // si ce n'est pas des contraintes, il ne se passera rien
 			
+		}
+		else if(methode == "décalé")
+		{
+			var nPlanRef = Number($("#tab_new_item_plan_decale_reference").val()); // A quel plan doit-on s'attacher ?
+			var planRef = getItemFromId(nPlanRef)// On recupere le plan de référence
+			var decalage = Number($("#tab_new_item_plan_decale_distance").val())
+			
+			var parametres = planRef.parametres(); // Copie
+			
+			
+			// On regarde si la normale (a,b,c) du plan est du même sens que OH (H = projection de O sur le plan)
+			var O = new THREE.Vector3(0,0,0);
+			var OH = planRef.getProjection(O)
+			var n = planRef.normale();
+			
+			if(n.dot(OH)>=0)
+				var signe = -1;
+			else 
+				var signe = 1
+			
+			parametres[3] += decalage*Math.sqrt(parametres[0]*parametres[0]+parametres[1]*parametres[1]+parametres[2]*parametres[2])*signe;
+			console.log(parametres)
+			var plan = new Plan(nom,parametres)
 		}
 		plan.couleur(couleur);
 		plan.centre(centre);
@@ -939,6 +962,7 @@ function getDistanceDroiteCarre(_param_droite_,_P_)
 // Ouvre boitre "ajouter item"
 function ouvreBoiteAjouterItem()
 {
+	// Onglet nuages
 	$("#tab_new_item_nuage_nom").val("Nuage "+String(NUMERO_ITEM+1))
 	$("#tab_new_item_nuage_couleur").val(LISTE_COULEURS[ NUMERO_ITEM % LISTE_COULEURS.length ])
 /*	$("#tab_new_item_nuage_assemblage_nuage1").empty();
@@ -948,17 +972,23 @@ function ouvreBoiteAjouterItem()
 	$("#tab_new_item_nuage_assemblage_nuage2 option:nth-child(2)").prop('selected', true);*/
 	$("#tab_new_item_liste_assemble_nuage").empty();
 	
+	// Onglet plans
 	$("#tab_new_item_plan_nom").val("Plan "+String(NUMERO_ITEM+1))
 	$('#boite_new_item').dialog('open')
 	$("#tab_new_item_liste_contraintes_plan").empty();
+	$("#tab_new_item_plan_decale_reference").empty();
+	$("#tab_new_item_plan_decale_reference").html(getHTMLPlansInSelect())
 	
+	// Onglet cylindres
 	$("#tab_new_item_cylindre_nom").val("Cylindre "+String(NUMERO_ITEM+1))
 	$("#tab_new_item_cylindre_couleur").val(LISTE_COULEURS[ NUMERO_ITEM % LISTE_COULEURS.length ])
 	$("#tab_new_item_liste_contraintes_cylindre").empty();
 	
-	
+	// Onglet droite
 	$("#tab_new_item_droite_nom").val("Droite "+String(NUMERO_ITEM+1))
 	$("#tab_new_item_liste_contraintes_droite").empty();
+	
+	
 }
 
 

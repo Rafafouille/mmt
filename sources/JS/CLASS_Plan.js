@@ -89,7 +89,7 @@ class Plan extends Item
 	 		if(redessine)
 	 			this.redessine()
 		 }
-	 	return this._parametres;
+	 	return this._parametres.slice();
 	 }
 	 
 	 // Renvoie la base

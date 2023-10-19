@@ -17,6 +17,20 @@ body
 
 textarea { height: auto; }
 
+.bouton_infobulle
+{
+	display:inline-block;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-image:url('../images/info.svg');
+	
+	width:30px;
+	height:30px;
+	margin-bottom:-10px;
+	
+	cursor:help;
+}
+
 /* =======================================
 AFFICHAGE DEPLACEMENTS
 =========================================== */
