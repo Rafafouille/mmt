@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="20.773842mm"
+   height="20.773842mm"
+   viewBox="0 0 20.773842 20.773842"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="info.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="3.5713615"
+     inkscape:cx="7.9801499"
+     inkscape:cy="42.140791"
+     inkscape:window-width="1850"
+     inkscape:window-height="1016"
+     inkscape:window-x="70"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient1927">
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0"
+         offset="0"
+         id="stop1923" />
+      <stop
+         style="stop-color:#ffffff;stop-opacity:0.621315"
+         offset="1"
+         id="stop1925" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient1927"
+       id="linearGradient1929"
+       x1="71.326714"
+       y1="54.193733"
+       x2="84.070236"
+       y2="65.120804"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-66.92487,-49.804253)">
+    <circle
+       style="font-variation-settings:normal;opacity:1;vector-effect:none;fill:#6565ff;fill-opacity:1;stroke:#0000ff;stroke-width:1.05833;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;-inkscape-stroke:none;stop-color:#000000;stop-opacity:1"
+       id="path846"
+       cx="77.31179"
+       cy="60.191174"
+       r="9.8577557" />
+    <circle
+       style="fill:url(#linearGradient1929);fill-opacity:1;stroke:none;stroke-width:1.05833;stroke-linejoin:round;stroke-opacity:1"
+       id="path846-3"
+       cy="60.191174"
+       cx="77.31179"
+       r="8.5734024" />
+    <g
+       aria-label="i"
+       id="text3473"
+       style="font-size:21.9383px;line-height:1.25;font-family:'latin moderne roman';-inkscape-font-specification:'latin moderne roman, ';fill:#ffffff;stroke-width:0.548458">
+      <path
+         d="m 80.062399,63.720592 c 0,-0.307136 -0.285198,-0.307136 -0.614273,-0.307136 -0.416827,0 -0.526519,0 -0.614272,0.285198 -0.175506,0.570396 -0.76784,2.654534 -2.018324,2.654534 -0.109691,0 -0.307136,0 -0.307136,-0.394889 0,-0.285198 0.153568,-0.833655 0.175507,-0.877532 l 1.974447,-5.221315 c 0.131629,-0.351013 0.197444,-0.526519 0.197444,-0.855594 0,-1.228545 -1.118853,-1.952509 -2.303521,-1.952509 -2.281583,0 -3.35656,2.961671 -3.35656,3.422375 0,0.307136 0.285198,0.307136 0.614273,0.307136 0.416827,0 0.526519,0 0.614272,-0.285198 0.175506,-0.570395 0.76784,-2.654534 2.018323,-2.654534 0.109692,0 0.307137,0 0.307137,0.39489 0,0.285197 -0.153568,0.833655 -0.175507,0.877532 l -1.974447,5.221315 c -0.13163,0.351013 -0.197444,0.526519 -0.197444,0.855593 0,1.228545 1.118853,1.952509 2.303521,1.952509 2.281583,0 3.35656,-2.96167 3.35656,-3.422375 z m 0.307136,-10.223247 c 0,-0.614272 -0.460704,-1.316298 -1.360175,-1.316298 -1.009161,0 -1.952508,0.943347 -1.952508,1.908632 0,0.702026 0.526519,1.316298 1.360174,1.316298 1.0311,0 1.952509,-0.965285 1.952509,-1.908632 z"
+         style="font-style:italic;font-weight:bold;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman,  Bold Italic'"
+         id="path829" />
+    </g>
+  </g>
+</svg>
