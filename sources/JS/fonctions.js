@@ -1301,6 +1301,7 @@ function updateCalculMesurePlan()
 			<ul>
 				<li><strong>Écart min :</strong> `+String(dMin)+`</li>
 				<li><strong>Écart max :</strong> `+String(dMax)+`</li>
+				<li><strong>IT : </strong>`+String(dMax-dMin)+`</li>
 				<li><strong>R<sub>a</sub> :</strong> `+String(Ra)+`</li>
 			</ul>
 		`)
@@ -1353,6 +1354,7 @@ function updateCalculMesureCylindre()
 				<li><strong>Écart max :</strong> `+String(dcMax)+`</li>
 				<li><strong>IT :</strong> `+String(dcMax-dcMin)+`</li>
 				<li><strong>R<sub>a</sub> :</strong> `+String(Ra)+`</li>
+				<li>`+(dcMin==0&&dcMax==0?"Tous les points sont <strong>sur le cylindre</strong>.":(dcMin==0?"Tous les points sont <strong>hors du cylindre</strong>.":(dcMax==0?"Tous les points sont <strong>dans le cylindre</strong>.":"Il y a des points <strong>dans et hors du cylindre</strong>.")))+`</li>
 			</ul>
 			<strong>Mesure par rapport à l'axe :</strong>
 			<ul>
