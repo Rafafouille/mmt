@@ -657,7 +657,7 @@ function ajouterItemFromDialog()
 	}
 	else if(type == "cylindre")
 	{
-		var methode = ["equation","contraintes"][$("#tab_new_item_cylindre_methode").tabs('option', 'active')];
+		var methode = ["equation","contraintes","droite"][$("#tab_new_item_cylindre_methode").tabs('option', 'active')];
 		var nom = $("#tab_new_item_cylindre_nom").val();
 		var couleur = $("#tab_new_item_cylindre_couleur").val();
 		
@@ -719,6 +719,15 @@ function ajouterItemFromDialog()
 			cylindre.optimiseCylindre(); // Trouves la meilleure équationsi ce n'est pas des contraintes, il ne se passera rien
 			cylindre.optimiseGraphismes(); // Trouves les meilleurs paramètres d'affichage (centre, ...)
 		}
+		else if(methode == "droite")
+		{
+			var nDroite =  Number($("#tab_new_item_cylindre_droite_choix").val()); 
+			var droite = getItemFromId(nDroite);
+			var rayon =  Number($("#tab_new_item_cylindre_droite_rayon").val());
+			
+			var p = droite.parametres();
+			var cylindre = new Cylindre(nom,[p[0],p[1],p[2],p[3],p[4],p[5],rayon]);
+		}
 		
 		
 		cylindre.couleur(couleur);
@@ -733,7 +742,7 @@ function ajouterItemFromDialog()
 	}
 	else if(type == "droite")
 	{
-		var methode = ["equation","contraintes","intersection"][$("#tab_new_item_droite_methode").tabs('option', 'active')];
+		var methode = ["equation","contraintes","intersection","cylindre"][$("#tab_new_item_droite_methode").tabs('option', 'active')];
 		var nom = $("#tab_new_item_droite_nom").val();
 		var couleur = $("#tab_new_item_droite_couleur").val();
 		
@@ -798,6 +807,13 @@ function ajouterItemFromDialog()
 			
 			
 			var droite = new Droite(nom,[centre.x , centre.y , centre.z , vDirecteur.x , vDirecteur.y , vDirecteur.z])
+		}
+		else if(methode=="cylindre")
+		{
+			var idCylindre = Number($("#tab_new_item_droite_cylindre_choix").val()); 
+			var cylindre = getItemFromId(idCylindre);
+			var p = cylindre.parametres();
+			var droite = new Droite(nom,[p[0] , p[1] , p[2] , p[3] , p[4] , p[5]])
 		}
 		
 		
@@ -1013,6 +1029,8 @@ function ouvreBoiteAjouterItem()
 	$("#tab_new_item_cylindre_nom").val("Cylindre "+String(NUMERO_ITEM+1))
 	$("#tab_new_item_cylindre_couleur").val(LISTE_COULEURS[ NUMERO_ITEM % LISTE_COULEURS.length ])
 	$("#tab_new_item_liste_contraintes_cylindre").empty();
+	$("#tab_new_item_cylindre_droite_choix").empty();
+	$("#tab_new_item_cylindre_droite_choix").html(getHTMLDroitesInSelect());
 	
 	// Onglet droite
 	$("#tab_new_item_droite_nom").val("Droite "+String(NUMERO_ITEM+1))
@@ -1021,6 +1039,10 @@ function ouvreBoiteAjouterItem()
 	$("#tab_new_item_droite_intersection_plan1").html(getHTMLPlansInSelect());
 	$("#tab_new_item_droite_intersection_plan2").empty();
 	$("#tab_new_item_droite_intersection_plan2").html(getHTMLPlansInSelect());
+	$("#tab_new_item_droite_cylindre_choix").empty();
+	$("#tab_new_item_droite_cylindre_choix").html(getHTMLCylindresInSelect());
+	
+	getHTMLDroitesInSelect
 	
 	
 }
@@ -1461,6 +1483,41 @@ function getHTMLPlansInSelect()
 	}
 	return html;
 }
+
+// *********************************************
+// Fonction qui fait la liste des cylindres pour mettre dans un select (form)
+function getHTMLCylindresInSelect()
+{
+	var html = "";
+	for(var i=0;i<LISTE_ITEMS.length;i++)
+	{
+		var item = LISTE_ITEMS[i];
+		if(item.type()=="cylindre")
+		{
+			html+=`
+					<option value="`+String(item.id())+`">`+item.nom()+`</option>`;
+		}
+	}
+	return html;
+}
+
+// *********************************************
+// Fonction qui fait la liste des cylindres pour mettre dans un select (form)
+function getHTMLDroitesInSelect()
+{
+	var html = "";
+	for(var i=0;i<LISTE_ITEMS.length;i++)
+	{
+		var item = LISTE_ITEMS[i];
+		if(item.type()=="droite")
+		{
+			html+=`
+					<option value="`+String(item.id())+`">`+item.nom()+`</option>`;
+		}
+	}
+	return html;
+}
+
 
 
 // **************************************************************************

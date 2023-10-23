@@ -118,7 +118,8 @@
 			<div id="tab_new_item_cylindre_methode">
 				<ul>
 					<li><a href="#tab_new_item_cylindre_equation">Coordonnées</a></li>
-					<li><a href="#tab_new_item_cylindre_contraintes">Contraintes de position</a></li>
+					<li><a href="#tab_new_item_cylindre_contraintes">Contraintes</a></li>
+					<li><a href="#tab_new_item_cylindre_droite">À partir d'une droite</a></li>
 				</ul>
 				<div id="tab_new_item_cylindre_equation">
 					<form>
@@ -146,6 +147,16 @@
 					<div id="tab_new_item_bouton_add_contrainte_cylindre" onclick="tab_new_item_ajouteContrainte_cylindre()">Ajouter une contrainte à respecter</div>
 					<div id="tab_new_item_liste_contraintes_cylindre"></div>
 				</div>
+				<!-- Cylindre depuis un axe -->
+				<div id="tab_new_item_cylindre_droite">
+					<p>Créer un cylindre à partir d'une droite qui servira d'axe.</p>
+					<span for="tab_new_item_cylindre_droite_choix">Droite servant d'axe : </span>
+						<select id="tab_new_item_cylindre_droite_choix">
+						</select>
+					</br>
+					<span for="tab_new_item_cylindre_droite_rayon">Rayon : </span>
+						<input type="number" name="tab_new_item_cylindre_droite_rayon" id="tab_new_item_cylindre_droite_rayon" min="0" value="0.1" placeholder="Rayon"/>
+				</div>
 			</div>
 		</div>
 		
@@ -167,8 +178,9 @@
 			<div id="tab_new_item_droite_methode">
 				<ul>
 					<li><a href="#tab_new_item_droite_equation">Coordonnées</a></li>
-					<li><a href="#tab_new_item_droite_contraintes">Contraintes de position</a></li>
-					<li><a href="#tab_new_item_droite_intersection">Intersection de plans</a></li>
+					<li><a href="#tab_new_item_droite_contraintes">Contraintes</a></li>
+					<li><a href="#tab_new_item_droite_intersection">Intersection plans</a></li>
+					<li><a href="#tab_new_item_droite_cylindre">Axe cylindre</a></li>
 				</ul>
 				<div id="tab_new_item_droite_equation">
 					<form>
@@ -201,6 +213,13 @@
 					<br/>
 					<span for="tab_new_item_droite_intersection_plan2">Plan 2 : </span>
 						<select id="tab_new_item_droite_intersection_plan2">
+						</select>
+				</div>
+				<!-- droite à partir d'un cylindre -->
+				<div id="tab_new_item_droite_cylindre">
+					<p>Extraire l'axe d'un cylindre</p>
+					<span for="tab_new_item_droite_cylindre_choix">Cylindre de référence : </span>
+						<select id="tab_new_item_droite_cylindre_choix">
 						</select>
 				</div>
 			</div>
