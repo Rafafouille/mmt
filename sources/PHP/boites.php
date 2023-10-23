@@ -168,6 +168,7 @@
 				<ul>
 					<li><a href="#tab_new_item_droite_equation">Coordonnées</a></li>
 					<li><a href="#tab_new_item_droite_contraintes">Contraintes de position</a></li>
+					<li><a href="#tab_new_item_droite_intersection">Intersection de plans</a></li>
 				</ul>
 				<div id="tab_new_item_droite_equation">
 					<form>
@@ -191,6 +192,16 @@
 				<div id="tab_new_item_droite_contraintes">
 					<div id="tab_new_item_bouton_add_contrainte_droite" onclick="tab_new_item_ajouteContrainte_droite()">Ajouter une contrainte à respecter</div>
 					<div id="tab_new_item_liste_contraintes_droite"></div>
+				</div>
+				<!-- droite par intersection -->
+				<div id="tab_new_item_droite_intersection">
+					<span for="tab_new_item_droite_intersection_plan1">Plan 1 : </span>
+						<select id="tab_new_item_droite_intersection_plan1">
+						</select>
+					<br/>
+					<span for="tab_new_item_droite_intersection_plan2">Plan 2 : </span>
+						<select id="tab_new_item_droite_intersection_plan2">
+						</select>
 				</div>
 			</div>
 		</div>

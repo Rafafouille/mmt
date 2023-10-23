@@ -36,6 +36,7 @@ class Droite extends Item
 	 
 	 _couleur = "";
 	 _epaisseur = 10;
+	 _icone="./sources/images/bouton_droite.svg";
 	 GROUPE = null;
 	 _parametres = null;	// [a,b,c,d] dans l'équation ax+by+cz+d=0
 

@@ -630,6 +630,8 @@ function ajouterItemFromDialog()
 			
 			var parametres = planRef.parametres(); // Copie
 			
+			centre = planRef.centre() // On reprend le même centre, pour être à peu prés en face du plan de référence
+			
 			
 			// On regarde si la normale (a,b,c) du plan est du même sens que OH (H = projection de O sur le plan)
 			var O = new THREE.Vector3(0,0,0);
@@ -731,7 +733,7 @@ function ajouterItemFromDialog()
 	}
 	else if(type == "droite")
 	{
-		var methode = ["equation","contraintes"][$("#tab_new_item_droite_methode").tabs('option', 'active')];
+		var methode = ["equation","contraintes","intersection"][$("#tab_new_item_droite_methode").tabs('option', 'active')];
 		var nom = $("#tab_new_item_droite_nom").val();
 		var couleur = $("#tab_new_item_droite_couleur").val();
 		
@@ -768,6 +770,34 @@ function ajouterItemFromDialog()
 			droite.optimiseDroite(); // Trouves la meilleure équation si ce n'est pas des contraintes, il ne se passera rien
 			droite.optimiseGraphismes(); // Trouves les meilleurs paramètres d'affichage (centre, ...)
 			
+		}
+		else if(methode=="intersection")
+		{
+			var idPlan1 = Number($("#tab_new_item_droite_intersection_plan1").val()); 
+			var plan1 = getItemFromId(idPlan1);
+			var idPlan2 = Number($("#tab_new_item_droite_intersection_plan2").val()); 
+			var plan2 = getItemFromId(idPlan2);
+			
+			var vDirecteur = plan1.normale().cross(plan2.normale());
+			
+			if(vDirecteur.length()==0) // Si coplanaire
+			{
+				console.log("Plans colinéaires");
+				return
+			}
+			
+			
+			//Pour trouver un point de la droite, on projette le centre de chaque plan sur l'autre, et on prend le barycentre
+			var centre = (plan1.centre().add(plan2.centre())).multiplyScalar(0.5); // Barycentre
+			for(var i=0;i<=100;i++)
+			{
+				centre = plan1.getProjection(centre);
+				centre = plan2.getProjection(centre);
+			}
+
+			
+			
+			var droite = new Droite(nom,[centre.x , centre.y , centre.z , vDirecteur.x , vDirecteur.y , vDirecteur.z])
 		}
 		
 		
@@ -987,6 +1017,10 @@ function ouvreBoiteAjouterItem()
 	// Onglet droite
 	$("#tab_new_item_droite_nom").val("Droite "+String(NUMERO_ITEM+1))
 	$("#tab_new_item_liste_contraintes_droite").empty();
+	$("#tab_new_item_droite_intersection_plan1").empty();
+	$("#tab_new_item_droite_intersection_plan1").html(getHTMLPlansInSelect());
+	$("#tab_new_item_droite_intersection_plan2").empty();
+	$("#tab_new_item_droite_intersection_plan2").html(getHTMLPlansInSelect());
 	
 	
 }
@@ -1382,6 +1416,7 @@ function envoieDonneesVersServeur_callback(data)
 // **********************************************
 function afficheCache(_id_)
 {
+	// L'item dans la vue 3D
 	var item = getItemFromId(_id_);
 	item.afficheCacheGROUPE();
 }

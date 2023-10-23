@@ -37,6 +37,7 @@ class Cylindre extends Item
 	 _couleur = "";
 	 GROUPE = null;
 	 _parametres = null;	// [a,b,c,d] dans l'équation ax+by+cz+d=0
+	 _icone = "./sources/images/bouton_cylindre.svg";
 
 	 _base = null; // Base attachée au plan [xP,yP,n] ou n est la normale
 

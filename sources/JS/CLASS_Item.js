@@ -19,7 +19,7 @@ class Item
 	 _nom = "";	// Nom
 	 _couleur = "#000000"; // Couleur
 	 _id = 0 ;	// N° de l'item
-	 
+	 _icone = "";
 	/* ****************************
 	 GETTER / SETTER
 	 **************************** */
@@ -63,6 +63,17 @@ class Item
 	 
 	 
 	 
+	 // Nom de l'item de l'item
+	 icone(i_)
+	 {
+	 	if (i_ != undefined)
+	 	{
+	 		this._icone = i_;
+	 	}
+	 	return this._icone;
+	 }
+	 
+	 
 	 
 	/* ****************************
 	 AUTRES MEMBRES
@@ -73,6 +84,7 @@ class Item
 	{
 		var retour = `
 			<div class="item" id="item-`+String(this._id)+`">
+				<div class="icone_item"><img src="`+this.icone()+`" alt=""/></div>
 				<div class="titre-item" style="background-color:`+this._couleur+`" onclick="ouvreFermeItem(`+String(this._id)+`)">
 					`+this._nom+`
 				</div>
@@ -182,10 +194,17 @@ class Item
 		if(this.GROUPE)
 		{
 			if(this.GROUPE.visible)
+			{
 				this.cacheGROUPE();
+				$("#item-"+String(this._id)+" .icone_item img").css("opacity","0.3");
+			}
 			else
+			{
 				this.afficheGROUPE();
+				$("#item-"+String(this._id)+" .icone_item img").css("opacity","1");
+			}
 		}
+		
 	}
 	
 	 

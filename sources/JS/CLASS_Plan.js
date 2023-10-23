@@ -26,6 +26,7 @@ class Plan extends Item
 	 
 	 _type = "plan"
 	 _couleur = ""
+	 _icone= "./sources/images/bouton_plan.svg"
 	 GROUPE = null;
 	 _parametres = null;	// [a,b,c,d] dans l'équation ax+by+cz+d=0
 	 _marges = 0.1	// Marge autour de la pièce

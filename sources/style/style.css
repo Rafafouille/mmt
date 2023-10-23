@@ -253,10 +253,30 @@ ARBRE
 	background-color:black;
 	color:white;
 	margin:0px;
-	min-height:30px;
+	padding-top:5px;
+/*	padding-bottom:-5px;*/
+	min-height:25px;
 	cursor:pointer;
 }
 
+/* Icone */
+#arbre .item .icone_item
+{
+	width:26px;
+	height:26px;
+	border : solid 2px black;
+	border-radius: 13px;
+	float:left;
+/*	margin-top:2px;
+	margin-left:2px;*/
+	background-color:white;
+}
+
+#arbre .item .icone_item img
+{
+	max-height:100%;
+	max-width:100%;
+}
 
 
 #arbre .item .contenu-item

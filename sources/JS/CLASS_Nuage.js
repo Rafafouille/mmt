@@ -23,6 +23,7 @@ class Nuage extends Item
 	 _type = "nuage"
 	 _rayon_marker = RAYON_MARKER;
 	 _couleur = 0xff0000;
+	 _icone = "./sources/images/bouton_nuage.svg"
 
 	 
 	/* ****************************
