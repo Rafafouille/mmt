@@ -7,6 +7,7 @@
 			<li><a href="#tab_new_item_plan"><img width="50px;" src="./sources/images/bouton_plan.svg" alt="/_/"/><br/>Plan</a></li>
 			<li><a href="#tab_new_item_cylindre"><img width="50px;" src="./sources/images/bouton_cylindre.svg" alt="C_O"/><br/>Cylindre</a></li>
 			<li><a href="#tab_new_item_droite"><img width="50px;" src="./sources/images/bouton_droite.svg" alt="---"/><br/>Droite</a></li>
+			<li><a href="#tab_new_item_biplan"><img width="50px;" src="./sources/images/bouton_biplan.svg" alt="---"/><br/>Biplan</a></li>
 		</ul>
 		
 		<!-- Onglets "nouveau nuage" -->
@@ -164,7 +165,7 @@
 		
 		<!-- Onglets "nouvelle droite" ------------------------------------ -->
 		<div id="tab_new_item_droite">
-			<p>Créer une nouvelle doite.</p>
+			<p>Créer une nouvelle droite.</p>
 			<form>
 				<label for="tab_new_item_droite_nom">Nom : </label>
 				<input type="text" name="tab_new_item_droite_nom" id="tab_new_item_droite_nom"/>
@@ -182,6 +183,7 @@
 					<li><a href="#tab_new_item_droite_intersection">Intersection plans</a></li>
 					<li><a href="#tab_new_item_droite_cylindre">Axe cylindre</a></li>
 				</ul>
+				<!-- Doite par équation -->
 				<div id="tab_new_item_droite_equation">
 					<form>
 						<label for="tab_new_item_droite_Px">Point central de la droite :</label> ( 
@@ -224,6 +226,57 @@
 				</div>
 			</div>
 		</div>
+		
+		
+		
+		<!-- Onglets "nouveau biplan" ------------------------------------ -->
+		<div id="tab_new_item_biplan">
+			<p>Créer un nouveau biplan.</p>
+			<form>
+				<label for="tab_new_item_biplan_nom">Nom : </label>
+				<input type="text" name="tab_new_item_biplan_nom" id="tab_new_item_biplan_nom"/>
+				<br/>
+				<label for="tab_new_item_biplan_couleur">Couleur : </label>
+				<input type="color" name="tab_new_item_biplan_couleur" id="tab_new_item_biplan_couleur" value="#0000FF"/>
+			</form>
+			
+			
+			<!-- Liste des manière de définir le biplan -->
+			<div id="tab_new_item_biplan_methode">
+				<ul>
+					<li><a href="#tab_new_item_biplan_equation">Coordonnées</a></li>
+					<li><a href="#tab_new_item_biplan_plan">Plan médian</a></li>
+				</ul>
+				<!-- biplan par équation -->
+				<div id="tab_new_item_biplan_equation">
+					<form>
+						Équation du plan médian :<br/>
+						<input type="number" style="width: 80px;text-align:center;" id="tab_new_item_biplan_A" placeholder="a" name="tab_new_item_biplan_A" value="0"/><label for="tab_new_item_biplan_A"> × X</label>
+						+
+						<input type="number" style="width: 80px;text-align:center;" id="tab_new_item_biplan_B" placeholder="b" name="tab_new_item_biplan_B" value="0"/><label for="tab_new_item_biplan_B"> × Y</label>
+						+
+						<input type="number" style="width: 80px;text-align:center;" id="tab_new_item_biplan_C" placeholder="c" name="tab_new_item_biplan_C" value="1"/><label for="tab_new_item_biplan_C"> × Z</label>
+						+
+						<input type="number" style="width: 80px;text-align:center;" id="tab_new_item_biplan_D" placeholder="d" name="tab_new_item_biplan_D" value="0"/><label for="tab_new_item_biplan_D"> </label>
+						=0
+						<br/>
+						<label for="tab_new_item_biplan_equation_ecart">Écart entre plans (en m) : </label>
+							<input type="number" name="tab_new_item_biplan_equation_ecart" id="tab_new_item_biplan_equation_ecart" placeholder="ex : 0.01" value="0.01"/>
+					</form>
+				</div>
+				<!-- biplan par plan médian -->
+				<div id="tab_new_item_biplan_plan">
+					<form>
+						<label for="tab_new_item_biplan_planMedian">Plan médian : </label>
+							<select name="tab_new_item_biplan_planMedian" id="tab_new_item_biplan_planMedian">
+							</select>
+						<br/>
+						<label for="tab_new_item_biplan_plan_ecart">Écart entre plans (en m) : </label>
+							<input type="number" name="tab_new_item_biplan_plan_ecart" id="tab_new_item_biplan_plan_ecart" placeholder="ex : 0.01" value="0.01"/>
+					</form>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
 	
@@ -251,7 +304,10 @@
 	$("#tab_new_item_nuage_methode").tabs();
 	$("#tab_new_item_plan_methode").tabs({ active: 1 });
 	$("#tab_new_item_cylindre_methode").tabs({ active: 1 });
-	$("#tab_new_item_droite_methode").tabs({ active: 1 });
+	$("#tab_new_item_droite_methode").tabs();
+	$("#tab_new_item_biplan_methode").tabs({ active: 1 });
+	
+	
 	
 </script>
 
@@ -359,6 +415,37 @@
 						}
 				});
 </script>
+
+
+
+
+<!-- MESURE D'ÉLÉMENTS PAR RAPPORT AU BIPLAN ----------------------- -->
+<div id="boite_mesure_biplan" title="Mesures à partir d'un biplan" data-id="-1">
+	<p>
+		<label for="boite_mesure_biplan_choix_item">Réaliser des mesures entre le biplan et :</label>
+		<select name="boite_mesure_biplan_choix_item" id="boite_mesure_biplan_choix_item" onchange="updateCalculMesureBiplan();">
+		</select>
+	</p>
+	<div id="boite_mesure_biplan_mesures">
+	</div>
+</div>
+	
+	
+
+<script>
+	$("#boite_mesure_biplan").dialog({
+					autoOpen:false,
+					width: "800px",
+					modal: true,
+					buttons:{
+						Annuler: function() {$(this).dialog("close")}
+						}
+				});
+</script>
+
+
+
+
 
 
 

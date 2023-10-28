@@ -507,7 +507,7 @@ function resizeFenetre()
 function ajouterItemFromDialog()
 {
 	// Choix du nouvel item   (type = "nuage" ou "plan", etc.)
-	var type=["nuage","plan","cylindre","droite"][$("#tab_new_item").tabs('option', 'active')];
+	var type=["nuage","plan","cylindre","droite","biplan"][$("#tab_new_item").tabs('option', 'active')];
 
 	if(type == "nuage")
 	{
@@ -825,6 +825,43 @@ function ajouterItemFromDialog()
 		return droite;
 		
 	}
+	else if(type == "biplan")
+	{
+		var methode = ["equation","plan"][$("#tab_new_item_biplan_methode").tabs('option', 'active')];
+		var nom = $("#tab_new_item_biplan_nom").val();
+		var couleur = $("#tab_new_item_biplan_couleur").val();
+		
+		var centre = new THREE.Vector3(0,0,0); // Centre du plan (qui sera un éventuel barycentre de nuage de points)
+		
+		if(methode == "equation")
+		{
+			var A = Number($("#tab_new_item_biplan_A").val());
+			var B = Number($("#tab_new_item_biplan_B").val());
+			var C = Number($("#tab_new_item_biplan_C").val());
+			var D = Number($("#tab_new_item_biplan_D").val());
+			var ecart = Number($("#tab_new_item_biplan_equation_ecart").val());
+			var plan = new Biplan(nom,[ A , C , -B , D , ecart])
+		}
+		else if(methode == "plan")
+		{
+			var nPlanRef = Number($("#tab_new_item_plan_decale_reference").val()); // A quel plan doit-on s'attacher ?
+			var planRef = getItemFromId(nPlanRef)// On recupere le plan de référence
+			var ecart = Number($("#tab_new_item_biplan_plan_ecart").val());
+			
+			var p = planRef.parametres(); // Copie
+			
+			centre = planRef.centre() // On reprend le même centre, pour être à peu prés en face du plan de référence
+			
+			var plan = new Biplan(nom,[p[0],p[1],p[2],p[3],ecart]);
+		}
+		plan.couleur(couleur);
+		plan.centre(centre);
+		
+		LISTE_ITEMS.push(plan);
+		$("#arbre").append(plan.getHTML())
+		return plan;
+		
+	}
 	else
 	{
 		item = new Item("item", "#000000");
@@ -1042,7 +1079,11 @@ function ouvreBoiteAjouterItem()
 	$("#tab_new_item_droite_cylindre_choix").empty();
 	$("#tab_new_item_droite_cylindre_choix").html(getHTMLCylindresInSelect());
 	
-	getHTMLDroitesInSelect
+	// Onglet droite
+	$("#tab_new_item_biplan_nom").val("Biplan "+String(NUMERO_ITEM+1))
+	$("#tab_new_item_biplan_planMedian").empty();
+	$("#tab_new_item_biplan_planMedian").html(getHTMLPlansInSelect())
+	
 	
 	
 }
@@ -1236,6 +1277,28 @@ function ouvreBoiteMesureDroite(_id_)
 
 
 // ******************************************
+// Ouvre la boite d'analyse par rapport au biplan dont l'item est le n°id
+function ouvreBoiteMesureBiplan(_id_)
+{
+	$("#boite_mesure_biplan").attr("data-id",_id_);	// On enregistre le numero du biplan concerné
+	$("#boite_mesure_biplan_choix_item").empty();	// On vide le sélect
+	$("#boite_mesure_biplan_choix_item").append("<option value=\"\"></select>"); // On ajoute une case vide dans le select
+/*	for(var i=0;i<LISTE_ITEMS.length ;i++)
+	{
+		if(LISTE_ITEMS[i].id()!=_id_)
+		{
+			$("#boite_mesure_biplan_choix_item").append("<option value=\""+String(LISTE_ITEMS[i].id())+"\">"+LISTE_ITEMS[i].nom()+"</option>")
+		}
+	}*/
+	$("#boite_mesure_biplan_choix_item").append(getHTMLNuagesInSelect());
+	
+	
+	$("#boite_mesure_biplan_mesures").empty();
+	$("#boite_mesure_biplan").dialog("open");
+}
+
+
+// ******************************************
 // Ouvre la boite pour charger une nouvelle piece
 function ouvreBoiteOuvrirPiece()
 {
@@ -1298,6 +1361,8 @@ function updateCalculMesurePlan()
 	
 		// Résultats
 		$("#boite_mesure_plan_mesures").append(`
+			<hr>
+			<strong>Mesure par rapport au plan :</strong>
 			<ul>
 				<li><strong>Écart min :</strong> `+String(dMin)+`</li>
 				<li><strong>Écart max :</strong> `+String(dMax)+`</li>
@@ -1348,6 +1413,7 @@ function updateCalculMesureCylindre()
 	
 		// Résultats
 		$("#boite_mesure_cylindre_mesures").append(`
+			<hr>
 			<strong>Mesure par rapport au cylindre :</strong>
 			<ul>
 				<li><strong>Écart min :</strong> `+String(dcMin)+`</li>
@@ -1389,10 +1455,43 @@ function updateCalculMesureDroite()
 	
 		// Résultats
 		$("#boite_mesure_droite_mesures").append(`
+			<hr>
 			<strong>Mesure par rapport à la droite :</strong>
 			<ul>
 				<li><strong>Écart max :</strong> `+String(rMax)+`</li>
 			</ul>
+		`)
+	}
+	
+}
+
+
+// *****************************************
+function updateCalculMesureBiplan()
+{
+	var biplan = getItemFromId($("#boite_mesure_biplan").attr("data-id"))
+	var item = getItemFromId($("#boite_mesure_biplan_choix_item").val())
+	
+	// NUAGES ========================
+	if(item.type()=="nuage")
+	{
+		var dMin = 0
+		var dMax = 0
+		for(var i=0;i<item.nbMesures();i++)
+		{
+			var mes = item.getMesure(i)
+			var d = biplan.getDistancePoint(mes);
+			if(d>dMax)
+				dMax = d;
+			if(d<dMin)
+				dMin = d;
+		}
+	
+		// Résultats
+		$("#boite_mesure_biplan_mesures").append(`
+			<hr>
+			<strong>Mesure par rapport au biplan :</strong>
+			<p>Le nuage de points \"<strong>`+item.nom()+`</strong>\" `+(Math.abs(dMax)<=biplan.ecart()/2 && Math.abs(dMin)<=biplan.ecart()/2 ? "<span style='color:#00AA00;font-weight:bold;'>est entièrement contenu</span>" : "<span style='color:#FF0000;font-weight:bold;'>n'est pas entièrement contenu</span>")+` dans le biplan.</p>
 		`)
 	}
 	
