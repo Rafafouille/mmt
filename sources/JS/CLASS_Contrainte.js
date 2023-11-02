@@ -379,7 +379,7 @@ class ContraintePlanParallelisme
 		
 		var S = Math.pow(  Math.tan((n1.cross(n2)).length() * Math.PI*0.5 )   ,2);
 		
-		return S;
+		return S*100;
 	}	 
 }
 
@@ -426,7 +426,7 @@ class ContraintePlanPerpendicularite
 		
 		var S = Math.pow(  Math.tan(Math.abs(n1.dot(n2)) * Math.PI*0.5 )   ,2);
 		
-		return S;
+		return S*100;
 	}	 
 }
 

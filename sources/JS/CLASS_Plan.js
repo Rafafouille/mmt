@@ -405,7 +405,7 @@ class Plan extends Item
 		erreur = erreur.bind(erreur)
 	
 		
-		var resultat =  GEN_algo_genetique([0,0,0,0], [1000,1000,1000,10], erreur	,10000,50,0.1) // (nominal, IT, fecart, nb population, nb itérations, %meilleurs)
+		var resultat =  GEN_algo_genetique([0,0,0,0], [1000,1000,1000,10], erreur	,10000,60,0.1) // (nominal, IT, fecart, nb population, nb itérations, %meilleurs)
 
 
 		

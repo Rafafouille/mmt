@@ -1476,6 +1476,21 @@ function updateCalculMesurePlan()
 			</ul>
 		`)
 	}
+	else if(item.type()=="plan")
+	{
+		var angle = Math.abs(Math.acos(item.normale().dot(plan.normale())))
+		if(angle>Math.PI/2)
+			angle = Math.abs(angle-Math.PI);
+		
+		// Résultats
+		$("#boite_mesure_plan_mesures").append(`
+			<hr>
+			<strong>Mesure par rapport au plan :</strong>
+			<ul>
+				<li><strong>Angle entre les normales :</strong> `+String(Math.round(angle/Math.PI*180*100)/100)+`° (`+String(Math.round(angle*10000)/10000)+` <emph>rad</emph>)</li>
+			</ul>
+		`)
+	}
 	
 }
 
