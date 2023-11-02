@@ -869,7 +869,7 @@ function ajouterItemFromDialog()
 		}
 		else if(methode == "plan")
 		{
-			var nPlanRef = Number($("#tab_new_item_plan_decale_reference").val()); // A quel plan doit-on s'attacher ?
+			var nPlanRef = Number($("#tab_new_item_biplan_planMedian").val()); // A quel plan doit-on s'attacher ?
 			var planRef = getItemFromId(nPlanRef)// On recupere le plan de référence
 			var ecart = Number($("#tab_new_item_biplan_plan_ecart").val());
 			
