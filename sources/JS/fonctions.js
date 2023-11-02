@@ -523,25 +523,33 @@ function ajouterItemFromDialog()
 		{
 			for(var i=0; i<$("#tab_new_item_liste_assemble_nuage").children().length;i++ ) // Pour chaque nuage à copier
 			{
-				var htmlNuageAFusionner = $("#tab_new_item_liste_assemble_nuage").children()[i];
-				var nNuage = Number($(htmlNuageAFusionner).find(".choix_assemblage_nuage_nuage select").val()); // A quel nuage doit-on s'attacher ?
-				var nuageSource = getItemFromId(nNuage)
+				var htmlItemAFusionner = $("#tab_new_item_liste_assemble_nuage").children()[i];
+				var nItem = Number($(htmlItemAFusionner).find(".choix_assemblage_nuage_nuage select").val()); // A quel nuage doit-on s'attacher ?
+				var itemSource = getItemFromId(nItem)
 				
-				var A_SUPPRIMER = $(htmlNuageAFusionner).find("input[name=suppr_source]").is(':checked') 
-				var A_FUSIONNER = $(htmlNuageAFusionner).find("input[name=CdG]").is(':checked')
+				var A_SUPPRIMER = $(htmlItemAFusionner).find("input[name=suppr_source]").is(':checked') 
+				var A_FUSIONNER = $(htmlItemAFusionner).find("input[name=CdG]").is(':checked')
 				
-				if(A_FUSIONNER)
+				if(itemSource.type()=="nuage")
 				{
-					var CdG = nuageSource.getBarycentre()
-					nuage.ajouteMesure(CdG)
+					if(A_FUSIONNER)
+					{
+						var CdG = itemSource.getBarycentre()
+						nuage.ajouteMesure(CdG)
+					}
+					else
+					{
+						copyMesuresFromFusion(itemSource,nuage)
+					}
 				}
-				else
+				else if(itemSource.type()=="cercle")
 				{
-					copyMesuresFromFusion(nuageSource,nuage)
+					nuage.ajouteMesure(itemSource.centre())
 				}
+				
 				if(A_SUPPRIMER)
 				{
-					nuageSource.remove()
+					itemSource.remove()
 				}
 			}
 		}
@@ -1276,7 +1284,7 @@ function tab_new_item_assemble_ajoute_nuage()
 			<div class="choix_assemblage_nuage_nuage">
 				Nuage :
 				<select>
-					`+getHTMLNuagesInSelect()+`
+					`+getHTMLItemsInSelect(["nuage","cercle"])+`
 				</select>
 			</div>
 			<form style=\"display:inline-block;\">
@@ -1709,45 +1717,45 @@ function changeAlpha(_id_,_alpha_)
 // Fonction qui fait la liste des nuages pour mettre dans un select (form)
 function getHTMLNuagesInSelect()
 {
-	var html = "";
-	for(var i=0;i<LISTE_ITEMS.length;i++)
-	{
-		var item = LISTE_ITEMS[i];
-		if(item.type()=="nuage")
-		{
-			html+=`
-					<option value="`+String(item.id())+`">`+item.nom()+`</option>`;
-		}
-	}
-	return html;
+	return getHTMLItemsInSelect(["nuage"])
 }
 
 // *********************************************
 // Fonction qui fait la liste des plans pour mettre dans un select (form)
 function getHTMLPlansInSelect()
 {
-	var html = "";
-	for(var i=0;i<LISTE_ITEMS.length;i++)
-	{
-		var item = LISTE_ITEMS[i];
-		if(item.type()=="plan")
-		{
-			html+=`
-					<option value="`+String(item.id())+`">`+item.nom()+`</option>`;
-		}
-	}
-	return html;
+	return getHTMLItemsInSelect(["plan"])
 }
 
 // *********************************************
 // Fonction qui fait la liste des cylindres pour mettre dans un select (form)
 function getHTMLCylindresInSelect()
 {
+	return getHTMLItemsInSelect(["cylindre"])
+}
+
+
+
+// *********************************************
+// Fonction qui fait la liste des Droites pour mettre dans un select (form)
+function getHTMLDroitesInSelect()
+{
+	return getHTMLItemsInSelect(["droite"])
+}
+
+
+
+
+// *********************************************
+// Fonction qui fait la liste des items pour mettre dans un select (form)
+// listeItems doit être un tableau de STRING avec les mots clés "plan", "droite", "cylindre", "nuage", ...
+function getHTMLItemsInSelect(listeItems)
+{
 	var html = "";
 	for(var i=0;i<LISTE_ITEMS.length;i++)
 	{
 		var item = LISTE_ITEMS[i];
-		if(item.type()=="cylindre")
+		if(listeItems.includes(item.type()))
 		{
 			html+=`
 					<option value="`+String(item.id())+`">`+item.nom()+`</option>`;
@@ -1756,22 +1764,6 @@ function getHTMLCylindresInSelect()
 	return html;
 }
 
-// *********************************************
-// Fonction qui fait la liste des cylindres pour mettre dans un select (form)
-function getHTMLDroitesInSelect()
-{
-	var html = "";
-	for(var i=0;i<LISTE_ITEMS.length;i++)
-	{
-		var item = LISTE_ITEMS[i];
-		if(item.type()=="droite")
-		{
-			html+=`
-					<option value="`+String(item.id())+`">`+item.nom()+`</option>`;
-		}
-	}
-	return html;
-}
 
 
 
