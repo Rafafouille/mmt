@@ -35,12 +35,14 @@
 		<input type="range" id="input_range_Z" name="input_range_Z" min="0" max="0.4" step="0.001" oninput="updateZ($(this).val())"/>
 		<br/>
 		<div class="bouton clicable carre" onclick="ouvreBoiteOuvrirPiece()"><img src="./sources/images/icone_ouvrir.svg" alt="[Ouvrir]" title="Ouvrir une pièce à mesurer"></div>
-		<div class="bouton clicable carre affichePiece" id="boutonAfficheCachePiece" title="Afficher/Cacher la pièce" onclick="afficheCachePiece()"></div>
 		<div class="bouton clicable carre afficheMachine" id="boutonAfficheCacheMachine" title="Affiche/Cacher machine" onclick="afficheCacheMachine()"></div>
 		<div class="bouton clicable carre afficheReperePalpeur" id="boutonAfficheCacheReperePalpeur" title="Afficher/Cacher le repère du palpeur"onclick="afficheCacheReperePalpeur()"></div>
 		<div class="bouton clicable carre" onclick="ouvreBoiteAjouterItem()"><img src="./sources/images/plus.svg" title="Ajouter un élément" alt="[ + ]"/></div>
 		<div class="bouton clicable carre" style="display:none;" id="conteneur_vrbouton">[Bouton VR]</div>
-		
+		<br/>
+		<div class="bouton clicable carre affichePiece" id="boutonAfficheCachePiece" title="Afficher/Cacher la pièce" onclick="afficheCachePiece()"></div>
+		<label for="input_alpha_piece">&alpha; :</label>
+		<input type="range" id="input_alpha_piece" name="input_alpha_piece" min="0" max="1" step="0.1" value="1" oninput="changeAlphaPiece($(this).val())"/>
 		
 		<!-- ARBRE DES ITEMS -------- -->
 		<div id="arbre">
