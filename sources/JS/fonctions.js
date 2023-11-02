@@ -1433,6 +1433,9 @@ getPiece_callback = function(data)
 		var code = "<a class='piece_a_ouvrir' href='?piece="+lien+"'><h1>"+nom+"</h1><div class='image_piece_a_ouvrir'><img src='"+image+"'/></div></div>"
 		$("#boite_ouvrir_piece_contenu").append(code);
 	}	
+	
+	
+	$( "#boite_ouvrir_piece" ).dialog( "option", "position", { my: "center", at: "center", of: window } );
 }
 
 

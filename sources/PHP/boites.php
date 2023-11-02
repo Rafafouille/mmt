@@ -336,7 +336,7 @@
 <script>
 	$("#boite_new_item").dialog({
 					autoOpen:false,
-					width: "800px",
+					width: 800,
 					buttons:{
 						Annuler: function() {$(this).dialog("close")},
 						Ajouter : function()	{
@@ -545,7 +545,8 @@
 <script>
 	$("#boite_ouvrir_piece").dialog({
 					autoOpen:false,
-					width: "800px",
+					width: 800,
+					maxHeight: 600,
 					modal: true,
 					buttons:{
 						Fermer: function() {$(this).dialog("close")}
