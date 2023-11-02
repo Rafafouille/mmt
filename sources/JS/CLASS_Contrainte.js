@@ -430,3 +430,45 @@ class ContraintePlanPerpendicularite
 	}	 
 }
 
+
+
+
+
+
+class ContrainteRMSCercle
+{
+	/* Constructeur */
+	constructor(_nuage_)
+	{
+		this.nuage = _nuage_;
+	}
+	
+	
+	/* ****************************
+	 MEMBRES
+	 **************************** */
+			
+	nuage = null;
+	 
+	/* ****************************
+	 GETTER / SETTER
+	 **************************** */
+	 
+	 
+	/* ****************************
+	 AUTRES MEMBRES
+	 **************************** */
+	 
+	 
+	/** Calcule la somme des erreurs au carré */
+	exec(params_cercle)
+	{
+		var S=0;
+		for(var i=0;i<this.nuage.nbMesures();i++)//Pour chaque noeud du nuage
+		{
+			S+= getDistanceCercleCarre(params_cercle,this.nuage.getMesure(i))	// On calcule la distance entre le point i et le plan
+		}
+		return S
+	}	 
+}
+

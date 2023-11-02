@@ -8,6 +8,7 @@
 			<li><a href="#tab_new_item_cylindre"><img width="50px;" src="./sources/images/bouton_cylindre.svg" alt="C_O"/><br/>Cylindre</a></li>
 			<li><a href="#tab_new_item_droite"><img width="50px;" src="./sources/images/bouton_droite.svg" alt="---"/><br/>Droite</a></li>
 			<li><a href="#tab_new_item_biplan"><img width="50px;" src="./sources/images/bouton_biplan.svg" alt="---"/><br/>Biplan</a></li>
+			<li><a href="#tab_new_item_cercle"><img width="50px;" src="./sources/images/bouton_cercle.svg" alt="---"/><br/>Cercle</a></li>
 		</ul>
 		
 		<!-- Onglets "nouveau nuage" -->
@@ -38,8 +39,8 @@
 							<select id="tab_new_item_nuage_assemblage_nuage2">
 							</select>
 					</form>-->
-					<div id="tab_new_item_bouton_assemble_ajoute_nuages" onclick="tab_new_item_assemble_ajoute_nuage()">Ajouter un nuage à fusionner</div>
-					<div id="tab_new_item_liste_assemble_nuage"></div>
+					<div class="new_item_bouton_add_contrainte" id="tab_new_item_bouton_assemble_ajoute_nuages" onclick="tab_new_item_assemble_ajoute_nuage()">Ajouter un nuage à fusionner</div>
+					<div class="new_item_liste_contraintes" id="tab_new_item_liste_assemble_nuage"></div>
 				</div>
 			</div>
 		</div>
@@ -81,8 +82,8 @@
 				</div>
 				<!-- Plan par contraintes -->
 				<div id="tab_new_item_plan_contraintes">
-					<div id="tab_new_item_bouton_add_contrainte_plan" onclick="tab_new_item_ajouteContrainte_plan()">Ajouter une contrainte à respecter</div>
-					<div id="tab_new_item_liste_contraintes_plan"></div>
+					<div class="new_item_bouton_add_contrainte" id="tab_new_item_bouton_add_contrainte_plan" onclick="tab_new_item_ajouteContrainte_plan()">Ajouter une contrainte à respecter</div>
+					<div class="new_item_liste_contraintes" id="tab_new_item_liste_contraintes_plan"></div>
 				</div>
 				<!-- Plan à partir d'un autre plan -->
 				<div id="tab_new_item_plan_decale">
@@ -145,8 +146,8 @@
 				</div>
 				<!-- Cylindre par contraintes -->
 				<div id="tab_new_item_cylindre_contraintes">
-					<div id="tab_new_item_bouton_add_contrainte_cylindre" onclick="tab_new_item_ajouteContrainte_cylindre()">Ajouter une contrainte à respecter</div>
-					<div id="tab_new_item_liste_contraintes_cylindre"></div>
+					<div class="new_item_bouton_add_contrainte" id="tab_new_item_bouton_add_contrainte_cylindre" onclick="tab_new_item_ajouteContrainte_cylindre()">Ajouter une contrainte à respecter</div>
+					<div class="new_item_liste_contraintes" id="tab_new_item_liste_contraintes_cylindre"></div>
 				</div>
 				<!-- Cylindre depuis un axe -->
 				<div id="tab_new_item_cylindre_droite">
@@ -204,8 +205,8 @@
 				</div>
 				<!-- droite par contraintes -->
 				<div id="tab_new_item_droite_contraintes">
-					<div id="tab_new_item_bouton_add_contrainte_droite" onclick="tab_new_item_ajouteContrainte_droite()">Ajouter une contrainte à respecter</div>
-					<div id="tab_new_item_liste_contraintes_droite"></div>
+					<div class="new_item_bouton_add_contrainte" id="tab_new_item_bouton_add_contrainte_droite" onclick="tab_new_item_ajouteContrainte_droite()">Ajouter une contrainte à respecter</div>
+					<div class="new_item_liste_contraintes" id="tab_new_item_liste_contraintes_droite"></div>
 				</div>
 				<!-- droite par intersection -->
 				<div id="tab_new_item_droite_intersection">
@@ -277,6 +278,56 @@
 				</div>
 			</div>
 		</div>
+		
+		
+		
+		<!-- Onglets "nouveau cercle" ------------------------------------ -->
+		<div id="tab_new_item_cercle">
+			<p>Créer un nouveau cercle.</p>
+			<form>
+				<label for="tab_new_item_cercle_nom">Nom : </label>
+				<input type="text" name="tab_new_item_cercle_nom" id="tab_new_item_cercle_nom"/>
+				<br/>
+				<label for="tab_new_item_cercle_couleur">Couleur : </label>
+				<input type="color" name="tab_new_item_cercle_couleur" id="tab_new_item_cercle_couleur" value="#00FF00"/>
+			</form>
+			
+			
+			<!-- Liste des manière de définir le cercle -->
+			<div id="tab_new_item_cercle_methode">
+				<ul>
+					<li><a href="#tab_new_item_cercle_equation">Coordonnées</a></li>
+					<li><a href="#tab_new_item_cercle_contraintes">Contraintes</a></li>
+				</ul>
+				<div id="tab_new_item_cercle_equation">
+					<form>
+						<label for="tab_new_item_cercle_Px">Centre du cercle :</label> ( 
+						<input type="number" style="width: 80px;text-align:center;" id="tab_new_item_cercle_Px" placeholder="x" name="tab_new_item_cercle_Px" value="0"/>
+						;
+						<input type="number" style="width: 80px;text-align:center;" id="tab_new_item_cercle_Py" placeholder="y" name="tab_new_item_cercle_Py" value="0"/>
+						;
+						<input type="number" style="width: 80px;text-align:center;" id="tab_new_item_cercle_Pz" placeholder="z" name="tab_new_item_cercle_Pz" value="0"/>
+						)
+						<br/><label for="tab_new_item_cercle_Vx">Vecteur normal :</label> ( 
+						<input type="number" style="width: 80px;text-align:center;" id="tab_new_item_cercle_Vx" placeholder="V.x" name="tab_new_item_cercle_Vx" value="1"/>
+						; 
+						<input type="number" style="width: 80px;text-align:center;" id="tab_new_item_cercle_Vy" placeholder="V.y" name="tab_new_item_cercle_Vy" value="0"/>
+						; 
+						<input type="number" style="width: 80px;text-align:center;" id="tab_new_item_cercle_Vz" placeholder="V.z" name="tab_new_item_cercle_Vz" value="0"/>
+						)
+						<br/>
+						<label for="tab_new_item_cylindre_R">Rayon : </label> 
+						<input type="number" style="width: 80px;text-align:center;" id="tab_new_item_cercle_R" placeholder="R" name="tab_new_item_cercle_R" value="0.3"/>
+					</form>
+				</div>
+				<!-- Cercle par contraintes -->
+				<div id="tab_new_item_cercle_contraintes">
+					<div class="new_item_bouton_add_contrainte" id="tab_new_item_bouton_add_contrainte_cercle" onclick="tab_new_item_ajouteContrainte_cercle()">Ajouter une contrainte à respecter</div>
+					<div class="new_item_liste_contraintes" id="tab_new_item_liste_contraintes_cercle"></div>
+				</div>
+			</div>
+		</div>
+		
 	</div>
 </div>
 	
@@ -306,6 +357,7 @@
 	$("#tab_new_item_cylindre_methode").tabs({ active: 1 });
 	$("#tab_new_item_droite_methode").tabs();
 	$("#tab_new_item_biplan_methode").tabs({ active: 1 });
+	$("#tab_new_item_cercle_methode").tabs({ active: 1 });
 	
 	
 	
@@ -434,6 +486,33 @@
 
 <script>
 	$("#boite_mesure_biplan").dialog({
+					autoOpen:false,
+					width: "800px",
+					modal: true,
+					buttons:{
+						Annuler: function() {$(this).dialog("close")}
+						}
+				});
+</script>
+
+
+
+
+<!-- MESURE D'ÉLÉMENTS PAR RAPPORT AU CERCLE ----------------------- -->
+<div id="boite_mesure_cercle" title="Mesures à partir d'un cercle" data-id="-1">
+	<p>
+		<label for="boite_mesure_cercle_choix_item">Réaliser des mesures entre le cercle et :</label>
+		<select name="boite_mesure_cercle_choix_item" id="boite_mesure_cercle_choix_item" onchange="updateCalculMesureCercle();">
+		</select>
+	</p>
+	<div id="boite_mesure_cercle_mesures">
+	</div>
+</div>
+	
+	
+
+<script>
+	$("#boite_mesure_cercle").dialog({
 					autoOpen:false,
 					width: "800px",
 					modal: true,

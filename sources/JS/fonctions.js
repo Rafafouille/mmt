@@ -507,7 +507,7 @@ function resizeFenetre()
 function ajouterItemFromDialog()
 {
 	// Choix du nouvel item   (type = "nuage" ou "plan", etc.)
-	var type=["nuage","plan","cylindre","droite","biplan"][$("#tab_new_item").tabs('option', 'active')];
+	var type=["nuage","plan","cylindre","droite","biplan","cercle"][$("#tab_new_item").tabs('option', 'active')];
 
 	if(type == "nuage")
 	{
@@ -705,8 +705,6 @@ function ajouterItemFromDialog()
 				{
 					var nNuage = Number($(htmlContrainte).find(".choix_contrainte_element select").val()); // A quel nuage doit-on s'attacher ?
 					var nuage = getItemFromId(nNuage)	// On recupere le nuage
-					/*centre.add(nuage.getBarycentre())
-					nbNuages+=1 // Pour faire la moyenne*/
 					var contrainte = new ContrainteCylindreCirconscrit(nuage) // On créer la contrainte
 					cylindre.liste_contraintes.push(contrainte)
 				}
@@ -768,10 +766,6 @@ function ajouterItemFromDialog()
 				{
 					var nNuage = Number($(htmlContrainte).find(".choix_contrainte_element select").val()); // A quel nuage doit-on s'attacher ?
 					var nuage = getItemFromId(nNuage)	// On recupere le nuage
-					console.log(nNuage);
-					console.log(nuage);
-					/*centre.add(nuage.getBarycentre())
-					nbNuages+=1 // Pour faire la moyenne*/
 					var contrainte = new ContrainteRMSDroite(nuage) // On créer la contrainte
 					droite.liste_contraintes.push(contrainte)
 				}
@@ -860,6 +854,52 @@ function ajouterItemFromDialog()
 		LISTE_ITEMS.push(plan);
 		$("#arbre").append(plan.getHTML())
 		return plan;
+		
+	}
+	else if(type == "cercle")
+	{
+		var methode = ["equation","contraintes"][$("#tab_new_item_cercle_methode").tabs('option', 'active')];
+		var nom = $("#tab_new_item_cercle_nom").val();
+		var couleur = $("#tab_new_item_cercle_couleur").val();
+		
+		if(methode == "equation")
+		{
+			var centre = {"x": Number($("#tab_new_item_cercle_Px").val()) , "y" : Number($("#tab_new_item_cercle_Pz").val()) , "z" : -Number($("#tab_new_item_cercle_Py").val()) };
+			var vDirecteur = {"x": Number($("#tab_new_item_cercle_Vx").val()) , "y" : Number($("#tab_new_item_cercle_Vz").val()) , "z" : -Number($("#tab_new_item_cercle_Vy").val()) };
+			var rayon = Number($("#tab_new_item_cercle_R").val());
+			
+			var cercle = new Cercle(nom,[ centre.x , centre.y , centre.z , vDirecteur.x , vDirecteur.y , vDirecteur.z, rayon])
+		}
+		else if(methode=="contraintes")
+		{
+			var cercle = new Cercle(nom); // On fabrique un nouveau cercle
+			var nbNuages = 0; // Nombre de points (pour le barycentre)
+			// Ajout des contraintes
+			for(var i=0; i<$("#tab_new_item_liste_contraintes_cercle").children().length;i++)
+			{
+				htmlContrainte = $("#tab_new_item_liste_contraintes_cercle").children()[i];
+				typeContrainte = $(htmlContrainte).find(".type-contrainte").val();
+				if(typeContrainte=="RMS")
+				{
+					var nNuage = Number($(htmlContrainte).find(".choix_contrainte_element select").val()); // A quel nuage doit-on s'attacher ?
+					var nuage = getItemFromId(nNuage)	// On recupere le nuage
+					var contrainte = new ContrainteRMSCercle(nuage) // On créer la contrainte
+					cercle.liste_contraintes.push(contrainte)
+				}
+			}
+			cercle.optimiseCercle(); // Trouves la meilleure équation si ce n'est pas des contraintes, il ne se passera rien
+//			cercle.optimiseGraphismes(); // Trouves les meilleurs paramètres d'affichage (centre, ...)
+			
+		}
+		
+		
+		
+		
+		cercle.couleur(couleur);
+		
+		LISTE_ITEMS.push(cercle);
+		$("#arbre").append(cercle.getHTML())
+		return cercle;
 		
 	}
 	else
@@ -1039,6 +1079,21 @@ function getDistanceDroiteCarre(_param_droite_,_P_)
 	return Math.pow( (OP.cross(V)).length()/V.length()  ,2)
 }
 
+// ********************************************************
+// Fonction qui calcule la distance au carré entre un cercle de composante [Px, Py, Pz, Vx, Vy, Vz, R]
+// à un point P
+// _P_ = THREE.Vector3
+function getDistanceCercleCarre(_param_cercle_,_P_)
+{		
+	var C = new THREE.Vector3(_param_cercle_[0], _param_cercle_[1],_param_cercle_[2]);
+	var vDir = new THREE.Vector3(_param_cercle_[3], _param_cercle_[4],_param_cercle_[5]).normalize();
+	var R = _param_cercle_[6];
+	
+	var CP = _P_.clone().sub(C)
+	// R = || vDir ^ CP ||
+	return  Math.pow(vDir.dot(CP) , 2) + Math.pow(vDir.cross(CP).length()-R , 2) // Pas besoin de clone car plus utile apres
+}
+
 
 
 // *****************************************
@@ -1079,10 +1134,16 @@ function ouvreBoiteAjouterItem()
 	$("#tab_new_item_droite_cylindre_choix").empty();
 	$("#tab_new_item_droite_cylindre_choix").html(getHTMLCylindresInSelect());
 	
-	// Onglet droite
+	// Onglet biplan
 	$("#tab_new_item_biplan_nom").val("Biplan "+String(NUMERO_ITEM+1))
 	$("#tab_new_item_biplan_planMedian").empty();
-	$("#tab_new_item_biplan_planMedian").html(getHTMLPlansInSelect())
+	$("#tab_new_item_biplan_planMedian").html(getHTMLPlansInSelect());
+	
+	// Onglet cercle
+	$("#tab_new_item_cercle_nom").val("Cercle "+String(NUMERO_ITEM+1))
+	$("#tab_new_item_liste_contraintes_cercle").empty();
+	
+	
 	
 	
 	
@@ -1108,7 +1169,7 @@ function ouvreBoiteDeleteItem(_id)
 function tab_new_item_ajouteContrainte_plan()
 {
 	var html = `
-		<div class=\"tab_new_item_contrainte_plan\">
+		<div class=\"tab_new_item_contrainte_dans_liste\">
 			<div class=\"bouton_autosupprime_dans_liste\" title=\"Supprimer la contrainte\" onclick=\"autosupprime_dans_liste(this)\"></div>
 			Contrainte : 
 			<select class="type-contrainte" onchange="new_item_contrainte_plan_update_liste_elements(this)">
@@ -1136,7 +1197,7 @@ function tab_new_item_ajouteContrainte_plan()
 function tab_new_item_ajouteContrainte_cylindre()
 {
 	var html = `
-		<div class=\"tab_new_item_contrainte_cylindre\">
+		<div class=\"tab_new_item_contrainte_dans_liste\">
 			<div class=\"bouton_autosupprime_dans_liste\" title=\"Supprimer la contrainte\" onclick=\"autosupprime_dans_liste(this)\"></div>
 			Contrainte : 
 			<select class="type-contrainte">
@@ -1159,11 +1220,11 @@ function tab_new_item_ajouteContrainte_cylindre()
 
 
 // ********************************************
-// Fonction qui ajoute un div pour lister les contrainte à inffliger à la future droite dans la boite de dialog
+// Fonction qui ajoute un div pour lister les contrainte à infliger à la future droite dans la boite de dialog
 function tab_new_item_ajouteContrainte_droite()
 {
 	var html = `
-		<div class=\"tab_new_item_contrainte_droite\">
+		<div class=\"tab_new_item_contrainte_dans_liste\">
 			<div class=\"bouton_autosupprime_dans_liste\" title=\"Supprimer la contrainte\" onclick=\"autosupprime_dans_liste(this)\"></div>
 			Contrainte : 
 			<select class="type-contrainte">
@@ -1182,12 +1243,35 @@ function tab_new_item_ajouteContrainte_droite()
 }
 
 
+
+// ********************************************
+// Fonction qui ajoute un div pour lister les contrainte à infliger au future cercle dans la boite de dialog
+function tab_new_item_ajouteContrainte_cercle()
+{
+	var html = `
+		<div class=\"tab_new_item_contrainte_dans_liste\">
+			<div class=\"bouton_autosupprime_dans_liste\" title=\"Supprimer la contrainte\" onclick=\"autosupprime_dans_liste(this)\"></div>
+			Contrainte : 
+			<select class="type-contrainte">
+				<option value="RMS">Cercle des moindres carrés</option>
+			</select>
+			<div class="choix_contrainte_element">
+				Nuage :
+				<select>
+					`+getHTMLNuagesInSelect()+`
+				</select>
+			</div>`;
+			
+	html += "</div>";
+	
+	$("#tab_new_item_liste_contraintes_cercle").append(html)
+}
 // ********************************************
 // Fonction qui ajoute un div pour lister nuages à fusionner
 function tab_new_item_assemble_ajoute_nuage()
 {
 	var html = `
-		<div class=\"tab_new_item_assemble_nuage\">
+		<div class=\"tab_new_item_contrainte_dans_liste\">
 			<div class=\"bouton_autosupprime_dans_liste\" title=\"Supprimer la contrainte\" onclick=\"autosupprime_dans_liste(this)\"></div>
 			<div class="choix_assemblage_nuage_nuage">
 				Nuage :
@@ -1295,6 +1379,24 @@ function ouvreBoiteMesureBiplan(_id_)
 	
 	$("#boite_mesure_biplan_mesures").empty();
 	$("#boite_mesure_biplan").dialog("open");
+}
+
+// ******************************************
+// Ouvre la boite d'analyse par rapport au cercle dont l'item est le n°id
+function ouvreBoiteMesureCercle(_id_)
+{
+	$("#boite_mesure_cercle").attr("data-id",_id_);
+	$("#boite_mesure_cercle_choix_item").empty();
+	$("#boite_mesure_cercle_choix_item").append("<option value=\"\"></select>");
+	for(var i=0;i<LISTE_ITEMS.length ;i++)
+	{
+		if(LISTE_ITEMS[i].id()!=_id_)
+		{
+			$("#boite_mesure_cercle_choix_item").append("<option value=\""+String(LISTE_ITEMS[i].id())+"\">"+LISTE_ITEMS[i].nom()+"</option>")
+		}
+	}
+	$("#boite_mesure_cercle_mesures").empty();
+	$("#boite_mesure_cercle").dialog("open");
 }
 
 
@@ -1492,6 +1594,40 @@ function updateCalculMesureBiplan()
 			<hr>
 			<strong>Mesure par rapport au biplan :</strong>
 			<p>Le nuage de points \"<strong>`+item.nom()+`</strong>\" `+(Math.abs(dMax)<=biplan.ecart()/2 && Math.abs(dMin)<=biplan.ecart()/2 ? "<span style='color:#00AA00;font-weight:bold;'>est entièrement contenu</span>" : "<span style='color:#FF0000;font-weight:bold;'>n'est pas entièrement contenu</span>")+` dans le biplan.</p>
+		`)
+	}
+	
+}
+
+
+// *****************************************
+function updateCalculMesureCercle()
+{
+	var cercle = getItemFromId($("#boite_mesure_cercle").attr("data-id"))
+	var item = getItemFromId($("#boite_mesure_cercle_choix_item").val())
+	
+	// NUAGES ========================
+	if(item.type()=="nuage")
+	{
+		var dMax = 0
+		for(var i=0;i<item.nbMesures();i++)
+		{
+			var mes = item.getMesure(i)
+			
+			// Mesures à la droite
+			var d = cercle.getDistancePoint(mes)
+			if(d>dMax)
+				dMax = d;
+			
+		}
+	
+		// Résultats
+		$("#boite_mesure_cercle_mesures").append(`
+			<hr>
+			<strong>Mesure par rapport au cercle :</strong>
+			<ul>
+				<li><strong>Écart max :</strong> `+String(dMax)+`</li>
+			</ul>
 		`)
 	}
 	

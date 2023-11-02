@@ -36,6 +36,7 @@ $PIECE = isset($_GET['piece']) ? $_GET['piece'] : "RI40";	# Pièce à chargé (p
 		<script src="./sources/JS/CLASS_Cylindre.js"></script>
 		<script src="./sources/JS/CLASS_Droite.js"></script>
 		<script src="./sources/JS/CLASS_Biplan.js"></script>
+		<script src="./sources/JS/CLASS_Cercle.js"></script>
 		<script src="./sources/JS/CLASS_Contrainte.js"></script>
 		<script src="./sources/JS/init.js"></script>
 
