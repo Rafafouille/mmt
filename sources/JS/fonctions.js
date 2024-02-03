@@ -1696,7 +1696,58 @@ function getDonneesInTableau()
 	return tab;
 }
 
+
+
+// ******************************************
+function ouvreBoite_envoieDonneesMail()
+{
+	$("#boite_envoie_vers_mail").dialog('open')
+	$("#message_erreur_mail").text("")
+}
+
 // *****************************************
+function envoieDonneesVersMail()
+{
+	var donnees = getDonneesInTableau()
+	
+	var mail = $("#input_email_envoi").val()
+	
+	var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+	if(emailRegex.test(mail))
+	{
+		$("#message_erreur_mail").text("Envoi...")
+		$.post(
+			"repondeur.php",
+			{
+				action:"envoieDonneeMail",
+				mail:mail,
+				donnees:donnees
+			},
+			envoieDonneesVersMail_callback,
+			"json"
+		);
+	}
+	else
+	{
+		$("#message_erreur_mail").text("Erreur : le mail n'est pas au bon format")
+	}
+}
+
+// ***************************************
+function envoieDonneesVersMail_callback(data)
+{
+	if(data.OK)
+	{
+		$("#boite_envoie_vers_mail").dialog('close')
+	}
+	else
+	{
+		$("#message_erreur_mail").text(data['message']);
+	}
+}
+
+// ***************************************** OBSOLETE ###############################
 function envoieDonneesVersServeur()
 {
 	var donnees = getDonneesInTableau()
@@ -1712,7 +1763,7 @@ function envoieDonneesVersServeur()
 	);
 }
 
-// **********************************************
+// ********************************************** OBSOLETE ###############################
 function envoieDonneesVersServeur_callback(data)
 {
 	if(data.OK)

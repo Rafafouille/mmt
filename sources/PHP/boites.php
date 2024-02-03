@@ -558,10 +558,26 @@
 
 
 
-
-
 <!-- SAUVEGARDES LES DONNEES SUR LE SERVEUR (VALIDATION) ----------------------- -->
-<div id="boite_valider_enregistrer_depuis_Occulus" title="Enregistrement des données sur le serveur">
+
+<div id="boite_envoie_vers_mail" title="Envoi des donnéespar mail">
+	<p>Les mesures vont être envoyées par mail. (Il est possible qu'il soit catégoriser comme "spam")</p>
+	<p><label for="input_email_envoi">Adresse mail :</label> <input type="email" id="input_email_envoi" name="input_email_envoi"/></p>
+	<p id="message_erreur_mail"></p>
+</div>
+<script>
+	$("#boite_envoie_vers_mail").dialog({
+					autoOpen:false,
+					width: "800px",
+					modal: true,
+					buttons:{
+						Fermer: function() {$(this).dialog("close")},
+						Envoyer: function() {envoieDonneesVersMail();}
+						}
+				});
+</script>
+<!-- SAUVEGARDES LES DONNEES SUR LE SERVEUR (VALIDATION) ----------------------- -->
+<!--<div id="boite_valider_enregistrer_depuis_Occulus" title="Enregistrement des données sur le serveur">
 	<p>Les données ont été enregistrées sur le serveur (l'ancien fichier a été écrasé).</p>
 	<p>Le fichier est accessible dans <a href="https://<?php echo  $_SERVER['HTTP_HOST'].parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);?>/sauvegardes">https://<?php echo  $_SERVER['HTTP_HOST'].parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH);?>sauvegardes</a>.</p>
 </div>
@@ -577,4 +593,4 @@
 						Fermer: function() {$(this).dialog("close")}
 						}
 				});
-</script>
+</script>-->

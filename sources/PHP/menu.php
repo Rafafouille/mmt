@@ -38,14 +38,17 @@
 		<div class="bouton clicable carre afficheMachine" id="boutonAfficheCacheMachine" title="Affiche/Cacher machine" onclick="afficheCacheMachine()"></div>
 		<div class="bouton clicable carre afficheReperePalpeur" id="boutonAfficheCacheReperePalpeur" title="Afficher/Cacher le repère du palpeur"onclick="afficheCacheReperePalpeur()"></div>
 		<div class="bouton clicable carre" onclick="ouvreBoiteAjouterItem()"><img src="./sources/images/plus.svg" title="Ajouter un élément" alt="[ + ]"/></div>
-		<div class="bouton clicable carre" style="display:none;" id="conteneur_vrbouton">[Bouton VR]</div>
 		<br/>
 		<div class="bouton clicable carre affichePiece" id="boutonAfficheCachePiece" title="Afficher/Cacher la pièce" onclick="afficheCachePiece()"></div>
 		<label for="input_alpha_piece">&alpha; :</label>
 		<input type="range" id="input_alpha_piece" name="input_alpha_piece" min="0" max="1" step="0.1" value="1" oninput="changeAlphaPiece($(this).val())"/>
+		<br/>
+		<div class="bouton clicable carre" style="display:none;" title="Activer la VR (si disponible)" id="conteneur_vrbouton">[Bouton VR]</div>
+		<div class="bouton clicable carre" onclick="ouvreBoite_envoieDonneesMail()"><img src="./sources/images/icon_envoi_mail.svg" alt="[Envoi]" title="Envoyer les mesures par mail"></div>
 		
 		<!-- ARBRE DES ITEMS -------- -->
 		<div id="arbre">
+			<div id="titreListeItems">liste des items</div>
 		</div>
 		
 		<div id="mesures" style="display:none;">
@@ -55,10 +58,10 @@
 		</div>
 		
 		<?php
-		if(strpos($_SERVER['HTTP_USER_AGENT'],"Quest 2") != false)
+		/*if(strpos($_SERVER['HTTP_USER_AGENT'],"Quest 2") != false)
 		{
 			echo '<div class="bouton" onclick="envoieDonneesVersServeur()">données --> Serveur</div>';
-		}
+		}*/
 		?>
 		
 		<a href="https://contact.allais.eu/?site=MMT" title="Contact" style="display:inline-block;margin-top:20px;"><img src="./sources/images/icone_mail.png" alt=Contact/></a>
