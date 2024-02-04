@@ -121,7 +121,7 @@
 				<ul>
 					<li><a href="#tab_new_item_cylindre_equation">Coordonnées</a></li>
 					<li><a href="#tab_new_item_cylindre_contraintes">Contraintes</a></li>
-					<li><a href="#tab_new_item_cylindre_droite">À partir d'une droite</a></li>
+					<li><a href="#tab_new_item_cylindre_droite">À partir d'une droite/axe</a></li>
 				</ul>
 				<div id="tab_new_item_cylindre_equation">
 					<form>
@@ -156,7 +156,7 @@
 						<select id="tab_new_item_cylindre_droite_choix">
 						</select>
 					</br>
-					<span for="tab_new_item_cylindre_droite_rayon">Rayon : </span>
+					<span for="tab_new_item_cylindre_droite_rayon">Rayon (m) : </span>
 						<input type="number" name="tab_new_item_cylindre_droite_rayon" id="tab_new_item_cylindre_droite_rayon" min="0" value="0.1" placeholder="Rayon"/>
 				</div>
 			</div>
@@ -182,7 +182,7 @@
 					<li><a href="#tab_new_item_droite_equation">Coordonnées</a></li>
 					<li><a href="#tab_new_item_droite_contraintes">Contraintes</a></li>
 					<li><a href="#tab_new_item_droite_intersection">Intersection plans</a></li>
-					<li><a href="#tab_new_item_droite_cylindre">Axe cylindre</a></li>
+					<li><a href="#tab_new_item_droite_cylindre">À partir d'une droite/axe</a></li>
 				</ul>
 				<!-- Doite par équation -->
 				<div id="tab_new_item_droite_equation">

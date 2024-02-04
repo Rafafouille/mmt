@@ -750,11 +750,11 @@ function ajouterItemFromDialog()
 		}
 		else if(methode == "droite")
 		{
-			var nDroite =  Number($("#tab_new_item_cylindre_droite_choix").val()); 
-			var droite = getItemFromId(nDroite);
+			var nItem =  Number($("#tab_new_item_cylindre_droite_choix").val()); 
+			var itemRef = getItemFromId(nItem);
 			var rayon =  Number($("#tab_new_item_cylindre_droite_rayon").val());
 			
-			var p = droite.parametres();
+			var p = itemRef.parametres();
 			var cylindre = new Cylindre(nom,[p[0],p[1],p[2],p[3],p[4],p[5],rayon]);
 		}
 		
@@ -771,7 +771,7 @@ function ajouterItemFromDialog()
 	}
 	else if(type == "droite")
 	{
-		var methode = ["equation","contraintes","intersection","cylindre"][$("#tab_new_item_droite_methode").tabs('option', 'active')];
+		var methode = ["equation","contraintes","intersection","axe"][$("#tab_new_item_droite_methode").tabs('option', 'active')];
 		var nom = $("#tab_new_item_droite_nom").val();
 		var couleur = $("#tab_new_item_droite_couleur").val();
 		
@@ -833,11 +833,11 @@ function ajouterItemFromDialog()
 			
 			var droite = new Droite(nom,[centre.x , centre.y , centre.z , vDirecteur.x , vDirecteur.y , vDirecteur.z])
 		}
-		else if(methode=="cylindre")
+		else if(methode=="axe")
 		{
-			var idCylindre = Number($("#tab_new_item_droite_cylindre_choix").val()); 
-			var cylindre = getItemFromId(idCylindre);
-			var p = cylindre.parametres();
+			var idItemRef = Number($("#tab_new_item_droite_cylindre_choix").val()); 
+			var itemRef = getItemFromId(idItemRef);
+			var p = itemRef.parametres();
 			var droite = new Droite(nom,[p[0] , p[1] , p[2] , p[3] , p[4] , p[5]])
 		}
 		
@@ -1153,7 +1153,7 @@ function ouvreBoiteAjouterItem()
 	$("#tab_new_item_cylindre_couleur").val(LISTE_COULEURS[ NUMERO_ITEM % LISTE_COULEURS.length ])
 	$("#tab_new_item_liste_contraintes_cylindre").empty();
 	$("#tab_new_item_cylindre_droite_choix").empty();
-	$("#tab_new_item_cylindre_droite_choix").html(getHTMLDroitesInSelect());
+	$("#tab_new_item_cylindre_droite_choix").html(getHTMLDroitesAxesInSelect());
 	
 	// Onglet droite
 	$("#tab_new_item_droite_nom").val("Droite "+String(NUMERO_ITEM+1))
@@ -1163,7 +1163,7 @@ function ouvreBoiteAjouterItem()
 	$("#tab_new_item_droite_intersection_plan2").empty();
 	$("#tab_new_item_droite_intersection_plan2").html(getHTMLPlansInSelect());
 	$("#tab_new_item_droite_cylindre_choix").empty();
-	$("#tab_new_item_droite_cylindre_choix").html(getHTMLCylindresInSelect());
+	$("#tab_new_item_droite_cylindre_choix").html(getHTMLDroitesAxesInSelect());
 	
 	// Onglet biplan
 	$("#tab_new_item_biplan_nom").val("Biplan "+String(NUMERO_ITEM+1))
@@ -1841,6 +1841,13 @@ function getHTMLDroitesInSelect()
 }
 
 
+
+// *********************************************
+// Fonction qui fait la liste des Droites pour mettre dans un select (form)
+function getHTMLDroitesAxesInSelect()
+{
+	return getHTMLItemsInSelect(["droite","cylindre","cercle"])
+}
 
 
 // *********************************************
