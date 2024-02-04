@@ -136,21 +136,43 @@ function creePiece_OLD_A_SUPPRIMER()
 	// DECORS
 function creeDecors()
 {
-	var geometry = new THREE.BoxGeometry( 3, 10, 3 );
-	var material = new THREE.MeshLambertMaterial({color : 0x0000AA});//   MeshBasicMaterial( {color: 0x00ff00} );
-	var cube = new THREE.Mesh( geometry, material );
-	cube.position.set(0.3,-5,-0.5);
-	cube.position.sub(ENVIRONNEMENT.position) // Recentre par rapport à l'origine principale
-	DECORS.add(cube);
-	
-	
-	
-	geometry = new THREE.BoxGeometry( 10, 20, 10 );
-	material = new THREE.MeshLambertMaterial({color : 0xFFFFFF});//   MeshBasicMaterial( {color: 0x00ff00} );
-	material.side = THREE.BackSide;
-	cube = new THREE.Mesh( geometry, material );
-	cube.position.sub(ENVIRONNEMENT.position) // Recentre par rapport à l'origine principale
-	DECORS.add(cube);
+	var decors = 1
+	if(decors == 1)
+	{
+		var geometry = new THREE.PlaneGeometry( 1, 1 );
+		var material = new THREE.MeshLambertMaterial({color : 0xAAAAAA});//   MeshBasicMaterial( {color: 0x00ff00} );
+		var plane = new THREE.Mesh( geometry, material );
+		plane.position.set(0.,-0.73,0);
+		plane.rotation.x = -Math.PI/2
+		plane.scale.x = 10
+		plane.scale.y = 10
+		DECORS.add(plane);
+		
+		
+		var geometry = new THREE.BoxGeometry( 2, 0.2, 1.4 );
+		var cube = new THREE.Mesh( geometry, material );
+		cube.position.set(0.25,0.08,-0.85);
+		cube.position.sub(ENVIRONNEMENT.position) // Recentre par rapport à l'origine principale
+		DECORS.add(cube);
+	}
+	else
+	{
+		var geometry = new THREE.BoxGeometry( 3, 10, 3 );
+		var material = new THREE.MeshLambertMaterial({color : 0x0000AA});//   MeshBasicMaterial( {color: 0x00ff00} );
+		var cube = new THREE.Mesh( geometry, material );
+		cube.position.set(0.3,-5,-0.5);
+		cube.position.sub(ENVIRONNEMENT.position) // Recentre par rapport à l'origine principale
+		DECORS.add(cube);
+		
+		
+		
+		geometry = new THREE.BoxGeometry( 10, 20, 10 );
+		material = new THREE.MeshLambertMaterial({color : 0xFFFFFF});//   MeshBasicMaterial( {color: 0x00ff00} );
+		material.side = THREE.BackSide;
+		cube = new THREE.Mesh( geometry, material );
+		cube.position.sub(ENVIRONNEMENT.position) // Recentre par rapport à l'origine principale
+		DECORS.add(cube);
+	}
 
 }
 	

@@ -13,6 +13,7 @@ THREEJS.VRButton = VRButton;// Magouille pour se libérer des modules
 import { XRControllerModelFactory } from './bibliotheques/threejs/XRControllerModelFactory.js';
 THREEJS.XRControllerModelFactory = XRControllerModelFactory;// Magouille pour se libérer des modules
 
+
 // ======================================
 // CONSTANTES GLOBALES
 // ======================================
@@ -43,13 +44,14 @@ ENVIRONNEMENT.add(MARKERS);
 SCENE.add( axesHelper );*/
 
 
-
 // RENDERER ****************************
 RENDERER = new THREE.WebGLRenderer();
 RENDERER.setSize( window.innerWidth-320, window.innerHeight);
 document.body.appendChild( RENDERER.domElement );
 RENDERER.xr.enabled = true;	// Autorise la VR
 
+/*RENDERER.shadowMap.enabled = true; //Trop gourmand
+RENDERER.shadowMap.type = THREE.PCFSoftShadowMap;*/
 
 
 // CAMERA *************************************
@@ -63,10 +65,13 @@ window.addEventListener( 'resize', resizeFenetre, false );
 CAMERA.position.set(2,2,2)
 
 // LUMIERE ************************************
+/*var light0 = new THREE.AmbientLight( 0xFFFFFF,0.5 ); // soft white light
+	ENVIRONNEMENT.add(light0);*/
 var light = new THREE.DirectionalLight(0xFFFFFF, 1);
 	light.position.set(1, 2, 3).normalize();
+	//light.castShadow = true;
 	ENVIRONNEMENT.add(light);
-var light2 = new THREE.DirectionalLight(0xAAAAAA, 1);
+var light2 = new THREE.DirectionalLight(0xFFFFFF, 0.5);
 	light2.position.set(-30, 20, -10).normalize();
 	ENVIRONNEMENT.add(light2);
 

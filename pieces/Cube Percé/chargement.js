@@ -120,31 +120,31 @@ for(var i=0;i<nuage2.length;i++)
 	NUAGE_COURANT.ajouteMesure(new THREE.Vector3(nuage2[i][0], nuage2[i][2], -nuage2[i][1]))
 	NUAGE_COURANT.rayon_marker(0.01);
 	
-ajouteNuage("Cercle 1")
+ajouteNuage("Nuage Cercle 1")
 for(var i=0;i<cercle1.length;i++)
 	NUAGE_COURANT.ajouteMesure(new THREE.Vector3(cercle1[i][0], cercle1[i][2], -cercle1[i][1]))
 	NUAGE_COURANT.rayon_marker(0.005);
-ajouteNuage("Cercle 2")
+ajouteNuage("Nuage Cercle 2")
 for(var i=0;i<cercle2.length;i++)
 	NUAGE_COURANT.ajouteMesure(new THREE.Vector3(cercle2[i][0], cercle2[i][2], -cercle2[i][1]))
 	NUAGE_COURANT.rayon_marker(0.005);
-ajouteNuage("Cercle 3")
+ajouteNuage("Nuage Cercle 3")
 for(var i=0;i<cercle3.length;i++)
 	NUAGE_COURANT.ajouteMesure(new THREE.Vector3(cercle3[i][0], cercle3[i][2], -cercle3[i][1]))
 	NUAGE_COURANT.rayon_marker(0.005);
-ajouteNuage("Cercle 4")
+ajouteNuage("Nuage Cercle 4")
 for(var i=0;i<cercle4.length;i++)
 	NUAGE_COURANT.ajouteMesure(new THREE.Vector3(cercle4[i][0], cercle4[i][2], -cercle4[i][1]))
 	NUAGE_COURANT.rayon_marker(0.005);
-ajouteNuage("Cercle 5")
+ajouteNuage("Nuage Cercle 5")
 for(var i=0;i<cercle5.length;i++)
 	NUAGE_COURANT.ajouteMesure(new THREE.Vector3(cercle5[i][0], cercle5[i][2], -cercle5[i][1]))
 	NUAGE_COURANT.rayon_marker(0.005);
-ajouteNuage("Cercle 6")
+ajouteNuage("Nuage Cercle 6")
 for(var i=0;i<cercle6.length;i++)
 	NUAGE_COURANT.ajouteMesure(new THREE.Vector3(cercle6[i][0], cercle6[i][2], -cercle6[i][1]))
 	NUAGE_COURANT.rayon_marker(0.005);
-ajouteNuage("Cercle 7")
+ajouteNuage("Nuage Cercle 7")
 for(var i=0;i<cercle7.length;i++)
 	NUAGE_COURANT.ajouteMesure(new THREE.Vector3(cercle7[i][0], cercle7[i][2], -cercle7[i][1]))
 	NUAGE_COURANT.rayon_marker(0.005);
