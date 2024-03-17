@@ -74,7 +74,7 @@ var light = new THREE.DirectionalLight(0xFFFFFF, 1);
 var light2 = new THREE.DirectionalLight(0xFFFFFF, 0.5);
 	light2.position.set(-30, 20, -10).normalize();
 	ENVIRONNEMENT.add(light2);
-
+// Il y a une lampe aussi avec le panneau explicatif
 
 // **********************************************
 // Ajout premier nuage de points
@@ -159,11 +159,22 @@ function animate() {
 	CONTROLS.update(); // Mise à jour de la caméra, en fonction des actions de l'utilisateur
 	if(CHARGEMENT_TERMINE)
 	{
-		if(SUIVRE_MANETTE_VR)
+	
+		if(RENDERER.xr.isPresenting)
 		{
-			var p = new THREE.Vector3();
-			var pp = new THREE.Vector3();
-			POSITION_CIBLE = p.add(COORDONNEES_PALPEUR_INITIAL_VR).add(CONTROLLER2.position).sub(COORDONNEES_INIALES_MANETTE_VR)
+			SPOT_NOTICE.visible=true;
+			NOTICE.visible=true;
+			if(SUIVRE_MANETTE_VR)
+			{
+				var p = new THREE.Vector3();
+				var pp = new THREE.Vector3();
+				POSITION_CIBLE = p.add(COORDONNEES_PALPEUR_INITIAL_VR).add(CONTROLLER2.position).sub(COORDONNEES_INIALES_MANETTE_VR)
+			}
+		}
+		else
+		{
+			SPOT_NOTICE.visible=false;
+			NOTICE.visible=false;
 		}
 		
 		deplacePalpeur();

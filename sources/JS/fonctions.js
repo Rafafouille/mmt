@@ -139,6 +139,7 @@ function creeDecors()
 	var decors = 1
 	if(decors == 1)
 	{
+		// LE SOL
 		var geometry = new THREE.PlaneGeometry( 1, 1 );
 		var material = new THREE.MeshLambertMaterial({color : 0xAAAAAA});//   MeshBasicMaterial( {color: 0x00ff00} );
 		var plane = new THREE.Mesh( geometry, material );
@@ -148,12 +149,36 @@ function creeDecors()
 		plane.scale.y = 10
 		DECORS.add(plane);
 		
-		
+		// ESTRADE
 		var geometry = new THREE.BoxGeometry( 2, 0.2, 1.4 );
 		var cube = new THREE.Mesh( geometry, material );
 		cube.position.set(0.25,0.08,-0.85);
 		cube.position.sub(ENVIRONNEMENT.position) // Recentre par rapport à l'origine principale
 		DECORS.add(cube);
+		
+		//NOTICE
+		var geometry = new THREE.PlaneGeometry( 1.058/3*2, 0.748/3*2 );
+		
+		const loader = new THREE.TextureLoader();
+		material = new THREE.MeshLambertMaterial({ map: loader.load('./sources/images/commande_VR.png')});
+		
+		NOTICE = new THREE.Mesh( geometry, material );
+		NOTICE.position.set(-1,0.2,1);
+		NOTICE.rotateY(Math.PI/2);
+		NOTICE.rotateX(-Math.PI/10);
+		NOTICE.visible=false;
+		DECORS.add(NOTICE);
+		SPOT_NOTICE = new THREE.SpotLight( 0xffffff );
+		SPOT_NOTICE.intensity = 0.7;
+		SPOT_NOTICE.position.set(-0.7,0.9,1);
+		SPOT_NOTICE.target=NOTICE;
+		SPOT_NOTICE.penumbra = 1;
+		SPOT_NOTICE.angle = Math.PI / 5;
+		SPOT_NOTICE.castShadow = true;
+		SPOT_NOTICE.visible=false;
+		ENVIRONNEMENT.add(SPOT_NOTICE);
+
+		
 	}
 	else
 	{
@@ -1910,7 +1935,7 @@ function copyMesuresFromFusion(n_source,n_contenant)
 function ouvreModal(texte="Chargement...")
 {
 	$("#message_voileNoir").text(texte);
-	$("#pourcentage_calcul").text("(cela peut être long... La prochaine fois, lancez la console (F11) AVANT de lancer le calcul pour suivre l'avancement)");
+	$("#pourcentage_calcul").text("(cela peut être long... La prochaine fois, lancez la console (F12) AVANT de lancer le calcul pour suivre l'avancement)");
 	$("#voileNoir").show()
 }
 
