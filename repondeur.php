@@ -12,7 +12,7 @@ if($action=="getPieces")
 	$dossiers_pieces = scandir("pieces");
 	for($i=0;$i<sizeof($dossiers_pieces);$i++)
 	{
-		if($dossiers_pieces[$i]!="." && $dossiers_pieces[$i]!="..")
+		if($dossiers_pieces[$i]!="." && $dossiers_pieces[$i]!=".." && substr($dossiers_pieces[$i],0,1)!="_")
 		{
 		
 			$nom = $dossiers_pieces[$i];
