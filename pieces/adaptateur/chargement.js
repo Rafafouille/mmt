@@ -8,7 +8,7 @@ materialLoader.load("./pieces/adaptateur/adaptateur.mtl", function(materials)
 		objLoader.load('./pieces/adaptateur/adaptateur.obj', function ( object ) {
 					PIECE = object;
 					//On déplace la géométrie de la piece (les vertices, et pas la piece elle meme)
-					var echelle = 1
+					var echelle = 2
 					PIECE.children[0].geometry.scale(echelle,echelle,echelle)
 					PIECE.children[0].geometry.translate(0.4,0,-0.15)
 					//CONTROLS.target = PIECE.position  // Camera vise la piece
