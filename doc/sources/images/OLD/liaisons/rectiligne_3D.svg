@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (b51213c273, 2020-08-10)"
+   sodipodi:docname="rectiligne_3D.svg"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 20.264584 20.769339"
+   height="20.769339mm"
+   width="20.264584mm">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="3.959798"
+     inkscape:cx="129.70345"
+     inkscape:cy="59.187094"
+     inkscape:document-units="mm"
+     inkscape:current-layer="svg8"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1853"
+     inkscape:window-height="1025"
+     inkscape:window-x="67"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:snap-page="true"
+     inkscape:snap-object-midpoints="true"
+     inkscape:snap-global="true"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+     id="g1032"
+     transform="translate(10.132292,10.384669)">
+    <path
+       d="M 0,0 V 6.1237"
+       stroke="#0000ff"
+       stroke-width="0.5"
+       style="stroke-linecap:round"
+       profondeur="-10000002.16506351"
+       id="path1016" />
+    <path
+       d="M 7.8561,-1.0002 1.7324,-4.5357 -7.8561,1.0002 -1.7324,4.5357 Z"
+       stroke="#0000ff"
+       stroke-width="0.5"
+       profondeur="-10000000.0"
+       style="fill:#ffffff;stroke-linejoin:round"
+       id="path1018" />
+    <path
+       d="M 2.6517,-1.633 2.1151,-6.1528 5.177,-4.3851 Z"
+       stroke="#ff0000"
+       stroke-width="0.5"
+       style="fill:#ffffff;stroke-linejoin:round"
+       profondeur="2.2337968020635564"
+       id="path1020" />
+    <path
+       d="m 2.6517,-1.633 -5.3034,3.0619 -2.5253,-3.3717 7.2921,-4.21 z"
+       stroke="#ff0000"
+       stroke-width="0.5"
+       style="fill:#ffffff;stroke-linejoin:round"
+       profondeur="2.235572566095092"
+       id="path1022" />
+    <path
+       d="M 2.6517,-1.633 -2.6517,1.4289 -2.1151,-0.175 5.177,-4.3851 Z"
+       stroke="#ff0000"
+       stroke-width="0.5"
+       style="fill:#ffffff;stroke-linejoin:round"
+       profondeur="2.2369531710736763"
+       id="path1024" />
+    <path
+       d="m 5.177,-4.3851 -3.0619,-1.7677 -7.2921,4.21 3.0619,1.7678 z"
+       stroke="#ff0000"
+       stroke-width="0.5"
+       style="fill:#ffffff;stroke-linejoin:round"
+       profondeur="2.2372322931097997"
+       id="path1026" />
+    <path
+       d="M -2.6517,1.4289 -5.177,-1.9428 -2.1151,-0.175 Z"
+       stroke="#ff0000"
+       stroke-width="0.5"
+       style="fill:#ffffff;stroke-linejoin:round"
+       profondeur="2.2392004922496924"
+       id="path1028" />
+    <path
+       d="M 0,-3.1639 V -6.2258"
+       stroke="#ff0000"
+       stroke-width="0.5"
+       style="stroke-linecap:round"
+       profondeur="3.3197640478403487"
+       id="path1030" />
+  </g>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(10.132292,10.384669)" />
+</svg>

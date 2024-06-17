@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="20.264584mm"
+   height="20.769339mm"
+   viewBox="0 0 20.264584 20.769339"
+   version="1.1"
+   id="svg874"
+   sodipodi:docname="rectiligne_2D_bout.svg"
+   inkscape:version="1.0 (9f2f71dc58, 2020-08-02)">
+  <defs
+     id="defs868" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="3.959798"
+     inkscape:cx="166.85112"
+     inkscape:cy="104.49874"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1853"
+     inkscape:window-height="1025"
+     inkscape:window-x="67"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:snap-object-midpoints="true"
+     inkscape:snap-page="true"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata871">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(10.132292,10.384669)" />
+  <g
+     credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+     id="g2371"
+     transform="translate(10.132292,10.384669)">
+    <g
+       transform="rotate(-90)"
+       id="g2363">
+      <path
+         d="M 0.5,0 4.25,-2.1651 V 2.1651 Z"
+         stroke="#ff0000"
+         stroke-width="0.5"
+         style="fill:#ffffff"
+         id="path2359" />
+      <path
+         d="M 4.25,0 H 7.5"
+         stroke="#ff0000"
+         stroke-width="0.5"
+         id="path2361" />
+    </g>
+    <g
+       transform="rotate(-90)"
+       id="g2369">
+      <path
+         d="M -0.25,4.3301 V -4.3301"
+         stroke="#0000ff"
+         stroke-width="0.5"
+         id="path2365" />
+      <path
+         d="M -5.0676,0 H -0.25"
+         stroke="#0000ff"
+         stroke-width="0.5"
+         id="path2367" />
+    </g>
+  </g>
+</svg>

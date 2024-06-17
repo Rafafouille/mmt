@@ -1,0 +1,889 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="6.2858505mm"
+   height="8.7973957mm"
+   viewBox="0 0 6.2858505 8.7973957"
+   version="1.1"
+   id="svg1885"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   sodipodi:docname="clic_milieu.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1887"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:zoom="8.2663555"
+     inkscape:cx="16.936121"
+     inkscape:cy="34.53759"
+     inkscape:window-width="1850"
+     inkscape:window-height="1016"
+     inkscape:window-x="1990"
+     inkscape:window-y="269"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1882">
+    <radialGradient
+       id="mouse_gradient"
+       cx="19.296726"
+       cy="13.266499"
+       r="13.266499"
+       fx="19.296726"
+       fy="19.89975"
+       gradientTransform="scale(0.8291562,1.2060454)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-color="#fff"
+         id="stop274" />
+      <stop
+         offset="1"
+         stop-color="#ccc"
+         id="stop276" />
+    </radialGradient>
+    <radialGradient
+       id="radialGradient1959"
+       cx="0.5"
+       cy="0.5"
+       r="0.5"
+       fx="0.5"
+       fy="0.75">
+      <stop
+         offset="0"
+         stop-color="#fff"
+         id="stop1955" />
+      <stop
+         offset="1"
+         stop-color="#ccc"
+         id="stop1957" />
+    </radialGradient>
+    <radialGradient
+       id="mouse_specular_gradient"
+       cx="0.5"
+       cy="0.25"
+       r="1"
+       fx="0.5"
+       fy="-0.0625"
+       gradientTransform="matrix(0.333,0,0,1,0.1665,0)">
+      <stop
+         offset="0"
+         stop-color="#ffffff"
+         stop-opacity="1"
+         id="stop279" />
+      <stop
+         offset="1"
+         stop-color="#ffffff"
+         stop-opacity="0"
+         id="stop281" />
+    </radialGradient>
+    <clipPath
+       id="mouse_clip"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="use294"
+         d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath1968"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="use1966"
+         d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath1972"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="use1970"
+         d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath1976"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="use1974"
+         d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath1980"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="use1978"
+         d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z" />
+    </clipPath>
+    <radialGradient
+       id="radialGradient1986"
+       cx="0.5"
+       cy="0.5"
+       r="0.5"
+       fx="0.5"
+       fy="0.75">
+      <stop
+         offset="0"
+         stop-color="#fff"
+         id="stop1982" />
+      <stop
+         offset="1"
+         stop-color="#ccc"
+         id="stop1984" />
+    </radialGradient>
+    <radialGradient
+       id="radialGradient1992"
+       cx="0.5"
+       cy="0.5"
+       r="0.5"
+       fx="0.5"
+       fy="0.75">
+      <stop
+         offset="0"
+         stop-color="#fff"
+         id="stop1988" />
+      <stop
+         offset="1"
+         stop-color="#ccc"
+         id="stop1990" />
+    </radialGradient>
+    <radialGradient
+       id="radialGradient1998"
+       cx="0.5"
+       cy="0.25"
+       r="1"
+       fx="0.5"
+       fy="-0.0625"
+       gradientTransform="matrix(0.333,0,0,1,0.1665,0)">
+      <stop
+         offset="0"
+         stop-color="#ffffff"
+         stop-opacity="1"
+         id="stop1994" />
+      <stop
+         offset="1"
+         stop-color="#ffffff"
+         stop-opacity="0"
+         id="stop1996" />
+    </radialGradient>
+    <clipPath
+       id="clipPath2002"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="use2000"
+         d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath2006"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="use2004"
+         d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath2010"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="use2008"
+         d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z" />
+    </clipPath>
+    <linearGradient
+       id="dpad_press_gradient"
+       x1="6.6666665"
+       y1="1.5"
+       x2="6.6666665"
+       y2="13.5"
+       gradientTransform="scale(0.75,1.3333333)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0.5"
+         stop-color="#0094ff"
+         stop-opacity="0.75"
+         id="stop30"
+         style="stop-color:#ff1100;stop-opacity:0.74901962" />
+      <stop
+         offset="1.0"
+         stop-color="#0094ff"
+         stop-opacity="0"
+         id="stop32"
+         style="stop-color:#ff0000;stop-opacity:0" />
+    </linearGradient>
+    <clipPath
+       id="clipPath2023"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="use2021"
+         d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z" />
+    </clipPath>
+    <radialGradient
+       id="radialGradient2029"
+       cx="0.5"
+       cy="0.5"
+       r="0.5"
+       fx="0.5"
+       fy="0.75">
+      <stop
+         offset="0"
+         stop-color="#fff"
+         id="stop2025" />
+      <stop
+         offset="1"
+         stop-color="#ccc"
+         id="stop2027" />
+    </radialGradient>
+    <radialGradient
+       id="radialGradient2035"
+       cx="0.5"
+       cy="0.5"
+       r="0.5"
+       fx="0.5"
+       fy="0.75">
+      <stop
+         offset="0"
+         stop-color="#fff"
+         id="stop2031" />
+      <stop
+         offset="1"
+         stop-color="#ccc"
+         id="stop2033" />
+    </radialGradient>
+    <radialGradient
+       id="radialGradient2041"
+       cx="0.5"
+       cy="0.25"
+       r="1"
+       fx="0.5"
+       fy="-0.0625"
+       gradientTransform="matrix(0.333,0,0,1,0.1665,0)">
+      <stop
+         offset="0"
+         stop-color="#ffffff"
+         stop-opacity="1"
+         id="stop2037" />
+      <stop
+         offset="1"
+         stop-color="#ffffff"
+         stop-opacity="0"
+         id="stop2039" />
+    </radialGradient>
+    <clipPath
+       id="clipPath2045"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="use2043"
+         d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath2049"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="use2047"
+         d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath2053"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="use2051"
+         d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath2069"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="use2067"
+         d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z" />
+    </clipPath>
+    <radialGradient
+       id="mouse_gradient-5"
+       cx="0.5"
+       cy="0.5"
+       r="0.5"
+       fx="0.5"
+       fy="0.75">
+      <stop
+         offset="0"
+         stop-color="#fff"
+         id="stop274-6" />
+      <stop
+         offset="1"
+         stop-color="#ccc"
+         id="stop276-5" />
+    </radialGradient>
+    <radialGradient
+       id="radialGradient2822"
+       cx="0.5"
+       cy="0.5"
+       r="0.5"
+       fx="0.5"
+       fy="0.75">
+      <stop
+         offset="0"
+         stop-color="#fff"
+         id="stop2818" />
+      <stop
+         offset="1"
+         stop-color="#ccc"
+         id="stop2820" />
+    </radialGradient>
+    <radialGradient
+       id="mouse_specular_gradient-9"
+       cx="0.5"
+       cy="0.25"
+       r="1"
+       fx="0.5"
+       fy="-0.0625"
+       gradientTransform="matrix(0.333,0,0,1,0.1665,0)">
+      <stop
+         offset="0"
+         stop-color="#ffffff"
+         stop-opacity="1"
+         id="stop279-9" />
+      <stop
+         offset="1"
+         stop-color="#ffffff"
+         stop-opacity="0"
+         id="stop281-0" />
+    </radialGradient>
+    <clipPath
+       id="mouse_clip-7"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="use294-6"
+         d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath2831"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="use2829"
+         d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath2835"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="use2833"
+         d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath2839"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="use2837"
+         d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath2843"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="use2841"
+         d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z" />
+    </clipPath>
+    <radialGradient
+       id="radialGradient2849"
+       cx="0.5"
+       cy="0.5"
+       r="0.5"
+       fx="0.5"
+       fy="0.75">
+      <stop
+         offset="0"
+         stop-color="#fff"
+         id="stop2845" />
+      <stop
+         offset="1"
+         stop-color="#ccc"
+         id="stop2847" />
+    </radialGradient>
+    <radialGradient
+       id="radialGradient2855"
+       cx="0.5"
+       cy="0.5"
+       r="0.5"
+       fx="0.5"
+       fy="0.75">
+      <stop
+         offset="0"
+         stop-color="#fff"
+         id="stop2851" />
+      <stop
+         offset="1"
+         stop-color="#ccc"
+         id="stop2853" />
+    </radialGradient>
+    <radialGradient
+       id="radialGradient2861"
+       cx="0.5"
+       cy="0.25"
+       r="1"
+       fx="0.5"
+       fy="-0.0625"
+       gradientTransform="matrix(0.333,0,0,1,0.1665,0)">
+      <stop
+         offset="0"
+         stop-color="#ffffff"
+         stop-opacity="1"
+         id="stop2857" />
+      <stop
+         offset="1"
+         stop-color="#ffffff"
+         stop-opacity="0"
+         id="stop2859" />
+    </radialGradient>
+    <clipPath
+       id="clipPath2865"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="use2863"
+         d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath2869"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="use2867"
+         d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath2873"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="use2871"
+         d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z" />
+    </clipPath>
+    <linearGradient
+       id="dpad_press_gradient-3"
+       x1="0"
+       y1="0"
+       x2="0"
+       y2="1">
+      <stop
+         offset="0.5"
+         stop-color="#0094ff"
+         stop-opacity="0.75"
+         id="stop30-7" />
+      <stop
+         offset="1.0"
+         stop-color="#0094ff"
+         stop-opacity="0"
+         id="stop32-6" />
+    </linearGradient>
+    <clipPath
+       id="clipPath2892"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="use2890"
+         d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z" />
+    </clipPath>
+    <radialGradient
+       id="radialGradient2898"
+       cx="0.5"
+       cy="0.5"
+       r="0.5"
+       fx="0.5"
+       fy="0.75">
+      <stop
+         offset="0"
+         stop-color="#fff"
+         id="stop2894" />
+      <stop
+         offset="1"
+         stop-color="#ccc"
+         id="stop2896" />
+    </radialGradient>
+    <radialGradient
+       id="radialGradient2904"
+       cx="0.5"
+       cy="0.5"
+       r="0.5"
+       fx="0.5"
+       fy="0.75">
+      <stop
+         offset="0"
+         stop-color="#fff"
+         id="stop2900" />
+      <stop
+         offset="1"
+         stop-color="#ccc"
+         id="stop2902" />
+    </radialGradient>
+    <radialGradient
+       id="radialGradient2910"
+       cx="0.5"
+       cy="0.25"
+       r="1"
+       fx="0.5"
+       fy="-0.0625"
+       gradientTransform="matrix(0.333,0,0,1,0.1665,0)">
+      <stop
+         offset="0"
+         stop-color="#ffffff"
+         stop-opacity="1"
+         id="stop2906" />
+      <stop
+         offset="1"
+         stop-color="#ffffff"
+         stop-opacity="0"
+         id="stop2908" />
+    </radialGradient>
+    <clipPath
+       id="clipPath2914"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="use2912"
+         d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath2918"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="use2916"
+         d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath2922"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="use2920"
+         d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath2944"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="use2942"
+         d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z" />
+    </clipPath>
+    <radialGradient
+       id="mouse_gradient-9"
+       cx="0.5"
+       cy="0.5"
+       r="0.5"
+       fx="0.5"
+       fy="0.75">
+      <stop
+         offset="0"
+         stop-color="#fff"
+         id="stop274-1" />
+      <stop
+         offset="1"
+         stop-color="#ccc"
+         id="stop276-0" />
+    </radialGradient>
+    <radialGradient
+       id="radialGradient3644"
+       cx="0.5"
+       cy="0.5"
+       r="0.5"
+       fx="0.5"
+       fy="0.75">
+      <stop
+         offset="0"
+         stop-color="#fff"
+         id="stop3640" />
+      <stop
+         offset="1"
+         stop-color="#ccc"
+         id="stop3642" />
+    </radialGradient>
+    <radialGradient
+       id="mouse_specular_gradient-4"
+       cx="0.5"
+       cy="0.25"
+       r="1"
+       fx="0.5"
+       fy="-0.0625"
+       gradientTransform="matrix(0.333,0,0,1,0.1665,0)">
+      <stop
+         offset="0"
+         stop-color="#ffffff"
+         stop-opacity="1"
+         id="stop279-2" />
+      <stop
+         offset="1"
+         stop-color="#ffffff"
+         stop-opacity="0"
+         id="stop281-7" />
+    </radialGradient>
+    <clipPath
+       id="mouse_clip-4"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="use294-0"
+         d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath3653"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="use3651"
+         d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath3657"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="use3655"
+         d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath3661"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="use3659"
+         d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath3665"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="use3663"
+         d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z" />
+    </clipPath>
+    <radialGradient
+       id="radialGradient3671"
+       cx="0.5"
+       cy="0.5"
+       r="0.5"
+       fx="0.5"
+       fy="0.75">
+      <stop
+         offset="0"
+         stop-color="#fff"
+         id="stop3667" />
+      <stop
+         offset="1"
+         stop-color="#ccc"
+         id="stop3669" />
+    </radialGradient>
+    <radialGradient
+       id="radialGradient3677"
+       cx="0.5"
+       cy="0.5"
+       r="0.5"
+       fx="0.5"
+       fy="0.75">
+      <stop
+         offset="0"
+         stop-color="#fff"
+         id="stop3673" />
+      <stop
+         offset="1"
+         stop-color="#ccc"
+         id="stop3675" />
+    </radialGradient>
+    <radialGradient
+       id="radialGradient3683"
+       cx="0.5"
+       cy="0.25"
+       r="1"
+       fx="0.5"
+       fy="-0.0625"
+       gradientTransform="matrix(0.333,0,0,1,0.1665,0)">
+      <stop
+         offset="0"
+         stop-color="#ffffff"
+         stop-opacity="1"
+         id="stop3679" />
+      <stop
+         offset="1"
+         stop-color="#ffffff"
+         stop-opacity="0"
+         id="stop3681" />
+    </radialGradient>
+    <clipPath
+       id="clipPath3687"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="use3685"
+         d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath3691"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="use3689"
+         d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath3695"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="use3693"
+         d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z" />
+    </clipPath>
+    <linearGradient
+       id="mouse_wheel_gradient_up"
+       x1="20.784611"
+       y1="2.309401"
+       x2="20.784611"
+       y2="9.2376041"
+       gradientTransform="matrix(0.57735027,0,0,1.7320508,-2,2)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0.333"
+         stop-color="#0094ff"
+         stop-opacity="0.75"
+         id="stop284"
+         style="stop-color:#ff0f00;stop-opacity:0.74901962" />
+      <stop
+         offset="0.96068358"
+         stop-color="#0094ff"
+         stop-opacity="0"
+         id="stop286"
+         style="stop-color:#ff0000;stop-opacity:0" />
+    </linearGradient>
+    <radialGradient
+       id="radialGradient3710"
+       cx="0.5"
+       cy="0.5"
+       r="0.5"
+       fx="0.5"
+       fy="0.75">
+      <stop
+         offset="0"
+         stop-color="#fff"
+         id="stop3706" />
+      <stop
+         offset="1"
+         stop-color="#ccc"
+         id="stop3708" />
+    </radialGradient>
+    <radialGradient
+       id="radialGradient3716"
+       cx="0.5"
+       cy="0.5"
+       r="0.5"
+       fx="0.5"
+       fy="0.75">
+      <stop
+         offset="0"
+         stop-color="#fff"
+         id="stop3712" />
+      <stop
+         offset="1"
+         stop-color="#ccc"
+         id="stop3714" />
+    </radialGradient>
+    <radialGradient
+       id="radialGradient3722"
+       cx="0.5"
+       cy="0.25"
+       r="1"
+       fx="0.5"
+       fy="-0.0625"
+       gradientTransform="matrix(0.333,0,0,1,0.1665,0)">
+      <stop
+         offset="0"
+         stop-color="#ffffff"
+         stop-opacity="1"
+         id="stop3718" />
+      <stop
+         offset="1"
+         stop-color="#ffffff"
+         stop-opacity="0"
+         id="stop3720" />
+    </radialGradient>
+    <clipPath
+       id="clipPath3726"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="use3724"
+         d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath3730"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="use3728"
+         d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z" />
+    </clipPath>
+    <clipPath
+       id="clipPath3734"
+       clipPathUnits="userSpaceOnUse">
+      <path
+         id="use3732"
+         d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z" />
+    </clipPath>
+    <radialGradient
+       inkscape:collect="always"
+       xlink:href="#mouse_specular_gradient"
+       id="radialGradient4123"
+       gradientTransform="scale(0.8291562,1.2060454)"
+       cx="19.296726"
+       cy="6.6332498"
+       fx="19.296726"
+       fy="-1.6583124"
+       r="26.532997"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-87.776141,-103.20739)">
+    <g
+       id="use644"
+       transform="matrix(0.26458333,0,0,0.26458333,87.049202,102.74437)">
+      <g
+         id="use4103"
+         transform="translate(-2,2)">
+        <!-- DEBUG: rect x="-5" y="-5" width="50" height="50" fill="lime"/ -->
+        <!-- Shadow. -->
+        <path
+           id="use4109"
+           d="m 17,0.5 q 8,0 9,4 4,16 0,24 -2,4 -9,4 -7,0 -9,-4 -4,-8 0,-24 1,-4 9,-4 z"
+           style="opacity:0.887;fill:#000000;stroke:#000000;stroke-width:1" />
+        <!-- Base. -->
+        <path
+           id="use4111"
+           d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z"
+           style="fill:url(#mouse_gradient);stroke:none" />
+        <!-- Specular lighting. -->
+        <rect
+           x="3"
+           y="0"
+           width="26"
+           height="32"
+           fill="url(#mouse_specular_gradient)"
+           clip-path="url(#mouse_clip)"
+           id="rect4113"
+           style="fill:url(#radialGradient4123)" />
+        <!-- Buttons. -->
+        <path
+           id="use4115"
+           d="m 16,0 v 2 q -2,0 -2,6 0,6 2,6 v 2 Q 7,16 7,12 V 0 Z"
+           clip-path="url(#mouse_clip)"
+           style="fill:none;stroke:#8a8993;stroke-width:0.25" />
+        <path
+           id="use4117"
+           d="m 16,0 v 2 q -2,0 -2,6 0,6 2,6 v 2 Q 7,16 7,12 V 0 Z"
+           clip-path="url(#mouse_clip)"
+           style="fill:none;stroke:#8a8993;stroke-width:0.25"
+           transform="matrix(-1,0,0,1,32,0)" />
+        <!-- The dark outline. -->
+        <path
+           id="use4119"
+           d="m 16,0 q 8,0 9,4 4,16 0,24 -2,4 -9,4 Q 9,32 7,28 3,20 7,4 8,0 16,0 Z"
+           style="fill:none;stroke:#8a8993;stroke-width:0.5" />
+      </g>
+      <path
+         id="use4105"
+         d="m 14,4 q -2,0 -2,6 0,6 2,6 2,0 2,-6 0,-6 -2,-6 z"
+         style="fill:url(#mouse_wheel_gradient_up);stroke:none" />
+    </g>
+  </g>
+</svg>

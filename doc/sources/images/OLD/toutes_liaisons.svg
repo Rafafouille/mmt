@@ -1,0 +1,2304 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="0.92.3 (2405546, 2018-03-11)"
+   id="svg8"
+   version="1.1"
+   viewBox="0 0 264.84837 418.30666"
+   height="418.30667mm"
+   width="264.84836mm"
+   sodipodi:docname="toutes_liaisons.svg"
+   inkscape:export-filename="/run/user/1000/gvfs/sftp:host=allais.eu,port=33121,user=raf/home/raf/internet/inkscape/images/toutes_liaisons_mini.png"
+   inkscape:export-xdpi="12.1442"
+   inkscape:export-ydpi="12.1442">
+  <sodipodi:namedview
+     inkscape:window-maximized="1"
+     inkscape:window-y="27"
+     inkscape:window-x="67"
+     inkscape:window-height="1025"
+     inkscape:window-width="1853"
+     showgrid="true"
+     inkscape:current-layer="svg8"
+     inkscape:document-units="mm"
+     inkscape:cy="656.77782"
+     inkscape:cx="496.15027"
+     inkscape:zoom="0.35"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:snap-center="true"
+     inkscape:snap-object-midpoints="true"
+     inkscape:object-paths="true"
+     inkscape:snap-intersection-paths="true"
+     inkscape:snap-midpoints="true"
+     inkscape:snap-smooth-nodes="true"
+     inkscape:snap-bbox="true"
+     inkscape:snap-bbox-edge-midpoints="true"
+     inkscape:snap-grids="false"
+     inkscape:snap-global="true">
+    <inkscape:grid
+       originx="104.57542"
+       type="xygrid"
+       id="grid241"
+       originy="394.68711"
+       enabled="true"
+       units="mm"
+       spacingx="5"
+       spacingy="5" />
+  </sodipodi:namedview>
+  <defs
+     id="defs2" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <rect
+     y="0.13249999"
+     x="0.13249999"
+     height="418.04166"
+     width="264.58334"
+     id="rect30251"
+     style="opacity:1;vector-effect:none;fill:#ffffff;fill-opacity:1;stroke:#000004;stroke-width:0.26499999;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+  <g
+     transform="translate(104.57541,23.619533)"
+     id="layer1"
+     inkscape:groupmode="layer"
+     inkscape:label="Calque 1" />
+  <g
+     id="g19391"
+     credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+     transform="translate(214.59869,219.77078)">
+    <path
+       inkscape:connector-curvature="0"
+       id="path19375"
+       profondeur="-114281.490579"
+       style="fill:none;stroke:#0000ff;stroke-width:1"
+       d="M 9.5726,0.2468 9.4913,0.2908 9.3247,0.3643 9.1492,0.4201 8.9655,0.4582 8.7743,0.4784 8.5764,0.4806 8.3726,0.4647 8.1636,0.431 7.9503,0.3794 7.7336,0.3102 7.5142,0.2236 7.2931,0.1201 7.0711,0 6.8491,-0.1362 6.6279,-0.288 6.4086,-0.4548 6.1918,-0.6359 5.9785,-0.8306 5.7696,-1.0381 5.5657,-1.2577 5.3678,-1.4884 5.1766,-1.7293 4.9929,-1.9795 4.8174,-2.238 4.6508,-2.5038 4.4938,-2.7758 4.3469,-3.053 4.2108,-3.3343 4.0859,-3.6185 3.9729,-3.9045 3.872,-4.1912 3.7838,-4.4775 3.7086,-4.7623 3.6466,-5.0443 3.5982,-5.3226 3.5634,-5.596 3.5425,-5.8634 3.5355,-6.1237 v 0 l 0.007,-0.2523 0.0209,-0.2433 0.0348,-0.2332 0.0484,-0.2224 0.062,-0.2105 0.0752,-0.1978 0.0882,-0.1845 0.1009,-0.1703 0.113,-0.1555 0.1249,-0.14 0.1361,-0.1241 0.1469,-0.1075 0.0757,-0.0466 -14.1421,8.1649 -0.0758,0.0466 -0.1468,0.1076 -0.1362,0.1241 -0.1248,0.14 -0.1131,0.1555 -0.1008,0.1703 -0.0882,0.1844 -0.0753,0.1979 -0.0619,0.2105 -0.0485,0.2223 -0.0347,0.2333 -0.0209,0.2432 -0.007,0.2523 v 0 l 0.007,0.2604 0.0209,0.2674 0.0347,0.2734 0.0485,0.2782 0.0619,0.2821 0.0753,0.2847 0.0882,0.2863 0.1008,0.2868 0.1131,0.286 0.1248,0.2842 0.1362,0.2813 0.1468,0.2771 0.1571,0.2721 0.1666,0.2658 0.1755,0.2585 0.1837,0.2502 0.1912,0.2409 0.1979,0.2307 0.2038,0.2195 0.209,0.2076 0.2133,0.1947 0.2167,0.1811 0.2194,0.1667 0.2211,0.1518 0.222,0.1363 0.222,0.1201 0.2212,0.1035 0.2193,0.0865 0.2168,0.0692 0.2133,0.0516 0.2089,0.0338 0.2039,0.0158 0.1979,-0.0021 0.1912,-0.0202 0.1837,-0.0381 0.1755,-0.0559 0.1666,-0.0734 0.0813,-0.0441 z" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path19377"
+       profondeur="-1000"
+       style="fill:none;stroke:#ff0000;stroke-width:1"
+       d="M 3.5355,-6.1237 3.4927,-6.5785 3.5052,-6.9932 3.5717,-7.3608 3.69,-7.6747 3.8572,-7.9294 4.0695,-8.1202 4.1099,-8.1464 m 3.2353,9.6791 v 0 L 6.1723,1.8686 5.6887,1.8598 5.188,1.7799 4.6768,1.6306 4.1621,1.4151 3.6509,1.1374 3.1501,0.8024 2.6666,0.4162 2.2068,-0.0146 1.7769,-0.4825 1.3825,-0.9795 1.0288,-1.4971 0.7202,-2.0265 0.4604,-2.5588 0.2525,-3.0847 0.0986,-3.5955 0,-4.0825 -0.0428,-4.5372 -0.0303,-4.952 0.0361,-5.3195 0.1545,-5.6334 0.3217,-5.8881 0.534,-6.0789 0.5744,-6.1051 M 3.8097,3.574 v 0 L 2.6367,3.9099 2.1532,3.9011 1.6524,3.8211 1.1412,3.6719 0.6265,3.4564 0.1153,3.1786 -0.3854,2.8436 -0.869,2.4574 -1.3287,2.0266 -1.7587,1.5587 -2.153,1.0617 -2.5068,0.5441 -2.8154,0.0147 -3.0751,-0.5175 -3.283,-1.0435 -3.4369,-1.5543 -3.5355,-2.0412 -3.5784,-2.496 l 0.0125,-0.4147 0.0665,-0.3676 0.1183,-0.3139 0.1672,-0.2547 0.2123,-0.1908 0.0404,-0.0262 m 3.2353,9.6791 v 0 L -0.8988,5.9511 -1.3823,5.9423 -1.8831,5.8624 -2.3943,5.7131 -2.909,5.4976 -3.4202,5.2198 -3.921,4.8849 -4.4045,4.4986 -4.8643,4.0678 -5.2942,3.5999 -5.6886,3.1029 -6.0423,2.5853 -6.3509,2.0559 -6.6107,1.5237 -6.8186,0.9978 -6.9725,0.4869 -7.0711,0 l -0.0428,-0.4548 0.0125,-0.4147 0.0665,-0.3675 0.1183,-0.314 0.1672,-0.2547 0.2123,-0.1908 0.0404,-0.0261 m 3.2353,9.6791 v 0 L -4.4343,7.9923 -4.9179,7.9836 -5.4186,7.9036 -5.9298,7.7544 -6.4445,7.5388 -6.9557,7.2611 -7.4565,6.9261 -7.94,6.5399 -8.3998,6.1091 -8.8297,5.6412 -9.2241,5.1442 -9.5778,4.6266 -9.8864,4.0972 -10.1462,3.565 -10.3541,3.039 -10.508,2.5282" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path19379"
+       profondeur="-0.00114281490579"
+       style="fill:#ffffff;stroke:#0000ff;stroke-width:1"
+       d="M 9.5726,0.2468 9.4913,0.2908 9.3247,0.3643 9.1492,0.4201 8.9655,0.4582 8.7743,0.4784 8.5764,0.4806 8.3726,0.4647 8.1636,0.431 7.9503,0.3794 7.7336,0.3102 7.5142,0.2236 7.2931,0.1201 7.0711,0 6.8491,-0.1362 6.6279,-0.288 6.4086,-0.4548 6.1918,-0.6359 5.9785,-0.8306 5.7696,-1.0381 5.5657,-1.2577 5.3678,-1.4884 5.1766,-1.7293 4.9929,-1.9795 4.8174,-2.238 4.6508,-2.5038 4.4938,-2.7758 4.3469,-3.053 4.2108,-3.3343 4.0859,-3.6185 3.9729,-3.9045 3.872,-4.1912 3.7838,-4.4775 3.7086,-4.7623 3.6466,-5.0443 3.5982,-5.3226 3.5634,-5.596 3.5425,-5.8634 3.5355,-6.1237 v 0 l 0.007,-0.2523 0.0209,-0.2433 0.0348,-0.2332 0.0484,-0.2224 0.062,-0.2105 0.0752,-0.1978 0.0882,-0.1845 0.1009,-0.1703 0.113,-0.1555 0.1249,-0.14 0.1361,-0.1241 0.1469,-0.1075 0.0757,-0.0466 -14.1421,8.1649 -0.0758,0.0466 -0.1468,0.1076 -0.1362,0.1241 -0.1248,0.14 -0.1131,0.1555 -0.1008,0.1703 -0.0882,0.1844 -0.0753,0.1979 -0.0619,0.2105 -0.0485,0.2223 -0.0347,0.2333 -0.0209,0.2432 -0.007,0.2523 v 0 l 0.007,0.2604 0.0209,0.2674 0.0347,0.2734 0.0485,0.2782 0.0619,0.2821 0.0753,0.2847 0.0882,0.2863 0.1008,0.2868 0.1131,0.286 0.1248,0.2842 0.1362,0.2813 0.1468,0.2771 0.1571,0.2721 0.1666,0.2658 0.1755,0.2585 0.1837,0.2502 0.1912,0.2409 0.1979,0.2307 0.2038,0.2195 0.209,0.2076 0.2133,0.1947 0.2167,0.1811 0.2194,0.1667 0.2211,0.1518 0.222,0.1363 0.222,0.1201 0.2212,0.1035 0.2193,0.0865 0.2168,0.0692 0.2133,0.0516 0.2089,0.0338 0.2039,0.0158 0.1979,-0.0021 0.1912,-0.0202 0.1837,-0.0381 0.1755,-0.0559 0.1666,-0.0734 0.0813,-0.0441 z" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path19381"
+       profondeur="0.0"
+       style="stroke:#ff0000;stroke-width:1;stroke-linecap:round"
+       d="M 14.1421,-8.165 -14.1421,8.165" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path19383"
+       profondeur="0.00114281490579"
+       style="fill:#ffffff;stroke:#0000ff;stroke-width:1"
+       d="m 4.5695,-8.4117 0.0813,-0.0441 0.1666,-0.0734 0.1755,-0.0559 0.1837,-0.0381 0.1912,-0.0202 0.1979,-0.0021 0.2039,0.0158 0.2089,0.0338 0.2133,0.0516 0.2168,0.0692 0.2193,0.0865 0.2212,0.1035 0.222,0.1201 0.222,0.1363 0.2211,0.1518 0.2194,0.1667 0.2167,0.1811 0.2133,0.1947 0.209,0.2076 0.2038,0.2195 0.1979,0.2307 0.1912,0.2409 0.1837,0.2502 0.1755,0.2585 0.1666,0.2658 0.1571,0.2721 0.1468,0.2771 0.1362,0.2813 0.1248,0.2842 0.1131,0.286 0.1008,0.2868 0.0882,0.2863 0.0753,0.2847 0.0619,0.2821 0.0485,0.2782 0.0347,0.2734 0.0209,0.2674 0.007,0.2604 -0.007,0.2523 -0.0209,0.2432 -0.0347,0.2333 -0.0485,0.2223 -0.0619,0.2105 -0.0753,0.1979 -0.0882,0.1844 -0.1008,0.1703 -0.1131,0.1555 -0.1248,0.14 L 9.7952,0.0926 9.6484,0.2002 9.5726,0.2468 -4.5695,8.4117 -4.4938,8.3651 -4.3469,8.2576 -4.2108,8.1335 -4.0859,7.9935 -3.9729,7.838 -3.872,7.6677 -3.7838,7.4832 -3.7086,7.2854 -3.6466,7.0749 -3.5982,6.8525 -3.5634,6.6193 -3.5425,6.376 -3.5355,6.1237 -3.5425,5.8634 -3.5634,5.596 -3.5982,5.3226 -3.6466,5.0443 -3.7086,4.7623 -3.7838,4.4775 -3.872,4.1912 -3.9729,3.9045 -4.0859,3.6185 -4.2108,3.3343 -4.3469,3.053 -4.4938,2.7758 -4.6508,2.5038 -4.8174,2.238 -4.9929,1.9795 -5.1766,1.7293 -5.3678,1.4884 -5.5657,1.2577 -5.7696,1.0381 -5.9785,0.8306 -6.1918,0.6359 -6.4086,0.4548 -6.6279,0.288 -6.8491,0.1362 -7.0711,0 l -0.222,-0.1201 -0.2211,-0.1035 -0.2194,-0.0866 -0.2167,-0.0692 -0.2133,-0.0516 -0.209,-0.0337 -0.2038,-0.0159 -0.1979,0.0022 -0.1912,0.0202 -0.1837,0.0381 -0.1755,0.0558 -0.1666,0.0735 -0.0813,0.044 z" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path19385"
+       profondeur="1000"
+       style="fill:none;stroke:#ff0000;stroke-width:1"
+       d="m 4.1099,-8.1464 v 0 l 0.8194,-0.1317 0.3421,0.0904 0.3594,0.1616 0.3697,0.2309 0.3733,0.2972 0.3698,0.3594 0.3593,0.4166 0.3422,0.4679 0.3183,0.5124 0.2885,0.5496 0.253,0.5786 0.2123,0.5993 0.1672,0.611 0.1183,0.6139 0.0665,0.6076 0.0125,0.5925 L 8.8388,-1.0206 8.7402,-0.4842 8.5863,0.0122 8.3784,0.4614 8.1187,0.8569 7.8101,1.1933 7.4563,1.4657 7.3452,1.5327 M 0.5744,-6.1051 v 0 l 0.8194,-0.1318 0.3421,0.0905 0.3593,0.1616 0.3698,0.2309 0.3733,0.2971 0.3698,0.3594 0.3593,0.4166 0.3421,0.4679 0.3184,0.5125 0.2885,0.5495 0.2529,0.5787 0.2123,0.5992 0.1672,0.6111 0.1184,0.6138 0.0664,0.6077 L 5.3461,0.452 5.3033,1.0206 5.2047,1.557 5.0508,2.0534 4.8429,2.5026 4.5831,2.8982 4.2745,3.2345 3.9208,3.507 3.8097,3.574 m -6.7709,-7.6379 v 0 l 0.8194,-0.1317 0.3422,0.0904 0.3593,0.1616 0.3698,0.2309 0.3733,0.2972 0.3697,0.3594 0.3594,0.4166 0.3421,0.4679 0.3184,0.5124 0.2884,0.5496 0.253,0.5786 0.2123,0.5993 0.1672,0.611 L 1.7316,1.2932 1.7981,1.9008 1.8106,2.4933 1.7678,3.0619 1.6692,3.5983 1.5153,4.0947 1.3074,4.5439 1.0476,4.9394 0.739,5.2758 0.3853,5.5482 0.2741,5.6152 m -6.7708,-7.6378 v 0 l 0.8194,-0.1318 0.3421,0.0904 0.3594,0.1617 0.3697,0.2308 0.3733,0.2972 0.3698,0.3594 0.3593,0.4166 0.3422,0.4679 0.3183,0.5125 0.2885,0.5495 0.253,0.5787 0.2123,0.5992 0.1672,0.6111 0.1183,0.6138 0.0665,0.6077 0.0125,0.5924 -0.0429,0.5686 -0.0986,0.5364 -0.1539,0.4964 -0.2079,0.4492 -0.2597,0.3956 -0.3086,0.3363 -0.3538,0.2725 -0.1111,0.067" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path19387"
+       profondeur="114281.490579"
+       style="fill:none;stroke:#0000ff;stroke-width:1"
+       d="m 4.5695,-8.4117 0.0813,-0.0441 0.1666,-0.0734 0.1755,-0.0559 0.1837,-0.0381 0.1912,-0.0202 0.1979,-0.0021 0.2039,0.0158 0.2089,0.0338 0.2133,0.0516 0.2168,0.0692 0.2193,0.0865 0.2212,0.1035 0.222,0.1201 0.222,0.1363 0.2211,0.1518 0.2194,0.1667 0.2167,0.1811 0.2133,0.1947 0.209,0.2076 0.2038,0.2195 0.1979,0.2307 0.1912,0.2409 0.1837,0.2502 0.1755,0.2585 0.1666,0.2658 0.1571,0.2721 0.1468,0.2771 0.1362,0.2813 0.1248,0.2842 0.1131,0.286 0.1008,0.2868 0.0882,0.2863 0.0753,0.2847 0.0619,0.2821 0.0485,0.2782 0.0347,0.2734 0.0209,0.2674 0.007,0.2604 -0.007,0.2523 -0.0209,0.2432 -0.0347,0.2333 -0.0485,0.2223 -0.0619,0.2105 -0.0753,0.1979 -0.0882,0.1844 -0.1008,0.1703 -0.1131,0.1555 -0.1248,0.14 L 9.7952,0.0926 9.6484,0.2002 9.5726,0.2468 -4.5695,8.4117 -4.4938,8.3651 -4.3469,8.2576 -4.2108,8.1335 -4.0859,7.9935 -3.9729,7.838 -3.872,7.6677 -3.7838,7.4832 -3.7086,7.2854 -3.6466,7.0749 -3.5982,6.8525 -3.5634,6.6193 -3.5425,6.376 -3.5355,6.1237 -3.5425,5.8634 -3.5634,5.596 -3.5982,5.3226 -3.6466,5.0443 -3.7086,4.7623 -3.7838,4.4775 -3.872,4.1912 -3.9729,3.9045 -4.0859,3.6185 -4.2108,3.3343 -4.3469,3.053 -4.4938,2.7758 -4.6508,2.5038 -4.8174,2.238 -4.9929,1.9795 -5.1766,1.7293 -5.3678,1.4884 -5.5657,1.2577 -5.7696,1.0381 -5.9785,0.8306 -6.1918,0.6359 -6.4086,0.4548 -6.6279,0.288 -6.8491,0.1362 -7.0711,0 l -0.222,-0.1201 -0.2211,-0.1035 -0.2194,-0.0866 -0.2167,-0.0692 -0.2133,-0.0516 -0.209,-0.0337 -0.2038,-0.0159 -0.1979,0.0022 -0.1912,0.0202 -0.1837,0.0381 -0.1755,0.0558 -0.1666,0.0735 -0.0813,0.044 z" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path19389"
+       profondeur="57735026919.0"
+       style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+       d="m 0,-4.0825 v -8.1649" />
+  </g>
+  <g
+     transform="translate(84.068292,10.865012)"
+     id="g28244">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-11.97641"
+       y="15.15341"
+       id="text27326"><tspan
+         sodipodi:role="line"
+         id="tspan27324"
+         x="-11.97641"
+         y="15.15341"
+         style="font-size:7.05555534px;text-align:end;text-anchor:end;stroke-width:0.26458332">Pivot</tspan></text>
+    <g
+       id="g28206">
+      <g
+         id="g28149">
+        <g
+           credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+           id="g166"
+           transform="translate(20.507121,12.754521)">
+          <g
+             id="g150">
+            <rect
+               x="-10"
+               y="-5"
+               width="20"
+               height="10"
+               style="fill:#ffffff"
+               id="rect148" />
+          </g>
+          <g
+             id="g158">
+            <path
+               d="M -20,0 H 20"
+               id="path152"
+               inkscape:connector-curvature="0"
+               style="stroke:#ff0000;stroke-width:1" />
+            <path
+               d="M -15,5 V -5"
+               id="path154"
+               inkscape:connector-curvature="0"
+               style="stroke:#ff0000;stroke-width:1" />
+            <path
+               d="M 15,5 V -5"
+               id="path156"
+               inkscape:connector-curvature="0"
+               style="stroke:#ff0000;stroke-width:1" />
+          </g>
+          <g
+             id="g164">
+            <rect
+               x="-10"
+               y="-5"
+               width="20"
+               height="10"
+               style="fill:none;stroke:#0000ff;stroke-width:1"
+               id="rect160" />
+            <path
+               d="M 0,5 V 15 Z"
+               id="path162"
+               inkscape:connector-curvature="0"
+               style="stroke:#0000ff;stroke-width:1" />
+          </g>
+        </g>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+           x="20.612259"
+           y="33.0462"
+           id="text27570"><tspan
+             sodipodi:role="line"
+             id="tspan27568"
+             x="20.612259"
+             y="33.0462"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332">2D (Coté)</tspan></text>
+      </g>
+      <g
+         id="g28159">
+        <g
+           id="g516"
+           credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+           transform="translate(50.507121,12.754521)">
+          <g
+             id="g508"
+             transform="rotate(-45)">
+            <path
+               id="path506"
+               d="M 0,0 H 10"
+               inkscape:connector-curvature="0"
+               style="stroke:#ff0000;stroke-width:1" />
+          </g>
+          <g
+             id="g514"
+             transform="rotate(90)">
+            <path
+               id="path510"
+               d="M 0,0 H 10"
+               inkscape:connector-curvature="0"
+               style="stroke:#0000ff;stroke-width:1" />
+            <circle
+               id="circle512"
+               style="fill:#ffffff;stroke:#0000ff;stroke-width:1"
+               r="5"
+               cy="0"
+               cx="0" />
+          </g>
+        </g>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+           x="50.612259"
+           y="33.0462"
+           id="text27570-5"><tspan
+             sodipodi:role="line"
+             id="tspan27568-9"
+             x="50.612259"
+             y="33.0462"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332">2D (Face)</tspan></text>
+      </g>
+      <g
+         id="g28171">
+        <g
+           transform="translate(80.507121,12.754521)"
+           credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+           id="g998">
+          <g
+             id="g984" />
+          <path
+             d="m 7.0711,-8.165 7.071,4.0825"
+             style="stroke:#ff0000;stroke-width:1;stroke-linecap:round"
+             profondeur="-8.66025403784"
+             id="path986"
+             inkscape:connector-curvature="0" />
+          <path
+             d="M 9.5726,0.2468 9.4913,0.2908 9.3247,0.3643 9.1492,0.4201 8.9655,0.4582 8.7743,0.4784 8.5764,0.4806 8.3726,0.4647 8.1636,0.431 7.9503,0.3794 7.7336,0.3102 7.5142,0.2236 7.2931,0.1201 7.0711,0 6.8491,-0.1362 6.6279,-0.288 6.4086,-0.4548 6.1918,-0.6359 5.9785,-0.8306 5.7696,-1.0381 5.5657,-1.2577 5.3678,-1.4884 5.1766,-1.7293 4.9929,-1.9795 4.8174,-2.238 4.6508,-2.5038 4.4938,-2.7758 4.3469,-3.053 4.2108,-3.3343 4.0859,-3.6185 3.9729,-3.9045 3.872,-4.1912 3.7838,-4.4775 3.7086,-4.7623 3.6466,-5.0443 3.5982,-5.3226 3.5634,-5.596 3.5425,-5.8634 3.5355,-6.1237 v 0 l 0.007,-0.2523 0.0209,-0.2433 0.0348,-0.2332 0.0484,-0.2224 0.062,-0.2105 0.0752,-0.1978 0.0882,-0.1845 0.1009,-0.1703 0.113,-0.1555 0.1249,-0.14 0.1361,-0.1241 0.1469,-0.1075 0.0757,-0.0466 -14.1421,8.1649 -0.0758,0.0466 -0.1468,0.1076 -0.1362,0.1241 -0.1248,0.14 -0.1131,0.1555 -0.1008,0.1703 -0.0882,0.1844 -0.0753,0.1979 -0.0619,0.2105 -0.0485,0.2223 -0.0347,0.2333 -0.0209,0.2432 -0.007,0.2523 v 0 l 0.007,0.2604 0.0209,0.2674 0.0347,0.2734 0.0485,0.2782 0.0619,0.2821 0.0753,0.2847 0.0882,0.2863 0.1008,0.2868 0.1131,0.286 0.1248,0.2842 0.1362,0.2813 0.1468,0.2771 0.1571,0.2721 0.1666,0.2658 0.1755,0.2585 0.1837,0.2502 0.1912,0.2409 0.1979,0.2307 0.2038,0.2195 0.209,0.2076 0.2133,0.1947 0.2167,0.1811 0.2194,0.1667 0.2211,0.1518 0.222,0.1363 0.222,0.1201 0.2212,0.1035 0.2193,0.0865 0.2168,0.0692 0.2133,0.0516 0.2089,0.0338 0.2039,0.0158 0.1979,-0.0021 0.1912,-0.0202 0.1837,-0.0381 0.1755,-0.0559 0.1666,-0.0734 0.0813,-0.0441 z"
+             style="fill:#ffffff;stroke:#0000ff;stroke-width:1"
+             profondeur="-1.14281490579"
+             id="path988"
+             inkscape:connector-curvature="0" />
+          <path
+             d="M 14.1421,-8.165 -14.1421,8.165"
+             style="stroke:#ff0000;stroke-width:1;stroke-linecap:round"
+             profondeur="0.0"
+             id="path990"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m -12.9636,3.4021 7.071,4.0825"
+             style="stroke:#ff0000;stroke-width:1;stroke-linecap:round"
+             profondeur="0.0"
+             id="path992"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 4.5695,-8.4117 0.0813,-0.0441 0.1666,-0.0734 0.1755,-0.0559 0.1837,-0.0381 0.1912,-0.0202 0.1979,-0.0021 0.2039,0.0158 0.2089,0.0338 0.2133,0.0516 0.2168,0.0692 0.2193,0.0865 0.2212,0.1035 0.222,0.1201 0.222,0.1363 0.2211,0.1518 0.2194,0.1667 0.2167,0.1811 0.2133,0.1947 0.209,0.2076 0.2038,0.2195 0.1979,0.2307 0.1912,0.2409 0.1837,0.2502 0.1755,0.2585 0.1666,0.2658 0.1571,0.2721 0.1468,0.2771 0.1362,0.2813 0.1248,0.2842 0.1131,0.286 0.1008,0.2868 0.0882,0.2863 0.0753,0.2847 0.0619,0.2821 0.0485,0.2782 0.0347,0.2734 0.0209,0.2674 0.007,0.2604 -0.007,0.2523 -0.0209,0.2432 -0.0347,0.2333 -0.0485,0.2223 -0.0619,0.2105 -0.0753,0.1979 -0.0882,0.1844 -0.1008,0.1703 -0.1131,0.1555 -0.1248,0.14 L 9.7952,0.0926 9.6484,0.2002 9.5726,0.2468 -4.5695,8.4117 -4.4938,8.3651 -4.3469,8.2576 -4.2108,8.1335 -4.0859,7.9935 -3.9729,7.838 -3.872,7.6677 -3.7838,7.4832 -3.7086,7.2854 -3.6466,7.0749 -3.5982,6.8525 -3.5634,6.6193 -3.5425,6.376 -3.5355,6.1237 -3.5425,5.8634 -3.5634,5.596 -3.5982,5.3226 -3.6466,5.0443 -3.7086,4.7623 -3.7838,4.4775 -3.872,4.1912 -3.9729,3.9045 -4.0859,3.6185 -4.2108,3.3343 -4.3469,3.053 -4.4938,2.7758 -4.6508,2.5038 -4.8174,2.238 -4.9929,1.9795 -5.1766,1.7293 -5.3678,1.4884 -5.5657,1.2577 -5.7696,1.0381 -5.9785,0.8306 -6.1918,0.6359 -6.4086,0.4548 -6.6279,0.288 -6.8491,0.1362 -7.0711,0 l -0.222,-0.1201 -0.2211,-0.1035 -0.2194,-0.0866 -0.2167,-0.0692 -0.2133,-0.0516 -0.209,-0.0337 -0.2038,-0.0159 -0.1979,0.0022 -0.1912,0.0202 -0.1837,0.0381 -0.1755,0.0558 -0.1666,0.0735 -0.0813,0.044 z"
+             style="fill:#ffffff;stroke:#0000ff;stroke-width:1"
+             profondeur="1.14281490579"
+             id="path994"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m 0,-4.0825 v -8.1649"
+             style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+             profondeur="57735026919.0"
+             id="path996"
+             inkscape:connector-curvature="0" />
+        </g>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+           x="80.538177"
+           y="34.011398"
+           id="text27570-2"><tspan
+             sodipodi:role="line"
+             id="tspan27568-2"
+             x="80.538177"
+             y="34.011398"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332">3D</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g
+     transform="translate(84.068292,10.865012)"
+     id="g28361">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-11.976411"
+       y="50.174568"
+       id="text27326-3"><tspan
+         sodipodi:role="line"
+         id="tspan27324-6"
+         x="-11.976413"
+         y="50.174568"
+         style="font-size:7.05555534px;text-align:end;text-anchor:end;stroke-width:0.26458332">Pivot-Glissant</tspan></text>
+    <g
+       id="g28327">
+      <g
+         id="g28276">
+        <g
+           id="g1512"
+           credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+           transform="translate(20.507121,47.754513)">
+          <g
+             id="g1500">
+            <rect
+               id="rect1498"
+               style="fill:#ffffff"
+               height="10"
+               width="20"
+               y="-5"
+               x="-10" />
+          </g>
+          <g
+             id="g1504">
+            <path
+               id="path1502"
+               d="M -20,0 H 20 Z"
+               inkscape:connector-curvature="0"
+               style="stroke:#ff0000;stroke-width:1" />
+          </g>
+          <g
+             id="g1510">
+            <rect
+               id="rect1506"
+               style="fill:none;stroke:#0000ff;stroke-width:1"
+               height="10"
+               width="20"
+               y="-5"
+               x="-10" />
+            <path
+               id="path1508"
+               d="M 0,5 V 15"
+               inkscape:connector-curvature="0"
+               style="stroke:#0000ff;stroke-width:1" />
+          </g>
+        </g>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+           x="20.612259"
+           y="68.046181"
+           id="text27570-8"><tspan
+             sodipodi:role="line"
+             id="tspan27568-97"
+             x="20.612259"
+             y="68.046181"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332">2D (Coté)</tspan></text>
+      </g>
+      <g
+         id="g28287">
+        <g
+           transform="translate(50.507121,47.754513)"
+           credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+           id="g1600">
+          <g
+             transform="rotate(90)"
+             id="g1592">
+            <path
+               d="M 0,0 H 10"
+               id="path1588"
+               inkscape:connector-curvature="0"
+               style="stroke:#0000ff;stroke-width:1" />
+            <circle
+               cx="0"
+               cy="0"
+               r="5"
+               style="fill:#ffffff;stroke:#0000ff;stroke-width:1"
+               id="circle1590" />
+          </g>
+          <g
+             transform="rotate(-45)"
+             id="g1598">
+            <path
+               d="M 0,0 H 10"
+               id="path1594"
+               inkscape:connector-curvature="0"
+               style="stroke:#ff0000;stroke-width:1" />
+            <circle
+               cx="0"
+               cy="0"
+               r="2"
+               style="fill:#ff0000;stroke:none"
+               id="circle1596" />
+          </g>
+        </g>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+           x="50.612259"
+           y="68.046181"
+           id="text27570-5-3"><tspan
+             sodipodi:role="line"
+             id="tspan27568-9-6"
+             x="50.612259"
+             y="68.046181"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332">2D (Face)</tspan></text>
+      </g>
+      <g
+         id="g28296">
+        <g
+           id="g1698"
+           credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+           transform="translate(80.507121,47.754513)">
+          <path
+             id="path1690"
+             profondeur="-1.14281490579"
+             style="fill:#ffffff;stroke:#0000ff;stroke-width:1"
+             d="M 9.5726,0.2468 9.4913,0.2908 9.3247,0.3643 9.1492,0.4201 8.9655,0.4582 8.7743,0.4784 8.5764,0.4806 8.3726,0.4647 8.1636,0.431 7.9503,0.3794 7.7336,0.3102 7.5142,0.2236 7.2931,0.1201 7.0711,0 6.8491,-0.1362 6.6279,-0.288 6.4086,-0.4548 6.1918,-0.6359 5.9785,-0.8306 5.7696,-1.0381 5.5657,-1.2577 5.3678,-1.4884 5.1766,-1.7293 4.9929,-1.9795 4.8174,-2.238 4.6508,-2.5038 4.4938,-2.7758 4.3469,-3.053 4.2108,-3.3343 4.0859,-3.6185 3.9729,-3.9045 3.872,-4.1912 3.7838,-4.4775 3.7086,-4.7623 3.6466,-5.0443 3.5982,-5.3226 3.5634,-5.596 3.5425,-5.8634 3.5355,-6.1237 v 0 l 0.007,-0.2523 0.0209,-0.2433 0.0348,-0.2332 0.0484,-0.2224 0.062,-0.2105 0.0752,-0.1978 0.0882,-0.1845 0.1009,-0.1703 0.113,-0.1555 0.1249,-0.14 0.1361,-0.1241 0.1469,-0.1075 0.0757,-0.0466 -14.1421,8.1649 -0.0758,0.0466 -0.1468,0.1076 -0.1362,0.1241 -0.1248,0.14 -0.1131,0.1555 -0.1008,0.1703 -0.0882,0.1844 -0.0753,0.1979 -0.0619,0.2105 -0.0485,0.2223 -0.0347,0.2333 -0.0209,0.2432 -0.007,0.2523 v 0 l 0.007,0.2604 0.0209,0.2674 0.0347,0.2734 0.0485,0.2782 0.0619,0.2821 0.0753,0.2847 0.0882,0.2863 0.1008,0.2868 0.1131,0.286 0.1248,0.2842 0.1362,0.2813 0.1468,0.2771 0.1571,0.2721 0.1666,0.2658 0.1755,0.2585 0.1837,0.2502 0.1912,0.2409 0.1979,0.2307 0.2038,0.2195 0.209,0.2076 0.2133,0.1947 0.2167,0.1811 0.2194,0.1667 0.2211,0.1518 0.222,0.1363 0.222,0.1201 0.2212,0.1035 0.2193,0.0865 0.2168,0.0692 0.2133,0.0516 0.2089,0.0338 0.2039,0.0158 0.1979,-0.0021 0.1912,-0.0202 0.1837,-0.0381 0.1755,-0.0559 0.1666,-0.0734 0.0813,-0.0441 z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path1692"
+             profondeur="0.0"
+             style="stroke:#ff0000;stroke-width:1;stroke-linecap:round"
+             d="M 14.1421,-8.165 -14.1421,8.165"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path1694"
+             profondeur="1.14281490579"
+             style="fill:#ffffff;stroke:#0000ff;stroke-width:1"
+             d="m 4.5695,-8.4117 0.0813,-0.0441 0.1666,-0.0734 0.1755,-0.0559 0.1837,-0.0381 0.1912,-0.0202 0.1979,-0.0021 0.2039,0.0158 0.2089,0.0338 0.2133,0.0516 0.2168,0.0692 0.2193,0.0865 0.2212,0.1035 0.222,0.1201 0.222,0.1363 0.2211,0.1518 0.2194,0.1667 0.2167,0.1811 0.2133,0.1947 0.209,0.2076 0.2038,0.2195 0.1979,0.2307 0.1912,0.2409 0.1837,0.2502 0.1755,0.2585 0.1666,0.2658 0.1571,0.2721 0.1468,0.2771 0.1362,0.2813 0.1248,0.2842 0.1131,0.286 0.1008,0.2868 0.0882,0.2863 0.0753,0.2847 0.0619,0.2821 0.0485,0.2782 0.0347,0.2734 0.0209,0.2674 0.007,0.2604 -0.007,0.2523 -0.0209,0.2432 -0.0347,0.2333 -0.0485,0.2223 -0.0619,0.2105 -0.0753,0.1979 -0.0882,0.1844 -0.1008,0.1703 -0.1131,0.1555 -0.1248,0.14 L 9.7952,0.0926 9.6484,0.2002 9.5726,0.2468 -4.5695,8.4117 -4.4938,8.3651 -4.3469,8.2576 -4.2108,8.1335 -4.0859,7.9935 -3.9729,7.838 -3.872,7.6677 -3.7838,7.4832 -3.7086,7.2854 -3.6466,7.0749 -3.5982,6.8525 -3.5634,6.6193 -3.5425,6.376 -3.5355,6.1237 -3.5425,5.8634 -3.5634,5.596 -3.5982,5.3226 -3.6466,5.0443 -3.7086,4.7623 -3.7838,4.4775 -3.872,4.1912 -3.9729,3.9045 -4.0859,3.6185 -4.2108,3.3343 -4.3469,3.053 -4.4938,2.7758 -4.6508,2.5038 -4.8174,2.238 -4.9929,1.9795 -5.1766,1.7293 -5.3678,1.4884 -5.5657,1.2577 -5.7696,1.0381 -5.9785,0.8306 -6.1918,0.6359 -6.4086,0.4548 -6.6279,0.288 -6.8491,0.1362 -7.0711,0 l -0.222,-0.1201 -0.2211,-0.1035 -0.2194,-0.0866 -0.2167,-0.0692 -0.2133,-0.0516 -0.209,-0.0337 -0.2038,-0.0159 -0.1979,0.0022 -0.1912,0.0202 -0.1837,0.0381 -0.1755,0.0558 -0.1666,0.0735 -0.0813,0.044 z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path1696"
+             profondeur="57735026919.0"
+             style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+             d="m 0,-4.0825 v -8.1649"
+             inkscape:connector-curvature="0" />
+        </g>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+           x="80.538177"
+           y="69.011383"
+           id="text27570-2-1"><tspan
+             sodipodi:role="line"
+             id="tspan27568-2-2"
+             x="80.538177"
+             y="69.011383"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332">3D</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g
+     transform="translate(84.068292,10.865012)"
+     id="g30249">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-12.298236"
+       y="124.43803"
+       id="text27326-35"><tspan
+         sodipodi:role="line"
+         id="tspan27324-62"
+         x="-12.298236"
+         y="124.43803"
+         style="font-size:7.05555534px;text-align:end;text-anchor:end;stroke-width:0.26458332">Plane</tspan><tspan
+         sodipodi:role="line"
+         x="-12.298237"
+         y="131.6153"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.29166651px;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Italic';text-align:end;text-anchor:end;stroke-width:0.26458332"
+         id="tspan27362">(Appui-Plan)</tspan></text>
+    <g
+       id="g29582">
+      <g
+         id="g29532">
+        <g
+           transform="translate(20.507121,123.04618)"
+           credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+           id="g8437">
+          <g
+             id="g8429">
+            <path
+               style="stroke:#ff0000;stroke-width:1"
+               inkscape:connector-curvature="0"
+               d="m -7.5,-1.75 h 15"
+               id="path8425" />
+            <path
+               style="stroke:#ff0000;stroke-width:1"
+               inkscape:connector-curvature="0"
+               d="M 0,-1.75 V -10"
+               id="path8427" />
+          </g>
+          <g
+             id="g8435">
+            <path
+               style="stroke:#0000ff;stroke-width:1"
+               inkscape:connector-curvature="0"
+               d="m -7.5,1.75 h 15"
+               id="path8431" />
+            <path
+               style="stroke:#0000ff;stroke-width:1"
+               inkscape:connector-curvature="0"
+               d="M 0,1.75 V 10"
+               id="path8433" />
+          </g>
+        </g>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+           x="20.612259"
+           y="143.33781"
+           id="text27570-8-8-2"><tspan
+             sodipodi:role="line"
+             id="tspan27568-97-4-0"
+             x="20.612259"
+             y="143.33781"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332">2D (Coté)</tspan></text>
+      </g>
+      <g
+         id="g29543">
+        <g
+           id="g10132"
+           credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+           transform="translate(50.507121,123.04618)">
+          <g
+             id="g10124">
+            <rect
+               id="rect10120"
+               style="fill:#ffffff;stroke:#0000ff;stroke-width:1"
+               height="17.25"
+               width="17.25"
+               y="-8.625"
+               x="-8.625" />
+            <path
+               style="stroke:#0000ff;stroke-width:1"
+               inkscape:connector-curvature="0"
+               id="path10122"
+               d="M 8.625,0 H 15 Z" />
+          </g>
+          <g
+             id="g10130"
+             transform="rotate(90)">
+            <rect
+               id="rect10126"
+               style="fill:#ffffff;stroke:#ff0000;stroke-width:1"
+               height="12.75"
+               width="12.75"
+               y="-6.375"
+               x="-6.375" />
+            <path
+               style="stroke:#ff0000;stroke-width:1"
+               inkscape:connector-curvature="0"
+               id="path10128"
+               d="M 6.375,0 H 15 Z" />
+          </g>
+        </g>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+           x="50.612259"
+           y="143.33781"
+           id="text27570-5-3-5-6"><tspan
+             sodipodi:role="line"
+             id="tspan27568-9-6-0-1"
+             x="50.612259"
+             y="143.33781"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332">2D (Dessus)</tspan></text>
+      </g>
+      <g
+         id="g29552">
+        <g
+           transform="translate(81.921335,122.22969)"
+           credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+           id="g10342">
+          <path
+             inkscape:connector-curvature="0"
+             d="m 1.2374,-0.7144 8.9273,-5.1542"
+             style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+             profondeur="-4.65488654534"
+             id="path10334" />
+          <path
+             inkscape:connector-curvature="0"
+             d="M 6.5407,8.4712 V -3.7763 L -4.0659,-9.9 V 2.3474 Z"
+             style="fill:#ffffff;stroke:#0000ff;stroke-width:1"
+             profondeur="-1.01036297108"
+             id="path10336" />
+          <path
+             inkscape:connector-curvature="0"
+             d="M 4.0659,9.9 V -2.3474 L -6.5407,-8.4712 V 3.7763 Z"
+             style="fill:#ffffff;stroke:#ff0000;stroke-width:1"
+             profondeur="1.01036297108"
+             id="path10338" />
+          <path
+             inkscape:connector-curvature="0"
+             d="m -1.2374,0.7144 -8.9273,5.1542"
+             style="stroke:#ff0000;stroke-width:1;stroke-linecap:round"
+             profondeur="4.65488654534"
+             id="path10340" />
+        </g>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+           x="83.189789"
+           y="143.05418"
+           id="text27570-2-1-3-5"><tspan
+             sodipodi:role="line"
+             id="tspan27568-2-2-6-5"
+             x="83.189789"
+             y="143.05418"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332">3D</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g
+     transform="translate(84.068292,10.865012)"
+     id="g29714">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-12.298236"
+       y="165.53154"
+       id="text27326-35-2"><tspan
+         sodipodi:role="line"
+         id="tspan27324-62-7"
+         x="-12.298235"
+         y="165.53154"
+         style="font-size:7.05555534px;text-align:end;text-anchor:end;stroke-width:0.26458332">Sphérique</tspan><tspan
+         sodipodi:role="line"
+         x="-12.298235"
+         y="172.7088"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.29166651px;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Italic';text-align:end;text-anchor:end;stroke-width:0.26458332"
+         id="tspan27362-0">(Rotule)</tspan></text>
+    <g
+       id="g29668">
+      <g
+         id="g29593">
+        <g
+           transform="translate(20.507121,163.33786)"
+           credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+           id="g6310">
+          <g
+             transform="rotate(-60)"
+             id="g6302">
+            <circle
+               cx="0"
+               cy="0"
+               r="5"
+               style="fill:#ffffff;stroke:#ff0000;stroke-width:1"
+               id="circle6298" />
+            <path
+               d="m 5,0 h 6.25"
+               id="path6300"
+               inkscape:connector-curvature="0"
+               style="stroke:#ff0000;stroke-width:1" />
+          </g>
+          <g
+             transform="rotate(90)"
+             id="g6308">
+            <path
+               d="m -5.6569,5.6569 0.5575,0.5072 0.6027,0.4525 0.6427,0.3939 0.6768,0.3315 0.7051,0.2665 0.727,0.1988 0.7424,0.1296 0.7514,0.0592 L 0.5023,7.9842 1.2515,7.9015 1.9895,7.7487 2.7099,7.527 3.4062,7.2386 4.0723,6.8859 4.7023,6.4721 5.2905,6.0009 5.8317,5.4764 6.3212,4.9033 6.7546,4.2866 7.1281,3.6319 7.4382,2.945 7.6823,2.2319 7.8583,1.4991 7.9645,0.7529 8,0 7.9645,-0.7529 7.8583,-1.4991 7.6823,-2.2319 7.4382,-2.945 7.1281,-3.6319 6.7546,-4.2866 6.3212,-4.9033 5.8317,-5.4764 5.2905,-6.0009 4.7023,-6.4721 4.0723,-6.8859 3.4062,-7.2386 2.7099,-7.527 1.9895,-7.7487 1.2515,-7.9015 0.5023,-7.9842 l -0.7536,-0.0119 -0.7514,0.0592 -0.7424,0.1296 -0.727,0.1988 -0.7051,0.2665 -0.6768,0.3315 -0.6427,0.3939 -0.6027,0.4525 -0.5575,0.5072"
+               style="fill:none;stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+               id="path6304"
+               inkscape:connector-curvature="0" />
+            <path
+               d="m 8,0 h 7 z"
+               style="fill:none;stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+               id="path6306"
+               inkscape:connector-curvature="0" />
+          </g>
+        </g>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+           x="20.521244"
+           y="183.34587"
+           id="text27570-2-1-3-5-4"><tspan
+             sodipodi:role="line"
+             id="tspan27568-2-2-6-5-7"
+             x="20.521244"
+             y="183.34587"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332">2D</tspan></text>
+      </g>
+      <g
+         id="g29605">
+        <g
+           id="g7844"
+           credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+           transform="translate(50.507121,163.33786)">
+          <g
+             id="g7836"
+             transform="rotate(-60)">
+            <circle
+               id="circle7832"
+               style="fill:#ffffff;stroke:#ff0000;stroke-width:1"
+               r="5"
+               cy="0"
+               cx="0" />
+            <path
+               id="path7834"
+               d="m 5,0 h 6.25"
+               inkscape:connector-curvature="0"
+               style="stroke:#ff0000;stroke-width:1" />
+          </g>
+          <g
+             id="g7842"
+             transform="rotate(90)">
+            <path
+               id="path7838"
+               style="fill:none;stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+               d="m -7.7274,2.0706 0.2291,0.718 0.2957,0.6932 0.3597,0.6624 0.4204,0.6256 0.4773,0.5832 0.5302,0.5358 0.5782,0.4834 0.6212,0.4269 0.6585,0.3666 0.6902,0.3029 0.7155,0.2367 0.7347,0.1683 0.7473,0.0983 L 0.0838,7.9996 0.8362,7.9562 1.5813,7.8422 2.3123,7.6586 3.0227,7.407 3.7064,7.0896 4.3571,6.7094 4.9692,6.2695 5.5371,5.7741 6.056,5.2274 6.521,4.6342 6.9282,4 7.2739,3.3302 7.555,2.6309 7.7691,1.9083 7.9142,1.1687 7.989,0.4187 7.993,-0.335 7.926,-1.0857 7.7886,-1.8268 7.5821,-2.5517 7.3084,-3.2539 6.9697,-3.9272 6.5692,-4.5657 6.1104,-5.1637 5.5973,-5.7158 5.0346,-6.2172 4.4271,-6.6634 3.7804,-7.0504 3.1001,-7.3749 2.3923,-7.6339 1.6633,-7.8252 0.9195,-7.947 l -0.752,-0.0512 -0.7534,0.0197 -0.7482,0.0905 -0.7365,0.1606"
+               inkscape:connector-curvature="0" />
+            <path
+               id="path7840"
+               style="fill:none;stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+               d="m 8,0 h 7 z"
+               inkscape:connector-curvature="0" />
+          </g>
+        </g>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+           x="50.497299"
+           y="183.39244"
+           id="text27570-2-1-3-5-6"><tspan
+             sodipodi:role="line"
+             id="tspan27568-2-2-6-5-5"
+             x="50.497299"
+             y="183.39244"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332">2D avec calotte</tspan><tspan
+             sodipodi:role="line"
+             x="50.497299"
+             y="188.68411"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332"
+             id="tspan27798">femelle adaptative</tspan></text>
+      </g>
+      <g
+         id="g29615">
+        <g
+           transform="translate(80.507121,163.33786)"
+           credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+           id="g13947">
+          <path
+             d="m 0,4.9806 v 5.4297"
+             style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+             profondeur="-5.44152628711"
+             id="path13937"
+             inkscape:connector-curvature="0" />
+          <path
+             d="m -4.707,-3.875 0.1599,-0.1679 0.1778,-0.1618 0.1951,-0.155 0.2115,-0.1476 0.2272,-0.1397 0.242,-0.1312 0.2557,-0.1221 0.2685,-0.1126 0.2802,-0.1027 0.2908,-0.0923 0.3003,-0.0816 0.3085,-0.0705 0.3157,-0.0592 0.3214,-0.0477 0.326,-0.0359 0.3292,-0.024 0.3313,-0.012 h 0.3318 l 0.3313,0.012 0.3292,0.024 0.326,0.0359 0.3214,0.0477 0.3157,0.0592 0.3085,0.0705 0.3003,0.0816 0.2908,0.0923 0.2802,0.1027 0.2685,0.1126 0.2557,0.1221 0.242,0.1312 0.2272,0.1397 0.2115,0.1476 0.1951,0.155 0.1778,0.1618 0.1599,0.1679 0.0024,-0.002 0.1704,0.2167 0.1603,0.2242 0.1501,0.2312 0.1395,0.2377 0.1286,0.2438 0.1175,0.2494 0.106,0.2544 0.0945,0.259 0.0827,0.2629 0.0707,0.2664 0.0586,0.2694 0.0464,0.2717 0.034,0.2735 0.0217,0.2748 0.0092,0.2755 L 6.0964,0.2092 6.0807,0.4844 6.0526,0.7586 6.0122,1.0313 5.9595,1.3018 5.8946,1.5697 5.8176,1.8344 5.7288,2.0953 5.6283,2.352 5.5163,2.6039 5.3931,2.8504 5.2588,3.0911 5.1138,3.3255 4.9583,3.5532 4.7927,3.7735 4.6174,3.9862 4.4326,4.1907 4.2387,4.3867 4.0362,4.5737 3.8255,4.7514 3.607,4.9193 3.381,5.0773 3.1482,5.2248 2.909,5.3617 2.6638,5.4876 2.4131,5.6024 2.1576,5.7057 1.8976,5.7973 1.6338,5.8771 1.3666,5.9449 1.0967,6.0006 0.8245,6.044 0.5506,6.0751 0.2756,6.0938 0,6.1 -0.2756,6.0938 -0.5506,6.0751 -0.8245,6.044 -1.0967,6.0006 -1.3666,5.9449 -1.6338,5.8771 -1.8976,5.7973 -2.1576,5.7057 -2.4131,5.6024 -2.6638,5.4876 -2.909,5.3617 -3.1482,5.2248 -3.381,5.0773 -3.607,4.9193 -3.8255,4.7514 -4.0362,4.5737 -4.2387,4.3867 -4.4326,4.1907 -4.6174,3.9862 -4.7927,3.7735 -4.9583,3.5532 -5.1138,3.3255 -5.2588,3.0911 -5.3931,2.8504 -5.5163,2.6039 -5.6283,2.352 -5.7288,2.0953 -5.8176,1.8344 -5.8946,1.5697 -5.9595,1.3018 -6.0122,1.0313 -6.0526,0.7586 -6.0807,0.4844 -6.0964,0.2092 l -0.0032,-0.2756 0.0092,-0.2755 0.0217,-0.2748 0.034,-0.2735 0.0464,-0.2717 0.0586,-0.2694 0.0707,-0.2664 0.0827,-0.2629 0.0945,-0.259 0.106,-0.2544 0.1175,-0.2494 0.1286,-0.2438 0.1395,-0.2377 0.1501,-0.2312 0.1603,-0.2242 0.1704,-0.2167 z"
+             style="fill:#ffffff;stroke:#0000ff;stroke-width:1;stroke-linecap:round;stroke-linejoin:round"
+             profondeur="-0.00001"
+             id="path13939"
+             inkscape:connector-curvature="0" />
+          <circle
+             cx="0"
+             cy="0"
+             r="5"
+             style="fill:#ffffff;stroke:#ff0000;stroke-width:1"
+             profondeur="0"
+             id="circle13941" />
+          <path
+             d="m -4.8483,-3.7016 -0.1221,0.1781 -0.1026,0.1823 -0.0825,0.1855 -0.0622,0.1883 -0.0416,0.1901 -0.0208,0.1912 v 0.1916 l 0.0208,0.1912 0.0416,0.1901 0.0622,0.1882 0.0825,0.1856 0.1026,0.1822 0.1221,0.1782 0.1413,0.1734 0.1599,0.1679 0.1778,0.1617 0.1951,0.1551 0.2115,0.1476 0.2272,0.1397 0.242,0.1311 0.2557,0.1222 0.2685,0.1126 0.2802,0.1026 0.2908,0.0924 0.3003,0.0815 0.3085,0.0706 0.3157,0.0592 0.3214,0.0476 0.326,0.0359 0.3292,0.024 0.3313,0.0121 H 0.1659 L 0.4972,0.5461 0.8264,0.5221 1.1524,0.4862 1.4738,0.4386 1.7895,0.3794 2.098,0.3088 2.3983,0.2273 2.6891,0.1349 2.9693,0.0323 3.2378,-0.0803 3.4935,-0.2025 3.7355,-0.3336 3.9627,-0.4733 4.1742,-0.6209 4.3693,-0.776 4.5471,-0.9377 4.707,-1.1056 4.8483,-1.279 4.9704,-1.4572 5.073,-1.6394 5.1555,-1.825 5.2177,-2.0132 5.2593,-2.2033 5.2801,-2.3945 V -2.5861 L 5.2593,-2.7773 5.2177,-2.9674 5.1555,-3.1557 5.073,-3.3412 4.9704,-3.5235 4.8483,-3.7016 4.7094,-3.877 l 0.1704,0.2167 0.1603,0.2242 0.1501,0.2312 0.1395,0.2377 0.1286,0.2438 0.1175,0.2494 0.106,0.2544 0.0945,0.259 0.0827,0.2629 0.0707,0.2664 0.0586,0.2694 0.0464,0.2717 0.034,0.2735 0.0217,0.2748 0.0092,0.2755 L 6.0964,0.2092 6.0807,0.4844 6.0526,0.7586 6.0122,1.0313 5.9595,1.3018 5.8946,1.5697 5.8176,1.8344 5.7288,2.0953 5.6283,2.352 5.5163,2.6039 5.3931,2.8504 5.2588,3.0911 5.1138,3.3255 4.9583,3.5532 4.7927,3.7735 4.6174,3.9862 4.4326,4.1907 4.2387,4.3867 4.0362,4.5737 3.8255,4.7514 3.607,4.9193 3.381,5.0773 3.1482,5.2248 2.909,5.3617 2.6638,5.4876 2.4131,5.6024 2.1576,5.7057 1.8976,5.7973 1.6338,5.8771 1.3666,5.9449 1.0967,6.0006 0.8245,6.044 0.5506,6.0751 0.2756,6.0938 0,6.1 -0.2756,6.0938 -0.5506,6.0751 -0.8245,6.044 -1.0967,6.0006 -1.3666,5.9449 -1.6338,5.8771 -1.8976,5.7973 -2.1576,5.7057 -2.4131,5.6024 -2.6638,5.4876 -2.909,5.3617 -3.1482,5.2248 -3.381,5.0773 -3.607,4.9193 -3.8255,4.7514 -4.0362,4.5737 -4.2387,4.3867 -4.4326,4.1907 -4.6174,3.9862 -4.7927,3.7735 -4.9583,3.5532 -5.1138,3.3255 -5.2588,3.0911 -5.3931,2.8504 -5.5163,2.6039 -5.6283,2.352 -5.7288,2.0953 -5.8176,1.8344 -5.8946,1.5697 -5.9595,1.3018 -6.0122,1.0313 -6.0526,0.7586 -6.0807,0.4844 -6.0964,0.2092 l -0.0032,-0.2756 0.0092,-0.2755 0.0217,-0.2748 0.034,-0.2735 0.0464,-0.2717 0.0586,-0.2694 0.0707,-0.2664 0.0827,-0.2629 0.0945,-0.259 0.106,-0.2544 0.1175,-0.2494 0.1286,-0.2438 0.1395,-0.2377 0.1501,-0.2312 0.1603,-0.2242 0.1704,-0.2167 z"
+             style="fill:#ffffff;stroke:#0000ff;stroke-width:1;stroke-linecap:round;stroke-linejoin:round"
+             profondeur="0.00001"
+             id="path13943"
+             inkscape:connector-curvature="0" />
+          <path
+             d="M 1.6565,-3.5067 4.224,-8.942"
+             style="stroke:#ff0000;stroke-width:1;stroke-linecap:round"
+             profondeur="5.60162260537"
+             id="path13945"
+             inkscape:connector-curvature="0" />
+        </g>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+           x="80.538177"
+           y="183.34587"
+           id="text27570-2-1-3-5-69"><tspan
+             sodipodi:role="line"
+             id="tspan27568-2-2-6-5-3"
+             x="80.538177"
+             y="183.34587"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332">3D</tspan></text>
+      </g>
+      <g
+         id="g29626">
+        <g
+           id="g13685"
+           credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+           transform="translate(110.50712,163.33786)">
+          <path
+             id="path13675"
+             profondeur="-5.44152628711"
+             style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+             d="m 0,4.9806 v 5.4297"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path13677"
+             profondeur="-0.00001"
+             style="fill:#ffffff;stroke:#0000ff;stroke-width:1;stroke-linecap:round;stroke-linejoin:round"
+             d="M -2.5275,-5.5517 -2.3,-5.645 l 0.2405,-0.0794 0.2526,-0.0652 0.2638,-0.0508 0.2738,-0.0363 0.2828,-0.0214 0.2907,-0.0067 0.2974,0.0083 0.303,0.023 0.3074,0.0378 0.3105,0.0524 0.3124,0.0667 0.3132,0.0809 0.3125,0.0947 0.3108,0.1081 0.3078,0.1211 0.3036,0.1336 0.2982,0.1456 0.2916,0.1571 0.2838,0.1678 0.275,0.178 0.265,0.1874 0.254,0.1961 0.2421,0.204 0.229,0.2112 0.2152,0.2174 0.2006,0.2229 0.185,0.2274 0.1688,0.231 0.1519,0.2338 0.1344,0.2356 0.1163,0.2364 0.0979,0.2365 0.0791,0.2354 6e-4,-2e-4 0.0693,0.2694 0.057,0.2722 0.0445,0.2746 0.0319,0.2762 0.0193,0.2775 L 6.1,-0.0068 6.094,0.2712 6.0753,0.5487 6.0439,0.8251 6.0001,1.0997 5.9437,1.3721 5.875,1.6416 5.794,1.9077 5.701,2.1698 5.5962,2.4274 5.4797,2.68 5.3519,2.927 5.2129,3.1679 5.0631,3.4022 4.9027,3.6295 4.7322,3.8492 4.5518,4.0609 4.362,4.2642 4.1631,4.4586 3.9555,4.6437 3.7397,4.8192 3.5162,4.9846 3.2853,5.1397 3.0476,5.2841 2.8036,5.4176 2.5537,5.5397 2.2985,5.6504 2.0386,5.7493 1.7744,5.8362 1.5065,5.911 1.2355,5.9736 0.9619,6.0237 0.6863,6.0613 0.4093,6.0863 0.1315,6.0986 -0.1466,6.0982 -0.4245,6.0852 -0.7014,6.0595 -0.9769,6.0213 -1.2503,5.9705 -1.5212,5.9073 -1.7889,5.8318 -2.0529,5.7442 -2.3126,5.6446 -2.5675,5.5334 -2.817,5.4106 -3.0607,5.2765 -3.2981,5.1315 -3.5286,4.9759 -3.7517,4.8099 -3.967,4.6338 -4.1741,4.4482 -4.3726,4.2533 -4.5619,4.0496 -4.7418,3.8374 -4.9117,3.6173 -5.0715,3.3896 -5.2208,3.1549 -5.3592,2.9137 -5.4864,2.6664 -5.6022,2.4135 -5.7064,2.1556 -5.7988,1.8933 -5.879,1.627 -5.9471,1.3573 -6.0028,1.0848 -6.046,0.81 -6.0766,0.5336 -6.0946,0.2561 -6.1,-0.022 -6.0926,-0.3 l 0.02,-0.2775 0.0326,-0.2762 0.0452,-0.2744 0.0577,-0.2721 0.07,-0.2692 0.0822,-0.2657 0.0942,-0.2617 0.106,-0.2571 0.1177,-0.252 0.129,-0.2464 0.1401,-0.2402 0.151,-0.2336 0.1614,-0.2265 0.1716,-0.2189 0.1813,-0.2109 0.1908,-0.2024 0.1999,-0.1934 0.2084,-0.1842 0.2166,-0.1744 0.2244,-0.1644 0.2316,-0.154 0.2383,-0.1433 0.2447,-0.1323 0.2504,-0.121 z"
+             inkscape:connector-curvature="0" />
+          <circle
+             id="circle13679"
+             profondeur="0"
+             style="fill:#ffffff;stroke:#ff0000;stroke-width:1"
+             r="5"
+             cy="0"
+             cx="0" />
+          <path
+             id="path13681"
+             profondeur="0.00001"
+             style="fill:#ffffff;stroke:#0000ff;stroke-width:1;stroke-linecap:round;stroke-linejoin:round"
+             d="m -2.7409,-5.445 -0.1987,0.1197 -0.1831,0.1323 -0.1668,0.1444 -0.1498,0.1558 -0.1322,0.1667 -0.1142,0.177 -0.0956,0.1864 -0.0767,0.1952 -0.0575,0.2032 -0.0381,0.2105 -0.0185,0.2168 0.0012,0.2223 0.0209,0.2269 0.0404,0.2307 0.0598,0.2336 0.0791,0.2354 0.0979,0.2364 0.1163,0.2365 0.1344,0.2356 0.1519,0.2338 0.1688,0.231 0.185,0.2274 0.2005,0.2229 0.2153,0.2174 0.229,0.2111 0.2421,0.204 0.254,0.1962 0.265,0.1874 0.275,0.1779 0.2838,0.1679 0.2916,0.157 L -0.3619,0.9 -0.0584,1.0337 0.2495,1.1548 0.5603,1.2629 0.8728,1.3575 1.186,1.4384 1.4984,1.5052 1.8089,1.5576 2.1163,1.5954 2.4193,1.6184 2.7167,1.6266 3.0074,1.62 3.2902,1.5985 3.564,1.5623 3.8278,1.5115 4.0804,1.4462 4.3209,1.3668 4.5484,1.2736 4.7618,1.1669 4.9605,1.0472 5.1436,0.9149 5.3104,0.7705 5.4602,0.6146 5.5924,0.4479 5.7066,0.271 5.8022,0.0846 5.8789,-0.1107 5.9364,-0.3139 5.9745,-0.5243 5.993,-0.7411 5.9918,-0.9634 5.9709,-1.1904 5.9305,-1.4211 5.8713,-1.6548 l 0.0693,0.2694 0.057,0.2722 0.0445,0.2746 0.0319,0.2762 0.0193,0.2775 L 6.1,-0.0068 6.094,0.2712 6.0753,0.5487 6.0439,0.8251 6.0001,1.0997 5.9437,1.3721 5.875,1.6416 5.794,1.9077 5.701,2.1698 5.5962,2.4274 5.4797,2.68 5.3519,2.927 5.2129,3.1679 5.0631,3.4022 4.9027,3.6295 4.7322,3.8492 4.5518,4.0609 4.362,4.2642 4.1631,4.4586 3.9555,4.6437 3.7397,4.8192 3.5162,4.9846 3.2853,5.1397 3.0476,5.2841 2.8036,5.4176 2.5537,5.5397 2.2985,5.6504 2.0386,5.7493 1.7744,5.8362 1.5065,5.911 1.2355,5.9736 0.9619,6.0237 0.6863,6.0613 0.4093,6.0863 0.1315,6.0986 -0.1466,6.0982 -0.4245,6.0852 -0.7014,6.0595 -0.9769,6.0213 -1.2503,5.9705 -1.5212,5.9073 -1.7889,5.8318 -2.0529,5.7442 -2.3126,5.6446 -2.5675,5.5334 -2.817,5.4106 -3.0607,5.2765 -3.2981,5.1315 -3.5286,4.9759 -3.7517,4.8099 -3.967,4.6338 -4.1741,4.4482 -4.3726,4.2533 -4.5619,4.0496 -4.7418,3.8374 -4.9117,3.6173 -5.0715,3.3896 -5.2208,3.1549 -5.3592,2.9137 -5.4864,2.6664 -5.6022,2.4135 -5.7064,2.1556 -5.7988,1.8933 -5.879,1.627 -5.9471,1.3573 -6.0028,1.0848 -6.046,0.81 -6.0766,0.5336 -6.0946,0.2561 -6.1,-0.022 -6.0926,-0.3 l 0.02,-0.2775 0.0326,-0.2762 0.0452,-0.2744 0.0577,-0.2721 0.07,-0.2692 0.0822,-0.2657 0.0942,-0.2617 0.106,-0.2571 0.1177,-0.252 0.129,-0.2464 0.1401,-0.2402 0.151,-0.2336 0.1614,-0.2265 0.1716,-0.2189 0.1813,-0.2109 0.1908,-0.2024 0.1999,-0.1934 0.2084,-0.1842 0.2166,-0.1744 0.2244,-0.1644 0.2316,-0.154 0.2383,-0.1433 0.2447,-0.1323 0.2504,-0.121 z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path13683"
+             profondeur="5.60162260537"
+             style="stroke:#ff0000;stroke-width:1;stroke-linecap:round"
+             d="M 1.6565,-3.5067 4.224,-8.942"
+             inkscape:connector-curvature="0" />
+        </g>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+           x="110.4973"
+           y="183.39244"
+           id="text27570-2-1-3-5-7"><tspan
+             sodipodi:role="line"
+             id="tspan27568-2-2-6-5-4"
+             x="110.4973"
+             y="183.39244"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332">3D avec calotte</tspan><tspan
+             sodipodi:role="line"
+             x="110.4973"
+             y="188.68411"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332"
+             id="tspan27811">femelle adaptative</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g
+     transform="translate(84.068292,10.865012)"
+     id="g29878">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-12.201636"
+       y="211.67526"
+       id="text27326-35-9"><tspan
+         sodipodi:role="line"
+         x="-12.201636"
+         y="211.67526"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05555534px;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';text-align:end;text-anchor:end;stroke-width:0.26458332"
+         id="tspan27362-6">Hélicoïdale</tspan></text>
+    <g
+       id="g29775">
+      <g
+         transform="translate(20.507121,209.21287)"
+         credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+         id="g15073">
+        <g
+           id="g15057">
+          <rect
+             x="-10"
+             y="-5"
+             width="20"
+             height="10"
+             style="fill:#ffffff"
+             id="rect15055" />
+        </g>
+        <g
+           id="g15065">
+          <path
+             inkscape:connector-curvature="0"
+             d="m -20,0 h 10"
+             style="fill:none;stroke:#ff0000;stroke-width:1;stroke-linecap:round"
+             id="path15059" />
+          <path
+             inkscape:connector-curvature="0"
+             d="M 10,0 H 20"
+             style="fill:none;stroke:#ff0000;stroke-width:1;stroke-linecap:round"
+             id="path15061" />
+          <path
+             inkscape:connector-curvature="0"
+             d="m -10,0 0.202,0.5023 0.202,0.4701 0.2021,0.4078 0.202,0.3193 0.202,0.2103 0.202,0.0879 0.202,-0.0401 0.2021,-0.1656 0.202,-0.2805 0.202,-0.3774 0.202,-0.4501 0.202,-0.4939 0.2021,-0.5061 0.202,-0.4859 0.202,-0.4344 0.202,-0.3552 0.202,-0.2532 0.2021,-0.1349 0.202,-0.0081 0.202,0.1194 0.202,0.2391 0.202,0.3436 0.2021,0.426 0.202,0.4811 0.202,0.5053 0.202,0.4973 0.202,0.4572 0.2021,0.3879 0.202,0.2937 0.202,0.1807 0.202,0.0561 0.202,-0.072 0.2021,-0.1956 0.202,-0.3067 0.202,-0.398 0.202,-0.4639 0.202,-0.5 0.2021,-0.5041 0.202,-0.4759 0.202,-0.417 0.202,-0.3316 0.202,-0.2249 0.2021,-0.1037 0.202,0.0241 0.202,0.1503 0.202,0.267 0.202,0.3665 0.2021,0.4425 0.202,0.4901 0.202,0.5064 0.202,0.4901 0.2021,0.4425 0.202,0.3665 0.202,0.267 0.202,0.1503 0.202,0.0241 0.2021,-0.1037 0.202,-0.2249 0.202,-0.3316 0.202,-0.417 0.202,-0.4759 0.2021,-0.5041 0.202,-0.5 0.202,-0.4639 0.202,-0.398 0.202,-0.3067 0.2021,-0.1956 0.202,-0.072 0.202,0.0561 0.202,0.1807 0.202,0.2937 0.2021,0.3879 0.202,0.4572 0.202,0.4973 0.202,0.5053 0.202,0.4811 0.2021,0.426 0.202,0.3436 0.202,0.2391 0.202,0.1194 0.202,-0.0081 0.2021,-0.1349 0.202,-0.2532 0.202,-0.3552 0.202,-0.4344 0.202,-0.4859 0.2021,-0.5061 0.202,-0.4939 0.202,-0.4501 0.202,-0.3774 0.202,-0.2805 0.2021,-0.1656 0.202,-0.0401 0.202,0.0879 0.202,0.2103 0.202,0.3193 0.2021,0.4078 0.202,0.4701"
+             style="fill:none;stroke:#ff0000;stroke-width:1;stroke-linecap:round"
+             id="path15063" />
+        </g>
+        <g
+           id="g15071">
+          <rect
+             x="-10"
+             y="-5"
+             width="20"
+             height="10"
+             style="fill:none;stroke:#0000ff;stroke-width:1"
+             id="rect15067" />
+          <path
+             style="stroke:#0000ff;stroke-width:1"
+             inkscape:connector-curvature="0"
+             d="m 0,5 v 5 z"
+             id="path15069" />
+        </g>
+      </g>
+      <text
+         id="text27570-8-8-2-5"
+         y="224.5045"
+         x="20.612259"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332"
+           y="224.5045"
+           x="20.612259"
+           id="tspan27568-97-4-0-2"
+           sodipodi:role="line">2D (Coté)</tspan></text>
+    </g>
+    <g
+       id="g29795">
+      <g
+         id="g29730">
+        <g
+           id="g16921"
+           credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+           transform="translate(50.530399,208.90577)">
+          <g
+             id="g16913"
+             transform="rotate(90)">
+            <path
+               id="path16909"
+               d="M 0,0 H 10"
+               inkscape:connector-curvature="0"
+               style="stroke:#0000ff;stroke-width:1" />
+            <circle
+               id="circle16911"
+               style="fill:#ffffff;stroke:#0000ff;stroke-width:1"
+               r="5"
+               cy="0"
+               cx="0" />
+          </g>
+          <g
+             id="g16919"
+             transform="rotate(-45)">
+            <path
+               id="path16915"
+               style="stroke:#ff0000;stroke-width:1;stroke-linecap:round"
+               d="M 3.5,0 H 10"
+               inkscape:connector-curvature="0" />
+            <path
+               id="path16917"
+               style="fill:none;stroke:#ff0000;stroke-width:1;stroke-linecap:round"
+               d="m 3.5,0 a 3.5,3.5 0 0 1 -7,0"
+               inkscape:connector-curvature="0" />
+          </g>
+        </g>
+        <g
+           transform="translate(70.530399,208.90577)"
+           credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+           id="g17588">
+          <g
+             transform="rotate(90)"
+             id="g17580">
+            <path
+               d="M 0,0 H 10"
+               id="path17576"
+               inkscape:connector-curvature="0"
+               style="stroke:#0000ff;stroke-width:1" />
+            <circle
+               cx="0"
+               cy="0"
+               r="5"
+               style="fill:#ffffff;stroke:#0000ff;stroke-width:1"
+               id="circle17578" />
+          </g>
+          <g
+             transform="rotate(-45)"
+             id="g17586">
+            <path
+               d="M 3.5,0 H 10"
+               style="stroke:#ff0000;stroke-width:1;stroke-linecap:round"
+               id="path17582"
+               inkscape:connector-curvature="0" />
+            <path
+               d="m 3.5,0 a 3.5,3.5 0 0 0 -7,0"
+               style="fill:none;stroke:#ff0000;stroke-width:1;stroke-linecap:round"
+               id="path17584"
+               inkscape:connector-curvature="0" />
+          </g>
+        </g>
+      </g>
+      <text
+         id="text27570-8-8-2-5-7"
+         y="224.5045"
+         x="60.612259"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332"
+           y="224.5045"
+           x="60.612259"
+           id="tspan27568-97-4-0-2-4"
+           sodipodi:role="line">2D (Face)</tspan><tspan
+           id="tspan27867"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332"
+           y="229.79617"
+           x="60.612259"
+           sodipodi:role="line">Pas à droite &amp; à gauche</tspan></text>
+    </g>
+    <g
+       id="g29819">
+      <g
+         id="g29750">
+        <g
+           id="g18650"
+           credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+           transform="translate(100.5304,208.90577)">
+          <path
+             id="path18634"
+             profondeur="-114281.490579"
+             style="fill:none;stroke:#0000ff;stroke-width:1"
+             d="M 9.5726,0.2468 9.4913,0.2908 9.3247,0.3643 9.1492,0.4201 8.9655,0.4582 8.7743,0.4784 8.5764,0.4806 8.3726,0.4647 8.1636,0.431 7.9503,0.3794 7.7336,0.3102 7.5142,0.2236 7.2931,0.1201 7.0711,0 6.8491,-0.1362 6.6279,-0.288 6.4086,-0.4548 6.1918,-0.6359 5.9785,-0.8306 5.7696,-1.0381 5.5657,-1.2577 5.3678,-1.4884 5.1766,-1.7293 4.9929,-1.9795 4.8174,-2.238 4.6508,-2.5038 4.4938,-2.7758 4.3469,-3.053 4.2108,-3.3343 4.0859,-3.6185 3.9729,-3.9045 3.872,-4.1912 3.7838,-4.4775 3.7086,-4.7623 3.6466,-5.0443 3.5982,-5.3226 3.5634,-5.596 3.5425,-5.8634 3.5355,-6.1237 v 0 l 0.007,-0.2523 0.0209,-0.2433 0.0348,-0.2332 0.0484,-0.2224 0.062,-0.2105 0.0752,-0.1978 0.0882,-0.1845 0.1009,-0.1703 0.113,-0.1555 0.1249,-0.14 0.1361,-0.1241 0.1469,-0.1075 0.0757,-0.0466 -14.1421,8.1649 -0.0758,0.0466 -0.1468,0.1076 -0.1362,0.1241 -0.1248,0.14 -0.1131,0.1555 -0.1008,0.1703 -0.0882,0.1844 -0.0753,0.1979 -0.0619,0.2105 -0.0485,0.2223 -0.0347,0.2333 -0.0209,0.2432 -0.007,0.2523 v 0 l 0.007,0.2604 0.0209,0.2674 0.0347,0.2734 0.0485,0.2782 0.0619,0.2821 0.0753,0.2847 0.0882,0.2863 0.1008,0.2868 0.1131,0.286 0.1248,0.2842 0.1362,0.2813 0.1468,0.2771 0.1571,0.2721 0.1666,0.2658 0.1755,0.2585 0.1837,0.2502 0.1912,0.2409 0.1979,0.2307 0.2038,0.2195 0.209,0.2076 0.2133,0.1947 0.2167,0.1811 0.2194,0.1667 0.2211,0.1518 0.222,0.1363 0.222,0.1201 0.2212,0.1035 0.2193,0.0865 0.2168,0.0692 0.2133,0.0516 0.2089,0.0338 0.2039,0.0158 0.1979,-0.0021 0.1912,-0.0202 0.1837,-0.0381 0.1755,-0.0559 0.1666,-0.0734 0.0813,-0.0441 z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path18636"
+             profondeur="-1000"
+             style="fill:none;stroke:#ff0000;stroke-width:1"
+             d="m 3.5355,-6.1237 -0.0428,0.5686 0.0125,0.5924 0.0665,0.6077 0.1183,0.6138 0.1672,0.6111 0.2123,0.5992 0.253,0.5787 0.2884,0.5495 0.3184,0.5125 0.3421,0.4679 0.3594,0.4166 L 6.0005,0.3537 6.3738,0.6508 6.7436,0.8817 7.1029,1.0433 7.4451,1.1338 7.7634,1.1522 8.0519,1.0991 8.2645,1.002 M 1.4936,-6.6358 v 0 L 0.7202,-5.96 0.4604,-5.5645 0.2525,-5.1153 0.0986,-4.6189 0,-4.0825 l -0.0428,0.5686 0.0125,0.5925 0.0664,0.6076 0.1184,0.6139 0.1672,0.611 L 0.534,-0.4896 0.7869,0.089 1.0754,0.6386 1.3938,1.151 1.7359,1.6189 2.0952,2.0355 2.465,2.3949 2.8383,2.6921 3.2081,2.923 3.5674,3.0846 3.9095,3.175 4.2279,3.1935 4.5164,3.1403 4.7289,3.0433 m -6.7708,-7.6379 v 0 l -0.7735,0.6758 -0.2597,0.3956 -0.2079,0.4492 -0.1539,0.4964 -0.0986,0.5364 -0.0429,0.5685 0.0125,0.5925 0.0665,0.6076 0.1183,0.6139 0.1672,0.611 0.2123,0.5993 0.253,0.5786 0.2885,0.5496 0.3183,0.5124 0.3422,0.4679 0.3593,0.4167 0.3698,0.3594 0.3733,0.2971 0.3697,0.2309 L 0.0319,5.1258 0.374,5.2163 0.6924,5.2347 0.9808,5.1816 1.1934,5.0845 m -6.7708,-7.6379 v 0 l -0.7735,0.6758 -0.2598,0.3956 -0.2079,0.4492 -0.1539,0.4964 L -7.0711,0 l -0.0428,0.5686 0.0125,0.5925 0.0665,0.6076 0.1183,0.6138 0.1672,0.6111 0.2123,0.5992 0.253,0.5787 0.2884,0.5495 0.3184,0.5125 0.3421,0.4679 0.3594,0.4166 0.3697,0.3594 0.3733,0.2972 0.3698,0.2309 0.3593,0.1616 0.3422,0.0904 0.3183,0.0185 0.2885,-0.0532 0.2126,-0.0971 M -9.113,-0.5121 v 0 l -0.7734,0.6758 -0.2598,0.3955 -0.2079,0.4492 -0.1539,0.4964"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path18638"
+             profondeur="-0.00114281490579"
+             style="fill:#ffffff;stroke:#0000ff;stroke-width:1"
+             d="M 9.5726,0.2468 9.4913,0.2908 9.3247,0.3643 9.1492,0.4201 8.9655,0.4582 8.7743,0.4784 8.5764,0.4806 8.3726,0.4647 8.1636,0.431 7.9503,0.3794 7.7336,0.3102 7.5142,0.2236 7.2931,0.1201 7.0711,0 6.8491,-0.1362 6.6279,-0.288 6.4086,-0.4548 6.1918,-0.6359 5.9785,-0.8306 5.7696,-1.0381 5.5657,-1.2577 5.3678,-1.4884 5.1766,-1.7293 4.9929,-1.9795 4.8174,-2.238 4.6508,-2.5038 4.4938,-2.7758 4.3469,-3.053 4.2108,-3.3343 4.0859,-3.6185 3.9729,-3.9045 3.872,-4.1912 3.7838,-4.4775 3.7086,-4.7623 3.6466,-5.0443 3.5982,-5.3226 3.5634,-5.596 3.5425,-5.8634 3.5355,-6.1237 v 0 l 0.007,-0.2523 0.0209,-0.2433 0.0348,-0.2332 0.0484,-0.2224 0.062,-0.2105 0.0752,-0.1978 0.0882,-0.1845 0.1009,-0.1703 0.113,-0.1555 0.1249,-0.14 0.1361,-0.1241 0.1469,-0.1075 0.0757,-0.0466 -14.1421,8.1649 -0.0758,0.0466 -0.1468,0.1076 -0.1362,0.1241 -0.1248,0.14 -0.1131,0.1555 -0.1008,0.1703 -0.0882,0.1844 -0.0753,0.1979 -0.0619,0.2105 -0.0485,0.2223 -0.0347,0.2333 -0.0209,0.2432 -0.007,0.2523 v 0 l 0.007,0.2604 0.0209,0.2674 0.0347,0.2734 0.0485,0.2782 0.0619,0.2821 0.0753,0.2847 0.0882,0.2863 0.1008,0.2868 0.1131,0.286 0.1248,0.2842 0.1362,0.2813 0.1468,0.2771 0.1571,0.2721 0.1666,0.2658 0.1755,0.2585 0.1837,0.2502 0.1912,0.2409 0.1979,0.2307 0.2038,0.2195 0.209,0.2076 0.2133,0.1947 0.2167,0.1811 0.2194,0.1667 0.2211,0.1518 0.222,0.1363 0.222,0.1201 0.2212,0.1035 0.2193,0.0865 0.2168,0.0692 0.2133,0.0516 0.2089,0.0338 0.2039,0.0158 0.1979,-0.0021 0.1912,-0.0202 0.1837,-0.0381 0.1755,-0.0559 0.1666,-0.0734 0.0813,-0.0441 z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path18640"
+             profondeur="0.0"
+             style="stroke:#ff0000;stroke-width:1;stroke-linecap:round"
+             d="M 14.1421,-8.165 -14.1421,8.165"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path18642"
+             profondeur="0.00114281490579"
+             style="fill:#ffffff;stroke:#0000ff;stroke-width:1"
+             d="m 4.5695,-8.4117 0.0813,-0.0441 0.1666,-0.0734 0.1755,-0.0559 0.1837,-0.0381 0.1912,-0.0202 0.1979,-0.0021 0.2039,0.0158 0.2089,0.0338 0.2133,0.0516 0.2168,0.0692 0.2193,0.0865 0.2212,0.1035 0.222,0.1201 0.222,0.1363 0.2211,0.1518 0.2194,0.1667 0.2167,0.1811 0.2133,0.1947 0.209,0.2076 0.2038,0.2195 0.1979,0.2307 0.1912,0.2409 0.1837,0.2502 0.1755,0.2585 0.1666,0.2658 0.1571,0.2721 0.1468,0.2771 0.1362,0.2813 0.1248,0.2842 0.1131,0.286 0.1008,0.2868 0.0882,0.2863 0.0753,0.2847 0.0619,0.2821 0.0485,0.2782 0.0347,0.2734 0.0209,0.2674 0.007,0.2604 -0.007,0.2523 -0.0209,0.2432 -0.0347,0.2333 -0.0485,0.2223 -0.0619,0.2105 -0.0753,0.1979 -0.0882,0.1844 -0.1008,0.1703 -0.1131,0.1555 -0.1248,0.14 L 9.7952,0.0926 9.6484,0.2002 9.5726,0.2468 -4.5695,8.4117 -4.4938,8.3651 -4.3469,8.2576 -4.2108,8.1335 -4.0859,7.9935 -3.9729,7.838 -3.872,7.6677 -3.7838,7.4832 -3.7086,7.2854 -3.6466,7.0749 -3.5982,6.8525 -3.5634,6.6193 -3.5425,6.376 -3.5355,6.1237 -3.5425,5.8634 -3.5634,5.596 -3.5982,5.3226 -3.6466,5.0443 -3.7086,4.7623 -3.7838,4.4775 -3.872,4.1912 -3.9729,3.9045 -4.0859,3.6185 -4.2108,3.3343 -4.3469,3.053 -4.4938,2.7758 -4.6508,2.5038 -4.8174,2.238 -4.9929,1.9795 -5.1766,1.7293 -5.3678,1.4884 -5.5657,1.2577 -5.7696,1.0381 -5.9785,0.8306 -6.1918,0.6359 -6.4086,0.4548 -6.6279,0.288 -6.8491,0.1362 -7.0711,0 l -0.222,-0.1201 -0.2211,-0.1035 -0.2194,-0.0866 -0.2167,-0.0692 -0.2133,-0.0516 -0.209,-0.0337 -0.2038,-0.0159 -0.1979,0.0022 -0.1912,0.0202 -0.1837,0.0381 -0.1755,0.0558 -0.1666,0.0735 -0.0813,0.044 z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path18644"
+             profondeur="1000"
+             style="fill:none;stroke:#ff0000;stroke-width:1"
+             d="m 8.2645,1.002 v 0 L 8.6844,0.5303 8.8027,0.2164 8.8692,-0.1511 8.8817,-0.5659 8.8388,-1.0206 8.7402,-1.5076 8.5863,-2.0184 8.3784,-2.5444 8.1187,-3.0766 7.8101,-3.606 7.4563,-4.1236 7.062,-4.6206 6.632,-5.0885 6.1723,-5.5193 5.6887,-5.9055 5.188,-6.2405 4.6768,-6.5182 4.1621,-6.7337 3.6509,-6.883 3.1501,-6.9629 2.6666,-6.9717 2.2068,-6.9085 1.7769,-6.7738 1.4936,-6.6358 m 3.2353,9.6791 v 0 L 5.1488,2.5716 5.2672,2.2577 5.3336,1.8901 5.3461,1.4754 5.3033,1.0206 5.2047,0.5337 5.0508,0.0229 4.8429,-0.5031 4.5831,-1.0353 4.2745,-1.5647 3.9208,-2.0823 3.5264,-2.5793 3.0965,-3.0472 2.6367,-3.478 2.1532,-3.8643 1.6524,-4.1992 1.1412,-4.477 0.6265,-4.6925 0.1153,-4.8417 l -0.5007,-0.08 -0.4836,-0.0088 -0.4597,0.0632 -0.43,0.1348 -0.2832,0.1379 m 3.2353,9.6791 v 0 L 1.6133,4.6128 1.7316,4.2989 1.7981,3.9314 1.8106,3.5166 1.7678,3.0619 1.6692,2.5749 1.5153,2.0641 1.3074,1.5381 1.0476,1.0059 0.739,0.4765 0.3853,-0.0411 -0.0091,-0.5381 -0.439,-1.006 -0.8988,-1.4368 -1.3823,-1.823 -1.8831,-2.158 -2.3943,-2.4357 -2.909,-2.6513 l -0.5112,-0.1492 -0.5008,-0.08 -0.4835,-0.0087 -0.4598,0.0631 -0.4299,0.1348 -0.2832,0.1379 m 3.2353,9.6791 v 0 L -1.9222,6.6541 -1.8039,6.3401 -1.7374,5.9726 -1.7249,5.5579 -1.7678,5.1031 -1.8664,4.6162 -2.0203,4.1054 -2.2282,3.5794 -2.4879,3.0472 -2.7965,2.5178 -3.1503,2.0002 -3.5446,1.5032 -3.9746,1.0353 -4.4343,0.6045 -4.9179,0.2182 -5.4186,-0.1167 -5.9298,-0.3945 -6.4445,-0.61 -6.9557,-0.7593 -7.4565,-0.8392 -7.94,-0.848 -8.3998,-0.7848 -8.8297,-0.65 -9.113,-0.5121"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path18646"
+             profondeur="114281.490579"
+             style="fill:none;stroke:#0000ff;stroke-width:1"
+             d="m 4.5695,-8.4117 0.0813,-0.0441 0.1666,-0.0734 0.1755,-0.0559 0.1837,-0.0381 0.1912,-0.0202 0.1979,-0.0021 0.2039,0.0158 0.2089,0.0338 0.2133,0.0516 0.2168,0.0692 0.2193,0.0865 0.2212,0.1035 0.222,0.1201 0.222,0.1363 0.2211,0.1518 0.2194,0.1667 0.2167,0.1811 0.2133,0.1947 0.209,0.2076 0.2038,0.2195 0.1979,0.2307 0.1912,0.2409 0.1837,0.2502 0.1755,0.2585 0.1666,0.2658 0.1571,0.2721 0.1468,0.2771 0.1362,0.2813 0.1248,0.2842 0.1131,0.286 0.1008,0.2868 0.0882,0.2863 0.0753,0.2847 0.0619,0.2821 0.0485,0.2782 0.0347,0.2734 0.0209,0.2674 0.007,0.2604 -0.007,0.2523 -0.0209,0.2432 -0.0347,0.2333 -0.0485,0.2223 -0.0619,0.2105 -0.0753,0.1979 -0.0882,0.1844 -0.1008,0.1703 -0.1131,0.1555 -0.1248,0.14 L 9.7952,0.0926 9.6484,0.2002 9.5726,0.2468 -4.5695,8.4117 -4.4938,8.3651 -4.3469,8.2576 -4.2108,8.1335 -4.0859,7.9935 -3.9729,7.838 -3.872,7.6677 -3.7838,7.4832 -3.7086,7.2854 -3.6466,7.0749 -3.5982,6.8525 -3.5634,6.6193 -3.5425,6.376 -3.5355,6.1237 -3.5425,5.8634 -3.5634,5.596 -3.5982,5.3226 -3.6466,5.0443 -3.7086,4.7623 -3.7838,4.4775 -3.872,4.1912 -3.9729,3.9045 -4.0859,3.6185 -4.2108,3.3343 -4.3469,3.053 -4.4938,2.7758 -4.6508,2.5038 -4.8174,2.238 -4.9929,1.9795 -5.1766,1.7293 -5.3678,1.4884 -5.5657,1.2577 -5.7696,1.0381 -5.9785,0.8306 -6.1918,0.6359 -6.4086,0.4548 -6.6279,0.288 -6.8491,0.1362 -7.0711,0 l -0.222,-0.1201 -0.2211,-0.1035 -0.2194,-0.0866 -0.2167,-0.0692 -0.2133,-0.0516 -0.209,-0.0337 -0.2038,-0.0159 -0.1979,0.0022 -0.1912,0.0202 -0.1837,0.0381 -0.1755,0.0558 -0.1666,0.0735 -0.0813,0.044 z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path18648"
+             profondeur="57735026919.0"
+             style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+             d="m 0,-4.0825 v -8.1649"
+             inkscape:connector-curvature="0" />
+        </g>
+        <g
+           id="g19775"
+           credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+           transform="translate(130.5304,208.90577)">
+          <path
+             id="path19759"
+             profondeur="-114281.490579"
+             style="fill:none;stroke:#0000ff;stroke-width:1"
+             d="M 9.5726,0.2468 9.4913,0.2908 9.3247,0.3643 9.1492,0.4201 8.9655,0.4582 8.7743,0.4784 8.5764,0.4806 8.3726,0.4647 8.1636,0.431 7.9503,0.3794 7.7336,0.3102 7.5142,0.2236 7.2931,0.1201 7.0711,0 6.8491,-0.1362 6.6279,-0.288 6.4086,-0.4548 6.1918,-0.6359 5.9785,-0.8306 5.7696,-1.0381 5.5657,-1.2577 5.3678,-1.4884 5.1766,-1.7293 4.9929,-1.9795 4.8174,-2.238 4.6508,-2.5038 4.4938,-2.7758 4.3469,-3.053 4.2108,-3.3343 4.0859,-3.6185 3.9729,-3.9045 3.872,-4.1912 3.7838,-4.4775 3.7086,-4.7623 3.6466,-5.0443 3.5982,-5.3226 3.5634,-5.596 3.5425,-5.8634 3.5355,-6.1237 v 0 l 0.007,-0.2523 0.0209,-0.2433 0.0348,-0.2332 0.0484,-0.2224 0.062,-0.2105 0.0752,-0.1978 0.0882,-0.1845 0.1009,-0.1703 0.113,-0.1555 0.1249,-0.14 0.1361,-0.1241 0.1469,-0.1075 0.0757,-0.0466 -14.1421,8.1649 -0.0758,0.0466 -0.1468,0.1076 -0.1362,0.1241 -0.1248,0.14 -0.1131,0.1555 -0.1008,0.1703 -0.0882,0.1844 -0.0753,0.1979 -0.0619,0.2105 -0.0485,0.2223 -0.0347,0.2333 -0.0209,0.2432 -0.007,0.2523 v 0 l 0.007,0.2604 0.0209,0.2674 0.0347,0.2734 0.0485,0.2782 0.0619,0.2821 0.0753,0.2847 0.0882,0.2863 0.1008,0.2868 0.1131,0.286 0.1248,0.2842 0.1362,0.2813 0.1468,0.2771 0.1571,0.2721 0.1666,0.2658 0.1755,0.2585 0.1837,0.2502 0.1912,0.2409 0.1979,0.2307 0.2038,0.2195 0.209,0.2076 0.2133,0.1947 0.2167,0.1811 0.2194,0.1667 0.2211,0.1518 0.222,0.1363 0.222,0.1201 0.2212,0.1035 0.2193,0.0865 0.2168,0.0692 0.2133,0.0516 0.2089,0.0338 0.2039,0.0158 0.1979,-0.0021 0.1912,-0.0202 0.1837,-0.0381 0.1755,-0.0559 0.1666,-0.0734 0.0813,-0.0441 z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path19761"
+             profondeur="-1000"
+             style="fill:none;stroke:#ff0000;stroke-width:1"
+             d="M 3.5355,-6.1237 3.4927,-6.5785 3.5052,-6.9932 3.5717,-7.3608 3.69,-7.6747 3.8572,-7.9294 4.0695,-8.1202 4.1099,-8.1464 m 3.2353,9.6791 v 0 L 6.1723,1.8686 5.6887,1.8598 5.188,1.7799 4.6768,1.6306 4.1621,1.4151 3.6509,1.1374 3.1501,0.8024 2.6666,0.4162 2.2068,-0.0146 1.7769,-0.4825 1.3825,-0.9795 1.0288,-1.4971 0.7202,-2.0265 0.4604,-2.5588 0.2525,-3.0847 0.0986,-3.5955 0,-4.0825 -0.0428,-4.5372 -0.0303,-4.952 0.0361,-5.3195 0.1545,-5.6334 0.3217,-5.8881 0.534,-6.0789 0.5744,-6.1051 M 3.8097,3.574 v 0 L 2.6367,3.9099 2.1532,3.9011 1.6524,3.8211 1.1412,3.6719 0.6265,3.4564 0.1153,3.1786 -0.3854,2.8436 -0.869,2.4574 -1.3287,2.0266 -1.7587,1.5587 -2.153,1.0617 -2.5068,0.5441 -2.8154,0.0147 -3.0751,-0.5175 -3.283,-1.0435 -3.4369,-1.5543 -3.5355,-2.0412 -3.5784,-2.496 l 0.0125,-0.4147 0.0665,-0.3676 0.1183,-0.3139 0.1672,-0.2547 0.2123,-0.1908 0.0404,-0.0262 m 3.2353,9.6791 v 0 L -0.8988,5.9511 -1.3823,5.9423 -1.8831,5.8624 -2.3943,5.7131 -2.909,5.4976 -3.4202,5.2198 -3.921,4.8849 -4.4045,4.4986 -4.8643,4.0678 -5.2942,3.5999 -5.6886,3.1029 -6.0423,2.5853 -6.3509,2.0559 -6.6107,1.5237 -6.8186,0.9978 -6.9725,0.4869 -7.0711,0 l -0.0428,-0.4548 0.0125,-0.4147 0.0665,-0.3675 0.1183,-0.314 0.1672,-0.2547 0.2123,-0.1908 0.0404,-0.0261 m 3.2353,9.6791 v 0 L -4.4343,7.9923 -4.9179,7.9836 -5.4186,7.9036 -5.9298,7.7544 -6.4445,7.5388 -6.9557,7.2611 -7.4565,6.9261 -7.94,6.5399 -8.3998,6.1091 -8.8297,5.6412 -9.2241,5.1442 -9.5778,4.6266 -9.8864,4.0972 -10.1462,3.565 -10.3541,3.039 -10.508,2.5282"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path19763"
+             profondeur="-0.00114281490579"
+             style="fill:#ffffff;stroke:#0000ff;stroke-width:1"
+             d="M 9.5726,0.2468 9.4913,0.2908 9.3247,0.3643 9.1492,0.4201 8.9655,0.4582 8.7743,0.4784 8.5764,0.4806 8.3726,0.4647 8.1636,0.431 7.9503,0.3794 7.7336,0.3102 7.5142,0.2236 7.2931,0.1201 7.0711,0 6.8491,-0.1362 6.6279,-0.288 6.4086,-0.4548 6.1918,-0.6359 5.9785,-0.8306 5.7696,-1.0381 5.5657,-1.2577 5.3678,-1.4884 5.1766,-1.7293 4.9929,-1.9795 4.8174,-2.238 4.6508,-2.5038 4.4938,-2.7758 4.3469,-3.053 4.2108,-3.3343 4.0859,-3.6185 3.9729,-3.9045 3.872,-4.1912 3.7838,-4.4775 3.7086,-4.7623 3.6466,-5.0443 3.5982,-5.3226 3.5634,-5.596 3.5425,-5.8634 3.5355,-6.1237 v 0 l 0.007,-0.2523 0.0209,-0.2433 0.0348,-0.2332 0.0484,-0.2224 0.062,-0.2105 0.0752,-0.1978 0.0882,-0.1845 0.1009,-0.1703 0.113,-0.1555 0.1249,-0.14 0.1361,-0.1241 0.1469,-0.1075 0.0757,-0.0466 -14.1421,8.1649 -0.0758,0.0466 -0.1468,0.1076 -0.1362,0.1241 -0.1248,0.14 -0.1131,0.1555 -0.1008,0.1703 -0.0882,0.1844 -0.0753,0.1979 -0.0619,0.2105 -0.0485,0.2223 -0.0347,0.2333 -0.0209,0.2432 -0.007,0.2523 v 0 l 0.007,0.2604 0.0209,0.2674 0.0347,0.2734 0.0485,0.2782 0.0619,0.2821 0.0753,0.2847 0.0882,0.2863 0.1008,0.2868 0.1131,0.286 0.1248,0.2842 0.1362,0.2813 0.1468,0.2771 0.1571,0.2721 0.1666,0.2658 0.1755,0.2585 0.1837,0.2502 0.1912,0.2409 0.1979,0.2307 0.2038,0.2195 0.209,0.2076 0.2133,0.1947 0.2167,0.1811 0.2194,0.1667 0.2211,0.1518 0.222,0.1363 0.222,0.1201 0.2212,0.1035 0.2193,0.0865 0.2168,0.0692 0.2133,0.0516 0.2089,0.0338 0.2039,0.0158 0.1979,-0.0021 0.1912,-0.0202 0.1837,-0.0381 0.1755,-0.0559 0.1666,-0.0734 0.0813,-0.0441 z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path19765"
+             profondeur="0.0"
+             style="stroke:#ff0000;stroke-width:1;stroke-linecap:round"
+             d="M 14.1421,-8.165 -14.1421,8.165"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path19767"
+             profondeur="0.00114281490579"
+             style="fill:#ffffff;stroke:#0000ff;stroke-width:1"
+             d="m 4.5695,-8.4117 0.0813,-0.0441 0.1666,-0.0734 0.1755,-0.0559 0.1837,-0.0381 0.1912,-0.0202 0.1979,-0.0021 0.2039,0.0158 0.2089,0.0338 0.2133,0.0516 0.2168,0.0692 0.2193,0.0865 0.2212,0.1035 0.222,0.1201 0.222,0.1363 0.2211,0.1518 0.2194,0.1667 0.2167,0.1811 0.2133,0.1947 0.209,0.2076 0.2038,0.2195 0.1979,0.2307 0.1912,0.2409 0.1837,0.2502 0.1755,0.2585 0.1666,0.2658 0.1571,0.2721 0.1468,0.2771 0.1362,0.2813 0.1248,0.2842 0.1131,0.286 0.1008,0.2868 0.0882,0.2863 0.0753,0.2847 0.0619,0.2821 0.0485,0.2782 0.0347,0.2734 0.0209,0.2674 0.007,0.2604 -0.007,0.2523 -0.0209,0.2432 -0.0347,0.2333 -0.0485,0.2223 -0.0619,0.2105 -0.0753,0.1979 -0.0882,0.1844 -0.1008,0.1703 -0.1131,0.1555 -0.1248,0.14 L 9.7952,0.0926 9.6484,0.2002 9.5726,0.2468 -4.5695,8.4117 -4.4938,8.3651 -4.3469,8.2576 -4.2108,8.1335 -4.0859,7.9935 -3.9729,7.838 -3.872,7.6677 -3.7838,7.4832 -3.7086,7.2854 -3.6466,7.0749 -3.5982,6.8525 -3.5634,6.6193 -3.5425,6.376 -3.5355,6.1237 -3.5425,5.8634 -3.5634,5.596 -3.5982,5.3226 -3.6466,5.0443 -3.7086,4.7623 -3.7838,4.4775 -3.872,4.1912 -3.9729,3.9045 -4.0859,3.6185 -4.2108,3.3343 -4.3469,3.053 -4.4938,2.7758 -4.6508,2.5038 -4.8174,2.238 -4.9929,1.9795 -5.1766,1.7293 -5.3678,1.4884 -5.5657,1.2577 -5.7696,1.0381 -5.9785,0.8306 -6.1918,0.6359 -6.4086,0.4548 -6.6279,0.288 -6.8491,0.1362 -7.0711,0 l -0.222,-0.1201 -0.2211,-0.1035 -0.2194,-0.0866 -0.2167,-0.0692 -0.2133,-0.0516 -0.209,-0.0337 -0.2038,-0.0159 -0.1979,0.0022 -0.1912,0.0202 -0.1837,0.0381 -0.1755,0.0558 -0.1666,0.0735 -0.0813,0.044 z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path19769"
+             profondeur="1000"
+             style="fill:none;stroke:#ff0000;stroke-width:1"
+             d="m 4.1099,-8.1464 v 0 l 0.8194,-0.1317 0.3421,0.0904 0.3594,0.1616 0.3697,0.2309 0.3733,0.2972 0.3698,0.3594 0.3593,0.4166 0.3422,0.4679 0.3183,0.5124 0.2885,0.5496 0.253,0.5786 0.2123,0.5993 0.1672,0.611 0.1183,0.6139 0.0665,0.6076 0.0125,0.5925 L 8.8388,-1.0206 8.7402,-0.4842 8.5863,0.0122 8.3784,0.4614 8.1187,0.8569 7.8101,1.1933 7.4563,1.4657 7.3452,1.5327 M 0.5744,-6.1051 v 0 l 0.8194,-0.1318 0.3421,0.0905 0.3593,0.1616 0.3698,0.2309 0.3733,0.2971 0.3698,0.3594 0.3593,0.4166 0.3421,0.4679 0.3184,0.5125 0.2885,0.5495 0.2529,0.5787 0.2123,0.5992 0.1672,0.6111 0.1184,0.6138 0.0664,0.6077 L 5.3461,0.452 5.3033,1.0206 5.2047,1.557 5.0508,2.0534 4.8429,2.5026 4.5831,2.8982 4.2745,3.2345 3.9208,3.507 3.8097,3.574 m -6.7709,-7.6379 v 0 l 0.8194,-0.1317 0.3422,0.0904 0.3593,0.1616 0.3698,0.2309 0.3733,0.2972 0.3697,0.3594 0.3594,0.4166 0.3421,0.4679 0.3184,0.5124 0.2884,0.5496 0.253,0.5786 0.2123,0.5993 0.1672,0.611 L 1.7316,1.2932 1.7981,1.9008 1.8106,2.4933 1.7678,3.0619 1.6692,3.5983 1.5153,4.0947 1.3074,4.5439 1.0476,4.9394 0.739,5.2758 0.3853,5.5482 0.2741,5.6152 m -6.7708,-7.6378 v 0 l 0.8194,-0.1318 0.3421,0.0904 0.3594,0.1617 0.3697,0.2308 0.3733,0.2972 0.3698,0.3594 0.3593,0.4166 0.3422,0.4679 0.3183,0.5125 0.2885,0.5495 0.253,0.5787 0.2123,0.5992 0.1672,0.6111 0.1183,0.6138 0.0665,0.6077 0.0125,0.5924 -0.0429,0.5686 -0.0986,0.5364 -0.1539,0.4964 -0.2079,0.4492 -0.2597,0.3956 -0.3086,0.3363 -0.3538,0.2725 -0.1111,0.067"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path19771"
+             profondeur="114281.490579"
+             style="fill:none;stroke:#0000ff;stroke-width:1"
+             d="m 4.5695,-8.4117 0.0813,-0.0441 0.1666,-0.0734 0.1755,-0.0559 0.1837,-0.0381 0.1912,-0.0202 0.1979,-0.0021 0.2039,0.0158 0.2089,0.0338 0.2133,0.0516 0.2168,0.0692 0.2193,0.0865 0.2212,0.1035 0.222,0.1201 0.222,0.1363 0.2211,0.1518 0.2194,0.1667 0.2167,0.1811 0.2133,0.1947 0.209,0.2076 0.2038,0.2195 0.1979,0.2307 0.1912,0.2409 0.1837,0.2502 0.1755,0.2585 0.1666,0.2658 0.1571,0.2721 0.1468,0.2771 0.1362,0.2813 0.1248,0.2842 0.1131,0.286 0.1008,0.2868 0.0882,0.2863 0.0753,0.2847 0.0619,0.2821 0.0485,0.2782 0.0347,0.2734 0.0209,0.2674 0.007,0.2604 -0.007,0.2523 -0.0209,0.2432 -0.0347,0.2333 -0.0485,0.2223 -0.0619,0.2105 -0.0753,0.1979 -0.0882,0.1844 -0.1008,0.1703 -0.1131,0.1555 -0.1248,0.14 L 9.7952,0.0926 9.6484,0.2002 9.5726,0.2468 -4.5695,8.4117 -4.4938,8.3651 -4.3469,8.2576 -4.2108,8.1335 -4.0859,7.9935 -3.9729,7.838 -3.872,7.6677 -3.7838,7.4832 -3.7086,7.2854 -3.6466,7.0749 -3.5982,6.8525 -3.5634,6.6193 -3.5425,6.376 -3.5355,6.1237 -3.5425,5.8634 -3.5634,5.596 -3.5982,5.3226 -3.6466,5.0443 -3.7086,4.7623 -3.7838,4.4775 -3.872,4.1912 -3.9729,3.9045 -4.0859,3.6185 -4.2108,3.3343 -4.3469,3.053 -4.4938,2.7758 -4.6508,2.5038 -4.8174,2.238 -4.9929,1.9795 -5.1766,1.7293 -5.3678,1.4884 -5.5657,1.2577 -5.7696,1.0381 -5.9785,0.8306 -6.1918,0.6359 -6.4086,0.4548 -6.6279,0.288 -6.8491,0.1362 -7.0711,0 l -0.222,-0.1201 -0.2211,-0.1035 -0.2194,-0.0866 -0.2167,-0.0692 -0.2133,-0.0516 -0.209,-0.0337 -0.2038,-0.0159 -0.1979,0.0022 -0.1912,0.0202 -0.1837,0.0381 -0.1755,0.0558 -0.1666,0.0735 -0.0813,0.044 z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path19773"
+             profondeur="57735026919.0"
+             style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+             d="m 0,-4.0825 v -8.1649"
+             inkscape:connector-curvature="0" />
+        </g>
+      </g>
+      <text
+         id="text27570-8-8-2-5-7-0"
+         y="224.22087"
+         x="115.80141"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332"
+           y="224.22087"
+           x="115.80141"
+           id="tspan27568-97-4-0-2-4-7"
+           sodipodi:role="line">3D</tspan><tspan
+           id="tspan27867-8"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332"
+           y="229.51254"
+           x="115.80141"
+           sodipodi:role="line">Pas à droite &amp; à gauche</tspan></text>
+    </g>
+  </g>
+  <g
+     transform="translate(84.068292,13.510846)"
+     id="g29962">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-12.298236"
+       y="251.2253"
+       id="text27326-35-0"><tspan
+         sodipodi:role="line"
+         id="tspan27324-62-6"
+         x="-12.298237"
+         y="251.2253"
+         style="font-size:7.05555534px;text-align:end;text-anchor:end;stroke-width:0.26458332">Sphère-Plan</tspan><tspan
+         sodipodi:role="line"
+         x="-12.298237"
+         y="258.40256"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.29166651px;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Italic';text-align:end;text-anchor:end;stroke-width:0.26458332"
+         id="tspan27362-2">(Ponctuelle)</tspan></text>
+    <g
+       id="g29928">
+      <g
+         id="g29889">
+        <g
+           transform="translate(20.507121,249.41823)"
+           credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+           id="g84744">
+          <g
+             id="g84736">
+            <circle
+               cx="2.6023745e-16"
+               cy="-4.25"
+               r="3.75"
+               style="fill:#ffffff;stroke:#ff0000;stroke-width:1"
+               id="circle84732" />
+            <path
+               d="m 1.875,-7.4976 3.5,-6.0622 z"
+               id="path84734"
+               inkscape:connector-curvature="0"
+               style="stroke:#ff0000;stroke-width:1" />
+          </g>
+          <g
+             id="g84742">
+            <path
+               d="m 7.5,0.5 h -15"
+               id="path84738"
+               inkscape:connector-curvature="0"
+               style="stroke:#0000ff;stroke-width:1" />
+            <path
+               d="M 0,0.5 V 10"
+               id="path84740"
+               inkscape:connector-curvature="0"
+               style="stroke:#0000ff;stroke-width:1" />
+          </g>
+        </g>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+           x="20.612259"
+           y="264.70993"
+           id="text27570-8-8-2-5-6"><tspan
+             sodipodi:role="line"
+             id="tspan27568-97-4-0-2-8"
+             x="20.612259"
+             y="264.70993"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332">2D (Coté)</tspan></text>
+      </g>
+      <g
+         transform="translate(0.11102091)"
+         id="g29761">
+        <g
+           transform="translate(50.663371,249.41823)"
+           credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+           id="g87307">
+          <g
+             transform="rotate(90)"
+             id="g87299">
+            <rect
+               x="-6.75"
+               y="-6.75"
+               width="13.5"
+               height="13.5"
+               style="fill:#ffffff;stroke:#0000ff;stroke-width:1"
+               id="rect87295" />
+            <path
+               d="M 6.75,0 H 10 Z"
+               id="path87297"
+               inkscape:connector-curvature="0"
+               style="stroke:#0000ff;stroke-width:1" />
+          </g>
+          <g
+             transform="rotate(-90)"
+             id="g87305">
+            <circle
+               cx="0"
+               cy="0"
+               r="3.75"
+               style="fill:#ffffff;stroke:#ff0000;stroke-width:1"
+               id="circle87301" />
+            <path
+               d="M 3.75,0 H 15 Z"
+               id="path87303"
+               inkscape:connector-curvature="0"
+               style="stroke:#ff0000;stroke-width:1" />
+          </g>
+        </g>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+           x="50.768509"
+           y="264.70993"
+           id="text27570-5-3-5-6-8"><tspan
+             sodipodi:role="line"
+             id="tspan27568-9-6-0-1-4"
+             x="50.768509"
+             y="264.70993"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332">2D (Dessus)</tspan></text>
+      </g>
+      <g
+         transform="translate(0.111021)"
+         id="g29898">
+        <g
+           id="g88396"
+           credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+           transform="translate(80.66337,249.41823)">
+          <path
+             id="path88388"
+             profondeur="-2.88675134595"
+             style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+             d="M 0,0 V 8.165"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path88390"
+             profondeur="0.0"
+             style="fill:#ffffff;stroke:#0000ff;stroke-width:1"
+             d="M -10.6066,0 0,6.1237 10.6066,0 0,-6.1237 Z"
+             inkscape:connector-curvature="0" />
+          <circle
+             id="circle88392"
+             profondeur="0.57735026919"
+             style="fill:#ffffff;stroke:#ff0000;stroke-width:1"
+             r="3.75"
+             cy="-3.0618622"
+             cx="0" />
+          <path
+             id="path88394"
+             profondeur="6.89882909147"
+             style="stroke:#ff0000;stroke-width:1;stroke-linecap:round"
+             d="m 1.2424,-5.6919 2.4847,-5.26"
+             inkscape:connector-curvature="0" />
+        </g>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+           x="80.694427"
+           y="265.05072"
+           id="text27570-2-1-3-5-3"><tspan
+             sodipodi:role="line"
+             id="tspan27568-2-2-6-5-1"
+             x="80.694427"
+             y="265.05072"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332">3D</tspan></text>
+      </g>
+    </g>
+  </g>
+  <g
+     transform="translate(84.068292,10.865012)"
+     id="g30215">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-12.298237"
+       y="293.18256"
+       id="text27326-35-6"><tspan
+         sodipodi:role="line"
+         id="tspan27324-62-1"
+         x="-12.298236"
+         y="293.18256"
+         style="font-size:7.05555534px;text-align:end;text-anchor:end;stroke-width:0.26458332">Rectiligne</tspan><tspan
+         sodipodi:role="line"
+         x="-12.298236"
+         y="300.35983"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.29166651px;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Italic';text-align:end;text-anchor:end;stroke-width:0.26458332"
+         id="tspan27362-8">(Linéaire-Rectiligne)</tspan></text>
+    <g
+       id="g29973">
+      <g
+         transform="translate(20.774391,291.57899)"
+         credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+         id="g98557">
+        <g
+           transform="rotate(-90)"
+           id="g98549">
+          <path
+             inkscape:connector-curvature="0"
+             d="m 0.5,-7.5 v 15 L 8,10.3125 v -20.625 z"
+             style="fill:#ffffff;stroke:#ff0000;stroke-width:1"
+             id="path98545" />
+          <path
+             style="stroke:#ff0000;stroke-width:1"
+             inkscape:connector-curvature="0"
+             d="m 8,0 h 7 z"
+             id="path98547" />
+        </g>
+        <g
+           transform="rotate(-90)"
+           id="g98555">
+          <path
+             style="stroke:#0000ff;stroke-width:1"
+             inkscape:connector-curvature="0"
+             d="M -0.5,-13.5601 V 13.5601 Z"
+             id="path98551" />
+          <path
+             style="stroke:#0000ff;stroke-width:1"
+             inkscape:connector-curvature="0"
+             d="M -0.5,0 H -10 Z"
+             id="path98553" />
+        </g>
+      </g>
+      <text
+         id="text27570-8-8-2-5-6-4"
+         y="308.37637"
+         x="20.87953"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332"
+           y="308.37637"
+           x="20.87953"
+           id="tspan27568-97-4-0-2-8-9"
+           sodipodi:role="line">2D (Coté)</tspan></text>
+    </g>
+    <g
+       id="g29984">
+      <g
+         id="g100490"
+         credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+         transform="translate(50.774391,291.57899)">
+        <g
+           id="g100482"
+           transform="rotate(-90)">
+          <path
+             inkscape:connector-curvature="0"
+             id="path100478"
+             style="fill:#ffffff;stroke:#ff0000;stroke-width:1"
+             d="M 1,0 8.5,4.3301 V -4.3301 Z" />
+          <path
+             style="stroke:#ff0000;stroke-width:1"
+             inkscape:connector-curvature="0"
+             id="path100480"
+             d="M 8.5,0 H 15 Z" />
+        </g>
+        <g
+           id="g100488"
+           transform="rotate(-90)">
+          <path
+             style="stroke:#0000ff;stroke-width:1"
+             inkscape:connector-curvature="0"
+             id="path100484"
+             d="M -0.5,-8.6603 V 8.6603 Z" />
+          <path
+             style="stroke:#0000ff;stroke-width:1"
+             inkscape:connector-curvature="0"
+             id="path100486"
+             d="M -10.1351,0 H -0.5 Z" />
+        </g>
+      </g>
+      <text
+         id="text27570-8-8-2-5-6-2"
+         y="308.37637"
+         x="50.879532"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332"
+           y="308.37637"
+           x="50.879532"
+           id="tspan27568-97-4-0-2-8-0"
+           sodipodi:role="line">2D (Bout)</tspan></text>
+    </g>
+    <g
+       id="g29997">
+      <g
+         transform="translate(80.774391,291.57899)"
+         credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+         id="g100981">
+        <path
+           inkscape:connector-curvature="0"
+           d="M 0,0 V 12.2474"
+           style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+           profondeur="-10000004.3301"
+           id="path100965" />
+        <path
+           inkscape:connector-curvature="0"
+           d="M 15.7122,-2.0004 3.4647,-9.0714 -15.7122,2.0004 -3.4647,9.0714 Z"
+           profondeur="-10000000.0"
+           style="fill:#ffffff;stroke:#0000ff;stroke-width:1;stroke-linejoin:round"
+           id="path100967" />
+        <path
+           inkscape:connector-curvature="0"
+           d="m 5.3027,-3.4705 -1.0824,-9.0388 6.1237,3.5232 z"
+           style="fill:#ffffff;stroke:#ff0000;stroke-width:1;stroke-linejoin:round"
+           profondeur="4.60386537319"
+           id="path100969" />
+        <path
+           inkscape:connector-curvature="0"
+           d="M 5.3027,-3.4705 -5.3039,2.6533 -10.3638,-4.0892 4.2203,-12.5093 Z"
+           style="fill:#ffffff;stroke:#ff0000;stroke-width:1;stroke-linejoin:round"
+           profondeur="4.60741531749"
+           id="path100971" />
+        <path
+           inkscape:connector-curvature="0"
+           d="M 5.3027,-3.4705 -5.3039,2.6533 -4.2401,-0.566 10.344,-8.9861 Z"
+           style="fill:#ffffff;stroke:#ff0000;stroke-width:1;stroke-linejoin:round"
+           profondeur="4.61018134246"
+           id="path100973" />
+        <path
+           inkscape:connector-curvature="0"
+           d="m 10.344,-8.9861 -6.1237,-3.5232 -14.5841,8.4201 6.1237,3.5232 z"
+           style="fill:#ffffff;stroke:#ff0000;stroke-width:1;stroke-linejoin:round"
+           profondeur="4.61073379215"
+           id="path100975" />
+        <path
+           inkscape:connector-curvature="0"
+           d="m -5.3039,2.6533 -5.0599,-6.7425 6.1237,3.5232 z"
+           style="fill:#ffffff;stroke:#ff0000;stroke-width:1;stroke-linejoin:round"
+           profondeur="4.61467275357"
+           id="path100977" />
+        <path
+           inkscape:connector-curvature="0"
+           d="m -0.0099,-6.5377 -0.0092,-6.129"
+           style="stroke:#ff0000;stroke-width:1;stroke-linecap:round"
+           profondeur="6.77201525721"
+           id="path100979" />
+      </g>
+      <text
+         id="text27570-2-1-3-5-3-6"
+         y="309.34158"
+         x="80.805443"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332"
+           y="309.34158"
+           x="80.805443"
+           id="tspan27568-2-2-6-5-1-8"
+           sodipodi:role="line">3D</tspan></text>
+    </g>
+  </g>
+  <g
+     transform="translate(84.068292,10.865012)"
+     id="g30065">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-12.298235"
+       y="336.60403"
+       id="text27326-35-7"><tspan
+         sodipodi:role="line"
+         id="tspan27324-62-9"
+         x="-12.298236"
+         y="336.60403"
+         style="font-size:7.05555534px;text-align:end;text-anchor:end;stroke-width:0.26458332">Sphère-Cylindre</tspan><tspan
+         sodipodi:role="line"
+         x="-12.298235"
+         y="343.78131"
+         style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.29166651px;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Italic';text-align:end;text-anchor:end;stroke-width:0.26458332"
+         id="tspan27362-20">(Linéaire-Annulaire)</tspan></text>
+    <g
+       id="g30008">
+      <g
+         id="g9738"
+         credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+         transform="translate(20.774388,334.87474)">
+        <g
+           id="g9730">
+          <rect
+             id="rect9726"
+             style="fill:#ffffff;stroke:#0000ff;stroke-width:1"
+             height="5"
+             width="20"
+             y="1"
+             x="-10" />
+          <path
+             id="path9728"
+             d="m 0,6 v 9 z"
+             inkscape:connector-curvature="0"
+             style="stroke:#0000ff;stroke-width:1" />
+        </g>
+        <g
+           id="g9736"
+           transform="rotate(-90)">
+          <circle
+             id="circle9732"
+             style="fill:#ffffff;stroke:#ff0000;stroke-width:1"
+             r="5"
+             cy="0"
+             cx="0" />
+          <path
+             id="path9734"
+             d="m 5,0 h 5"
+             inkscape:connector-curvature="0"
+             style="stroke:#ff0000;stroke-width:1" />
+        </g>
+      </g>
+      <text
+         id="text27570-8-8-2-5-6-4-9"
+         y="355.16644"
+         x="20.87953"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332"
+           y="355.16644"
+           x="20.87953"
+           id="tspan27568-97-4-0-2-8-9-2"
+           sodipodi:role="line">2D (Coté)</tspan></text>
+    </g>
+    <g
+       id="g30020">
+      <g
+         transform="translate(50.774391,334.87474)"
+         credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+         id="g10648">
+        <g
+           transform="rotate(-90)"
+           id="g10640">
+          <path
+             d="M 2.3941,6.5778 2.0624,6.6893 1.7255,6.784 1.3843,6.8618 1.0396,6.9224 0.6923,6.9657 0.3433,6.9916 -0.0065,7 -0.3564,6.9909 -0.7053,6.9644 -1.0525,6.9204 -1.3971,6.8592 -1.7382,6.7808 -2.0749,6.6854 -2.4064,6.5734 -2.732,6.4449 -3.0506,6.3003 -3.3617,6.1399 -3.6644,5.9643 -3.9579,5.7737 -4.2415,5.5686 -4.5145,5.3497 -4.7763,5.1174 -5.026,4.8723 -5.2633,4.615 -5.4874,4.3461 -5.6977,4.0665 -5.8938,3.7766 -6.0752,3.4773 -6.2414,3.1693 -6.392,2.8534 -6.5266,2.5304 -6.645,2.2011 -6.7467,1.8662 -6.8315,1.5267 -6.8993,1.1833 -6.9498,0.837 -6.9829,0.4886 -6.9986,0.139 l 0.0018,-0.3499 0.0193,-0.3495 0.0367,-0.348 0.0541,-0.3458 0.0713,-0.3426 0.0883,-0.3386 0.1051,-0.3338 0.1217,-0.3281 0.1379,-0.3217 0.1539,-0.3143 0.1693,-0.3063 0.1845,-0.2974 0.1991,-0.2878 0.2132,-0.2775 0.2268,-0.2665 0.2399,-0.2548 0.2523,-0.2426 0.2641,-0.2296 0.2752,-0.2161 0.2857,-0.2021 0.2955,-0.1876 0.3045,-0.1726 0.3127,-0.1571 0.3201,-0.1413 0.3268,-0.1251 0.3327,-0.1087 0.3377,-0.0919 0.3419,-0.0749 0.3451,-0.0577 0.3477,-0.0404 0.3492,-0.0229 0.3499,-0.0055 0.3497,0.012 0.3488,0.0295 0.3468,0.0469 0.344,0.0641 0.3404,0.0813 0.3359,0.0982 0.2631,0.0899"
+             style="fill:none;stroke:#0000ff;stroke-width:1"
+             id="path10634"
+             inkscape:connector-curvature="0" />
+          <path
+             d="M -7,7 V -7 Z"
+             id="path10636"
+             inkscape:connector-curvature="0"
+             style="stroke:#0000ff;stroke-width:1" />
+          <path
+             d="m -7,0 h -8 z"
+             id="path10638"
+             inkscape:connector-curvature="0"
+             style="stroke:#0000ff;stroke-width:1" />
+        </g>
+        <g
+           transform="rotate(-90)"
+           id="g10646">
+          <circle
+             cx="0"
+             cy="0"
+             r="5"
+             style="fill:#ffffff;stroke:#ff0000;stroke-width:1"
+             id="circle10642" />
+          <path
+             d="m 5,0 h 5"
+             id="path10644"
+             inkscape:connector-curvature="0"
+             style="stroke:#ff0000;stroke-width:1" />
+        </g>
+      </g>
+      <text
+         id="text27570-8-8-2-5-6-2-6"
+         y="355.16644"
+         x="50.879532"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332"
+           y="355.16644"
+           x="50.879532"
+           id="tspan27568-97-4-0-2-8-0-6"
+           sodipodi:role="line">2D (Bout)</tspan></text>
+    </g>
+    <g
+       id="g30030">
+      <g
+         id="g11570"
+         credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+         transform="translate(80.774391,334.87474)">
+        <path
+           id="path11560"
+           profondeur="-57735026919.0"
+           style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+           d="m 0,4.0825 v 8.1649"
+           inkscape:connector-curvature="0" />
+        <path
+           id="path11562"
+           profondeur="-1.67391002102"
+           style="fill:#ffffff;stroke:#0000ff;stroke-width:1"
+           d="M 9.5726,0.2468 9.4184,0.3256 9.2478,0.3913 9.0685,0.4393 8.8814,0.4694 8.6872,0.4816 8.4865,0.4758 8.2803,0.4519 8.0693,0.4102 7.8544,0.3508 7.6363,0.2738 7.4161,0.1797 7.1945,0.0688 6.9723,-0.0586 6.7506,-0.2018 6.5302,-0.3603 6.3119,-0.5336 6.0965,-0.7208 5.8851,-0.9213 5.6783,-1.1343 5.477,-1.3589 5.282,-1.5942 5.094,-1.8394 4.9139,-2.0934 4.7422,-2.3553 4.5798,-2.624 4.4272,-2.8985 4.285,-3.1776 4.1539,-3.4603 4.0342,-3.7454 3.9265,-4.0319 3.8312,-4.3186 3.7488,-4.6043 3.6794,-4.888 3.6234,-5.1685 3.581,-5.4448 3.5524,-5.7156 3.5377,-5.98 l -8e-4,-0.2569 0.0132,-0.2484 0.0271,-0.239 0.0408,-0.2285 0.0545,-0.2171 0.0679,-0.205 0.0084,-0.022 -14.1422,8.165 -0.0083,0.0219 -0.0679,0.205 -0.0545,0.2172 -0.0409,0.2285 -0.0271,0.2389 -0.0131,0.2484 8e-4,0.257 0.0147,0.2644 0.0286,0.2708 0.0424,0.2762 0.0559,0.2805 0.0694,0.2837 0.0825,0.2858 0.0953,0.2867 0.1077,0.2864 0.1196,0.2852 0.1312,0.2827 0.1422,0.2791 0.1526,0.2745 0.1624,0.2687 0.1716,0.2618 0.1802,0.2541 0.1879,0.2451 0.195,0.2354 0.2013,0.2246 0.2068,0.213 0.2115,0.2005 0.2153,0.1872 0.2183,0.1732 0.2205,0.1586 0.2217,0.1432 0.2221,0.1273 0.2216,0.111 0.2203,0.0941 0.218,0.0769 0.215,0.0595 0.211,0.0417 0.2062,0.0238 0.2006,0.0059 0.1943,-0.0122 0.1871,-0.0302 0.1792,-0.048 0.1707,-0.0656 0.1542,-0.0789 z"
+           inkscape:connector-curvature="0" />
+        <circle
+           id="circle11564"
+           profondeur="0"
+           style="fill:#ffffff;stroke:#ff0000;stroke-width:1"
+           r="5"
+           cy="0"
+           cx="0" />
+        <path
+           id="path11566"
+           profondeur="1.90136489577"
+           style="fill:#ffffff;stroke:#0000ff;stroke-width:1"
+           d="m 10.3934,-3.5606 0.0694,0.2837 0.0559,0.2805 0.0424,0.2762 0.0286,0.2708 0.0147,0.2644 8e-4,0.257 -0.0131,0.2484 -0.0271,0.2389 -0.0409,0.2285 -0.0545,0.2172 -0.0679,0.205 -0.081,0.192 -0.0939,0.1782 -0.1063,0.1638 -0.1183,0.1487 -0.13,0.133 L 9.7313,0.1425 9.5798,0.2426 9.5726,0.2468 -4.5695,8.4117 -4.5624,8.4075 -4.4109,8.3074 -4.2699,8.1906 -4.14,8.0576 -4.0216,7.909 -3.9153,7.7452 -3.8214,7.5669 -3.7404,7.3749 -3.6725,7.1699 -3.618,6.9528 -3.5772,6.7243 -3.5501,6.4853 -3.5369,6.2369 -3.5377,5.98 -3.5524,5.7156 -3.581,5.4448 -3.6234,5.1685 -3.6794,4.888 -3.7488,4.6043 Z"
+           inkscape:connector-curvature="0" />
+        <path
+           id="path11568"
+           profondeur="5.05181485541"
+           style="stroke:#ff0000;stroke-width:1;stroke-linecap:round"
+           d="m 0,-4.0825 v -6.1237"
+           inkscape:connector-curvature="0" />
+      </g>
+      <text
+         id="text27570-2-1-3-5-3-6-4"
+         y="355.50723"
+         x="80.805443"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332"
+           y="355.50723"
+           x="80.805443"
+           id="tspan27568-2-2-6-5-1-8-9"
+           sodipodi:role="line">3D</tspan></text>
+    </g>
+  </g>
+  <g
+     transform="translate(84.068292,10.865012)"
+     id="g30178">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-12.257972"
+       y="372.92697"
+       id="text27326-35-7-2"><tspan
+         sodipodi:role="line"
+         x="-12.257972"
+         y="372.92697"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.05555534px;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';text-align:end;text-anchor:end;stroke-width:0.26458332"
+         id="tspan27362-20-7">Référentiel</tspan></text>
+    <g
+       id="g30089">
+      <g
+         transform="translate(20.774391,364.87474)"
+         credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+         id="g23777">
+        <g
+           transform="rotate(-90)"
+           id="g23775">
+          <path
+             inkscape:connector-curvature="0"
+             d="M -7.5,5 V -5"
+             style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+             id="path23763" />
+          <path
+             style="stroke:#0000ff;stroke-width:1"
+             inkscape:connector-curvature="0"
+             d="M 0,0 H -7.5"
+             id="path23765" />
+          <path
+             inkscape:connector-curvature="0"
+             d="m -7.5,5 -5,-1.8199"
+             style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+             id="path23767" />
+          <path
+             inkscape:connector-curvature="0"
+             d="m -7.5,1.6667 -5,-1.8199"
+             style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+             id="path23769" />
+          <path
+             inkscape:connector-curvature="0"
+             d="m -7.5,-1.6667 -5,-1.8198"
+             style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+             id="path23771" />
+          <path
+             inkscape:connector-curvature="0"
+             d="m -7.5,-5 -5,-1.8199"
+             style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+             id="path23773" />
+        </g>
+      </g>
+      <text
+         id="text27570-8-8-2-5-6-4-9-5"
+         y="382.81631"
+         x="20.788513"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332"
+           y="382.81631"
+           x="20.788513"
+           id="tspan27568-97-4-0-2-8-9-2-0"
+           sodipodi:role="line">2D</tspan></text>
+    </g>
+    <g
+       id="g30114">
+      <g
+         id="g26415"
+         credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+         transform="translate(46.066058,364.87474)">
+        <path
+           inkscape:connector-curvature="0"
+           id="path26379"
+           profondeur="-8.66025403784"
+           style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+           d="m -7.0711,6.1237 1.5442,4.0075" />
+        <path
+           inkscape:connector-curvature="0"
+           id="path26381"
+           profondeur="-8.66025403784"
+           style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+           d="m -4.714,7.4846 1.5441,4.0074" />
+        <path
+           inkscape:connector-curvature="0"
+           id="path26383"
+           profondeur="-8.66025403784"
+           style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+           d="m -2.357,8.8454 1.5442,4.0074" />
+        <path
+           inkscape:connector-curvature="0"
+           id="path26385"
+           profondeur="-8.66025403784"
+           style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+           d="m 0,10.2062 1.5442,4.0074" />
+        <path
+           inkscape:connector-curvature="0"
+           id="path26387"
+           profondeur="-8.66025403784"
+           style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+           d="m -4.714,4.7629 1.5441,4.0074" />
+        <path
+           inkscape:connector-curvature="0"
+           id="path26389"
+           profondeur="-8.66025403784"
+           style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+           d="m -2.357,6.1237 1.5442,4.0075" />
+        <path
+           inkscape:connector-curvature="0"
+           id="path26391"
+           profondeur="-8.66025403784"
+           style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+           d="M 0,7.4846 1.5442,11.492" />
+        <path
+           inkscape:connector-curvature="0"
+           id="path26393"
+           profondeur="-8.66025403784"
+           style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+           d="m 2.357,8.8454 1.5442,4.0074" />
+        <path
+           inkscape:connector-curvature="0"
+           id="path26395"
+           profondeur="-8.66025403784"
+           style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+           d="m -2.357,3.4021 1.5442,4.0074" />
+        <path
+           inkscape:connector-curvature="0"
+           id="path26397"
+           profondeur="-8.66025403784"
+           style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+           d="M 0,4.7629 1.5442,8.7703" />
+        <path
+           inkscape:connector-curvature="0"
+           id="path26399"
+           profondeur="-8.66025403784"
+           style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+           d="m 2.357,6.1237 1.5442,4.0075" />
+        <path
+           inkscape:connector-curvature="0"
+           id="path26401"
+           profondeur="-8.66025403784"
+           style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+           d="M 4.714,7.4846 6.2582,11.492" />
+        <path
+           inkscape:connector-curvature="0"
+           id="path26403"
+           profondeur="-8.66025403784"
+           style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+           d="M 0,2.0412 1.5442,6.0487" />
+        <path
+           inkscape:connector-curvature="0"
+           id="path26405"
+           profondeur="-8.66025403784"
+           style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+           d="M 2.357,3.4021 3.9012,7.4095" />
+        <path
+           inkscape:connector-curvature="0"
+           id="path26407"
+           profondeur="-8.66025403784"
+           style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+           d="M 4.714,4.7629 6.2582,8.7703" />
+        <path
+           inkscape:connector-curvature="0"
+           id="path26409"
+           profondeur="-8.66025403784"
+           style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+           d="m 7.0711,6.1237 1.5442,4.0075" />
+        <path
+           inkscape:connector-curvature="0"
+           id="path26411"
+           style="fill:#ffffff;stroke:#0000ff;stroke-width:1;stroke-linejoin:round"
+           profondeur="-4.33012701892"
+           d="M 7.0711,6.1237 0,10.2062 -7.0711,6.1237 0,2.0412 Z" />
+        <path
+           inkscape:connector-curvature="0"
+           id="path26413"
+           profondeur="-2.16506350946"
+           style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+           d="M 0,0 V 6.1237" />
+      </g>
+      <text
+         id="text27570-2-1-3-5-3-6-4-4"
+         y="382.81631"
+         x="45.902313"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332"
+           y="382.81631"
+           x="45.902313"
+           id="tspan27568-2-2-6-5-1-8-9-8"
+           sodipodi:role="line">3D</tspan><tspan
+           id="tspan28086"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332"
+           y="388.10797"
+           x="45.902313"
+           sodipodi:role="line">(représentation</tspan><tspan
+           id="tspan28111"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332"
+           y="393.39966"
+           x="45.902313"
+           sodipodi:role="line">spatiale)</tspan></text>
+    </g>
+    <g
+       id="g30127">
+      <g
+         transform="translate(81.941059,364.87474)"
+         credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+         id="g27007">
+        <path
+           inkscape:connector-curvature="0"
+           d="m -3.5355,8.165 1.2868,4.156"
+           style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+           profondeur="-8.66025403784"
+           id="path26995" />
+        <path
+           inkscape:connector-curvature="0"
+           d="m -1.1785,6.8041 1.2868,4.1561"
+           style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+           profondeur="-8.66025403784"
+           id="path26997" />
+        <path
+           inkscape:connector-curvature="0"
+           d="m 1.1785,5.4433 1.2868,4.156"
+           style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+           profondeur="-8.66025403784"
+           id="path26999" />
+        <path
+           inkscape:connector-curvature="0"
+           d="m 3.5355,4.0825 1.2869,4.156"
+           style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+           profondeur="-8.66025403784"
+           id="path27001" />
+        <path
+           inkscape:connector-curvature="0"
+           d="M -3.5355,8.165 3.5355,4.0825"
+           style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+           profondeur="-4.33012701892"
+           id="path27003" />
+        <path
+           inkscape:connector-curvature="0"
+           d="M 0,0 V 6.1237"
+           style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+           profondeur="-2.16506350946"
+           id="path27005" />
+      </g>
+      <text
+         id="text27570-2-1-3-5-3-6-4-4-7"
+         y="382.81631"
+         x="81.791527"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332"
+           y="382.81631"
+           x="81.791527"
+           id="tspan27568-2-2-6-5-1-8-9-8-1"
+           sodipodi:role="line">3D</tspan><tspan
+           id="tspan28086-7"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332"
+           y="388.10797"
+           x="81.791527"
+           sodipodi:role="line">(Projeté dans un</tspan><tspan
+           id="tspan28109"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332"
+           y="393.39966"
+           x="81.791527"
+           sodipodi:role="line">des plans)</tspan></text>
+    </g>
+  </g>
+  <g
+     transform="translate(84.068292,10.865012)"
+     id="g29480">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+       x="-12.201635"
+       y="90.199265"
+       id="text27326-7"><tspan
+         sodipodi:role="line"
+         id="tspan27324-5"
+         x="-12.201635"
+         y="90.199265"
+         style="font-size:7.05555534px;text-align:end;text-anchor:end;stroke-width:0.26458332">Glissière</tspan></text>
+    <g
+       id="g29413">
+      <g
+         id="g29293">
+        <g
+           id="g1930"
+           credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+           transform="translate(20.507121,87.754513)">
+          <g
+             id="g1922">
+            <path
+               id="path1920"
+               d="M -20,0 H 20"
+               inkscape:connector-curvature="0"
+               style="stroke:#ff0000;stroke-width:1" />
+          </g>
+          <g
+             id="g1928">
+            <rect
+               id="rect1924"
+               style="fill:#ffffff;stroke:#0000ff;stroke-width:1"
+               height="8.75"
+               width="20"
+               y="-4.375"
+               x="-10" />
+            <path
+               id="path1926"
+               d="M 0,-4.375 V -15"
+               inkscape:connector-curvature="0"
+               style="stroke:#0000ff;stroke-width:1" />
+          </g>
+        </g>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+           x="20.612259"
+           y="103.04618"
+           id="text27570-8-8"><tspan
+             sodipodi:role="line"
+             id="tspan27568-97-4"
+             x="20.612259"
+             y="103.04618"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332">2D (Coté)</tspan></text>
+      </g>
+      <g
+         id="g29305">
+        <g
+           transform="translate(50.507121,87.754521)"
+           credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+           id="g2572">
+          <g
+             id="g2562">
+            <path
+               d="m -5.75,3.875 11.5,-7.75"
+               id="path2558"
+               inkscape:connector-curvature="0"
+               style="stroke:#ff0000;stroke-width:1" />
+            <path
+               d="m 5.75,3.875 -11.5,-7.75"
+               id="path2560"
+               inkscape:connector-curvature="0"
+               style="stroke:#ff0000;stroke-width:1" />
+          </g>
+          <g
+             id="g2568">
+            <rect
+               x="-6.25"
+               y="-4.375"
+               width="12.5"
+               height="8.75"
+               style="fill:none;stroke:#0000ff;stroke-width:1"
+               id="rect2564" />
+            <path
+               d="M 0,-4.375 V -15"
+               id="path2566"
+               inkscape:connector-curvature="0"
+               style="stroke:#0000ff;stroke-width:1" />
+          </g>
+          <path
+             d="M 0,0 V 10"
+             id="path2570"
+             inkscape:connector-curvature="0"
+             style="stroke:#ff0000;stroke-width:1" />
+        </g>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+           x="50.612259"
+           y="103.04618"
+           id="text27570-5-3-5"><tspan
+             sodipodi:role="line"
+             id="tspan27568-9-6-0"
+             x="50.612259"
+             y="103.04618"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332">2D (Face)</tspan></text>
+      </g>
+      <g
+         id="g29320">
+        <g
+           id="g3238"
+           credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+           transform="translate(80.507121,87.754521)">
+          <path
+             id="path3218"
+             profondeur="-3608.43918244"
+             style="fill:#ffffff;stroke:#0000ff;stroke-width:1;stroke-linecap:round;stroke-linejoin:round"
+             d="m 2.6517,-10.2062 -14.1422,8.165 v 7.1443 l 14.1422,-8.165 z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path3220"
+             profondeur="-2525.9074277"
+             style="fill:#ffffff;stroke:#0000ff;stroke-width:1;stroke-linecap:round;stroke-linejoin:round"
+             d="m 11.4905,2.0412 -14.1422,8.165 -8.8388,-5.1031 14.1422,-8.165 z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path3222"
+             profondeur="-2.77849817048"
+             style="fill:#ffffff;stroke:#ff0000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round"
+             d="M 7.0711,-4.0825 3.0052,-3.266 -11.1369,4.899 -7.0711,4.0825 Z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path3224"
+             profondeur="-0.541265877365"
+             style="fill:#ffffff;stroke:#ff0000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round"
+             d="m 7.0711,-4.0825 -4.0659,-5.5113 -14.1421,8.1649 4.0658,5.5114 z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path3226"
+             profondeur="0.0"
+             style="stroke:#ff0000;stroke-width:1;stroke-linecap:round"
+             d="M 14.1421,-8.165 -14.1421,8.165"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path3228"
+             profondeur="0.541265877365"
+             style="fill:#ffffff;stroke:#ff0000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round"
+             d="M 7.0711,-4.0825 11.1369,1.4289 -3.0052,9.5938 -7.0711,4.0825 Z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path3230"
+             profondeur="2.77849817048"
+             style="fill:#ffffff;stroke:#ff0000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round"
+             d="M 7.0711,-4.0825 11.1369,-4.899 -3.0052,3.266 -7.0711,4.0825 Z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path3232"
+             profondeur="2525.9074277"
+             style="fill:#ffffff;stroke:#0000ff;stroke-width:1;stroke-linecap:round;stroke-linejoin:round"
+             d="m 11.4905,-5.1031 -14.1422,8.165 -8.8388,-5.1031 14.1422,-8.165 z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path3234"
+             profondeur="3608.43918244"
+             style="fill:#ffffff;stroke:#0000ff;stroke-width:1;stroke-linecap:round;stroke-linejoin:round"
+             d="m 11.4905,-5.1031 -14.1422,8.165 v 7.1443 l 14.1422,-8.165 z"
+             inkscape:connector-curvature="0" />
+          <path
+             id="path3236"
+             profondeur="5593080.73205"
+             style="stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+             d="m 0,-3.5722 v -8.6752"
+             inkscape:connector-curvature="0" />
+        </g>
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+           x="80.538177"
+           y="104.01138"
+           id="text27570-2-1-3"><tspan
+             sodipodi:role="line"
+             id="tspan27568-2-2-6"
+             x="80.538177"
+             y="104.01138"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332">3D</tspan></text>
+      </g>
+      <g
+         id="g29349">
+        <text
+           xml:space="preserve"
+           style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.23333311px;line-height:1.25;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332"
+           x="136.07701"
+           y="103.60239"
+           id="text27570-2-1-3-1"><tspan
+             sodipodi:role="line"
+             id="tspan27568-2-2-6-0"
+             x="136.07701"
+             y="103.60239"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332">Croisillon mâle</tspan><tspan
+             sodipodi:role="line"
+             x="136.07701"
+             y="108.89405"
+             style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Latin Modern Roman';-inkscape-font-specification:'Latin Modern Roman, ';stroke-width:0.26458332"
+             id="tspan27716">prismatique ou non</tspan></text>
+        <g
+           id="g29270">
+          <path
+             inkscape:connector-curvature="0"
+             d="m 123.76167,77.826534 -14.1422,8.165 v 7.1443 l 14.1422,-8.165 z"
+             style="opacity:0.2;fill:#ffffff;stroke:#0000ff;stroke-width:1;stroke-linecap:round;stroke-linejoin:round"
+             profondeur="-3608.43918244"
+             id="path3218-2" />
+          <path
+             inkscape:connector-curvature="0"
+             d="m 132.60047,90.073934 -14.1422,8.165005 -8.8388,-5.103105 14.1422,-8.165 z"
+             style="opacity:0.2;fill:#ffffff;stroke:#0000ff;stroke-width:1;stroke-linecap:round;stroke-linejoin:round"
+             profondeur="-2525.9074277"
+             id="path3220-7" />
+          <g
+             id="g3408"
+             credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+             transform="translate(121.09046,87.754521)">
+            <path
+               inkscape:connector-curvature="0"
+               id="path3392"
+               profondeur="-2.77849817048"
+               style="fill:#ffffff;stroke:#ff0000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round"
+               d="M 7.0711,-4.0825 3.0052,-3.266 -11.1369,4.899 -7.0711,4.0825 Z" />
+            <path
+               inkscape:connector-curvature="0"
+               id="path3394"
+               profondeur="-0.541265877365"
+               style="fill:#ffffff;stroke:#ff0000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round"
+               d="m 7.0711,-4.0825 -4.0659,-5.5113 -14.1421,8.1649 4.0658,5.5114 z" />
+            <path
+               inkscape:connector-curvature="0"
+               id="path3396"
+               profondeur="0.0"
+               style="stroke:#ff0000;stroke-width:1;stroke-linecap:round"
+               d="M 14.1421,-8.165 -14.1421,8.165" />
+            <path
+               inkscape:connector-curvature="0"
+               id="path3398"
+               profondeur="0.541265877365"
+               style="fill:#ffffff;stroke:#ff0000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round"
+               d="M 7.0711,-4.0825 11.1369,1.4289 -3.0052,9.5938 -7.0711,4.0825 Z" />
+            <path
+               inkscape:connector-curvature="0"
+               id="path3400"
+               profondeur="2.77849817048"
+               style="fill:#ffffff;stroke:#ff0000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round"
+               d="M 7.0711,-4.0825 11.1369,-4.899 -3.0052,3.266 -7.0711,4.0825 Z" />
+          </g>
+          <path
+             inkscape:connector-curvature="0"
+             d="m 132.60047,82.929634 -14.1422,8.165001 -8.8388,-5.103101 14.1422,-8.165 z"
+             style="opacity:0.2;fill:#ffffff;stroke:#0000ff;stroke-width:1;stroke-linecap:round;stroke-linejoin:round"
+             profondeur="2525.9074277"
+             id="path3232-2" />
+          <path
+             inkscape:connector-curvature="0"
+             d="m 132.60047,82.929634 -14.1422,8.165001 v 7.144304 l 14.1422,-8.165005 z"
+             style="opacity:0.2;fill:#ffffff;stroke:#0000ff;stroke-width:1;stroke-linecap:round;stroke-linejoin:round"
+             profondeur="3608.43918244"
+             id="path3234-2" />
+          <path
+             inkscape:connector-curvature="0"
+             d="m 121.10997,84.460534 v -8.6752"
+             style="opacity:0.2;stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+             profondeur="5593080.73205"
+             id="path3236-6" />
+        </g>
+        <g
+           id="g29283">
+          <path
+             inkscape:connector-curvature="0"
+             d="m 153.44058,77.845365 -14.1422,8.164999 v 7.1443 l 14.1422,-8.164999 z"
+             style="opacity:0.2;fill:#ffffff;stroke:#0000ff;stroke-width:1;stroke-linecap:round;stroke-linejoin:round"
+             profondeur="-3608.43918244"
+             id="path3218-2-1" />
+          <path
+             inkscape:connector-curvature="0"
+             d="m 162.27938,90.092764 -14.1422,8.165006 -8.8388,-5.103106 14.1422,-8.164999 z"
+             style="opacity:0.2;fill:#ffffff;stroke:#0000ff;stroke-width:1;stroke-linecap:round;stroke-linejoin:round"
+             profondeur="-2525.9074277"
+             id="path3220-7-0" />
+          <g
+             transform="translate(151.09046,87.754521)"
+             credits="Auteur : Raphaël ALLAIS - Éduscol-STI"
+             id="g3600">
+            <path
+               inkscape:connector-curvature="0"
+               d="M 10.7834,0.8165 3.3588,-8.9815"
+               style="fill:#ffffff;stroke:#ff0000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round"
+               profondeur="-5.7735026919"
+               id="path3584" />
+            <path
+               inkscape:connector-curvature="0"
+               d="m 3.3588,-3.4701 7.4246,-1.2248"
+               style="fill:#ffffff;stroke:#ff0000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round"
+               profondeur="-5.7735026919"
+               id="path3586" />
+            <path
+               inkscape:connector-curvature="0"
+               d="M 14.1421,-8.165 -14.1421,8.165"
+               style="stroke:#ff0000;stroke-width:1;stroke-linecap:round"
+               profondeur="0.0"
+               id="path3588" />
+            <path
+               inkscape:connector-curvature="0"
+               d="M -10.7834,4.6949 -3.3588,3.4701"
+               style="fill:#ffffff;stroke:#ff0000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round"
+               profondeur="5.7735026919"
+               id="path3590" />
+            <path
+               inkscape:connector-curvature="0"
+               d="m -3.3588,8.9815 -7.4246,-9.798"
+               style="fill:#ffffff;stroke:#ff0000;stroke-width:1;stroke-linecap:round;stroke-linejoin:round"
+               profondeur="5.7735026919"
+               id="path3592" />
+          </g>
+          <path
+             inkscape:connector-curvature="0"
+             d="m 162.27938,82.948465 -14.1422,8.165 -8.8388,-5.103101 14.1422,-8.164999 z"
+             style="opacity:0.2;fill:#ffffff;stroke:#0000ff;stroke-width:1;stroke-linecap:round;stroke-linejoin:round"
+             profondeur="2525.9074277"
+             id="path3232-2-6" />
+          <path
+             inkscape:connector-curvature="0"
+             d="m 162.27938,82.948465 -14.1422,8.165 v 7.144305 l 14.1422,-8.165006 z"
+             style="opacity:0.2;fill:#ffffff;stroke:#0000ff;stroke-width:1;stroke-linecap:round;stroke-linejoin:round"
+             profondeur="3608.43918244"
+             id="path3234-2-1" />
+          <path
+             inkscape:connector-curvature="0"
+             d="M 150.78888,84.479365 V 75.804164"
+             style="opacity:0.2;stroke:#0000ff;stroke-width:1;stroke-linecap:round"
+             profondeur="5593080.73205"
+             id="path3236-6-5" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

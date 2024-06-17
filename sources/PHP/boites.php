@@ -561,7 +561,7 @@
 <!-- SAUVEGARDES LES DONNEES SUR LE SERVEUR (VALIDATION) ----------------------- -->
 
 <div id="boite_envoie_vers_mail" title="Envoi des donnéespar mail">
-	<p>Les mesures vont être envoyées par mail. (Il est possible qu'il soit catégoriser comme "spam")</p>
+	<p>Les mesures vont être envoyées par mail. (Il est possible qu'il soit catégorisé comme "spam")</p>
 	<p><label for="input_email_envoi">Adresse mail :</label> <input type="email" id="input_email_envoi" name="input_email_envoi"/></p>
 	<p id="message_erreur_mail"></p>
 </div>

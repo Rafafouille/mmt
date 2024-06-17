@@ -1,0 +1,236 @@
+body
+{
+	background-color:#BBDDFF;
+	font-family:"arial";
+	overflow:scroll;
+}
+
+
+#message_alerte_installation
+{
+	display:none;
+	visibility: hidden;
+}
+
+#contenu
+{
+	margin:auto;
+	width:100%;
+	max-width:800px;
+}
+
+
+.legend
+{
+	font-size:x-small;
+	font-style:italic;
+}
+
+.paragraphe
+{
+	padding:20px;
+	background-color:white;
+	border-radius:30px;
+	margin-bottom:20px;
+	box-shadow: 1px 1px 12px #555;
+}
+
+.paragraphe h2
+{
+	cursor:pointer;
+	margin:-20px;
+	padding:20px;
+}
+
+.paragraphe h2:hover
+{
+	color:#EE9955;
+}
+
+.paragraphe .contenuParagraphe
+{
+	display:none;
+	margin:0px;
+	overflow: hidden
+}
+
+p, ul
+{
+	text-align:justify;
+	margin-left:20px;
+	margin-right:20px;
+}
+
+strong
+{
+	font-weight:bold;
+	color:#66AAFF;
+}
+
+a
+{
+	color:#EE9955;
+	text-decoration:none;
+	font-weight:bold;
+}
+
+a:hover
+{
+	text-decoration:underline;
+}
+
+h3
+{
+	color:#0088AA;
+}
+
+.code
+{
+	border:solid;
+	padding:10px;
+	background-color : black;
+	color:white;
+	font-family:"Courier";
+	border-radius:10px;
+}
+
+table
+{
+	border-collapse: collapse;
+	margin:auto;
+}
+
+
+table.bordure td
+{
+	border: 1px solid black;
+}
+table.centre td
+{
+	text-align:center;
+}
+
+table.bordure th
+{
+	border: 1px solid black;
+}
+
+.variable
+{
+	font-family:"Courier";
+	font-weight:bold;
+	color:#0088AA;
+}
+
+#menu
+{
+	margin:auto;
+}
+
+#menu td
+{
+	border:none;
+}
+
+#menu td a
+{
+	display:inline-block;
+	width:300px;
+	height:80px;
+	text-align:left;
+	margin:10px;
+	padding-left:20px;
+	padding-top:10px;
+	background-color:white;
+	border-radius:10px;
+	font-size:20px;
+}
+
+#menu td a:hover
+{
+	text-decoration:none;
+	background-color:#FFCCCC;
+}
+
+img, #menu span
+{
+	vertical-align:middle;
+	display:inline-block;
+}
+
+
+input:focus, textarea:focus
+{
+	background-color:#FFEEBB;
+}
+
+
+
+
+/* BOUTON DEVELOPPE MENU PRINCIPAL*/
+
+.boutonDeveloppe
+{
+	margin-top:15px;
+	margin-right:30px;
+	width:32px;
+	float:right;
+	-ms-transform: rotate(180deg); /* IE 9 */
+	-webkit-transform: rotate(180deg); /* Chrome, Safari, Opera */
+	transform: rotate(180deg);
+	transition: all 0.2s;
+	cursor:pointer;
+}
+
+.boutonDeveloppe:hover
+{
+	margin-top:10px;
+	margin-right:25px;
+	width:42px;
+	transition: all 0.2s;
+}
+
+
+
+
+/* BOUTON DEVELOPPE DANS LES PARAGRAPHES */
+
+.boite_Ouvrable, .boite_Ouvrable_ouverte
+{
+	overflow:hidden;
+	box-shadow: inset 5px 5px 15px #AAAAAA;
+	border-radius:20px;
+	padding:20px;
+}
+
+.boite_Ouvrable
+{
+	display:none;
+}
+
+h3,h4
+{
+	cursor:pointer;
+}
+
+.mini_exemples
+{
+	font-weight:bold;
+	margin-bottom:20px;
+}
+
+.commande
+{
+	background-color:black;
+	color:white;
+	font-family:"Courier New";
+}
+
+
+
+.image_centre
+{
+	display:block;
+	margin:auto;
+}
+

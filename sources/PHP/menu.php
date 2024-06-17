@@ -45,6 +45,8 @@
 		<br/>
 		<div class="bouton clicable carre" style="display:none;" title="Activer la VR (si disponible)" id="conteneur_vrbouton">[Bouton VR]</div>
 		<div class="bouton clicable carre" onclick="ouvreBoite_envoieDonneesMail()"><img src="./sources/images/icon_envoi_mail.svg" alt="[Envoi]" title="Envoyer les mesures par mail"></div>
+		<div class="bouton clicable carre" onclick="window.open('./doc', '_blank');"><img src="./sources/images/bouton_aide.svg" alt="[Aide]" title="Aide / Documentation"></div>
+		
 		
 		<!-- ARBRE DES ITEMS -------- -->
 		<div id="arbre">
