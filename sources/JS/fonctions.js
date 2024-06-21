@@ -1526,8 +1526,8 @@ function updateCalculMesurePlan()
 	// NUAGES ========================
 	if(item.type()=="nuage")
 	{
-		var dMin = 0
-		var dMax = 0
+		var dMin = 9999999999;
+		var dMax = -9999999999;
 		var Ra = 0
 		for(var i=0;i<item.nbMesures();i++)
 		{
@@ -1547,10 +1547,10 @@ function updateCalculMesurePlan()
 			<hr>
 			<strong>Mesure par rapport au plan :</strong>
 			<ul>
-				<li><strong>Écart min :</strong> `+String(dMin)+`</li>
-				<li><strong>Écart max :</strong> `+String(dMax)+`</li>
-				<li><strong>IT : </strong>`+String(dMax-dMin)+`</li>
-				<li><strong>R<sub>a</sub> :</strong> `+String(Ra)+`</li>
+				<li><strong>Écart min :</strong> `+afficheSigne(dMin)+String(arronditChiffresSignificatifs(Math.abs(dMin)))+`</li>
+				<li><strong>Écart max :</strong> `+afficheSigne(dMax)+String(arronditChiffresSignificatifs(Math.abs(dMax)))+`</li>
+				<li><strong>IT : </strong>`+String(arronditChiffresSignificatifs(dMax-dMin))+`</li>
+				<li><strong>R<sub>a</sub> :</strong> `+String(arronditChiffresSignificatifs(Ra))+`</li>
 			</ul>
 		`)
 	}
@@ -1582,8 +1582,8 @@ function updateCalculMesureCylindre()
 	// NUAGES ========================
 	if(item.type()=="nuage")
 	{
-		var dcMin = 0
-		var dcMax = 0
+		var dcMin = 9999999999;
+		var dcMax = -9999999999;
 		var daMax = 0
 		var Ra = 0
 		for(var i=0;i<item.nbMesures();i++)
@@ -1614,15 +1614,15 @@ function updateCalculMesureCylindre()
 			<hr>
 			<strong>Mesure par rapport au cylindre :</strong>
 			<ul>
-				<li><strong>Écart min :</strong> `+String(dcMin)+`</li>
-				<li><strong>Écart max :</strong> `+String(dcMax)+`</li>
-				<li><strong>IT :</strong> `+String(dcMax-dcMin)+`</li>
-				<li><strong>R<sub>a</sub> :</strong> `+String(Ra)+`</li>
+				<li><strong>Écart min :</strong> `+afficheSigne(dcMin)+String(arronditChiffresSignificatifs(Math.abs(dcMin)))+`</li>
+				<li><strong>Écart max :</strong> `+afficheSigne(dcMax)+String(arronditChiffresSignificatifs(Math.abs(dcMax)))+`</li>
+				<li><strong>IT :</strong> `+String(arronditChiffresSignificatifs(dcMax-dcMin))+`</li>
+				<li><strong>R<sub>a</sub> :</strong> `+String(arronditChiffresSignificatifs(Ra))+`</li>
 				<li>`+(dcMin==0&&dcMax==0?"Tous les points sont <strong>sur le cylindre</strong>.":(dcMin==0?"Tous les points sont <strong>hors du cylindre</strong>.":(dcMax==0?"Tous les points sont <strong>dans le cylindre</strong>.":"Il y a des points <strong>dans et hors du cylindre</strong>.")))+`</li>
 			</ul>
 			<strong>Mesure par rapport à l'axe :</strong>
 			<ul>
-				<li><strong>Écart max :</strong> `+String(daMax)+`</li>
+				<li><strong>Écart max :</strong> `+String(arronditChiffresSignificatifs(daMax))+`</li>
 			</ul>
 		`)
 	}
@@ -1656,7 +1656,7 @@ function updateCalculMesureDroite()
 			<hr>
 			<strong>Mesure par rapport à la droite :</strong>
 			<ul>
-				<li><strong>Écart max :</strong> `+String(rMax)+`</li>
+				<li><strong>Écart max :</strong> `+String(arronditChiffresSignificatifs(rMax))+`</li>
 			</ul>
 		`)
 	}
@@ -1722,7 +1722,7 @@ function updateCalculMesureCercle()
 			<hr>
 			<strong>Mesure par rapport au cercle :</strong>
 			<ul>
-				<li><strong>Écart max :</strong> `+String(dMax)+`</li>
+				<li><strong>Écart max :</strong> `+String(arronditChiffresSignificatifs(dMax))+`</li>
 			</ul>
 		`)
 	}
@@ -1974,3 +1974,32 @@ function new_item_contrainte_plan_update_liste_elements(element)
 	}
 }
 
+
+
+// **********************************************************
+// Fonction qui renvoi le caractère "+" ou "-" du nombre
+// Renvoie un caractère vide si 0
+function afficheSigne(n)
+{
+	if(n>0)
+		return "+";
+	if(n<0)
+		return "-";
+	return "";
+}
+
+
+
+
+// **********************************************************
+// Fonction qui arrondis le nombre avec "n" chiffres significatif (inclut les virgules)
+function arronditChiffresSignificatifs(val,n=CHIFFRES_SIGNIFICATIFS)
+{
+	var signe = Math.floor(Math.abs(val)/val);
+	val = Math.abs(val)+0.00000000000001;
+	var puissance = Math.floor(Math.log10(val)); // La puissance de 10 du nombre
+	var remonte = val * Math.pow(10,-puissance+(n-1))
+	remonte = Math.round(remonte)
+	val = remonte * Math.pow(10,puissance-(n-1));
+	return Math.round(val*signe*10000000000)/10000000000;
+}

@@ -96,6 +96,7 @@ RAYON_MARKER = 0.0015;
 DISTANCE_MIN_MARKERS = 0.005	// Distance minimal pour autoriser à faire un autre marker
 NUAGE_COURANT = null;		// Référence vers le nuage de points courant (null si aucun)
 LISTE_COULEURS = ["#FF0000","#0000FF","#00AA00","#FFAA00","#FF00FF","#00FFFF","#00FF00","#000000"]
+CHIFFRES_SIGNIFICATIFS = 4; // Nombre de chiffres significatifs quand on affiche les résultats
 
 
 // Manettes *******************
