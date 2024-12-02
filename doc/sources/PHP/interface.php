@@ -18,7 +18,7 @@
 							La fenêtre 3D présente la MMT en tant que telle, ainsi que la pièce à mesurer.
 							Au premier affichage, un temps de chargement peut être nécessaire pour faire apparaître chaque éléments.
 							
-							<h4>Pilotage</h4>
+							<h4>Pilotage de la vue</h4>
 						
 									
 							
@@ -58,29 +58,8 @@
 								
 									<img class="image_centre" src="./sources/images/commande_palpeur.png" height="300px"/>
 									<p>
-									Le palpeur se déplace en translation sur 3 axes X, Y et Z.
-									Son déplacement est borné dans un volume parallélépipédique correspondnant aux dimensions de la machine (0,8m × 0,8m × 0,4m).
-									L'origine du repère est l'un des coins (celui où est positionné le palpeur par défaut).
-									</p>
-									
-									<img class="image_centre" src="./sources/images/repere.png" height="300px;">
-									
-									
-									<p>
-										Il s'arrête dès qu'il entre en interaction avec une surface de la pièce.
-										Sa vitesse est bridée afin de ne pas "sauter" de polygone de la pièce pendant la translation.
-										L'écran "à cristaux liquides" affiche la position du <strong>centre du palpeur</strong> (et non pas celle d'un éventuel palpage).
-									</p>
-									<p>
-										Il existe 4 manières de déplacer le palpeur :
-									</p>
-									<ul>
-										<li>En modifiant directement les coordonnées dans l'affichage "à cristaux liquides"</li>
-										<li>En appuyant sur les boutons "+" et "-" (déplacement de 2mm)</li>
-										<li>En appuyant sur les boutons "++" et "--" (déplacement de 2mm)</li>
-										<li>En modifiant le curseur linéaire.</li>
-									</ul>
-									
+										Le haut du menu permet de déplacer le palpeur et de voir les coordonnées de son centre (voir le paragraphe "Faire une mesure")
+									</p>									
 								</div>
 							<h4>Ouvrir une pièce existante</h4>
 							
