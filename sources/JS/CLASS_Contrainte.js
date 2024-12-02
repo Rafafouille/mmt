@@ -31,7 +31,7 @@ class ContrainteRMSPlan
 		{
 			S+= getDistancePlanCarre(params_plan,this.nuage.getMesure(i))	// On calcule la distance entre le point i et le plan
 		}
-		return S
+		return S/this.nuage.nbMesures(); // On normalise
 	}	 
 }
 
@@ -95,7 +95,7 @@ class ContraintePlanExterieurPositif
 			if ((a*O.x + b*O.y + c*O.z + d) * (a*P.x + b*P.y + c*P.z + d) > 0) // Si on est du bon coté
 				S += 1000000000 * getDistancePlanCarre(params_plan,this.nuage.getMesure(i));//Math.abs(a*P.x + b*P.y + c*P.z + d)/(Math.sqrt(a*a+b*b+c*c))
 		}
-		return S
+		return S/this.nuage.nbMesures();	// On normalise
 	}	 
 }
 
@@ -160,7 +160,7 @@ class ContraintePlanExterieurNegatif
 			if ((a*O.x + b*O.y + c*O.z + d) * (a*P.x + b*P.y + c*P.z + d) < 0) // Si on est du bon coté
 				S += 100000000 * getDistancePlanCarre(params_plan,this.nuage.getMesure(i));//Math.abs(a*P.x + b*P.y + c*P.z + d)/(Math.sqrt(a*a+b*b+c*c))
 		}
-		return S
+		return S/this.nuage.nbMesures();	// On normalise
 	}	 
 }
 
@@ -202,7 +202,7 @@ class ContrainteRMSCylindre
 		{
 			S+= getDistanceCylindreCarre(params_cylindre,this.nuage.getMesure(i))	// On calcule la distance entre le point i et le plan
 		}
-		return S
+		return S/this.nuage.nbMesures(); // On normalise l'erreur
 	}	 
 }
 
@@ -244,7 +244,7 @@ class ContrainteCylindreInscrit
 			if(vDir.cross(CP).length()<params_cylindre[6])
 				S+= 100000000*getDistanceCylindreCarre(params_cylindre,this.nuage.getMesure(i))	// On calcule la distance entre le point i et le plan
 		}
-		return S
+		return S/this.nuage.nbMesures();	// On normalise
 	}	 
 }
 
@@ -290,7 +290,7 @@ class ContrainteCylindreCirconscrit
 			if(vDir.cross(CP).length()>params_cylindre[6])
 				S+= 100000000*getDistanceCylindreCarre(params_cylindre,this.nuage.getMesure(i))	// On calcule la distance entre le point i et le plan
 		}
-		return S
+		return S/this.nuage.nbMesures();	// On normalise
 	}	 
 }
 
@@ -332,7 +332,7 @@ class ContrainteRMSDroite
 		{
 			S+= getDistanceDroiteCarre(params_droite,this.nuage.getMesure(i))	// On calcule la distance entre le point i et le plan
 		}
-		return S
+		return S/this.nuage.nbMesures() ; // On normalise l'erreur
 	}	 
 }
 
@@ -468,7 +468,7 @@ class ContrainteRMSCercle
 		{
 			S+= getDistanceCercleCarre(params_cercle,this.nuage.getMesure(i))	// On calcule la distance entre le point i et le plan
 		}
-		return S
+		return S/this.nuage.nbMesures(); // On normalise
 	}	 
 }
 

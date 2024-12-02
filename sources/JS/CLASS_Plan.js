@@ -399,13 +399,19 @@ class Plan extends Item
 				var contrainte = this.listeContraintes[i];
 				e += contrainte.exec(_param_plan_);
 			}
+			// On divise par le nombre de contrainte.
+			// En effet, si on a 3 contraintes, qui balayent 3 fois les nuages de points, on aura une erreur 3 fois plus grande...
+			// Ceci dit, toutes les contraintes ne balyent pas toujours les mêmes nuages de point (voir aucun. Ex : perpendicularité, ...).
+			// Cette division est donc très empirique
+			if(this.listeContraintes.length>0)
+				e= e/this.listeContraintes.length  
 			return e
 		}
 		erreur.listeContraintes = this.liste_contraintes;
 		erreur = erreur.bind(erreur)
 	
 		
-		var resultat =  GEN_algo_genetique([0,0,0,0], [1000,1000,1000,10], erreur	,10000,60,0.1) // (nominal, IT, fecart, nb population, nb itérations, %meilleurs)
+		var resultat =  GEN_algo_genetique([0,0,0,0], [1000,1000,1000,10], erreur,10000,100,0.1,1e-7) // (nominal, IT, fecart, nb population, nb itérations, %meilleurs, delta_erreur_Mini)
 
 
 		
