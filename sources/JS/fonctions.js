@@ -1756,6 +1756,8 @@ function ouvreBoite_envoieDonneesMail()
 function envoieDonneesVersMail()
 {
 	var donnees = getDonneesInTableau()
+
+	console.log(donnees);
 	
 	var mail = $("#input_email_envoi").val()
 	

@@ -1,6 +1,18 @@
 <?php
+// Init PHPmailer
+use \PHPMailer as PHPMailer;
+use \SMTP as SMTP;
+use \Exception as Exception;
+require './sources/PHP/PHPmailer/src/Exception.php';
+require './sources/PHP/PHPmailer/src/PHPMailer.php';
+require './sources/PHP/PHPmailer/src/SMTP.php';
+
+
 
 $action = isset($_POST['action'])?$_POST['action']:"";
+
+
+ 
 
 
 
@@ -119,17 +131,19 @@ if($action == "envoieDonneeMail")
 			
 	// Récupération des données depuis le client
 	$donnees = isset($_POST['donnees'])?$_POST['donnees']:0;
-	$mail = isset($_POST['mail'])?$_POST['mail']:"";
+	$adresseMail = isset($_POST['mail'])?$_POST['mail']:"";
+
+	//print_r($donnees);
 	
 	$TXT = "Mesures enregistrées le ".date('d/m/y')." à ".date('H:i')."\n";
 						
 	// Vérifions qu'il n'y ai pas d'entête dans les variables
 	$regex_head = '/[\n\r]/';  
-	if (!preg_match($regex_head, $mail))
+	if (!preg_match($regex_head, $adresseMail))
 	{
 		if(substr($_SERVER['HTTP_REFERER'],0,22) == "https://mmt.allais.eu/") // Origin locale du mail (?)
 		{
-			if(filter_var($mail, FILTER_VALIDATE_EMAIL))// Le mail est-il au bon format ?
+			if(filter_var($adresseMail, FILTER_VALIDATE_EMAIL))// Le mail est-il au bon format ?
 			{
 				if($donnees)
 				{
@@ -141,7 +155,7 @@ if($action == "envoieDonneeMail")
 							// NUAGE DE POINTS
 							if($item["type"]=="nuage")
 							{
-								;
+								//echo "<<<<<".sizeof($item["donnees"]).">>>>>>>>>>>>";
 								$TXT .= "Nuage de points : ".$item['nom']."\n\n";
 								$TXT .= "X	;	Y	;	Z\n";
 								for($j=0;$j<sizeof($item['donnees']);$j++)
@@ -161,8 +175,11 @@ if($action == "envoieDonneeMail")
 								$TXT .= "   d = ".strval($item["donnees"]["d"])."\n";
 							}
 						}
+
+
+
 						// Envoie par mail
-						$headers = 'From: mmt@allais.eu'."\r\n";
+						/*$headers = 'From: mmt@allais.eu'."\r\n";
 						$headers .= "\r\n";
 						
 						$success = mail($mail, "[MMT] Export mesures", $TXT, $headers);
@@ -174,6 +191,55 @@ if($action == "envoieDonneeMail")
 						else
 						{
 							$reponse['message'] = "Erreur d'envoi de mail : ".print_r($error_get_last());
+						}*/
+						try {
+							// Tentative de création d’une nouvelle instance de la classe PHPMailer, avec les exceptions activées
+							$mail = new PHPMailer\PHPMailer\PHPMailer (true);
+					
+							// VOIR LA CONFIG ==>  https://www.ionos.fr/digitalguide/email/aspects-techniques/phpmailer/
+					
+							$mail->isSMTP();
+							$mail->SMTPAuth = true;
+							// Informations personnelles
+							$mail->Host = "smtp.gmail.com";
+							$mail->Port = 587;
+							$mail->Username = "site.allais.eu@gmail.com";//"raph.allais@gmail.com";
+
+							$mdp=""; // <-- Mot de passe par défaut (pour ne pas le sauver sur Github)
+							if(file_exists("./sources/PHP/passPHPMailer.php"))
+								{include "./sources/PHP/passPHPMailer.php";}
+
+							$mail->Password = $mdp;
+							$mail->SMTPSecure = 'tls';//PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
+					
+					
+							// Expéditeur
+							$mail->setFrom('site.allais.eu@gmail.com', 'MMT Virtuelle allais.eu');
+							// Destinataire dont le nom peut également être indiqué en option
+							$mail->addAddress($adresseMail);//, "nom");
+							// Copie
+							//$mail->addCC('allais.raphael@free.fr');
+							// Copie cachée
+							$mail->addBCC('allais.raphael@free.fr', 'Raphaël ALLAIS');
+					
+							$mail->isHTML(false);
+							// Objet
+							$mail->Subject = "[MMT] Export mesures";
+							// HTML-Content
+							$mail->Body = $TXT;
+							//$mail->AltBody = 'Le texte comme simple élément textuel';
+							// Ajouter une pièce jointe
+							//$mail->addAttachment("/home/user/Desktop/image.png", "image.png");
+					
+							$mail->CharSet = 'UTF-8';
+							$mail->Encoding = 'base64';
+							$mail->send();
+							
+							$reponse['OK']=true;
+						// (…)
+						} catch (Exception $e) {
+								//echo "Mailer Error: ".$e->getMessage();
+								$reponse['message'] = "Erreur d'envoi de mail : ".$e->getMessage();
 						}
 				}
 				else
